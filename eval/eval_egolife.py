@@ -162,7 +162,7 @@ def parse_target_time(row: Dict[str, Any], segments_30s: List[Dict[str, Any]]) -
 def main():
     parser = argparse.ArgumentParser(description="EgoLifeQA Evaluation with WorldMM")
     parser.add_argument("--subject", type=str, default="A1_JAKE", help="Subject ID")
-    parser.add_argument("--retriever-model", type=str, default="gpt-5-mini", help="LLM model for retrieval (NER, OpenIE)")
+    parser.add_argument("--retriever-model", type=str, default="qwen3vl-2b", help="LLM model for retrieval (NER, OpenIE)")
     parser.add_argument("--respond-model", type=str, default="gpt-5", help="LLM model for iterative reasoning and generating answers")
     parser.add_argument("--max-rounds", type=int, default=5, help="Maximum retrieval rounds")
     parser.add_argument("--max-errors", type=int, default=5, help="Maximum errors before forcing answer")
@@ -222,7 +222,7 @@ def main():
     episodic_captions_30sec = load_json(episodic_caption_files["30sec"])
     
     # Load semantic results
-    semantic_path = os.path.join(f"output/metadata/semantic_memory/{subject}/semantic_consolidation_results_gpt-5-mini.json")
+    semantic_path = os.path.join(f"output/metadata/semantic_memory/{subject}/semantic_consolidation_results_qwen3vl-2b.json")
     semantic_results = load_json(semantic_path)
     
     # Load visual embeddings

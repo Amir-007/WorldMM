@@ -75,7 +75,7 @@ def main():
     parser.add_argument("--eval-json", type=str, default="data/Video-MME/videomme/test.json", help="Path to Video-MME test JSON")
     parser.add_argument("--caption-dir", type=str, default="data/Video-MME/caption", help="Root caption directory with {videoID}/ subdirs")
     parser.add_argument("--metadata-dir", type=str, default="output/metadata/videomme", help="Root metadata directory")
-    parser.add_argument("--retriever-model", type=str, default="gpt-5-mini", help="LLM model for retrieval (NER, OpenIE)")
+    parser.add_argument("--retriever-model", type=str, default="qwen3vl-2b", help="LLM model for retrieval (NER, OpenIE)")
     parser.add_argument("--respond-model", type=str, default="gpt-5", help="LLM model for reasoning and answering")
     parser.add_argument("--max-rounds", type=int, default=5, help="Maximum retrieval rounds")
     parser.add_argument("--max-errors", type=int, default=5, help="Maximum errors before forcing answer")

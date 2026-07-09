@@ -1,11 +1,11 @@
 #!/bin/bash
 # WorldMM Memory Construction Script
-# Usage: ./script/3_build_memory.sh [--step episodic|semantic|visual|all] [--person <person>] [--gpu 0,1,2,3] [--model gpt-5-mini]
+# Usage: ./script/3_build_memory.sh [--step episodic|semantic|visual|all] [--person <person>] [--gpu 0,1,2,3] [--model qwen3vl-2b]
 
 set -e
 trap 'echo -e "\nInterrupted."; exit 130' INT TERM
 
-PERSON="A1_JAKE" STEP="all" GPU_LIST="0,1,2,3" MODEL="gpt-5-mini" NUM_FRAMES=16
+PERSON="A1_JAKE" STEP="all" GPU_LIST="0,1,2" MODEL="qwen3vl-2b" NUM_FRAMES=16
 
 source .venv/bin/activate
 

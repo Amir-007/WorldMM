@@ -14,9 +14,12 @@ while [[ $# -gt 0 ]]; do
     esac
 done
 
-source .venv/bin/activate
-
 cd "$(dirname "$0")/.."
+
+SCRATCH_VENV="/parallel_scratch/ms04938/MyEnv"
+source "$SCRATCH_VENV/bin/activate"
+
+export PYTHONPATH="$(pwd):$PYTHONPATH"
 
 BLUE='\033[1;34m' NC='\033[0m'
 TIMESTAMP=$(date +%Y%m%d_%H%M%S)

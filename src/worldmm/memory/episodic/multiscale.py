@@ -38,7 +38,7 @@ def _process_video_dir(
 
 def generate_multiscale_memory(
     caption_dir: str,
-    model_name: str = "gpt-5-mini",
+    model_name: str = "qwen3vl-2b",
     base_name: str = "10sec.json",
     windows: Optional[List[int]] = None,
     granularity_names: Optional[List[str]] = None,
@@ -123,7 +123,7 @@ if __name__ == "__main__":
 
     parser = argparse.ArgumentParser(description="Generate multiscale episodic memory.")
     parser.add_argument("--caption_dir", required=True, help="Single video dir or parent of {videoID}/ subdirs")
-    parser.add_argument("--model", default="gpt-5-mini", help="LLM model name")
+    parser.add_argument("--model", default="qwen3vl-2b", help="LLM model name")
     parser.add_argument("--base_name", default="10sec.json", help="Base caption filename in each directory")
     parser.add_argument("--windows", default="30,180,600", help="Comma-separated window sizes in seconds")
     parser.add_argument("--granularity_names", default="30sec,3min,10min", help="Comma-separated output granularity names")

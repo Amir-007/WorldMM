@@ -75,7 +75,7 @@ def group_captions_and_get_openie_triples(caption_data: List[Dict], openie_data:
     return episodic_triples_batch
 
 
-def run_semantic_extraction(caption_file: str, openie_file: str, output_dir: str, model_name: str = "gpt-5-mini", llm_model: LLMModel = None, period: int = DEFAULT_PERIOD):
+def run_semantic_extraction(caption_file: str, openie_file: str, output_dir: str, model_name: str = "qwen3vl-2b", llm_model: LLMModel = None, period: int = DEFAULT_PERIOD):
     """Core logic for semantic triple extraction, usable from CLI or as a library call."""
     os.makedirs(output_dir, exist_ok=True)
 
@@ -123,9 +123,9 @@ def run_semantic_extraction(caption_file: str, openie_file: str, output_dir: str
 def main():
     parser = argparse.ArgumentParser(description="Extract semantic triples from episodic triples.")
     parser.add_argument("--caption-file", type=str, default="data/EgoLife/EgoLifeCap/A1_JAKE/A1_JAKE_30sec.json", help="Path to caption JSON file.")
-    parser.add_argument("--openie-file", type=str, default="output/metadata/episodic_memory/A1_JAKE/openie_results_gpt-5-mini.json", help="Path to OpenIE results JSON file.")
+    parser.add_argument("--openie-file", type=str, default="output/metadata/episodic_memory/A1_JAKE/openie_results_qwen3vl-2b.json", help="Path to OpenIE results JSON file.")
     parser.add_argument("--output-dir", type=str, default="output/metadata/semantic_memory/A1_JAKE", help="Output directory for results.")
-    parser.add_argument("--model", type=str, default="gpt-5-mini", help="LLM model name.")
+    parser.add_argument("--model", type=str, default="qwen3vl-2b", help="LLM model name.")
     parser.add_argument("--period", type=int, default=DEFAULT_PERIOD, help="Number of captions per group.")
     args = parser.parse_args()
 

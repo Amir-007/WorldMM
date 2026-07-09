@@ -15,7 +15,7 @@ from concurrent.futures import ThreadPoolExecutor, as_completed
 from tqdm import tqdm
 from worldmm.llm import LLMModel
 
-model = LLMModel(model_name="gpt-5-mini")
+model = LLMModel(model_name="qwen3vl-2b")
 
 SYSTEM_PROMPT_TEMPLATE = """# Role and Objective
 

@@ -1,13 +1,13 @@
 #!/bin/bash
 # WorldMM Memory Construction Script
-# Usage: ./script/videomme/3_build_memory.sh [--step episodic|semantic|visual|all] [--gpu 0,1,2,3] [--model gpt-5-mini]
+# Usage: ./script/videomme/3_build_memory.sh [--step episodic|semantic|visual|all] [--gpu 0,1,2,3] [--model qwen3vl-2b]
 # Adjust paths for video, transcript, and output for different datasets or directory structures.
 
 set -e
 trap 'echo -e "\nInterrupted."; exit 130' INT TERM
 
 VIDEO_PATH="data/Video-MME/data" TRANSCRIPT_PATH="data/Video-MME/transcript" CAPTION_PATH="data/Video-MME/caption"
-STEP="all" GPU_LIST="0,1,2,3" MODEL="gpt-5-mini" UNIT_TIME=10 NUM_FRAMES=10
+STEP="all" GPU_LIST="0,1,2,3" MODEL="qwen3vl-2b" UNIT_TIME=10 NUM_FRAMES=10
 
 source .venv/bin/activate
 

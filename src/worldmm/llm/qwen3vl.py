@@ -100,8 +100,8 @@ class Qwen3VLModel:
         self.model = Qwen3VLForConditionalGeneration.from_pretrained(
             self.model_name,
             torch_dtype=torch.bfloat16,
-            attn_implementation="flash_attention_2",
-            device_map="cuda:1",
+            attn_implementation="sdpa",
+            device_map="auto",
         )
         
         # Load processor

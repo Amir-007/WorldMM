@@ -79,7 +79,7 @@ def create_episodic_triples_results(caption_data: List[Dict],
     }
 
 
-def run_episodic_triples(input_file: str, output_dir: str, model_name: str = "gpt-5-mini",
+def run_episodic_triples(input_file: str, output_dir: str, model_name: str = "qwen3vl-2b",
                          llm_model: LLMModel = None):
     """Core logic for episodic triple extraction, usable from CLI or as a library call."""
     os.makedirs(output_dir, exist_ok=True)
@@ -132,7 +132,7 @@ def main():
     parser = argparse.ArgumentParser(description="Extract episodic triples from captions using OpenIE.")
     parser.add_argument("--caption-file", type=str, default="data/EgoLife/EgoLifeCap/A1_JAKE/A1_JAKE_30sec.json", help="Path to caption JSON file.")
     parser.add_argument("--output-dir", type=str, default="output/metadata/episodic_memory/A1_JAKE", help="Output directory for results.")
-    parser.add_argument("--model", type=str, default="gpt-5-mini", help="LLM model name.")
+    parser.add_argument("--model", type=str, default="qwen3vl-2b", help="LLM model name.")
     args = parser.parse_args()
 
     run_episodic_triples(args.caption_file, args.output_dir, args.model)

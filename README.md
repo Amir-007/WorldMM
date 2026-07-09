@@ -72,7 +72,7 @@ bash script/3_build_memory.sh --step [episodic|semantic|visual]
 ```sh
 --step <type>       # Memory type: episodic, semantic, visual, all
 --gpu <ids>         # GPU IDs to use (default: 0,1,2,3)
---model <name>      # LLM model for memory construction (default: gpt-5-mini)
+--model <name>      # LLM model for memory construction (default: qwen3vl-2b)
 ```
 
 > [!TIP]
@@ -82,11 +82,11 @@ bash script/3_build_memory.sh --step [episodic|semantic|visual]
 
 Run evaluation on EgoLifeQA with:
 ```sh
-bash script/4_eval.sh --retriever-model gpt-5-mini --respond-model gpt-5
+bash script/4_eval.sh --retriever-model qwen3vl-2b --respond-model gpt-5
 ```
 #### Options
 ```sh
---retriever-model <m>   # Model for retrieval process (default: gpt-5-mini)
+--retriever-model <m>   # Model for retrieval process (default: qwen3vl-2b)
 --respond-model <m>     # Model for iterative reasoning and generating answers (default: gpt-5)
 --max-rounds <n>        # Max retrieval rounds (default: 5)
 ```
@@ -98,8 +98,8 @@ Beyond evaluation on week-long videos, WorldMM also supports evaluation on gener
 ```sh
 bash script/videomme/1_setup.sh
 bash script/videomme/2_preprocess.sh
-bash script/videomme/3_build_memory.sh --model gpt-5-mini
-bash script/videomme/4_eval.sh --retriever-model gpt-5-mini --respond-model gpt-5
+bash script/videomme/3_build_memory.sh --model qwen3vl-2b
+bash script/videomme/4_eval.sh --retriever-model qwen3vl-2b --respond-model gpt-5
 ```
 For detailed information about each step, please refer to the scripts located in `script/videomme`.
 
