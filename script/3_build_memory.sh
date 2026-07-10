@@ -7,7 +7,8 @@ trap 'echo -e "\nInterrupted."; exit 130' INT TERM
 
 PERSON="A1_JAKE" STEP="all" GPU_LIST="0,1,2" MODEL="qwen3vl-8b" NUM_FRAMES=16
 
-source .venv/bin/activate
+SCRATCH_VENV="/parallel_scratch/ms04938/MyEnv"
+source "$SCRATCH_VENV/bin/activate"
 
 while [[ $# -gt 0 ]]; do
     case $1 in
