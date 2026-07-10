@@ -41,7 +41,7 @@ logger = logging.getLogger(__name__)
 # Model configuration
 MODEL_DICT = {
     "gpt-5": "gpt-5-2025-08-07",
-    "qwen3vl-2b": "qwen3vl-2b-2025-08-07",
+    "gpt-5-mini": "gpt-5-mini-2025-08-07",
     "gpt-5-nano": "gpt-5-nano-2025-08-07"
 }
 
