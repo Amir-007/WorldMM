@@ -147,7 +147,7 @@ def normalize_camera_wearer_text(text: str, person: str) -> str:
     return text
 
 
-def generate_caption(segment_entries: List[Dict], person: str) -> str:
+def generate_caption(segment_entries: List[Dict], person: str, model: LLMModel) -> str:
     """Generate caption text using the LLM."""
     try:
         prompt = create_prompt(segment_entries)
@@ -215,7 +215,7 @@ def build_caption_entry(entries: List[Dict], video_file: str, sync_file: str, ca
     }
 
 
-def process_sync_files(sync_dir: str, output_file: str, person: str, overwrite: bool = False) -> None:
+def process_sync_files(sync_dir: str, output_file: str, person: str, model: LLMModel, overwrite: bool = False) -> None:
     """Process all sync files and generate captions in parallel."""
 
     if os.path.exists(output_file) and not overwrite:
@@ -241,9 +241,9 @@ def process_sync_files(sync_dir: str, output_file: str, person: str, overwrite: 
             segment_video_files = [segment["video_file"] for segment in usable_segments]
 
             results = []
-            with ThreadPoolExecutor() as executor:
+            with ThreadPoolExecutor(max_workers=1) as executor:
                 future_to_idx = {
-                    executor.submit(generate_caption, entries, person): idx
+                    executor.submit(generate_caption, entries, person, model): idx
                     for idx, entries in enumerate(segment_entries_list)
                 }
                 progress = tqdm(
@@ -292,6 +292,8 @@ def process_sync_files(sync_dir: str, output_file: str, person: str, overwrite: 
 
 
 def main():
+    global model
+    
     parser = argparse.ArgumentParser(description="Generate first-person video captions using the worldmm LLMModel")
     parser.add_argument("--person", default="A1_JAKE", help="Person identifier to process, e.g. A1_JAKE.")
     parser.add_argument("--sync-dir", default="data/EgoLife/EgoLifeCap/Sync", help="Directory containing sync files")
@@ -302,7 +304,7 @@ def main():
 
     model = LLMModel(model_name=args.model)
     output_file = args.output or f"data/EgoLife/EgoLifeCap/{args.person}/{args.person}_30sec.json"
-    process_sync_files(args.sync_dir, output_file, args.person, overwrite=args.overwrite)
+    process_sync_files(args.sync_dir, output_file, args.person, model, overwrite=args.overwrite)
 
 
 if __name__ == "__main__":
