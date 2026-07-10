@@ -1,3 +1,4 @@
+import argparse
 import json
 import os
 from concurrent.futures import ThreadPoolExecutor, as_completed
@@ -6,7 +7,7 @@ from tqdm import tqdm
 
 from worldmm.llm import LLMModel
 
-model = LLMModel(model_name="gpt-5-mini")
+model = None
 
 SYSTEM_PROMPT = "You are a helpful assistant that translates text from Chinese to English. Answer in translated text only."
 
@@ -82,7 +83,15 @@ def translate(input_path: str, output_path: str) -> None:
         _translate_file(input_path, output_path)
 
 
-if __name__ == "__main__":
+def main():
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--model", type=str, default="qwen3vl-2b", help="LLM model name.")
+    args = parser.parse_args()
+
+    model = LLMModel(model_name=args.model)
     input_path = "data/EgoLife/EgoLifeCap/DenseCaption/A1_JAKE"
     output_path = "data/EgoLife/EgoLifeCap/DenseCaption/translated"
     translate(input_path, output_path)
+
+if __name__ == "__main__":
+    main()

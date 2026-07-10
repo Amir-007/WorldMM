@@ -15,7 +15,7 @@ from concurrent.futures import ThreadPoolExecutor, as_completed
 from tqdm import tqdm
 from worldmm.llm import LLMModel
 
-model = LLMModel(model_name="qwen3vl-2b")
+model = None
 
 SYSTEM_PROMPT_TEMPLATE = """# Role and Objective
 
@@ -297,8 +297,10 @@ def main():
     parser.add_argument("--sync-dir", default="data/EgoLife/EgoLifeCap/Sync", help="Directory containing sync files")
     parser.add_argument("--output", default=None, help="Output file path. Defaults to data/EgoLife/EgoLifeCap/<person>/<person>_30sec.json.")
     parser.add_argument("--overwrite", action="store_true", help="Overwrite existing caption files.")
-
+    parser.add_argument("--model", type=str, default="qwen3vl-2b", help="LLM model name.")
     args = parser.parse_args()
+
+    model = LLMModel(model_name=args.model)
     output_file = args.output or f"data/EgoLife/EgoLifeCap/{args.person}/{args.person}_30sec.json"
     process_sync_files(args.sync_dir, output_file, args.person, overwrite=args.overwrite)
 
