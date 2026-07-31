@@ -2,13 +2,14 @@
 # WorldMM Memory Construction Script
 # Usage: ./script/3_build_memory.sh [--step episodic|semantic|visual|all] [--person <person>] [--gpu 0,1,2,3] [--model qwen3vl-2b]
 
-set -e
+set -eo pipefail
 trap 'echo -e "\nInterrupted."; exit 130' INT TERM
 
-PERSON="A1_JAKE" STEP="all" GPU_LIST="0,1,2" MODEL="qwen3vl-8b" NUM_FRAMES=16
+PERSON="A1_JAKE" STEP="all" GPU_LIST="0" MODEL="qwen3vl-8b" NUM_FRAMES=16
 
-SCRATCH_VENV="/parallel_scratch/ms04938/MyEnv"
-source "$SCRATCH_VENV/bin/activate"
+cd "$(dirname "$0")/.."
+
+source .venv/bin/activate
 
 while [[ $# -gt 0 ]]; do
     case $1 in
@@ -21,7 +22,6 @@ while [[ $# -gt 0 ]]; do
     esac
 done
 
-cd "$(dirname "$0")/.."
 mkdir -p output/metadata/{episodic,semantic,visual}_memory/${PERSON}
 
 BLUE='\033[1;34m' NC='\033[0m'
@@ -33,6 +33,7 @@ run_episodic() {
     echo -e "${BLUE}Episodic Memory: Generating fine captions...${NC}"
     python preprocess/episodic_memory/generate_fine_caption_egolife.py \
         --person "$PERSON" \
+        --model "$MODEL" \
         --sync-dir "data/EgoLife/EgoLifeCap/Sync" \
         --output "data/EgoLife/EgoLifeCap/${PERSON}/${PERSON}_30sec.json" 2>&1 | tee "$LOG_DIR/generate_fine_caption_$TIMESTAMP.log"
     echo -e "${BLUE}Episodic Memory: Generating multiscale memory...${NC}"

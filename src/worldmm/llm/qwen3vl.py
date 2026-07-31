@@ -15,7 +15,7 @@ from typing import Any, Dict, List, Optional, Tuple, Union
 import torch
 from decord import VideoReader, cpu
 from PIL import Image
-from transformers import Qwen3VLForConditionalGeneration, AutoProcessor
+from transformers import AutoModelForImageTextToText, AutoProcessor
 from qwen_vl_utils import process_vision_info
 
 from .utils import dynamic_retry_decorator
@@ -28,6 +28,7 @@ MODEL_DICT = {
     "qwen3vl-2b": "Qwen/Qwen3-VL-2B-Instruct",
     "qwen3vl-4b": "Qwen/Qwen3-VL-4B-Instruct",
     "qwen3vl-8b": "Qwen/Qwen3-VL-8B-Instruct",
+    "qwen3vl-30b": "Qwen/Qwen3-VL-30B-A3B-Instruct",
 }
 
 
@@ -97,11 +98,13 @@ class Qwen3VLModel:
     def _init_model(self) -> None:
         """Initialize the model and processor."""
         # Load model
-        self.model = Qwen3VLForConditionalGeneration.from_pretrained(
+        max_memory = {i: "76GiB" for i in range(torch.cuda.device_count())}
+        self.model = AutoModelForImageTextToText.from_pretrained(
             self.model_name,
-            torch_dtype=torch.bfloat16,
+            dtype=torch.bfloat16,
             attn_implementation="sdpa",
             device_map="auto",
+            max_memory=max_memory,
         )
         
         # Load processor
@@ -382,6 +385,10 @@ class Qwen3VLModel:
             # Set default generation parameters if not specified
             if "max_new_tokens" not in gen_kwargs:
                 gen_kwargs["max_new_tokens"] = 2048
+            if "repetition_penalty" not in gen_kwargs:
+                gen_kwargs["repetition_penalty"] = 1.3
+            if "do_sample" not in gen_kwargs:
+                gen_kwargs["do_sample"] = False
             
             # Generate
             generated_ids = self.model.generate(**inputs, **gen_kwargs)
@@ -489,17 +496,19 @@ class Qwen3VLModel:
     def _parse_structured_response(self, response: str, text_format: type) -> Any:
         """
         Parse the response string using the provided text_format (Pydantic model).
-        
-        Args:
-            response: The raw response string from the model
-            text_format: Pydantic model class for parsing
-            
-        Returns:
-            Parsed object of type text_format
-            
-        Raises:
-            Qwen3VLModelError: If parsing fails
+
+        Hardened for local VLM output quirks: bare lists, null elements, truncated
+        or non-JSON responses all degrade to a schema-valid empty result rather than
+        exhausting retries or crashing the pipeline.
         """
+        def _empty_default(fmt):
+            try:
+                fields = getattr(fmt, 'model_fields', {})
+                empty = {fname: [] for fname in fields}
+                return fmt.model_validate(empty)
+            except Exception:
+                return None
+
         try:
             # Clean the response by removing markdown code blocks if present
             cleaned_response = response.strip()
@@ -508,11 +517,63 @@ class Qwen3VLModel:
             if cleaned_response.endswith('```'):
                 cleaned_response = cleaned_response[:-3]
             cleaned_response = cleaned_response.strip()
-            
-            # Try to parse as JSON first
-            json_data = json.loads(cleaned_response)
-            
-            # If it's a Pydantic model, use model_validate (Pydantic v2)
+
+            # Parse as JSON; truncated/non-JSON output degrades to empty default
+            try:
+                json_data = json.loads(cleaned_response)
+            except json.JSONDecodeError as e:
+                logger.warning(f"Non-JSON/truncated response, using empty default. Raw head: {response[:120]!r}")
+                fallback = _empty_default(text_format)
+                if fallback is not None:
+                    return fallback
+                raise Qwen3VLModelError(f"Failed to parse response as JSON: {e}") from e
+
+            # Quirk 1: model returns a bare list instead of the single-field object
+            if isinstance(json_data, list):
+                fields = list(getattr(text_format, 'model_fields', {}).keys())
+                if len(fields) == 1:
+                    json_data = {fields[0]: json_data}
+                    
+            # Quirk 2 (generalized): list elements returned as dicts instead of bare strings
+            # handles {"entity":"X"}, {"entity":"X","type":"Y"}, {"name":"X"}, etc.
+            if isinstance(json_data, dict):
+                for k, v in list(json_data.items()):
+                    if isinstance(v, list):
+                        fixed = []
+                        for elem in v:
+                            if isinstance(elem, dict):
+                                for pref in ("entity", "name", "value", "text"):
+                                    if pref in elem:
+                                        fixed.append(elem[pref])
+                                        break
+                                else:
+                                    fixed.append(next(iter(elem.values())) if elem else "")
+                            else:
+                                fixed.append(elem)
+                        json_data[k] = fixed
+                        
+            # Quirk 3: single-field model but model used a different key name
+            # e.g. {"entities": [...]} when schema wants {"named_entities": [...]}
+            if isinstance(json_data, dict):
+                expected = list(getattr(text_format, 'model_fields', {}).keys())
+                if len(expected) == 1 and expected[0] not in json_data and len(json_data) == 1:
+                    only_value = next(iter(json_data.values()))
+                    json_data = {expected[0]: only_value}
+
+            # Quirk 4: null elements inside triples -> coerce to "" so filter_invalid_triples can drop them
+            if isinstance(json_data, dict) and isinstance(json_data.get("triples"), list):
+                json_data["triples"] = [
+                    [("" if elem is None else str(elem)) for elem in triple]
+                    for triple in json_data["triples"]
+                    if isinstance(triple, list)
+                ]
+
+            # Quirk 5: null elements inside any other single string-list field (e.g. named_entities)
+            if isinstance(json_data, dict):
+                for k, v in list(json_data.items()):
+                    if isinstance(v, list):
+                        json_data[k] = [("" if elem is None else elem) for elem in v]
+
             if hasattr(text_format, 'model_validate'):
                 return text_format.model_validate(json_data)
             # Fallback for older Pydantic versions
@@ -521,17 +582,14 @@ class Qwen3VLModel:
             else:
                 logger.warning(f"Unsupported text_format type: {text_format}")
                 raise ValueError("text_format must be a Pydantic model class")
-        except json.JSONDecodeError as e:
-            logger.warning(f"Failed to parse response as JSON: {response}")
-            raise Qwen3VLModelError(f"Failed to parse response as JSON: {e}") from e
-        except Exception as e:
-            logger.error(f"Failed to parse structured response: {e}")
-            raise Qwen3VLModelError(f"Failed to parse structured response: {e}") from e
 
-    def __repr__(self) -> str:
-        """String representation of the model instance."""
-        return (f"Qwen3VLModel(model_name='{self.model_name}', "
-                f"kwargs={self.kwargs})")
+        except Exception as e:
+            # Last-resort graceful degradation for any unforeseen output shape
+            logger.error(f"Unparseable structured response, degrading to empty. Error: {e}. Raw head: {response[:120]!r}")
+            fallback = _empty_default(text_format)
+            if fallback is not None:
+                return fallback
+            raise Qwen3VLModelError(f"Failed to parse structured response: {e}") from e
 
 
 # Convenience function

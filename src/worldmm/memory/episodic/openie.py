@@ -9,7 +9,7 @@ from .utils import compute_mdhash_id, filter_invalid_triples, NerRawOutput, Trip
 from ...llm import dynamic_retry_decorator, LLMModel, PromptTemplateManager
 
 logger = logging.getLogger(__name__)
-
+WORKERS = int(os.environ.get("WORLDMM_WORKERS", "1"))
 
 class OpenIE:
     def __init__(self, llm_model: LLMModel):
@@ -20,13 +20,13 @@ class OpenIE:
     @dynamic_retry_decorator
     def _execute_ner_call(self, ner_input_message) -> List[str]:
         """Retryable helper that runs the full NER try-block logic (so the whole block is retried)."""
-        response = self.llm_model.generate(ner_input_message, text_format=NerRawOutput)
+        response = self.llm_model.generate(ner_input_message, text_format=NerRawOutput, max_new_tokens=256)
         return response.named_entities
 
     @dynamic_retry_decorator
     def _execute_triples_call(self, messages) -> List[List[str]]:
         """Retryable helper that runs the full triple-extraction try-block logic (so the whole block is retried)."""
-        response = self.llm_model.generate(messages, text_format=TripleRawOutput)
+        response = self.llm_model.generate(messages, text_format=TripleRawOutput, max_new_tokens=512)
         triples = filter_invalid_triples(response.triples)
         return triples
 
@@ -135,7 +135,7 @@ class OpenIE:
 
         ner_results_list = []
 
-        with ThreadPoolExecutor() as executor:
+        with ThreadPoolExecutor(max_workers=WORKERS) as executor:
             # Create NER futures for each chunk (submission order doesn't matter)
             ner_futures = {
                 executor.submit(self.ner, chunk_key, chunk_passages[chunk_key]): chunk_key
@@ -148,7 +148,7 @@ class OpenIE:
                 ner_results_list.append(result)
 
         triple_results_list = []
-        with ThreadPoolExecutor() as executor:
+        with ThreadPoolExecutor(max_workers=WORKERS) as executor:
             # Create triple extraction futures for each chunk using outputs from NER
             re_futures = {
                 executor.submit(self.triple_extraction, ner_result.chunk_id,

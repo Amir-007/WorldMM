@@ -78,7 +78,7 @@ def generate_multiscale_memory(
 
     print(f"Processing {len(video_dirs)} video(s) for multiscale memory (perspective={perspective})...")
     failures: list[tuple[str, str]] = []
-    max_workers = min(8, len(video_dirs)) if video_dirs else 1
+    max_workers = int(os.environ.get("WORLDMM_WORKERS", "1"))
 
     with ThreadPoolExecutor(max_workers=max_workers) as executor:
         future_to_video_dir = {

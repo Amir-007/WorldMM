@@ -2,7 +2,7 @@
 # WorldMM Preprocessing Script
 # Usage: ./script/2_preprocess.sh [--person A1_JAKE]
 
-set -e
+set -eo pipefail
 trap 'echo -e "\nInterrupted."; exit 130' INT TERM
 
 PERSON="A1_JAKE" MODEL="qwen3vl-8b"
@@ -16,10 +16,7 @@ done
 
 cd "$(dirname "$0")/.."
 
-SCRATCH_VENV="/parallel_scratch/ms04938/MyEnv"
-source "$SCRATCH_VENV/bin/activate"
-
-export PYTHONPATH="$(pwd):$PYTHONPATH"
+source .venv/bin/activate
 
 BLUE='\033[1;34m' NC='\033[0m'
 TIMESTAMP=$(date +%Y%m%d_%H%M%S)

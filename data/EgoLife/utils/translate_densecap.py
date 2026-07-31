@@ -39,7 +39,7 @@ def translate(input_path: str, output_path: str) -> None:
             return idx, build_record(name, date, start, end, idx, translation)
 
         futures = []
-        with ThreadPoolExecutor() as executor:
+        with ThreadPoolExecutor(max_workers=1) as executor:
             for idx, sub in enumerate(subs, start=1):
                 start = f"{(hour + sub.start.hours):02d}{sub.start.minutes:02d}{sub.start.seconds:02d}"
                 end = f"{(hour + sub.end.hours):02d}{sub.end.minutes:02d}{sub.end.seconds:02d}"
@@ -75,7 +75,7 @@ def translate(input_path: str, output_path: str) -> None:
                 output_file = os.path.join(output_path, file.replace(".srt", ".jsonl"))
                 file_pairs.append((input_file, output_file))
         
-        with ThreadPoolExecutor() as executor:
+        with ThreadPoolExecutor(max_workers=1) as executor:
             futures = {executor.submit(_translate_file, in_f, out_f): in_f for in_f, out_f in file_pairs}
             for future in tqdm(as_completed(futures), total=len(futures), desc="Translating files"):
                 future.result()
@@ -84,6 +84,8 @@ def translate(input_path: str, output_path: str) -> None:
 
 
 def main():
+    global model
+
     parser = argparse.ArgumentParser()
     parser.add_argument("--model", type=str, default="qwen3vl-2b", help="LLM model name.")
     args = parser.parse_args()
