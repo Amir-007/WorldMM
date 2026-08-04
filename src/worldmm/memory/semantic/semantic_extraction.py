@@ -9,6 +9,7 @@ from .utils import SemanticRawOutput, SemanticOutput
 from ...llm import LLMModel, PromptTemplateManager
 
 logger = logging.getLogger(__name__)
+WORKERS = int(os.environ.get("WORLDMM_WORKERS", "1"))
 
 class SemanticExtraction:
     def __init__(self, llm_model: LLMModel):
@@ -73,7 +74,7 @@ class SemanticExtraction:
                 - A dict with keys as the chunk ids (mdhash) and values as the episodic evidence indices
         """
         results = []
-        with ThreadPoolExecutor() as executor:
+        with ThreadPoolExecutor(max_workers=WORKERS) as executor:
             futures = {
                 executor.submit(self.semantic_extraction, chunk_key, episodic_triples): episodic_triples
                 for chunk_key, episodic_triples in episodic_triples_batch.items()

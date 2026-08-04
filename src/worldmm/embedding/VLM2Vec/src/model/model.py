@@ -68,7 +68,7 @@ class MMEBModel(nn.Module):
         print_master(f'Loading backbone [{model_backbone}] from {model_args.model_name}')
         # Loading the base model
         if model_backbone in [QWEN2_VL]:
-            config._attn_implementation = "flash_attention_2"
+            config._attn_implementation = "sdpa"
             config.padding_side = "left"
             config.use_cache = False
             base_model = backbone2model[model_backbone].from_pretrained(
@@ -78,7 +78,7 @@ class MMEBModel(nn.Module):
                 low_cpu_mem_usage=True,
             )
         elif model_backbone in [QWEN2_VL_TOKENSELECTION]:
-            config._attn_implementation = "flash_attention_2"
+            config._attn_implementation = "sdpa"
             config.padding_side = "left"
             config.use_cache = False
 
@@ -100,7 +100,7 @@ class MMEBModel(nn.Module):
             config.use_cache = False
             base_model = cls.TRANSFORMER_CLS.from_pretrained(
                 model_args.model_name, **kwargs, config=config,
-                attn_implementation="flash_attention_2",
+                attn_implementation="sdpa",
                 torch_dtype=torch.bfloat16,
                 trust_remote_code=True)
 
@@ -143,8 +143,8 @@ class MMEBModel(nn.Module):
         print_master(f'Loading backbone [{model_args.model_backbone}] from {model_name_or_path}')
         if model_args.model_backbone in {QWEN2_VL, QWEN2_VL_TOKENSELECTION}:
             config = AutoConfig.from_pretrained(model_args.model_name, trust_remote_code=True)
-            config._attn_implementation = "flash_attention_2"
-            config.vision_config._attn_implementation = "flash_attention_2"
+            config._attn_implementation = "sdpa"
+            config.vision_config._attn_implementation = "sdpa"
             base_model = backbone2model[model_args.model_backbone].from_pretrained(
                 model_args.model_name,
                 torch_dtype=torch.bfloat16,
@@ -155,8 +155,12 @@ class MMEBModel(nn.Module):
             # Loading external base model from HF
             config = AutoConfig.from_pretrained(model_args.model_name, trust_remote_code=True)
             config.use_cache = False
+            # Force sdpa: transformers auto-selects flash-attn if the package is merely
+            # importable on disk, even when broken (GLIBC mismatch on this cluster).
+            config._attn_implementation = "sdpa"
             base_model = cls.TRANSFORMER_CLS.from_pretrained(
                 model_name_or_path, **kwargs, config=config,
+                attn_implementation="sdpa",
                 torch_dtype=torch.bfloat16,
                 trust_remote_code=True)
 

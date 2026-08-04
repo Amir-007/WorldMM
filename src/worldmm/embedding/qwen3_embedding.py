@@ -12,7 +12,7 @@ class Qwen3EmbeddingModel:
         
         self.model = SentenceTransformer(
             model_name,
-            model_kwargs={"attn_implementation": "flash_attention_2", "dtype": "auto", "device_map": device},
+            model_kwargs={"attn_implementation": "sdpa", "dtype": "auto", "device_map": device},
             tokenizer_kwargs={"padding_side": "left"},
         )
     

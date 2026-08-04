@@ -560,13 +560,16 @@ class Qwen3VLModel:
                     only_value = next(iter(json_data.values()))
                     json_data = {expected[0]: only_value}
 
-            # Quirk 4: null elements inside triples -> coerce to "" so filter_invalid_triples can drop them
-            if isinstance(json_data, dict) and isinstance(json_data.get("triples"), list):
-                json_data["triples"] = [
-                    [("" if elem is None else str(elem)) for elem in triple]
-                    for triple in json_data["triples"]
-                    if isinstance(triple, list)
-                ]
+            # Quirk 4 (generalized): null elements inside any list-of-lists field
+            # (e.g. "triples", "semantic_triples") -> coerce None to "" without touching
+            # already-valid elements, so int-typed fields like episodic_evidence aren't corrupted
+            if isinstance(json_data, dict):
+                for k, v in list(json_data.items()):
+                    if isinstance(v, list) and v and all(isinstance(item, list) for item in v):
+                        json_data[k] = [
+                            [("" if elem is None else elem) for elem in item]
+                            for item in v
+                        ]
 
             # Quirk 5: null elements inside any other single string-list field (e.g. named_entities)
             if isinstance(json_data, dict):
