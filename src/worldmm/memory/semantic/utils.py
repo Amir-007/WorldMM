@@ -1,5 +1,5 @@
 from dataclasses import dataclass
-from pydantic import BaseModel, field_validator
+from pydantic import BaseModel, field_validator, model_validator
 from typing import List
 
 class SemanticRawOutput(BaseModel):
