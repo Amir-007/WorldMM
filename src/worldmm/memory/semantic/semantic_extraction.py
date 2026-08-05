@@ -23,7 +23,7 @@ class SemanticExtraction:
 
         try:
             # LLM INFERENCE (entire try-block is retried by the decorator)
-            response = self.llm_model.generate(messages, text_format=SemanticRawOutput)
+            response = self.llm_model.generate(messages, text_format=SemanticRawOutput, max_new_tokens=4096)
 
         except Exception as e:
             logger.warning(e)

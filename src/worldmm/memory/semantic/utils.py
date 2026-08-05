@@ -6,12 +6,16 @@ class SemanticRawOutput(BaseModel):
     semantic_triples: List[List[str]]
     episodic_evidence: List[List[int]]
 
-    @field_validator("semantic_triples")
-    def validate_semantic_triples(cls, v):
-        if not all(len(triple) == 3 for triple in v):
-            raise ValueError("Each semantic triple must contain exactly 3 elements.", v)
-        return v
-    
+    @model_validator(mode="after")
+    def filter_invalid_semantic_triples(self):
+        valid_indices = [i for i, triple in enumerate(self.semantic_triples) if len(triple) == 3]
+        self.semantic_triples = [self.semantic_triples[i] for i in valid_indices]
+        self.episodic_evidence = [
+            self.episodic_evidence[i] if i < len(self.episodic_evidence) else []
+            for i in valid_indices
+        ]
+        return self
+
     # @field_validator("episodic_evidence")
     # def validate_evidence_length(cls, v, info):
     #     semantic_triples = info.data.get("semantic_triples", [])
