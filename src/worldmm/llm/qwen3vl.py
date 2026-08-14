@@ -8,6 +8,7 @@ import copy
 import json
 import logging
 import os
+import re
 from concurrent.futures import ThreadPoolExecutor, as_completed
 from pathlib import Path
 from typing import Any, Dict, List, Optional, Tuple, Union
@@ -523,11 +524,20 @@ class Qwen3VLModel:
             try:
                 json_data = json.loads(cleaned_response)
             except json.JSONDecodeError as e:
-                logger.warning(f"Non-JSON/truncated response, using empty default. Raw head: {response[:120]!r}")
-                fallback = _empty_default(text_format)
-                if fallback is not None:
-                    return fallback
-                raise Qwen3VLModelError(f"Failed to parse response as JSON: {e}") from e
+                salvaged = re.sub(r'//[^\n"]*(?=\n|$)', '', cleaned_response)
+                start, end = salvaged.find('{'), salvaged.rfind('}')
+                json_data = None
+                if start != -1 and end > start:
+                    try:
+                        json_data = json.loads(salvaged[start:end + 1])
+                    except json.JSONDecodeError:
+                        json_data = None
+                if json_data is None:
+                    logger.warning(f"Non-JSON/truncated response, using empty default. Raw head: {response[:1500]!r}")
+                    fallback = _empty_default(text_format)
+                    if fallback is not None:
+                        return fallback
+                    raise Qwen3VLModelError(f"Failed to parse response as JSON: {e}") from e
 
             # Quirk 1: model returns a bare list instead of the single-field object
             if isinstance(json_data, list):
