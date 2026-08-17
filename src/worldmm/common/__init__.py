@@ -5,6 +5,8 @@ the cluster.
 """
 
 from .checkpoint import CheckpointStore
+from .jsonrepair import fix_broken_generated_json, salvage_json
+from .schema_coercion import coerce_to_schema
 from .mapping import (
     DEFAULT_EXCLUDED_DAYS,
     CaptionChunk,
@@ -35,9 +37,12 @@ __all__ = [
     "build_caption_chunks",
     "chunk_key",
     "chunk_timestamp_key",
+    "coerce_to_schema",
     "day_of",
     "duration_seconds",
+    "fix_broken_generated_json",
     "format_key",
+    "salvage_json",
     "load_caption_chunks",
     "parse",
     "timestamp_to_chunk_key",

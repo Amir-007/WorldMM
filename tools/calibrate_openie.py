@@ -187,6 +187,22 @@ def main() -> int:
     print(f"silent empty results: {empties}/{len(records)}"
           + ("   <-- investigate before the full run" if empties else ""))
 
+    # Structured-output health. `repairs` are recoveries that would previously
+    # have been thrown away as empty; `failures` are chunks that exhausted the
+    # retry plan and genuinely lost their triples.
+    backend = getattr(llm_model, "model", None)
+    repairs = getattr(backend, "parse_repairs", None)
+    failures = getattr(backend, "parse_failures", None)
+    if repairs is not None:
+        calls = 2 * len(records)   # one NER plus one triple call per chunk
+        print(f"parse repairs:  {repairs}/{calls} calls "
+              f"({repairs / calls:.1%}) recovered by salvage")
+        print(f"parse failures: {failures}/{calls} calls "
+              f"({failures / calls:.1%}) exhausted the retry plan")
+        if failures == 0 and repairs > 0:
+            print("  -> every degraded generation was recovered; "
+                  "these chunks would previously have returned zero triples")
+
     per_chunk = chunk_stats["mean"]
     baseline_hours = baseline_chunks * per_chunk / 3600
     # Longer event chunks mean proportionally more output tokens, and decode
@@ -214,6 +230,8 @@ def main() -> int:
         "tokenizer_exact": tokenizer is not None,
         "errors": errors,
         "silent_empty": empties,
+        "parse_repairs": repairs,
+        "parse_failures": failures,
         "extrapolation": {
             "baseline_chunks": baseline_chunks,
             "baseline_hours": baseline_hours,

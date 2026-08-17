@@ -5,10 +5,8 @@ Qwen3VL Model Wrapper with comprehensive video and image processing capabilities
 from __future__ import annotations
 
 import copy
-import json
 import logging
 import os
-import re
 from concurrent.futures import ThreadPoolExecutor, as_completed
 from pathlib import Path
 from typing import Any, Dict, List, Optional, Tuple, Union
@@ -20,9 +18,21 @@ from transformers import AutoModelForImageTextToText, AutoProcessor
 from qwen_vl_utils import process_vision_info
 
 from .utils import dynamic_retry_decorator
+from ..common.jsonrepair import salvage_json
+from ..common.schema_coercion import coerce_to_schema
 
 # Configure logging
 logger = logging.getLogger(__name__)
+
+# When structured output fails to parse, retrying with identical settings is
+# pointless: generation is greedy by default, so it replays byte for byte.
+# Each successive attempt therefore changes something. Sampling breaks the tie;
+# a larger budget addresses genuine truncation.
+STRUCTURED_RETRY_PLAN: List[Dict[str, Any]] = [
+    {},                                                        # as configured
+    {"do_sample": True, "temperature": 0.7, "top_p": 0.9},     # break the replay
+    {"_max_new_tokens_multiplier": 2},                         # it was truncated
+]
 
 # Model configuration
 MODEL_DICT = {
@@ -88,6 +98,12 @@ class Qwen3VLModel:
         self.fps = fps
         self.nframes = nframes
         self.kwargs = kwargs
+
+        # Structured-output health, surfaced by the build runners. `repairs`
+        # means salvage worked; `failures` means the retry plan was exhausted
+        # and an empty result was returned, which is real data loss.
+        self.parse_repairs = 0
+        self.parse_failures = 0
 
         # Initialize model
         try:
@@ -358,7 +374,56 @@ class Qwen3VLModel:
         """
         prompt_copy = copy.deepcopy(self._normalize_prompt(prompt))
         messages = self._preprocess_prompt(prompt_copy)
-        
+
+        if text_format is None:
+            return self._generate_once(messages, **kwargs)
+
+        # Structured output: escalate through the retry plan rather than
+        # accepting the first unparseable response. Previously any parse
+        # failure returned a schema-valid *empty* object, which looked like
+        # success to the retry decorator and silently cost the chunk all of
+        # its triples - 13.2% of the inherited build set came back empty this
+        # way, with a non-empty caption every time.
+        last_raw = ""
+        for attempt, plan_entry in enumerate(STRUCTURED_RETRY_PLAN, start=1):
+            overrides = dict(plan_entry)   # never mutate the shared plan
+            multiplier = overrides.pop("_max_new_tokens_multiplier", None)
+            attempt_kwargs = dict(kwargs)
+            attempt_kwargs.update(overrides)
+            if multiplier:
+                budget = attempt_kwargs.get("max_new_tokens") \
+                    or self.kwargs.get("max_new_tokens") or 2048
+                attempt_kwargs["max_new_tokens"] = int(budget * multiplier)
+
+            last_raw = self._generate_once(messages, **attempt_kwargs)
+            value, how = self._parse_structured_response(last_raw, text_format)
+
+            if how != "failed":
+                if how not in ("clean", "fenced"):
+                    self.parse_repairs += 1
+                    logger.warning(
+                        "Recovered structured output by %s on attempt %d/%d",
+                        how, attempt, len(STRUCTURED_RETRY_PLAN),
+                    )
+                return value
+
+            logger.warning(
+                "Unparseable structured output on attempt %d/%d; raw head: %r",
+                attempt, len(STRUCTURED_RETRY_PLAN), last_raw[:200],
+            )
+
+        # Every attempt failed. Degrade to empty so a single pathological chunk
+        # cannot abort a multi-day run, but make it loud and countable rather
+        # than indistinguishable from a genuinely empty result.
+        self.parse_failures += 1
+        logger.error(
+            "Giving up on structured output after %d attempts; returning empty. "
+            "Raw head: %r", len(STRUCTURED_RETRY_PLAN), last_raw[:200],
+        )
+        return self._empty_default(text_format)
+
+    def _generate_once(self, messages: List[Dict[str, Any]], **kwargs) -> str:
+        """Run the model once and return the decoded text."""
         try:
             # Prepare text for Qwen3VL processor
             text = self.processor.apply_chat_template(
@@ -405,14 +470,8 @@ class Qwen3VLModel:
                 clean_up_tokenization_spaces=False
             )
             
-            result = output_text[0].strip() if output_text else ""
-            
-            # Parse response using text_format if provided
-            if text_format is not None:
-                result = self._parse_structured_response(result, text_format)
-            
-            return result
-                
+            return output_text[0].strip() if output_text else ""
+
         except Exception as e:
             logger.error(f"Qwen3VL generation error: {e}")
             raise Qwen3VLModelError(f"Failed to generate completion: {e}") from e
@@ -495,115 +554,54 @@ class Qwen3VLModel:
         
         return results
 
-    def _parse_structured_response(self, response: str, text_format: type) -> Any:
-        """
-        Parse the response string using the provided text_format (Pydantic model).
-
-        Hardened for local VLM output quirks: bare lists, null elements, truncated
-        or non-JSON responses all degrade to a schema-valid empty result rather than
-        exhausting retries or crashing the pipeline.
-        """
-        def _empty_default(fmt):
-            try:
-                fields = getattr(fmt, 'model_fields', {})
-                empty = {fname: [] for fname in fields}
-                return fmt.model_validate(empty)
-            except Exception:
-                return None
-
+    @staticmethod
+    def _empty_default(fmt):
+        """A schema-valid instance with every field empty."""
         try:
-            # Clean the response by removing markdown code blocks if present
-            cleaned_response = response.strip()
-            if cleaned_response.startswith('```json'):
-                cleaned_response = cleaned_response[7:]
-            if cleaned_response.endswith('```'):
-                cleaned_response = cleaned_response[:-3]
-            cleaned_response = cleaned_response.strip()
+            fields = getattr(fmt, 'model_fields', {})
+            return fmt.model_validate({fname: [] for fname in fields})
+        except Exception:
+            return None
 
-            # Parse as JSON; truncated/non-JSON output degrades to empty default
-            try:
-                json_data = json.loads(cleaned_response)
-            except json.JSONDecodeError as e:
-                salvaged = re.sub(r'//[^\n"]*(?=\n|$)', '', cleaned_response)
-                start, end = salvaged.find('{'), salvaged.rfind('}')
-                json_data = None
-                if start != -1 and end > start:
-                    try:
-                        json_data = json.loads(salvaged[start:end + 1])
-                    except json.JSONDecodeError:
-                        json_data = None
-                if json_data is None:
-                    logger.warning(f"Non-JSON/truncated response, using empty default. Raw head: {response[:1500]!r}")
-                    fallback = _empty_default(text_format)
-                    if fallback is not None:
-                        return fallback
-                    raise Qwen3VLModelError(f"Failed to parse response as JSON: {e}") from e
+    def _parse_structured_response(self, response: str, text_format: type) -> Tuple[Any, str]:
+        """
+        Parse a response into the given Pydantic model.
 
-            # Quirk 1: model returns a bare list instead of the single-field object
-            if isinstance(json_data, list):
-                fields = list(getattr(text_format, 'model_fields', {}).keys())
-                if len(fields) == 1:
-                    json_data = {fields[0]: json_data}
-                    
-            # Quirk 2 (generalized): list elements returned as dicts instead of bare strings
-            # handles {"entity":"X"}, {"entity":"X","type":"Y"}, {"name":"X"}, etc.
-            if isinstance(json_data, dict):
-                for k, v in list(json_data.items()):
-                    if isinstance(v, list):
-                        fixed = []
-                        for elem in v:
-                            if isinstance(elem, dict):
-                                for pref in ("entity", "name", "value", "text"):
-                                    if pref in elem:
-                                        fixed.append(elem[pref])
-                                        break
-                                else:
-                                    fixed.append(next(iter(elem.values())) if elem else "")
-                            else:
-                                fixed.append(elem)
-                        json_data[k] = fixed
-                        
-            # Quirk 3: single-field model but model used a different key name
-            # e.g. {"entities": [...]} when schema wants {"named_entities": [...]}
-            if isinstance(json_data, dict):
-                expected = list(getattr(text_format, 'model_fields', {}).keys())
-                if len(expected) == 1 and expected[0] not in json_data and len(json_data) == 1:
-                    only_value = next(iter(json_data.values()))
-                    json_data = {expected[0]: only_value}
+        Returns:
+            (value, how) where `how` is "clean"/"fenced" for output that parsed
+            as generated, "sliced"/"repaired" when salvage was needed, and
+            "failed" when nothing usable could be recovered.
 
-            # Quirk 4 (generalized): null elements inside any list-of-lists field
-            # (e.g. "triples", "semantic_triples") -> coerce None to "" without touching
-            # already-valid elements, so int-typed fields like episodic_evidence aren't corrupted
-            if isinstance(json_data, dict):
-                for k, v in list(json_data.items()):
-                    if isinstance(v, list) and v and all(isinstance(item, list) for item in v):
-                        json_data[k] = [
-                            [("" if elem is None else elem) for elem in item]
-                            for item in v
-                        ]
+        Crucially this reports failure instead of substituting an empty result:
+        the caller escalates through the retry plan, which is what a degraded
+        generation actually needs.
+        """
+        try:
+            json_data, how = salvage_json(response)
+            if how == "failed" or json_data is None:
+                return None, "failed"
 
-            # Quirk 5: null elements inside any other single string-list field (e.g. named_entities)
-            if isinstance(json_data, dict):
-                for k, v in list(json_data.items()):
-                    if isinstance(v, list):
-                        json_data[k] = [("" if elem is None else elem) for elem in v]
+            json_data = coerce_to_schema(
+                json_data, list(getattr(text_format, 'model_fields', {}).keys())
+            )
 
             if hasattr(text_format, 'model_validate'):
-                return text_format.model_validate(json_data)
+                return text_format.model_validate(json_data), how
             # Fallback for older Pydantic versions
             elif hasattr(text_format, 'parse_obj'):
-                return text_format.parse_obj(json_data)
+                return text_format.parse_obj(json_data), how
             else:
                 logger.warning(f"Unsupported text_format type: {text_format}")
                 raise ValueError("text_format must be a Pydantic model class")
 
         except Exception as e:
-            # Last-resort graceful degradation for any unforeseen output shape
-            logger.error(f"Unparseable structured response, degrading to empty. Error: {e}. Raw head: {response[:120]!r}")
-            fallback = _empty_default(text_format)
-            if fallback is not None:
-                return fallback
-            raise Qwen3VLModelError(f"Failed to parse structured response: {e}") from e
+            # An unforeseen shape is a failed parse, not an empty answer. The
+            # caller retries; only after the plan is exhausted does it degrade.
+            logger.warning(
+                "Structured response did not match the schema (%s). Raw head: %r",
+                e, response[:200],
+            )
+            return None, "failed"
 
 
 # Convenience function

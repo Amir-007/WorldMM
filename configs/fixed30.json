@@ -1,0 +1,22 @@
+{
+  "strategy": "fixed",
+  "person": "A1_JAKE",
+  "exclude_days": [
+    6
+  ],
+  "window_seconds": 30.0,
+  "sample_fps": 2.0,
+  "hist_bins": [
+    8,
+    8,
+    8
+  ],
+  "gray_size": 32,
+  "hist_weight": 0.5,
+  "threshold": 3.0,
+  "min_absolute_distance": 0.02,
+  "rolling_window_seconds": 60.0,
+  "min_event_seconds": 10.0,
+  "max_event_seconds": 60.0,
+  "gap_tolerance_seconds": 2.0
+}
