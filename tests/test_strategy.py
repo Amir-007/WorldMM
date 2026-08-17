@@ -173,6 +173,31 @@ def test_fixed_window_groups_multiple_files():
         assert len(chunk.video_paths) == 2
 
 
+def test_fixed_window_handles_overlapping_video_files():
+    """
+    Real EgoLife files overlap: starts drift under 30s apart while each clip
+    runs a full 30s, so entries from adjacent files interleave in time order.
+    Grouping must follow file membership, not the time-sorted stream, or the
+    grid shatters into fragments.
+    """
+    base = SECONDS_PER_DAY + 11 * 3600
+    entries = []
+    for f in range(3):
+        video_file = f"DAY1_{PERSON}_file{f}.mp4"
+        for i in range(10):
+            start = base + f * 18 + i * 3        # files start only 18s apart
+            entries.append(SourceEntry(1, float(start), float(start + 2),
+                                       f"line {f}-{i}", "caption", video_file))
+    entries.sort(key=lambda e: e.start_seconds)   # interleaved across files
+
+    chunks = FixedWindowStrategy(config(strategy="fixed")).segment(entries)
+    assert len(chunks) == 3, f"expected one chunk per file, got {len(chunks)}"
+    for chunk in chunks:
+        assert chunk.n_source_entries == 10
+        assert not chunk.spans_multiple_videos
+    assert sum(c.n_source_entries for c in chunks) == len(entries)
+
+
 def test_fixed_window_covers_every_entry():
     entries = make_entries(n_files=3, per_file=8)
     chunks = FixedWindowStrategy(config(strategy="fixed")).segment(entries)

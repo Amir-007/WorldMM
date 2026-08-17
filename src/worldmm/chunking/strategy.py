@@ -28,7 +28,7 @@ from typing import Any, Dict, List, Optional, Sequence, Tuple
 from ..common.mapping import chunk_key
 from ..common.timestamps import EgoTimestamp
 from .config import EVENT, FIXED, ChunkingConfig
-from .sources import SourceEntry, render_entries
+from .sources import SourceEntry, entries_by_video, render_entries
 
 logger = logging.getLogger(__name__)
 
@@ -81,7 +81,13 @@ class Chunk:
         }
 
     def to_dict(self) -> Dict[str, Any]:
-        return asdict(self)
+        """Full record, including derived fields the metrics stage reads."""
+        return {
+            **asdict(self),
+            "timestamp_key": self.timestamp_key,
+            "duration_seconds": self.duration_seconds,
+            "spans_multiple_videos": self.spans_multiple_videos,
+        }
 
 
 def _video_path_for(video_file: str, date: str, person: str) -> str:
@@ -160,25 +166,32 @@ class FixedWindowStrategy(ChunkingStrategy):
     def segment(self, entries: Sequence[SourceEntry], **kwargs) -> List[Chunk]:
         files_per_chunk = max(1, int(round(self.config.window_seconds / 30.0)))
 
+        # Group by file first, then order the groups. Consecutive EgoLife
+        # segments overlap in time - file starts drift and are often less than
+        # 30s apart while each clip runs a full 30s - so entries from adjacent
+        # files interleave in a time-sorted stream. Walking that stream and
+        # cutting whenever the file changes would shatter the grid into
+        # fragments, so grouping happens by file membership instead.
+        grouped = entries_by_video(entries)
+        ordered_files = sorted(
+            grouped, key=lambda f: min(e.start_seconds for e in grouped[f])
+        )
+
         chunks: List[Chunk] = []
-        current: List[SourceEntry] = []
-        current_files: List[str] = []
+        for start in range(0, len(ordered_files), files_per_chunk):
+            batch = ordered_files[start:start + files_per_chunk]
+            members = sorted(
+                (entry for name in batch for entry in grouped[name]),
+                key=lambda e: (e.start_seconds, e.end_seconds),
+            )
+            chunk = _build_chunk(members, self.config.person)
+            if chunk:
+                chunks.append(chunk)
 
-        for entry in entries:
-            if entry.video_file not in current_files:
-                if len(current_files) >= files_per_chunk:
-                    chunk = _build_chunk(current, self.config.person)
-                    if chunk:
-                        chunks.append(chunk)
-                    current, current_files = [], []
-                current_files.append(entry.video_file)
-            current.append(entry)
-
-        chunk = _build_chunk(current, self.config.person)
-        if chunk:
-            chunks.append(chunk)
-
-        logger.info("Fixed windows (%d file(s) each): %d chunks", files_per_chunk, len(chunks))
+        logger.info(
+            "Fixed windows (%d file(s) each): %d chunks from %d file(s)",
+            files_per_chunk, len(chunks), len(ordered_files),
+        )
         return chunks
 
 
