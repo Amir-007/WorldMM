@@ -176,13 +176,24 @@ def main():
     # Initialize models
     logger.info("Initializing models...")
     embedding_model = EmbeddingModel()
-    retriever_llm_model = LLMModel(
-        model_name=args.retriever_model,
-    )
-    respond_llm_model = LLMModel(
-        model_name=args.respond_model,
-        fps=1,
-    )
+    
+    # Local models consume VRAM per instance, unlike API models. When retriever and
+    # responder are the same local model, load once and share the instance.
+    if args.retriever_model == args.respond_model:
+        logger.info(f"Sharing one instance for retriever and responder ({args.retriever_model})")
+        retriever_llm_model = LLMModel(
+            model_name=args.retriever_model,
+            fps=1,
+        )
+        respond_llm_model = retriever_llm_model
+    else:
+        retriever_llm_model = LLMModel(
+            model_name=args.retriever_model,
+        )
+        respond_llm_model = LLMModel(
+            model_name=args.respond_model,
+            fps=1,
+        )
     prompt_template_manager = PromptTemplateManager()
 
     # Initialize WorldMemory
