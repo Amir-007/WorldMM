@@ -1,11 +1,11 @@
 #!/bin/bash
 # WorldMM Memory Construction Script
-# Usage: ./script/3_build_memory.sh [--step episodic|semantic|visual|all] [--person <person>] [--gpu 0,1,2,3] [--model qwen3vl-2b]
+# Usage: ./script/3_build_memory.sh [--step episodic|semantic|visual|all] [--person <person>] [--gpu 0,1,2,3] [--model qwen3vl-30b]
 
 set -eo pipefail
 trap 'echo -e "\nInterrupted."; exit 130' INT TERM
 
-PERSON="A1_JAKE" STEP="all" GPU_LIST="0" MODEL="qwen3vl-8b" NUM_FRAMES=16
+PERSON="A1_JAKE" STEP="all" GPU_LIST="0" MODEL="qwen3vl-30b" NUM_FRAMES=16
 
 cd "$(dirname "$0")/.."
 

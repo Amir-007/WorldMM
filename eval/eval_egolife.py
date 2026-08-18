@@ -162,8 +162,9 @@ def parse_target_time(row: Dict[str, Any], segments_30s: List[Dict[str, Any]]) -
 def main():
     parser = argparse.ArgumentParser(description="EgoLifeQA Evaluation with WorldMM")
     parser.add_argument("--subject", type=str, default="A1_JAKE", help="Subject ID")
-    parser.add_argument("--retriever-model", type=str, default="qwen3vl-2b", help="LLM model for retrieval (NER, OpenIE)")
+    parser.add_argument("--retriever-model", type=str, default="qwen3vl-30b", help="LLM model for retrieval (NER, OpenIE)")
     parser.add_argument("--respond-model", type=str, default="gpt-5", help="LLM model for iterative reasoning and generating answers")
+    parser.add_argument("--memory-model", type=str, default="qwen3vl-30b", help="Model used to build memory banks.")
     parser.add_argument("--max-rounds", type=int, default=5, help="Maximum retrieval rounds")
     parser.add_argument("--max-errors", type=int, default=5, help="Maximum errors before forcing answer")
     parser.add_argument("--episodic-top-k", type=int, default=3, help="Top-k for episodic retrieval")
@@ -171,7 +172,40 @@ def main():
     parser.add_argument("--visual-top-k", type=int, default=3, help="Top-k for visual retrieval")
     parser.add_argument("--output-dir", type=str, default="output", help="Output directory")
     parser.add_argument("--data-dir", type=str, default="data/EgoLife", help="Data directory")
+    parser.add_argument("--metadata-dir", type=str, default="output/metadata", help="Root metadata directory containing the built memory banks")
     args = parser.parse_args()
+
+    # Resolve every input path up front, then verify all of them exist BEFORE loading
+    # any model. Model loading takes ~50 minutes, so a missing file must fail in
+    # seconds rather than after the load.
+    subject = args.subject
+    data_dir = args.data_dir
+
+    eval_data_path = os.path.join(data_dir, f"EgoLifeQA/EgoLifeQA_{subject}.json")
+    episodic_caption_dir = os.path.join(data_dir, f"EgoLifeCap/{subject}")
+    granularities = ["30sec", "3min", "10min", "1h"]
+    episodic_caption_files = {
+        g: os.path.join(episodic_caption_dir, f"{subject}_{g}.json")
+        for g in granularities
+    }
+    semantic_path = os.path.join(
+        args.metadata_dir, "semantic_memory", subject,
+        f"semantic_consolidation_results_{args.memory_model}.json")
+    visual_path = os.path.join(
+        args.metadata_dir, "visual_memory", subject, "visual_embeddings.pkl")
+
+    required = {
+        "eval data": eval_data_path,
+        "semantic memory": semantic_path,
+        "visual embeddings": visual_path,
+        **{f"captions {g}": f for g, f in episodic_caption_files.items()},
+    }
+    missing = {k: v for k, v in required.items() if not os.path.exists(v)}
+    if missing:
+        for k, v in missing.items():
+            logger.error(f"Missing required input ({k}): {v}")
+        raise SystemExit(1)
+    logger.info(f"All {len(required)} required input files found")
 
     # Initialize models
     logger.info("Initializing models...")
@@ -214,30 +248,15 @@ def main():
         visual=args.visual_top_k,
     )
 
-    # Load data
+    # Load data (paths were resolved and verified before model loading)
     logger.info("Loading data...")
-    subject = args.subject
-    data_dir = args.data_dir
-    
-    eval_data_path = os.path.join(data_dir, f"EgoLifeQA/EgoLifeQA_{subject}.json")
     eval_data = load_json(eval_data_path)
-    
-    # Load episodic captions for all granularities (multiscale memory)
-    episodic_caption_dir = os.path.join(data_dir, f"EgoLifeCap/{subject}")
-    granularities = ["30sec", "3min", "10min", "1h"]
-    episodic_caption_files = {
-        g: os.path.join(episodic_caption_dir, f"{subject}_{g}.json")
-        for g in granularities
-    }
+
     # Load 30sec captions separately for target time parsing
     episodic_captions_30sec = load_json(episodic_caption_files["30sec"])
-    
+
     # Load semantic results
-    semantic_path = os.path.join(f"output/metadata/semantic_memory/{subject}/semantic_consolidation_results_qwen3vl-2b.json")
     semantic_results = load_json(semantic_path)
-    
-    # Load visual embeddings
-    visual_path = os.path.join(f"output/metadata/visual_memory/{subject}/visual_embeddings.pkl")
     
     # Load data into WorldMemory
     logger.info("Loading data into WorldMemory...")

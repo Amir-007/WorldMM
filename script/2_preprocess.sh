@@ -5,7 +5,7 @@
 set -eo pipefail
 trap 'echo -e "\nInterrupted."; exit 130' INT TERM
 
-PERSON="A1_JAKE" MODEL="qwen3vl-8b"
+PERSON="A1_JAKE" MODEL="qwen3vl-30b"
 
 while [[ $# -gt 0 ]]; do
     case $1 in
