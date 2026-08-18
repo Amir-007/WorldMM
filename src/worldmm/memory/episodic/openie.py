@@ -11,6 +11,20 @@ from ...llm import dynamic_retry_decorator, LLMModel, PromptTemplateManager
 logger = logging.getLogger(__name__)
 WORKERS = int(os.environ.get("WORLDMM_WORKERS", "1"))
 
+# Generation budgets. These must be identical across both chunking conditions
+# or the ablation is confounded.
+#
+# The original 512-token triple budget was tuned for the 30s grid, where a mean
+# chunk yields ~14 triples (~196 tokens) - and even there it truncated 8% of
+# calls in calibration. Event chunks average ~4x that content, so 512 would
+# truncate the event condition systematically while leaving the baseline mostly
+# intact, suppressing event triple counts and flattering the compression ratio.
+#
+# Decode time is paid per token actually generated, not per token budgeted, so
+# a generous ceiling costs nothing on short chunks.
+NER_MAX_TOKENS = int(os.environ.get("WORLDMM_NER_MAX_TOKENS", "512"))
+TRIPLE_MAX_TOKENS = int(os.environ.get("WORLDMM_TRIPLE_MAX_TOKENS", "4096"))
+
 class OpenIE:
     def __init__(self, llm_model: LLMModel):
         # Init prompt template manager
@@ -20,13 +34,13 @@ class OpenIE:
     @dynamic_retry_decorator
     def _execute_ner_call(self, ner_input_message) -> List[str]:
         """Retryable helper that runs the full NER try-block logic (so the whole block is retried)."""
-        response = self.llm_model.generate(ner_input_message, text_format=NerRawOutput, max_new_tokens=256)
+        response = self.llm_model.generate(ner_input_message, text_format=NerRawOutput, max_new_tokens=NER_MAX_TOKENS)
         return response.named_entities
 
     @dynamic_retry_decorator
     def _execute_triples_call(self, messages) -> List[List[str]]:
         """Retryable helper that runs the full triple-extraction try-block logic (so the whole block is retried)."""
-        response = self.llm_model.generate(messages, text_format=TripleRawOutput, max_new_tokens=512)
+        response = self.llm_model.generate(messages, text_format=TripleRawOutput, max_new_tokens=TRIPLE_MAX_TOKENS)
         triples = filter_invalid_triples(response.triples)
         return triples
 
