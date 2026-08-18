@@ -299,7 +299,7 @@ def main():
     parser.add_argument("--sync-dir", default="data/EgoLife/EgoLifeCap/Sync", help="Directory containing sync files")
     parser.add_argument("--output", default=None, help="Output file path. Defaults to data/EgoLife/EgoLifeCap/<person>/<person>_30sec.json.")
     parser.add_argument("--overwrite", action="store_true", help="Overwrite existing caption files.")
-    parser.add_argument("--model", type=str, default="qwen3vl-2b", help="LLM model name.")
+    parser.add_argument("--model", type=str, default="qwen3vl-30b", help="LLM model name.")
     args = parser.parse_args()
 
     model = LLMModel(model_name=args.model)

@@ -415,7 +415,7 @@ def main() -> None:
     parser.add_argument("--video-path", type=Path, default=Path("data/Video-MME/data"), help="Path to a video file or a directory of videos.")
     parser.add_argument("--transcript-path", type=Path, default=Path("data/Video-MME/transcript"), help="Path to an `.srt` file or a directory of transcripts.")
     parser.add_argument("--output-path", type=Path, default=Path("data/Video-MME/caption"), help="Output `.json` file for single-file input, or caption directory for transcript directories.")
-    parser.add_argument("--model", type=str, default="qwen3vl-2b", help="LLM model name.")
+    parser.add_argument("--model", type=str, default="qwen3vl-30b", help="LLM model name.")
     parser.add_argument("--unit-time", type=int, default=10, help="Segment length in seconds.")
     parser.add_argument("--overwrite", action="store_true", help="Overwrite existing caption files.")
     args = parser.parse_args()

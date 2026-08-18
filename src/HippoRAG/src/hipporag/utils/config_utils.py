@@ -16,7 +16,7 @@ class BaseConfig:
     """One and only configuration."""
     # LLM specific attributes 
     llm_name: str = field(
-        default="qwen3vl-2b",
+        default="qwen3vl-30b",
         metadata={"help": "Class name indicating which LLM model to use."}
     )
     llm_base_url: str = field(
@@ -91,7 +91,7 @@ class BaseConfig:
         metadata={"help": "Name of the text-based preprocessor to use in preprocessing."}
     )
     preprocess_encoder_name: str = field(
-        default="qwen3vl-2b",
+        default="qwen3vl-30b",
         metadata={"help": "Name of the encoder to use in preprocessing (currently implemented specifically for doc chunking)."}
     )
     preprocess_chunk_overlap_token_size: int = field(

@@ -27,7 +27,7 @@ def load_semantic_extraction_results(json_file: str) -> Dict[str, Any]:
     return data
 
 
-def run_semantic_consolidation(semantic_file: str, output_dir: str, model_name: str = "qwen3vl-2b", llm_model: LLMModel = None, embedding_model: EmbeddingModel = None):
+def run_semantic_consolidation(semantic_file: str, output_dir: str, model_name: str = "qwen3vl-30b", llm_model: LLMModel = None, embedding_model: EmbeddingModel = None):
     """Core logic for semantic consolidation, usable from CLI or as a library call."""
     os.makedirs(output_dir, exist_ok=True)
 
@@ -119,9 +119,9 @@ def run_semantic_consolidation(semantic_file: str, output_dir: str, model_name: 
 
 def main():
     parser = argparse.ArgumentParser(description="Consolidate semantic triples across timestamps.")
-    parser.add_argument("--semantic-file", type=str, default="output/metadata/semantic_memory/A1_JAKE/semantic_extraction_results_qwen3vl-2b.json", help="Path to semantic extraction results JSON file.")
+    parser.add_argument("--semantic-file", type=str, default="output/metadata/semantic_memory/A1_JAKE/semantic_extraction_results_qwen3vl-30b.json", help="Path to semantic extraction results JSON file.")
     parser.add_argument("--output-dir", type=str, default="output/metadata/semantic_memory/A1_JAKE", help="Output directory for results.")
-    parser.add_argument("--model", type=str, default="qwen3vl-2b", help="LLM model name.")
+    parser.add_argument("--model", type=str, default="qwen3vl-30b", help="LLM model name.")
     args = parser.parse_args()
 
     run_semantic_consolidation(args.semantic_file, args.output_dir, model_name=args.model)

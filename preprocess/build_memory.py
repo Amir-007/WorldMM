@@ -178,7 +178,7 @@ def main():
     parser = argparse.ArgumentParser(description="Batch per-video memory building.")
     parser.add_argument("--caption-dir", type=str, required=True, help="Root caption directory with {videoID}/ subdirs.")
     parser.add_argument("--output-dir", type=str, required=True, help="Root output directory (e.g., output/metadata/videomme).")
-    parser.add_argument("--model", type=str, default="qwen3vl-2b", help="LLM model name.")
+    parser.add_argument("--model", type=str, default="qwen3vl-30b", help="LLM model name.")
     parser.add_argument("--step", type=str, default="all", choices=["episodic", "semantic", "visual", "all"], help="Which steps to run.")
     parser.add_argument("--gpu", type=str, default="0", help="Comma-separated GPU token list for visual extraction.")
     parser.add_argument("--num-frames", "--num_frames", dest="num_frames", type=int, default=16, help="Number of frames to extract from each visual segment.")

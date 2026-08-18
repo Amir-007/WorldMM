@@ -40,7 +40,6 @@ MODEL_DICT = {
     "qwen3vl-4b": "Qwen/Qwen3-VL-4B-Instruct",
     "qwen3vl-8b": "Qwen/Qwen3-VL-8B-Instruct",
     "qwen3vl-30b": "Qwen/Qwen3-VL-30B-A3B-Instruct",
-    "qwen3vl-72b": "Qwen/Qwen2.5-VL-72B-Instruct",
 }
 
 
