@@ -115,7 +115,7 @@ class Qwen3VLModel:
     def _init_model(self) -> None:
         """Initialize the model and processor."""
         # Load model
-        max_memory = {i: "76GiB" for i in range(torch.cuda.device_count())}
+        max_memory = {i: "62GiB" for i in range(torch.cuda.device_count())}
         self.model = AutoModelForImageTextToText.from_pretrained(
             self.model_name,
             dtype=torch.bfloat16,

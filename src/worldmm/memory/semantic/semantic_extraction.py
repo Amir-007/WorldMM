@@ -39,6 +39,49 @@ class SemanticExtraction:
             episodic_evidence=response.episodic_evidence
         )
     
+    def _checkpoint_path(self, output_dir: str) -> str:
+        return os.path.join(output_dir,
+                            f"semantic_extraction_progress_{self.llm_model.model_name}.jsonl")
+
+    def _load_progress(self, output_dir: str) -> Dict[str, List[List[str]]]:
+        """
+        Reload chunks completed by an earlier run.
+
+        This stage takes many hours over thousands of chunks. Without a
+        checkpoint a failure near the end discards all of it. A truncated final
+        line from a killed process is dropped rather than aborting the reload.
+        """
+        path = self._checkpoint_path(output_dir)
+        if not os.path.exists(path):
+            return {}
+        done, skipped = {}, 0
+        with open(path, "r", encoding="utf-8") as handle:
+            for line in handle:
+                line = line.strip()
+                if not line:
+                    continue
+                try:
+                    record = json.loads(line)
+                    done[record["chunk_id"]] = record["semantic_triples"]
+                except (json.JSONDecodeError, KeyError, TypeError):
+                    skipped += 1
+        if done:
+            logger.info("Resuming semantic extraction: %d chunk(s) already done", len(done))
+        if skipped:
+            logger.warning("Skipped %d unparseable checkpoint line(s)", skipped)
+        return done
+
+    def _append_progress(self, output_dir: str, chunk_id: str,
+                         semantic_triples: List[List[str]]) -> None:
+        """Append one completed chunk and flush, so a crash loses at most that chunk."""
+        os.makedirs(output_dir, exist_ok=True)
+        with open(self._checkpoint_path(output_dir), "a", encoding="utf-8") as handle:
+            handle.write(json.dumps({"chunk_id": chunk_id,
+                                     "semantic_triples": semantic_triples},
+                                    ensure_ascii=False) + "\n")
+            handle.flush()
+            os.fsync(handle.fileno())
+
     def save_results(self, results: Dict[str, Any], output_dir: str = "."):
         """
         Save extraction results to a JSON file.
@@ -60,7 +103,7 @@ class SemanticExtraction:
         with open(os.path.join(output_dir, f"semantic_extraction_results_{self.llm_model.model_name}.json"), 'w', encoding='utf-8') as f:
             json.dump(json_results, f, indent=2, ensure_ascii=False)
 
-    def batch_semantic_extraction(self, episodic_triples_batch: Dict[str, List[List[str]]], output_dir: str = ".") -> Tuple[Dict[str, List[List[str]]], Dict[str, List[List[int]]]]:
+    def batch_semantic_extraction(self, episodic_triples_batch: Dict[str, List[List[str]]], output_dir: str = ".", resume: bool = True) -> Tuple[Dict[str, List[List[str]]], Dict[str, List[List[int]]]]:
         """
         Conduct batch semantic extraction synchronously using multi-threading.
 
@@ -73,18 +116,30 @@ class SemanticExtraction:
                 - A dict with keys as the chunk ids (mdhash) and values as the semantic triples
                 - A dict with keys as the chunk ids (mdhash) and values as the episodic evidence indices
         """
+        completed = self._load_progress(output_dir) if resume else {}
+        pending = {k: v for k, v in episodic_triples_batch.items() if k not in completed}
+        if completed:
+            logger.info("Extracting %d of %d chunk(s); %d restored from checkpoint",
+                        len(pending), len(episodic_triples_batch), len(completed))
+
         results = []
         with ThreadPoolExecutor(max_workers=WORKERS) as executor:
             futures = {
                 executor.submit(self.semantic_extraction, chunk_key, episodic_triples): episodic_triples
-                for chunk_key, episodic_triples in episodic_triples_batch.items()
+                for chunk_key, episodic_triples in pending.items()
             }
             pbar = tqdm(as_completed(futures), total=len(futures), desc="Extracting semantic triples")
             for future in pbar:
                 result = future.result()
                 results.append(result)
+                self._append_progress(output_dir, result.chunk_id, result.semantic_triples)
 
         semantic_triples_map = {res.chunk_id: res.semantic_triples for res in results}
+        semantic_triples_map.update(completed)
+        # Restored chunks contribute no episodic_evidence: only semantic_triples are
+        # checkpointed. That is safe here because the evidence map is neither saved
+        # (it is commented out below) nor used by the caller, which discards it.
+        # If it is ever persisted, checkpoint it alongside the triples.
         episodic_evidence_map = {res.chunk_id: res.episodic_evidence for res in results}
 
         chunk_keys = list(episodic_triples_batch.keys())

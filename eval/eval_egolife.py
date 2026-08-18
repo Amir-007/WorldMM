@@ -7,7 +7,7 @@ import os
 import json
 import re
 import argparse
-from typing import Dict, List, Any, Tuple, Optional
+from typing import Iterable, Dict, List, Any, Tuple, Optional
 from tqdm import tqdm
 import logging
 
@@ -30,10 +30,37 @@ def normalize(text: str) -> str:
     return text.lower().strip().rstrip(".,)")
 
 
-def extract_choice_letter(text: str) -> Optional[str]:
-    """Extracts A, B, C... from a prediction like (C), B. Bryan, etc."""
-    match = re.match(r"\(?([A-Za-z])[\.\)]?\s*", text.strip())
-    return match.group(1).upper() if match else None
+def extract_choice_letter(text: str, valid_letters: Optional[Iterable[str]] = None) -> Optional[str]:
+    """
+    Pull the chosen option letter out of a free-form model response.
+
+    Only letters in valid_letters are accepted. Without that filter, a pattern
+    keyed on the word "answer" happily returns the first letter of whatever word
+    follows it, so "I cannot answer this question" yields "T". Filtering also
+    lets a pattern that matched junk fall through to a later pattern instead of
+    returning early with a wrong letter.
+    """
+    t = (text or "").strip()
+    if not t:
+        return None
+    valid = {l.upper() for l in valid_letters} if valid_letters else set("ABCD")
+    patterns = [
+        r"\\boxed\{\(?([A-Za-z])\)?\}",                       # $\boxed{A}$
+        r"\*\*\(?([A-Za-z])\)?\*\*",                          # **(A)** or **A**
+        # An explicit separator is required, so prose like "to answer this" does
+        # not capture the next word's first letter.
+        r"(?:final answer|correct answer|answer|correct response|option)"
+        r"\s*(?:is|:|=)\s*\**\(?([A-Za-z])\)?\**",
+        r"^\(?([A-Za-z])\)?[\.\):]?\s*$",                     # whole response is "A", "(A)", "A."
+        r"^\(?([A-Za-z])[\.\)]",                              # "A." or "(A)" leading longer text
+        r"\b([A-Za-z])[\.\)]?\s*$",                           # trailing letter, "... so B."
+    ]
+    for pattern in patterns:
+        for match in re.finditer(pattern, t, re.IGNORECASE | re.MULTILINE):
+            letter = match.group(1).upper()
+            if letter in valid:
+                return letter
+    return None
 
 
 def evaluate_prediction(prediction: str, gold_letter: str, choices: Dict[str, str]) -> bool:
@@ -54,7 +81,7 @@ def evaluate_prediction(prediction: str, gold_letter: str, choices: Dict[str, st
     if pred_norm == gold_candidate:
         return True
 
-    pred_letter = extract_choice_letter(prediction)
+    pred_letter = extract_choice_letter(prediction, valid_letters=choices.keys())
     if pred_letter == gold_letter:
         return True
 
@@ -159,6 +186,71 @@ def parse_target_time(row: Dict[str, Any], segments_30s: List[Dict[str, Any]]) -
     return target_time_list
 
 
+def load_checkpoint(path: str) -> List[Dict[str, Any]]:
+    """
+    Read completed results from a JSONL checkpoint.
+
+    A run killed mid-write can leave a truncated final line, so unparseable
+    lines are dropped rather than aborting the resume. Later entries for the
+    same ID win, which matters if a question was retried.
+    """
+    if not os.path.exists(path):
+        return []
+    by_id: Dict[Any, Dict[str, Any]] = {}
+    skipped = 0
+    with open(path, "r", encoding="utf-8") as handle:
+        for line in handle:
+            line = line.strip()
+            if not line:
+                continue
+            try:
+                entry = json.loads(line)
+            except json.JSONDecodeError:
+                skipped += 1
+                continue
+            if isinstance(entry, dict) and "ID" in entry:
+                by_id[entry["ID"]] = entry
+            else:
+                skipped += 1
+    if skipped:
+        logger.warning("Skipped %d unparseable line(s) in %s", skipped, path)
+    return list(by_id.values())
+
+
+def append_checkpoint(path: str, entry: Dict[str, Any]) -> None:
+    """Append one result and flush, so a crash loses at most the question in flight."""
+    with open(path, "a", encoding="utf-8") as handle:
+        handle.write(json.dumps(entry, ensure_ascii=False) + "\n")
+        handle.flush()
+        os.fsync(handle.fileno())
+
+
+def summarise(results: List[Dict[str, Any]]) -> Dict[str, Any]:
+    """
+    Recompute every metric from the full result set.
+
+    Derived from the results themselves rather than from running counters, so
+    the numbers are identical whether the run completed in one pass or was
+    resumed a dozen times.
+    """
+    total = len(results)
+    abstained = sum(1 for r in results if r.get("abstained"))
+    answered = total - abstained
+    correct = sum(1 for r in results if r.get("evaluate") is True)
+    wrong = answered - correct
+    return {
+        "total": total,
+        "answered": answered,
+        "abstained": abstained,
+        "correct": correct,
+        "wrong": wrong,
+        "accuracy_answered": correct / answered if answered else 0.0,
+        "accuracy_overall": correct / total if total else 0.0,
+        "abstention_rate": abstained / total if total else 0.0,
+        "hallucination_rate": wrong / total if total else 0.0,
+    }
+
+
 def main():
     parser = argparse.ArgumentParser(description="EgoLifeQA Evaluation with WorldMM")
     parser.add_argument("--subject", type=str, default="A1_JAKE", help="Subject ID")
@@ -176,6 +268,9 @@ def main():
     parser.add_argument("--enable-spatial", action="store_true", help="Load the Entity ID bank so retrieval can distinguish same-named items by location.")
     parser.add_argument("--enable-abstention", action="store_true", help="Halt and ask a clarifying question when a query is ambiguous, instead of guessing. Implies --enable-spatial.")
     parser.add_argument("--confidence-threshold", type=float, default=0.75, help="Abstain below this confidence.")
+    resume_group = parser.add_mutually_exclusive_group()
+    resume_group.add_argument("--resume", dest="resume", action="store_true", default=True, help="Skip questions already present in the results file (default).")
+    resume_group.add_argument("--fresh", dest="resume", action="store_false", help="Ignore any existing results and start over.")
     args = parser.parse_args()
 
     # Resolve every input path up front, then verify all of them exist BEFORE loading
@@ -201,6 +296,23 @@ def main():
 
     # --enable-abstention is meaningless without the bank it reasons over.
     use_spatial = args.enable_spatial or args.enable_abstention
+
+    # The run tag keeps ablation configurations in separate files. Without it a
+    # later arm silently overwrites an earlier one, and the two become
+    # impossible to tell apart afterwards.
+    if args.enable_abstention:
+        run_tag = f"abstain{args.confidence_threshold:g}"
+    elif args.enable_spatial:
+        run_tag = "spatial"
+    else:
+        run_tag = "baseline"
+
+    run_dir = os.path.join(
+        args.output_dir,
+        f"{args.retriever_model.replace('-', '_')}_{args.respond_model.replace('-', '_')}")
+    output_stem = f"egolife_eval_{subject}_{run_tag}"
+    checkpoint_path = os.path.join(run_dir, f"{output_stem}.jsonl")
+    output_path = os.path.join(run_dir, f"{output_stem}.json")
 
     required = {
         "eval data": eval_data_path,
@@ -287,14 +399,28 @@ def main():
         world_memory.load_spatial_entities(file_path=spatial_path)
         logger.info("Spatial memory enabled (abstention=%s, threshold=%.2f)", args.enable_abstention, args.confidence_threshold)
 
-    # Evaluation loop
-    logger.info(f"Starting evaluation on {len(eval_data)} samples...")
-    results = []
-    evaluate_true = 0
-    abstained_count = 0
-    answered_count = 0
+    # Evaluation loop. Results are appended to a JSONL checkpoint as each
+    # question finishes, so an interrupted run keeps everything it completed.
+    os.makedirs(run_dir, exist_ok=True)
 
-    for row in tqdm(eval_data):
+    if args.resume:
+        results = load_checkpoint(checkpoint_path)
+        if results:
+            logger.info("Resuming from %s with %d question(s) already done",
+                        checkpoint_path, len(results))
+    else:
+        results = []
+        if os.path.exists(checkpoint_path):
+            backup = checkpoint_path + ".bak"
+            os.replace(checkpoint_path, backup)
+            logger.info("Starting fresh; previous checkpoint moved to %s", backup)
+
+    completed_ids = {r["ID"] for r in results}
+    pending = [row for row in eval_data if row["ID"] not in completed_ids]
+    logger.info("Evaluating %d of %d question(s); %d already complete",
+                len(pending), len(eval_data), len(completed_ids))
+
+    for row in tqdm(pending):
         ID = row['ID']
         query_type = row['type']
         question = row['question']
@@ -334,13 +460,7 @@ def main():
         # behaviour we are trying to produce, so it is excluded from accuracy
         # and counted separately.
         abstained = bool(qa_result.abstained) if qa_result else False
-        if abstained:
-            evaluate = None
-            abstained_count += 1
-        else:
-            evaluate = evaluate_prediction(response, answer, choices)
-            evaluate_true += int(evaluate)
-            answered_count += 1
+        evaluate = None if abstained else evaluate_prediction(response, answer, choices)
 
         # Build result entry
         result_entry = {
@@ -365,49 +485,62 @@ def main():
             # ],
         }
         results.append(result_entry)
+        append_checkpoint(checkpoint_path, result_entry)
 
-        running = (evaluate_true / answered_count) if answered_count else 0.0
+        # Running figures come from the full result set, resumed entries included.
+        running = summarise(results)
         verdict = "ABSTAIN" if abstained else f"Correct: {evaluate}"
         logger.info(
             f"ID {ID} Answer: {response}, Gold: {answer}, {verdict} "
-            f"// Accuracy: {evaluate_true}/{answered_count} = {running:.4f} "
-            f"// Abstained: {abstained_count}"
+            f"// Accuracy: {running['correct']}/{running['answered']} "
+            f"= {running['accuracy_answered']:.4f} "
+            f"// Abstained: {running['abstained']} "
+            f"// Done: {running['total']}/{len(eval_data)}"
         )
 
-    # Save results
-    output_path = os.path.join(
-        args.output_dir, 
-        f"{args.retriever_model.replace('-', '_')}_{args.respond_model.replace('-', '_')}",
-        f"egolife_eval_{subject}.json"
-    )
-    os.makedirs(os.path.dirname(output_path), exist_ok=True)
-    
-    with open(output_path, 'w') as f:
-        json.dump(results, f, indent=4)
-    
-    # Print summary. Accuracy, abstention rate and hallucination rate are
-    # reported separately: an agent that asks instead of guessing wrong has
-    # avoided a hallucination, so collapsing them into one number hides the
-    # effect being measured.
-    total = len(results)
-    wrong = answered_count - evaluate_true
-    accuracy_answered = evaluate_true / answered_count if answered_count else 0.0
-    accuracy_overall = evaluate_true / total if total else 0.0
-    abstention_rate = abstained_count / total if total else 0.0
-    hallucination_rate = wrong / total if total else 0.0
+    # Save results. The JSONL checkpoint is the source of truth; this is the
+    # aggregated view, rebuilt from it so both agree even after a resume.
+    results.sort(key=lambda r: str(r.get("ID")))
+    with open(output_path, 'w', encoding='utf-8') as f:
+        json.dump(results, f, indent=4, ensure_ascii=False)
+
+    # Accuracy, abstention rate and hallucination rate are reported separately:
+    # an agent that asks instead of guessing wrong has avoided a hallucination,
+    # so collapsing them into one number hides the effect being measured.
+    stats = summarise(results)
+    summary_path = os.path.join(run_dir, f"{output_stem}_summary.json")
+    with open(summary_path, 'w', encoding='utf-8') as f:
+        json.dump({
+            "subject": subject,
+            "run_tag": run_tag,
+            "retriever_model": args.retriever_model,
+            "respond_model": args.respond_model,
+            "memory_model": args.memory_model,
+            "enable_spatial": use_spatial,
+            "enable_abstention": args.enable_abstention,
+            "confidence_threshold": args.confidence_threshold,
+            "expected_questions": len(eval_data),
+            **stats,
+        }, f, indent=4)
+
     logger.info(f"\n{'='*50}")
-    logger.info(f"Evaluation Complete")
-    logger.info(f"Subject: {subject}")
-    logger.info(f"Total questions      : {total}")
-    logger.info(f"Answered             : {answered_count}")
-    logger.info(f"Abstained            : {abstained_count}")
-    logger.info(f"Correct              : {evaluate_true}")
-    logger.info(f"Wrong                : {wrong}")
-    logger.info(f"Accuracy (answered)  : {accuracy_answered:.4f}")
-    logger.info(f"Accuracy (overall)   : {accuracy_overall:.4f}")
-    logger.info(f"Abstention rate      : {abstention_rate:.4f}")
-    logger.info(f"Hallucination rate   : {hallucination_rate:.4f}")
-    logger.info(f"Results saved to: {output_path}")
+    logger.info("Evaluation Complete")
+    logger.info(f"Subject              : {subject}")
+    logger.info(f"Run                  : {run_tag}")
+    logger.info(f"Total questions      : {stats['total']} of {len(eval_data)}")
+    logger.info(f"Answered             : {stats['answered']}")
+    logger.info(f"Abstained            : {stats['abstained']}")
+    logger.info(f"Correct              : {stats['correct']}")
+    logger.info(f"Wrong                : {stats['wrong']}")
+    logger.info(f"Accuracy (answered)  : {stats['accuracy_answered']:.4f}")
+    logger.info(f"Accuracy (overall)   : {stats['accuracy_overall']:.4f}")
+    logger.info(f"Abstention rate      : {stats['abstention_rate']:.4f}")
+    logger.info(f"Hallucination rate   : {stats['hallucination_rate']:.4f}")
+    if stats['total'] < len(eval_data):
+        logger.warning("Incomplete: %d question(s) remain. Rerun the same command to resume.",
+                       len(eval_data) - stats['total'])
+    logger.info(f"Results  : {output_path}")
+    logger.info(f"Summary  : {summary_path}")
     logger.info(f"{'='*50}")
 
     # Cleanup

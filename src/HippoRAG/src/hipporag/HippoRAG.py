@@ -79,6 +79,16 @@ class HippoRAG:
         _print_config = ",\n  ".join([f"{k} = {v}" for k, v in asdict(self.global_config).items()])
         logger.debug(f"HippoRAG init with config:\n  {_print_config}\n")
 
+        # When callers hand us live model instances, those are the models that will
+        # actually be used, so the cache path must be derived from them. Reading
+        # global_config here instead let the path record a default while a
+        # different model did the work, silently mixing incompatible embeddings
+        # under one directory name.
+        if llm_model is not None and getattr(llm_model, "model_name", None):
+            self.global_config.llm_name = llm_model.model_name
+        if embedding_model is not None and getattr(embedding_model, "text_model_name", None):
+            self.global_config.embedding_model_name = embedding_model.text_model_name
+
         #LLM and embedding model specific working directories are created under every specified saving directories
         llm_label = self.global_config.llm_name.replace("/", "_")
         embedding_label = self.global_config.embedding_model_name.replace("/", "_")

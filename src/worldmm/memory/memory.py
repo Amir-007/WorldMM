@@ -114,6 +114,15 @@ class WorldMemory:
         self.episodic_top_k: int = 3
         self.semantic_top_k: int = 10
         self.visual_top_k: int = 3
+
+        # Generation budgets. The model default is 2048, which is far more room
+        # than either call needs and leaves space for a degenerate run to emit a
+        # wall of repeated text. The reasoning step returns a small JSON object;
+        # the answer step returns an option letter, or a short span when the
+        # question has no choices.
+        self.max_reasoning_tokens: int = 512
+        self.max_answer_tokens: int = 256
+        self.max_open_answer_tokens: int = 512
         
     def load_episodic_captions(
         self,
@@ -524,7 +533,7 @@ Step 2 (only if search): Pick one memory type (episodic/semantic/visual) and for
             })
             
             try:
-                response = self.respond_llm_model.generate(reasoning_messages)
+                response = self.respond_llm_model.generate(reasoning_messages, max_new_tokens=self.max_reasoning_tokens)
                 reasoning_output = self._parse_reasoning_response(response)
             except Exception as e:
                 logger.error(f"Reasoning failed: {e}")
@@ -660,7 +669,8 @@ Step 2 (only if search): Pick one memory type (episodic/semantic/visual) and for
         })
         
         try:
-            answer = self.respond_llm_model.generate(qa_messages)
+            answer_budget = self.max_answer_tokens if choices else self.max_open_answer_tokens
+            answer = self.respond_llm_model.generate(qa_messages, max_new_tokens=answer_budget)
         except Exception as e:
             logger.error(f"Answer generation failed: {e}")
             answer = "Unable to generate answer"
