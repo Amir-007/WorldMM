@@ -27,7 +27,7 @@ from __future__ import annotations
 
 import logging
 from dataclasses import dataclass, field
-from typing import List, Optional, Sequence, Tuple
+from typing import Dict, List, Optional, Sequence, Tuple
 
 import numpy as np
 
@@ -56,6 +56,14 @@ class Timeline:
         return float(self.times[0]), float(self.times[-1])
 
 
+# Why a cut exists. Only DETECTED is evidence of a semantic state change; the
+# other two are structural, and reporting them separately keeps the Objective 1
+# claim honest about how much of the segmentation the detector actually drove.
+DETECTED = "detected"    # a visual-change outlier cleared the threshold
+GAP = "gap"              # unobserved video, so continuity cannot be assumed
+CAP = "cap"              # max_event_seconds forced a split with no evidence
+
+
 @dataclass
 class BoundaryResult:
     """Detected cuts, plus the intermediates needed for a cheap threshold sweep."""
@@ -64,8 +72,19 @@ class BoundaryResult:
     distances: np.ndarray           # (N-1,) NaN across gaps
     zscores: np.ndarray             # (N-1,) NaN across gaps
     cuts: List[float]               # absolute seconds, sorted, strictly inside the span
-    forced_cuts: List[float] = field(default_factory=list)
+    origins: Dict[float, str] = field(default_factory=dict)
     config: Optional[ChunkingConfig] = None
+
+    @property
+    def forced_cuts(self) -> List[float]:
+        """Cuts imposed by a gap in observed video."""
+        return sorted(c for c in self.cuts if self.origins.get(c) == GAP)
+
+    def origin_counts(self) -> Dict[str, int]:
+        counts = {DETECTED: 0, GAP: 0, CAP: 0}
+        for cut in self.cuts:
+            counts[self.origins.get(cut, DETECTED)] += 1
+        return counts
 
     @property
     def segments(self) -> List[Tuple[float, float]]:
@@ -78,9 +97,15 @@ class BoundaryResult:
         lengths = np.array([b - a for a, b in self.segments], dtype=np.float64)
         if lengths.size == 0:
             return {"n_segments": 0}
+        counts = self.origin_counts()
         return {
             "n_segments": int(lengths.size),
-            "n_forced_cuts": len(self.forced_cuts),
+            "n_forced_cuts": counts[GAP],
+            "n_detected_cuts": counts[DETECTED],
+            "n_cap_cuts": counts[CAP],
+            "pct_cuts_detected": (
+                100.0 * counts[DETECTED] / len(self.cuts) if self.cuts else 0.0
+            ),
             "total_seconds": float(lengths.sum()),
             "mean_seconds": float(lengths.mean()),
             "median_seconds": float(np.median(lengths)),
@@ -198,7 +223,9 @@ def cuts_from_zscores(
     Cheap by design: this is the only step a threshold sweep needs to repeat.
 
     Returns:
-        (cuts, forced_cuts) as absolute seconds.
+        (cuts, origins) where origins maps each cut time to DETECTED, GAP or
+        CAP, so the write-up can state how much of the segmentation the
+        detector actually drove.
     """
     times = timeline.times
     start, end = timeline.span
@@ -242,6 +269,10 @@ def cuts_from_zscores(
             accepted.append(time)
     accepted.sort()
 
+    origins: Dict[float, str] = {}
+    for cut in accepted:
+        origins[cut] = GAP if cut in forced_set else DETECTED
+
     # Pass 2: honour the maximum event length, splitting at the strongest
     # available evidence inside the over-long stretch rather than at an
     # arbitrary tick.
@@ -269,13 +300,14 @@ def cuts_from_zscores(
             if split <= last:
                 break
             result.append(split)
+            origins.setdefault(split, CAP)
             last = split
         if time < end:
             result.append(time)
             last = time
 
     cuts = sorted({c for c in result if start < c < end})
-    return cuts, sorted(forced_set & set(cuts))
+    return cuts, {c: origins.get(c, DETECTED) for c in cuts}
 
 
 def detect_boundaries(
@@ -286,13 +318,13 @@ def detect_boundaries(
     timeline = build_timeline(features, gap_tolerance_seconds=config.gap_tolerance_seconds)
     distances = frame_distances(timeline, hist_weight=config.hist_weight)
     zscores = rolling_zscore(distances, config.rolling_window_frames)
-    cuts, forced = cuts_from_zscores(timeline, distances, zscores, config)
+    cuts, origins = cuts_from_zscores(timeline, distances, zscores, config)
     return BoundaryResult(
         timeline=timeline,
         distances=distances,
         zscores=zscores,
         cuts=cuts,
-        forced_cuts=forced,
+        origins=origins,
         config=config,
     )
 
@@ -313,13 +345,15 @@ def sweep_thresholds(
     rows = []
     for threshold in thresholds:
         config = ChunkingConfig.from_dict({**result.config.to_dict(), "threshold": threshold})
-        cuts, forced = cuts_from_zscores(result.timeline, result.distances, result.zscores, config)
+        cuts, origins = cuts_from_zscores(
+            result.timeline, result.distances, result.zscores, config
+        )
         candidate = BoundaryResult(
             timeline=result.timeline,
             distances=result.distances,
             zscores=result.zscores,
             cuts=cuts,
-            forced_cuts=forced,
+            origins=origins,
             config=config,
         )
         rows.append({"threshold": float(threshold), **candidate.stats()})

@@ -283,6 +283,11 @@ def chunk_statistics(chunks: Sequence[Chunk]) -> Dict[str, Any]:
         "max_seconds": lengths[-1],
         "mean_text_chars": statistics.fmean(texts),
         "median_text_chars": statistics.median(texts),
+        # Decode time tracks output length, which tracks input length, so the
+        # upper tail is what actually threatens the token budget and the
+        # wall-clock estimate. A mean alone hides it.
+        "p95_text_chars": pct(sorted(map(float, texts)), 95),
+        "p99_text_chars": pct(sorted(map(float, texts)), 99),
         "max_text_chars": max(texts),
         "multi_video_chunks": sum(1 for c in chunks if c.spans_multiple_videos),
         "duplicate_chunk_ids": len(chunks) - len({c.chunk_id for c in chunks}),

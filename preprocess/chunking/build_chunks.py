@@ -143,11 +143,14 @@ def main() -> int:
             "n_videos_expected": len(video_paths),
             "cuts": result.cuts,
             "forced_cuts": result.forced_cuts,
+            "cut_origins": {str(k): v for k, v in result.origins.items()},
             **stats,
         }
         print(f"DAY{day}: {len(day_entries)} entries, {len(features)} videos -> "
               f"{stats['n_segments']} segments "
-              f"(mean {stats['mean_seconds']:.0f}s, {stats['n_forced_cuts']} forced) "
+              f"(mean {stats['mean_seconds']:.0f}s | "
+              f"cuts: {stats['n_detected_cuts']} detected, "
+              f"{stats['n_cap_cuts']} by cap, {stats['n_forced_cuts']} by gap) "
               f"-> {len(chunks)} chunks with text")
 
         if args.sweep:
@@ -162,7 +165,8 @@ def main() -> int:
     stats = chunk_statistics(all_chunks)
     print(f"\n=== {config.strategy.upper()} CONDITION ===")
     for key in ("n_chunks", "mean_seconds", "median_seconds", "p95_seconds",
-                "min_seconds", "max_seconds", "mean_text_chars", "max_text_chars",
+                "min_seconds", "max_seconds", "mean_text_chars", "p95_text_chars",
+                "p99_text_chars", "max_text_chars",
                 "multi_video_chunks", "duplicate_chunk_ids"):
         value = stats[key]
         print(f"  {key:22s} {value:,.1f}" if isinstance(value, float)

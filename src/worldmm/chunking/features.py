@@ -115,44 +115,62 @@ def _sample_indices(total_frames: int, source_fps: float, sample_fps: float) -> 
     return list(range(0, total_frames, stride))
 
 
-def _read_decord(video_path: str, sample_fps: float):
+# Frames held in memory at once while decoding. Sampled frames are consumed
+# and reduced to features as they arrive rather than being collected first:
+# a 30s 1080p clip sampled at 2fps is ~60 frames, and materialising all of
+# them is ~373MB per worker, which multiplied across a 16-worker pool is the
+# difference between fitting in 32GB and not.
+DECODE_BATCH = 8
+
+
+def _open_decord(video_path: str, sample_fps: float):
+    """Probe with decord and return (fps, total, frame iterator)."""
     from decord import VideoReader, cpu
 
     reader = VideoReader(video_path, ctx=cpu(0))
     total = len(reader)
     fps = float(reader.get_avg_fps())
     indices = _sample_indices(total, fps, sample_fps)
-    if not indices:
-        return [], [], fps, total
-    batch = reader.get_batch(indices).asnumpy()  # RGB
-    return list(batch), indices, fps, total
+
+    def frames():
+        for start in range(0, len(indices), DECODE_BATCH):
+            window = indices[start:start + DECODE_BATCH]
+            batch = reader.get_batch(window).asnumpy()  # RGB
+            for index, frame in zip(window, batch):
+                yield index, frame
+
+    return fps, total, frames
 
 
-def _read_opencv(video_path: str, sample_fps: float):
+def _open_opencv(video_path: str, sample_fps: float):
+    """Probe with OpenCV and return (fps, total, frame iterator)."""
     import cv2
 
     capture = cv2.VideoCapture(video_path)
     if not capture.isOpened():
+        capture.release()
         raise RuntimeError("OpenCV could not open the file")
-    try:
-        total = int(capture.get(cv2.CAP_PROP_FRAME_COUNT))
-        fps = float(capture.get(cv2.CAP_PROP_FPS))
-        wanted = set(_sample_indices(total, fps, sample_fps))
 
+    total = int(capture.get(cv2.CAP_PROP_FRAME_COUNT))
+    fps = float(capture.get(cv2.CAP_PROP_FPS))
+    wanted = set(_sample_indices(total, fps, sample_fps))
+
+    def frames():
         # Sequential decode and skip: seeking per frame is slower and less
         # reliable across codecs than reading straight through.
-        frames, indices, index = [], [], 0
-        while True:
-            ok, frame_bgr = capture.read()
-            if not ok:
-                break
-            if index in wanted:
-                frames.append(cv2.cvtColor(frame_bgr, cv2.COLOR_BGR2RGB))
-                indices.append(index)
-            index += 1
-        return frames, indices, fps, (total if total > 0 else index)
-    finally:
-        capture.release()
+        try:
+            index = 0
+            while True:
+                ok, frame_bgr = capture.read()
+                if not ok:
+                    break
+                if index in wanted:
+                    yield index, cv2.cvtColor(frame_bgr, cv2.COLOR_BGR2RGB)
+                index += 1
+        finally:
+            capture.release()
+
+    return fps, total, frames
 
 
 def extract_features(
@@ -187,34 +205,39 @@ def extract_features(
 
     readers = []
     if prefer_decord:
-        readers.append(("decord", _read_decord))
-    readers.append(("opencv", _read_opencv))
+        readers.append(("decord", _open_decord))
+    readers.append(("opencv", _open_opencv))
 
-    frames = indices = None
+    hists: List[np.ndarray] = []
+    grays: List[np.ndarray] = []
+    indices: List[int] = []
     source_fps = 0.0
     total = 0
     last_error: Optional[str] = None
+    decoded = False
 
-    for name, reader in readers:
+    for name, opener in readers:
         try:
-            frames, indices, source_fps, total = reader(video_path, sample_fps)
+            source_fps, total, frame_iter = opener(video_path, sample_fps)
+            # Reduce each frame to features as it arrives, so peak memory is
+            # bounded by DECODE_BATCH rather than by the whole sampled clip.
+            hists, grays, indices = [], [], []
+            for index, frame in frame_iter():
+                hist, gray = _frame_features(frame, hist_bins, gray_size)
+                hists.append(hist)
+                grays.append(gray)
+                indices.append(index)
+            decoded = True
             break
         except ImportError:
             continue
         except Exception as exc:  # noqa: BLE001 - any decode failure falls through
             last_error = f"{name}: {type(exc).__name__}: {exc}"
-            frames = None
 
-    if frames is None:
+    if not decoded:
         return FrameFeatures.empty(video_path, UNREADABLE, last_error or "no usable video reader")
-    if not frames:
+    if not indices:
         return FrameFeatures.empty(video_path, UNREADABLE, "decoded zero frames")
-
-    hists, grays = [], []
-    for frame in frames:
-        hist, gray = _frame_features(frame, hist_bins, gray_size)
-        hists.append(hist)
-        grays.append(gray)
 
     effective_fps = source_fps if source_fps > 0 else sample_fps
     times = np.array([start_seconds + idx / effective_fps for idx in indices], dtype=np.float64)

@@ -17,22 +17,33 @@
 #SBATCH --ntasks=1
 #SBATCH --cpus-per-task=16
 #SBATCH --mem=32G
-#SBATCH --time=04:00:00
-#SBATCH --output=.log/slurm/features_%j.out
-#SBATCH --error=.log/slurm/features_%j.err
+#SBATCH --time=4-00:00:00
+#SBATCH --output=/parallel_scratch/ms04938/logs/features_%j.out
+#SBATCH --error=/parallel_scratch/ms04938/logs/features_%j.err
+#SBATCH --chdir=/parallel_scratch/ms04938/WorldMM
 
 set -eo pipefail
 
 PERSON="${PERSON:-A1_JAKE}"
 
-cd "${SLURM_SUBMIT_DIR:-$PWD}"
-mkdir -p .log/slurm
+# Navigate explicitly to the repository root
+cd /parallel_scratch/ms04938/WorldMM
+
+# Ensure your standard logs directory exists
+mkdir -p /parallel_scratch/ms04938/logs
 
 echo "host:    $(hostname)"
 echo "cpus:    ${SLURM_CPUS_PER_TASK:-1}"
 echo "started: $(date)"
 
-source .venv/bin/activate
+# Load environment and fix $PATH just in case
+if [ -f "/parallel_scratch/ms04938/env.sh" ]; then
+    source /parallel_scratch/ms04938/env.sh
+fi
+export PATH=/usr/local/bin:/usr/bin:/usr/local/sbin:/usr/sbin:/bin:$PATH
+
+# Activate virtual environment with absolute path
+source /parallel_scratch/ms04938/WorldMM/.venv/bin/activate
 
 python preprocess/chunking/extract_frame_features.py \
     --person "$PERSON" \
