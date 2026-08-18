@@ -117,8 +117,10 @@ def build_entity_bank(
         caption_file: caption JSON, e.g. A1_JAKE_30sec.json
         openie_file: openie_results_<model>.json from the episodic pipeline
         carry_forward: unlabelled captions a location label may span; 0 disables
-        use_ner: use raw NER entities instead of triple objects. Retained for the
-            ablation reported in the thesis; produces a far noisier bank.
+        use_ner: use raw NER entities instead of triple objects. Retained for
+            comparison; produces a far noisier bank, since NER on these captions
+            picks up people and places mentioned in speech rather than objects
+            actually handled.
 
     Returns:
         (entity_id -> EntityRecord, stats dict)

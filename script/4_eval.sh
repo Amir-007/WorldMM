@@ -2,6 +2,7 @@
 # WorldMM Evaluation Script
 # Usage: ./script/4_eval.sh [--person <person>] [--retriever-model qwen3vl-30b] [--respond-model gpt-5]
 #        [--memory-model qwen3vl-30b] [--metadata-dir output/metadata] [--max-rounds 5]
+#        [--enable-spatial] [--enable-abstention] [--confidence-threshold 0.75]
 
 set -eo pipefail
 trap 'echo -e "\nInterrupted."; exit 130' INT TERM
@@ -9,6 +10,7 @@ trap 'echo -e "\nInterrupted."; exit 130' INT TERM
 PERSON="A1_JAKE" RET_MODEL="qwen3vl-30b" RESP_MODEL="gpt-5" MEM_MODEL="qwen3vl-30b"
 MAX_ROUNDS=5 MAX_ERRORS=5 EPISODIC_K=3 SEMANTIC_K=10 VISUAL_K=3
 OUTPUT_DIR="output" DATA_DIR="data/EgoLife" METADATA_DIR="output/metadata"
+SPATIAL_FLAGS="" CONF_THRESHOLD="0.75"
 
 cd "$(dirname "$0")/.."
 
@@ -28,6 +30,9 @@ while [[ $# -gt 0 ]]; do
         --output-dir) OUTPUT_DIR="$2"; shift 2 ;;
         --data-dir) DATA_DIR="$2"; shift 2 ;;
         --metadata-dir) METADATA_DIR="$2"; shift 2 ;;
+        --enable-spatial) SPATIAL_FLAGS="$SPATIAL_FLAGS --enable-spatial"; shift ;;
+        --enable-abstention) SPATIAL_FLAGS="$SPATIAL_FLAGS --enable-abstention"; shift ;;
+        --confidence-threshold) CONF_THRESHOLD="$2"; shift 2 ;;
         *) echo "Unknown: $1"; exit 1 ;;
     esac
 done
@@ -51,6 +56,8 @@ python eval/eval_egolife.py \
     --visual-top-k "$VISUAL_K" \
     --output-dir "$OUTPUT_DIR" \
     --data-dir "$DATA_DIR" \
-    --metadata-dir "$METADATA_DIR" 2>&1 | tee "$LOG_FILE"
+    --metadata-dir "$METADATA_DIR" \
+    --confidence-threshold "$CONF_THRESHOLD" \
+    $SPATIAL_FLAGS 2>&1 | tee "$LOG_FILE"
 
 echo -e "${BLUE}Eval Done! Results: ${OUTPUT_DIR}/${RET_MODEL//-/_}_${RESP_MODEL//-/_}/egolife_eval_${PERSON}.json${NC}"

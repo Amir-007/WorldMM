@@ -4,3 +4,4 @@ from .utils import MemorySearchOutput, ReasoningOutput, RetrievedItem, QAResult,
 from .episodic import EpisodicMemory
 from .semantic import SemanticMemory
 from .visual import VisualMemory
+from .spatial import SpatialMemory, EntityRecord

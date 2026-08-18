@@ -173,6 +173,9 @@ def main():
     parser.add_argument("--output-dir", type=str, default="output", help="Output directory")
     parser.add_argument("--data-dir", type=str, default="data/EgoLife", help="Data directory")
     parser.add_argument("--metadata-dir", type=str, default="output/metadata", help="Root metadata directory containing the built memory banks")
+    parser.add_argument("--enable-spatial", action="store_true", help="Load the Entity ID bank so retrieval can distinguish same-named items by location.")
+    parser.add_argument("--enable-abstention", action="store_true", help="Halt and ask a clarifying question when a query is ambiguous, instead of guessing. Implies --enable-spatial.")
+    parser.add_argument("--confidence-threshold", type=float, default=0.75, help="Abstain below this confidence.")
     args = parser.parse_args()
 
     # Resolve every input path up front, then verify all of them exist BEFORE loading
@@ -193,6 +196,11 @@ def main():
         f"semantic_consolidation_results_{args.memory_model}.json")
     visual_path = os.path.join(
         args.metadata_dir, "visual_memory", subject, "visual_embeddings.pkl")
+    spatial_path = os.path.join(
+        args.metadata_dir, "spatial_memory", subject, "entity_ids.json")
+
+    # --enable-abstention is meaningless without the bank it reasons over.
+    use_spatial = args.enable_spatial or args.enable_abstention
 
     required = {
         "eval data": eval_data_path,
@@ -200,6 +208,8 @@ def main():
         "visual embeddings": visual_path,
         **{f"captions {g}": f for g, f in episodic_caption_files.items()},
     }
+    if use_spatial:
+        required["spatial entity bank"] = spatial_path
     missing = {k: v for k, v in required.items() if not os.path.exists(v)}
     if missing:
         for k, v in missing.items():
@@ -239,6 +249,8 @@ def main():
         prompt_template_manager=prompt_template_manager,
         max_rounds=args.max_rounds,
         max_errors=args.max_errors,
+        enable_abstention=args.enable_abstention,
+        confidence_threshold=args.confidence_threshold,
     )
     
     # Set retrieval top-k
@@ -270,10 +282,17 @@ def main():
     # Load visual embeddings
     world_memory.load_visual_clips(embeddings_path=visual_path, clips_data=episodic_captions_30sec)
 
+    # Load the Entity ID bank
+    if use_spatial:
+        world_memory.load_spatial_entities(file_path=spatial_path)
+        logger.info("Spatial memory enabled (abstention=%s, threshold=%.2f)", args.enable_abstention, args.confidence_threshold)
+
     # Evaluation loop
     logger.info(f"Starting evaluation on {len(eval_data)} samples...")
     results = []
     evaluate_true = 0
+    abstained_count = 0
+    answered_count = 0
 
     for row in tqdm(eval_data):
         ID = row['ID']
@@ -310,9 +329,18 @@ def main():
             logger.error(f"Error processing ID {ID}: {e}")
             response = "Error"
 
-        # Evaluate
-        evaluate = evaluate_prediction(response, answer, choices)
-        evaluate_true += int(evaluate)
+        # Evaluate. An abstention is neither correct nor a hallucination: the
+        # agent declined to guess. Scoring it as wrong would penalise exactly the
+        # behaviour we are trying to produce, so it is excluded from accuracy
+        # and counted separately.
+        abstained = bool(qa_result.abstained) if qa_result else False
+        if abstained:
+            evaluate = None
+            abstained_count += 1
+        else:
+            evaluate = evaluate_prediction(response, answer, choices)
+            evaluate_true += int(evaluate)
+            answered_count += 1
 
         # Build result entry
         result_entry = {
@@ -325,6 +353,9 @@ def main():
             "round_history": qa_result.round_history if qa_result else [],
             "num_rounds": qa_result.num_rounds if qa_result else 0,
             "evaluate": evaluate,
+            "abstained": abstained,
+            "confidence": qa_result.confidence if qa_result else None,
+            "ambiguity": qa_result.ambiguity if qa_result else None,
             "query_time": query_time,
             # "query_time_str": transform_timestamp(str(query_time)),
             "target_time": target_time_list,
@@ -335,9 +366,12 @@ def main():
         }
         results.append(result_entry)
 
+        running = (evaluate_true / answered_count) if answered_count else 0.0
+        verdict = "ABSTAIN" if abstained else f"Correct: {evaluate}"
         logger.info(
-            f"ID {ID} Answer: {response}, Gold: {answer}, Correct: {evaluate} "
-            f"// Accuracy: {evaluate_true}/{len(results)} = {evaluate_true/len(results):.4f}"
+            f"ID {ID} Answer: {response}, Gold: {answer}, {verdict} "
+            f"// Accuracy: {evaluate_true}/{answered_count} = {running:.4f} "
+            f"// Abstained: {abstained_count}"
         )
 
     # Save results
@@ -351,14 +385,28 @@ def main():
     with open(output_path, 'w') as f:
         json.dump(results, f, indent=4)
     
-    # Print summary
-    final_accuracy = evaluate_true / len(results) if results else 0
+    # Print summary. Accuracy, abstention rate and hallucination rate are
+    # reported separately: an agent that asks instead of guessing wrong has
+    # avoided a hallucination, so collapsing them into one number hides the
+    # effect being measured.
+    total = len(results)
+    wrong = answered_count - evaluate_true
+    accuracy_answered = evaluate_true / answered_count if answered_count else 0.0
+    accuracy_overall = evaluate_true / total if total else 0.0
+    abstention_rate = abstained_count / total if total else 0.0
+    hallucination_rate = wrong / total if total else 0.0
     logger.info(f"\n{'='*50}")
     logger.info(f"Evaluation Complete")
     logger.info(f"Subject: {subject}")
-    logger.info(f"Total: {len(results)}")
-    logger.info(f"Correct: {evaluate_true}")
-    logger.info(f"Accuracy: {final_accuracy:.4f}")
+    logger.info(f"Total questions      : {total}")
+    logger.info(f"Answered             : {answered_count}")
+    logger.info(f"Abstained            : {abstained_count}")
+    logger.info(f"Correct              : {evaluate_true}")
+    logger.info(f"Wrong                : {wrong}")
+    logger.info(f"Accuracy (answered)  : {accuracy_answered:.4f}")
+    logger.info(f"Accuracy (overall)   : {accuracy_overall:.4f}")
+    logger.info(f"Abstention rate      : {abstention_rate:.4f}")
+    logger.info(f"Hallucination rate   : {hallucination_rate:.4f}")
     logger.info(f"Results saved to: {output_path}")
     logger.info(f"{'='*50}")
 

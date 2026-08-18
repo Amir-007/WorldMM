@@ -174,7 +174,8 @@ def test_integration():
     check("candidates share one surface form", len(forms) == 1, str(forms))
     check("candidates span multiple locations", len(locations) >= 2, str(sorted(locations)))
 
-    # Naming the location must sharpen the margin; this is the Objective 5 signal.
+    # Naming the location must sharpen the margin. The retrieval loop reads that
+    # margin to decide whether the query was specific enough to answer.
     vague = memory.disambiguation_candidates("I need the plate")
     precise = memory.disambiguation_candidates("where is the plate in the kitchen")
     vague_margin = vague[0][1] - vague[1][1]

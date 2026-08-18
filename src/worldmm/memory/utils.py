@@ -31,14 +31,24 @@ class RetrievedItem:
     round_num: int  # Which retrieval round
 
 
-@dataclass 
+@dataclass
 class QAResult:
-    """Result of the full QA pipeline."""
+    """
+    Result of the full QA pipeline.
+
+    The abstention fields are populated only when the uncertainty-aware loop is
+    enabled and halts to ask a clarifying question instead of answering. They
+    default to the non-abstaining values, so existing callers are unaffected.
+    """
     question: str
     answer: str
     retrieved_items: List[RetrievedItem]
     round_history: List[Dict[str, Any]]
     num_rounds: int
+    abstained: bool = False
+    disambiguation_question: Optional[str] = None
+    confidence: Optional[float] = None
+    ambiguity: Optional[Dict[str, Any]] = None
 
 
 def transform_timestamp(ts_str: str) -> str:

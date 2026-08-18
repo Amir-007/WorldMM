@@ -10,7 +10,8 @@ Pure text processing: no GPU, no model, runs locally in seconds.
       --output-dir output/metadata/spatial_memory/A1_JAKE
 
 Prints the ambiguity budget, the count of surface forms splitting into two or
-more Entity IDs, which determines whether Objective 5 has evaluation signal.
+more Entity IDs. That count is how much genuine ambiguity the data contains,
+and so how much signal there is for the retrieval loop to act on.
 Use --sweep to compare carry-forward windows without writing anything.
 """
 

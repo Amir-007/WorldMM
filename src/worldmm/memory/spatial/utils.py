@@ -49,6 +49,18 @@ _STOPWORDS = frozenset({
     "time", "way", "bit", "lot", "part", "side", "end",
 })
 
+# A surface form opening with one of these is a clause or prepositional fragment
+# ("around the pit", "what choiszt was holding"), not the name of an object.
+_FRAGMENT_OPENERS = frozenset({
+    "what", "which", "who", "whom", "whose", "where", "when", "why", "how",
+    "that", "if", "whether", "and", "but", "or", "so", "because",
+    "in", "on", "at", "to", "from", "with", "for", "of", "about", "into",
+    "onto", "over", "under", "near", "behind", "beside", "between", "through",
+    "before", "after", "during", "against", "across", "around", "along",
+    "towards", "toward", "upon", "within", "without", "off", "out", "up",
+    "down", "back", "away", "there", "here", "then", "than", "as", "like",
+})
+
 _PUNCT = re.compile(r"[^\w\s'-]")
 _WS = re.compile(r"\s+")
 
@@ -86,7 +98,10 @@ def normalise_surface_form(raw: str, max_words: int = 4) -> Optional[str]:
 
     if not text or text in _STOPWORDS:
         return None
-    if len(text) < 3 or len(text.split()) > max_words:
+    tokens = text.split()
+    if len(text) < 3 or len(tokens) > max_words:
+        return None
+    if tokens[0] in _FRAGMENT_OPENERS:
         return None
     return text
 
@@ -116,7 +131,8 @@ class EntityRecord:
     One persistent Entity ID: a surface form observed at one location.
 
     The same surface form seen at two locations yields two EntityRecords with
-    distinct entity_ids, which is the disambiguation signal Objective 5 consumes.
+    distinct entity_ids. That split is what makes a query ambiguous and is the
+    signal the retrieval loop uses to decide whether to ask before answering.
     """
     entity_id: str
     surface_form: str

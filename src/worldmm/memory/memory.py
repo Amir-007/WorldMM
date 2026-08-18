@@ -16,6 +16,8 @@ from ..embedding import EmbeddingModel
 from .episodic import EpisodicMemory, CaptionEntry
 from .semantic import SemanticMemory, SemanticTripleEntry
 from .visual import VisualMemory
+from .spatial import SpatialMemory
+from .spatial import confidence as spatial_confidence
 from .utils import *
 
 logger = logging.getLogger(__name__)
@@ -59,6 +61,8 @@ class WorldMemory:
         qa_template_name: str = "qa_egolife",
         max_rounds: int = 5,
         max_errors: int = 5,
+        enable_abstention: bool = False,
+        confidence_threshold: float = spatial_confidence.DEFAULT_CONFIDENCE_THRESHOLD,
     ):
         """
         Initialize WorldMemory with all memory subsystems.
@@ -79,6 +83,12 @@ class WorldMemory:
         self.max_rounds = max_rounds
         self.max_errors = max_errors
         self.qa_template_name = qa_template_name
+
+        # Uncertainty-aware answering. Off by default so behaviour is unchanged
+        # unless explicitly enabled: with abstention disabled no confidence is
+        # computed and the loop answers exactly as it always did.
+        self.enable_abstention = enable_abstention
+        self.confidence_threshold = confidence_threshold
         
         # Initialize memory subsystems
         self.episodic_memory = EpisodicMemory(
@@ -92,6 +102,10 @@ class WorldMemory:
         self.semantic_memory = SemanticMemory(embedding_model=embedding_model)
         
         self.visual_memory = VisualMemory(embedding_model=embedding_model)
+
+        # Entity ID bank. Stays empty unless one is loaded, in which case every
+        # spatial code path is skipped.
+        self.spatial_memory = SpatialMemory()
         
         # Track indexed time
         self.indexed_time: int = 0
@@ -156,6 +170,23 @@ class WorldMemory:
         if clips_data:
             self.visual_memory.load_clips_from_data(clips_data)
     
+    def load_spatial_entities(
+        self,
+        file_path: Optional[str] = None,
+        data: Optional[Dict[str, Any]] = None,
+    ) -> None:
+        """
+        Load the Entity ID bank produced by the spatial build step.
+
+        Args:
+            file_path: Path to entity_ids.json
+            data: In-memory payload with the same shape
+        """
+        if file_path:
+            self.spatial_memory.load_entities_from_file(file_path)
+        if data:
+            self.spatial_memory.load_entities_from_data(data)
+
     def index(self, until_time: int) -> None:
         """
         Index all memory types up to the specified timestamp.
@@ -176,6 +207,8 @@ class WorldMemory:
         self.episodic_memory.index(until_time)
         self.semantic_memory.index(until_time)
         self.visual_memory.index(until_time)
+        if self.spatial_memory.entities:
+            self.spatial_memory.index(until_time)
         
         self.indexed_time = until_time
         logger.info(f"Indexing complete for all memory types")
@@ -405,6 +438,25 @@ Retrieved:
         # Fallback for unexpected return type
         return {}, retrieved_set
     
+    def assess_ambiguity(self, query: str):
+        """
+        Measure how ambiguous a query is against the Entity ID bank.
+
+        Returns an AmbiguityAssessment, or None when abstention is disabled or no
+        entity bank is loaded, in which case the caller answers as the baseline does.
+        """
+        if not self.enable_abstention or not self.spatial_memory.entities:
+            return None
+
+        candidates = self.spatial_memory.disambiguation_candidates(query)
+        if not candidates:
+            return None
+
+        pool = self.spatial_memory.indexed_entities or self.spatial_memory.entities
+        locations = [pool[entity_id].location_label for entity_id, _ in candidates]
+        surface_form = pool[candidates[0][0]].surface_form
+        return spatial_confidence.assess(candidates, locations, surface_form)
+
     def answer(
         self,
         query: str,
@@ -483,6 +535,35 @@ Step 2 (only if search): Pick one memory type (episodic/semantic/visual) and for
             
             # Handle decision
             if reasoning_output.decision == "answer":
+                # Before answering, check whether the question is under-specified
+                # against the Entity ID bank. Halting to ask beats guessing
+                # between two entities that share a name but sat in different places.
+                assessment = self.assess_ambiguity(query)
+                if assessment is not None and spatial_confidence.should_abstain(
+                        assessment, self.confidence_threshold):
+                    question_text = spatial_confidence.format_disambiguation_question(assessment)
+                    logger.info(
+                        "Abstaining at round %d: confidence %.3f < %.2f across %d entity ids",
+                        round_num, assessment.confidence, self.confidence_threshold,
+                        assessment.n_matching_entity_ids)
+                    round_history.append({
+                        "round_num": round_num,
+                        "decision": "abstain",
+                        "memory_type": "spatial",
+                        "search_query": query,
+                        "retrieved_content": question_text,
+                    })
+                    return QAResult(
+                        question=query,
+                        answer=question_text,
+                        retrieved_items=retrieved_items,
+                        round_history=round_history,
+                        num_rounds=round_num,
+                        abstained=True,
+                        disambiguation_question=question_text,
+                        confidence=assessment.confidence,
+                        ambiguity=assessment.to_dict(),
+                    )
                 break
             
             if reasoning_output.decision == "search":
@@ -584,12 +665,16 @@ Step 2 (only if search): Pick one memory type (episodic/semantic/visual) and for
             logger.error(f"Answer generation failed: {e}")
             answer = "Unable to generate answer"
         
+        final_assessment = self.assess_ambiguity(query)
         return QAResult(
             question=query,
             answer=answer,
             retrieved_items=retrieved_items,
             round_history=round_history,
             num_rounds=round_num,
+            abstained=False,
+            confidence=final_assessment.confidence if final_assessment else None,
+            ambiguity=final_assessment.to_dict() if final_assessment else None,
         )
     
     def reset_index(self) -> None:
@@ -597,6 +682,7 @@ Step 2 (only if search): Pick one memory type (episodic/semantic/visual) and for
         self.episodic_memory.reset_index()
         self.semantic_memory.reset_index()
         self.visual_memory.reset_index()
+        self.spatial_memory.reset_index()
         self.indexed_time = 0
         logger.info("All memory indices reset")
     
@@ -618,6 +704,7 @@ Step 2 (only if search): Pick one memory type (episodic/semantic/visual) and for
         """Release GPU memory and other resources."""
         self.semantic_memory.cleanup()
         self.visual_memory.cleanup()
+        self.spatial_memory.cleanup()
         logger.info("Memory cleanup complete")
     
     def get_indexed_time(self) -> str:

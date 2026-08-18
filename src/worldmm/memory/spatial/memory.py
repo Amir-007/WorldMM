@@ -6,7 +6,7 @@ Entity IDs that bind a surface form to a location, so that "the phone in the
 kitchen" and "the phone on the desk" are distinct retrievable entities.
 
 Retrieval is lexical rather than embedding-based: it runs on CPU in
-microseconds, which keeps the Objective 5 agent loop cheap, and it needs no
+microseconds, which keeps the agent's retrieval loop cheap, and it needs no
 model to be resident. If lexical matching proves too weak, the query path is
 the only thing that would need to change.
 """
@@ -31,6 +31,20 @@ def _tokenise(text: str) -> List[str]:
     return _WORD.findall(text.lower())
 
 
+def _contains_phrase(tokens: List[str], phrase: List[str]) -> bool:
+    """
+    True when phrase appears as a contiguous run of whole tokens in tokens.
+
+    Word-level rather than substring matching. Plain `in` on the raw string made
+    "hat" match inside "what", which fired disambiguation on queries containing
+    no such entity at all.
+    """
+    span = len(phrase)
+    if span == 0 or span > len(tokens):
+        return False
+    return any(tokens[i:i + span] == phrase for i in range(len(tokens) - span + 1))
+
+
 class SpatialMemory:
     """
     Spatial memory over persistent Entity IDs.
@@ -38,7 +52,7 @@ class SpatialMemory:
     Like the sibling banks, retrieval is gated by index(until_time) so a query
     can never see entities observed after the question's timestamp. EgoLifeQA is
     time-gated, so skipping that gate would leak future information and
-    invalidate the Objective 6 comparison.
+    invalidate any comparison against the baseline.
 
     Attributes:
         entities: entity_id -> EntityRecord, the full unfiltered bank
@@ -112,15 +126,17 @@ class SpatialMemory:
         """
         Rank Entity IDs against a free-text query.
 
-        Returns (entity_id, score) descending, score in (0, 1]. Objective 5 reads
-        both the number of results and the top1 minus top2 margin, so scores are
-        comparable within one call rather than calibrated globally.
+        Returns (entity_id, score) descending, score in (0, 1]. The caller reads
+        both the number of results and the top1 minus top2 margin to gauge how
+        ambiguous the query was, so scores are comparable within one call rather
+        than calibrated globally.
         """
         pool = self.indexed_entities or self.entities
         if not pool:
             return []
 
-        query_tokens = set(_tokenise(text))
+        query_token_list = _tokenise(text)
+        query_tokens = set(query_token_list)
         if not query_tokens:
             return []
         lowered = text.lower()
@@ -128,11 +144,12 @@ class SpatialMemory:
         scored: List[Tuple[str, float]] = []
         for entity_id, record in pool.items():
             surface = record.surface_form
-            surface_tokens = set(_tokenise(surface))
+            surface_token_list = _tokenise(surface)
+            surface_tokens = set(surface_token_list)
             if not surface_tokens:
                 continue
 
-            if surface in lowered:
+            if _contains_phrase(query_token_list, surface_token_list):
                 # Whole surface form present verbatim; longer phrases are stronger.
                 base = 1.0 if len(surface_tokens) > 1 else 0.9
             else:
@@ -145,7 +162,7 @@ class SpatialMemory:
             # without letting frequency dominate lexical fit.
             mentions = self.indexed_mention_counts.get(entity_id, record.n_mentions)
             prior = 1.0 + 0.08 * math.log1p(max(mentions, 0))
-            if lowered.find(record.location_label.replace("_", " ")) != -1:
+            if _contains_phrase(query_token_list, _tokenise(record.location_label.replace("_", " "))):
                 prior *= 1.25  # query names the location explicitly
 
             scored.append((entity_id, base * prior))
@@ -155,7 +172,7 @@ class SpatialMemory:
 
         # Normalise against the best raw score rather than clamping to 1.0.
         # Clamping made same-surface-form entities tie at the ceiling, which
-        # zeroed the top1-top2 margin exactly where Objective 5 reads it. After
+        # zeroed the top1-top2 margin, which is what the caller reads. After
         # normalisation the top hit is always 1.0 and the margin reflects how
         # much better it fits than its closest rival.
         best = max(score for _, score in scored)
@@ -168,9 +185,9 @@ class SpatialMemory:
         """
         Ranked entities that share the best-matching surface form.
 
-        This is the Objective 5 signal: two or more Entity IDs with the same name
-        at different locations means the query is genuinely ambiguous, whereas
-        several unrelated entities merely means the query was broad.
+        Two or more Entity IDs sharing a name at different locations means the
+        query is genuinely ambiguous, whereas several unrelated entities merely
+        means the query was broad. Only the former is worth asking the user about.
         """
         ranked = self.query(text, top_k=max(top_k, 10))
         if not ranked:
