@@ -121,11 +121,17 @@ def rebuild_one(cache_dir, caption_file, granularity, model, write, extra_source
         }
         with open(target, "w", encoding="utf-8") as handle:
             json.dump(payload, handle)
-    if existing:
-        status = (f"merged (+{added})" if write else f"would merge (+{added})") if added \
-                 else "already complete"
+    shortfall = total_keys - len(docs)
+    if added:
+        status = f"merged (+{added})" if write else f"would merge (+{added})"
+    elif existing:
+        # No source could top this one up. Say so plainly rather than implying it
+        # is finished: a partial cache still costs LLM calls at eval time.
+        status = "complete" if shortfall <= 0 else f"no source, {shortfall} still uncached"
     else:
         status = "rebuilt" if write else "would rebuild"
+    if shortfall > 0 and added:
+        status += f", {shortfall} short"
     return (granularity, status, len(docs), total_keys)
 
 
