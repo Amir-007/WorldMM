@@ -120,6 +120,14 @@ class WorldMemory:
         # wall of repeated text. The reasoning step returns a small JSON object;
         # the answer step returns an option letter, or a short span when the
         # question has no choices.
+        # Candidates fetched per granularity before the multiscale filter runs.
+        # The filter embeds every candidate's full text in one prompt, so this
+        # directly sets that prompt's size. The library default
+        # ({"30sec": 10, "3min": 5, "10min": 5, "1h": 3}) is about 10.5k tokens,
+        # dominated by the 1h captions at ~1,435 words each, which is enough for
+        # the logits tensor alone to exceed what is left beside the model weights.
+        self.episodic_candidates: Dict[str, int] = {"30sec": 5, "3min": 3, "10min": 2, "1h": 1}
+
         # Frames returned per visual retrieval. The visual memory default is 64,
         # which at roughly a thousand tokens per frame dominates the prompt and
         # drives the KV cache far past what fits alongside the model weights.
@@ -341,6 +349,7 @@ Retrieved:
         # Retrieve from episodic memory
         result = self.episodic_memory.retrieve(
             query=query,
+            top_k_per_granularity=self.episodic_candidates,
             final_top_k=top_k * 2,  # Get extra to filter duplicates
             as_context=False,
         )
@@ -733,6 +742,7 @@ Step 2 (only if search): Pick one memory type (episodic/semantic/visual) and for
         semantic: Optional[int] = None,
         visual: Optional[int] = None,
         visual_max_frames: Optional[int] = None,
+        episodic_candidates: Optional[Dict[str, int]] = None,
     ) -> None:
         """
         Configure the number of items to retrieve from each memory type.
@@ -750,3 +760,5 @@ Step 2 (only if search): Pick one memory type (episodic/semantic/visual) and for
             self.visual_top_k = visual
         if visual_max_frames is not None:
             self.visual_max_frames = visual_max_frames
+        if episodic_candidates is not None:
+            self.episodic_candidates = episodic_candidates

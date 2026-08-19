@@ -283,6 +283,8 @@ def main():
     parser.add_argument("--enable-spatial", action="store_true", help="Load the Entity ID bank so retrieval can distinguish same-named items by location.")
     parser.add_argument("--enable-abstention", action="store_true", help="Halt and ask a clarifying question when a query is ambiguous, instead of guessing. Implies --enable-spatial.")
     parser.add_argument("--confidence-threshold", type=float, default=0.75, help="Abstain below this confidence.")
+    parser.add_argument("--episodic-candidates", type=str, default="30sec:5,3min:3,10min:2,1h:1", help="Candidates per granularity before the multiscale filter, as "
+                             "g:n pairs. Sets the filter prompt size; the 1h captions average 1435 words each so they dominate it.")
     parser.add_argument("--visual-max-frames", type=int, default=8, help="Frames per visual retrieval. The underlying default is 64, "
                              "which dominates the prompt and drives KV cache growth.")
     parser.add_argument("--visual-embed-device", type=str, default="cuda", help="Device for the visual embedding model. 'cpu' frees several GB "
@@ -399,6 +401,10 @@ def main():
         semantic=args.semantic_top_k,
         visual=args.visual_top_k,
         visual_max_frames=args.visual_max_frames,
+        episodic_candidates={
+            g: int(n) for g, n in
+            (pair.split(":") for pair in args.episodic_candidates.split(",") if pair.strip())
+        },
     )
 
     # Load data (paths were resolved and verified before model loading)
