@@ -23,7 +23,7 @@
 #SBATCH --ntasks=1
 #SBATCH --cpus-per-task=8
 #SBATCH --mem=64G
-#SBATCH --time=2-00:00:00
+#SBATCH --time=4:00:00
 #SBATCH --output=/parallel_scratch/ms04938/logs/openie_%j.out
 #SBATCH --error=/parallel_scratch/ms04938/logs/openie_%j.err
 #SBATCH --chdir=/parallel_scratch/ms04938/WorldMM
