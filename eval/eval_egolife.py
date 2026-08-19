@@ -186,6 +186,19 @@ def parse_target_time(row: Dict[str, Any], segments_30s: List[Dict[str, Any]]) -
     return target_time_list
 
 
+# Responses that mean the pipeline failed rather than the model answering badly.
+# memory.py returns the second when generation raises; the eval loop returns the
+# first when answer() raises outright.
+FAILURE_RESPONSES = ("Error", "Unable to generate answer")
+
+
+def is_failed_entry(entry: Dict[str, Any]) -> bool:
+    """True when the entry records an infrastructure failure, not a model answer."""
+    if entry.get("failed"):
+        return True
+    return str(entry.get("response", "")).strip() in FAILURE_RESPONSES
+
+
 def load_checkpoint(path: str) -> List[Dict[str, Any]]:
     """
     Read completed results from a JSONL checkpoint.
@@ -234,14 +247,16 @@ def summarise(results: List[Dict[str, Any]]) -> Dict[str, Any]:
     resumed a dozen times.
     """
     total = len(results)
-    abstained = sum(1 for r in results if r.get("abstained"))
-    answered = total - abstained
+    failed = sum(1 for r in results if is_failed_entry(r))
+    abstained = sum(1 for r in results if r.get("abstained") and not is_failed_entry(r))
+    answered = total - abstained - failed
     correct = sum(1 for r in results if r.get("evaluate") is True)
     wrong = answered - correct
     return {
         "total": total,
         "answered": answered,
         "abstained": abstained,
+        "failed": failed,
         "correct": correct,
         "wrong": wrong,
         "accuracy_answered": correct / answered if answered else 0.0,
@@ -415,7 +430,12 @@ def main():
             os.replace(checkpoint_path, backup)
             logger.info("Starting fresh; previous checkpoint moved to %s", backup)
 
-    completed_ids = {r["ID"] for r in results}
+    # Failed entries are kept for diagnostics but are not treated as complete, so
+    # a transient OOM is retried on the next run rather than frozen as a wrong answer.
+    completed_ids = {r["ID"] for r in results if not is_failed_entry(r)}
+    retryable = sum(1 for r in results if is_failed_entry(r))
+    if retryable:
+        logger.info("%d previously failed question(s) will be retried", retryable)
     pending = [row for row in eval_data if row["ID"] not in completed_ids]
     logger.info("Evaluating %d of %d question(s); %d already complete",
                 len(pending), len(eval_data), len(completed_ids))
@@ -459,8 +479,13 @@ def main():
         # agent declined to guess. Scoring it as wrong would penalise exactly the
         # behaviour we are trying to produce, so it is excluded from accuracy
         # and counted separately.
+        #
+        # A generation failure (OOM, and so on) is neither. Scoring it wrong
+        # would silently deflate accuracy with an infrastructure problem, so it
+        # is marked failed, excluded from the metrics, and retried on resume.
         abstained = bool(qa_result.abstained) if qa_result else False
-        evaluate = None if abstained else evaluate_prediction(response, answer, choices)
+        failed = response.strip() in FAILURE_RESPONSES
+        evaluate = None if (abstained or failed) else evaluate_prediction(response, answer, choices)
 
         # Build result entry
         result_entry = {
@@ -474,6 +499,7 @@ def main():
             "num_rounds": qa_result.num_rounds if qa_result else 0,
             "evaluate": evaluate,
             "abstained": abstained,
+            "failed": failed,
             "confidence": qa_result.confidence if qa_result else None,
             "ambiguity": qa_result.ambiguity if qa_result else None,
             "query_time": query_time,
@@ -530,6 +556,7 @@ def main():
     logger.info(f"Total questions      : {stats['total']} of {len(eval_data)}")
     logger.info(f"Answered             : {stats['answered']}")
     logger.info(f"Abstained            : {stats['abstained']}")
+    logger.info(f"Failed (infra)       : {stats['failed']}")
     logger.info(f"Correct              : {stats['correct']}")
     logger.info(f"Wrong                : {stats['wrong']}")
     logger.info(f"Accuracy (answered)  : {stats['accuracy_answered']:.4f}")

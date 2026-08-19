@@ -35,7 +35,7 @@ def chunk_id(text: str) -> str:
     return "chunk-" + md5(text.encode()).hexdigest()
 
 
-def rebuild_one(cache_dir, caption_file, granularity, model, write, extra_sources=()):
+def rebuild_one(cache_dir, caption_file, granularity, model, write, extra_sources=(), merge=False):
     """
     Merge every available source, then join to captions by md5 of the text.
 
@@ -51,12 +51,26 @@ def rebuild_one(cache_dir, caption_file, granularity, model, write, extra_source
     candidates.extend(extra_sources)
     candidates = [c for c in candidates if os.path.exists(c)]
 
-    if not candidates:
-        return (granularity, "no source file", 0, 0)
     if not os.path.exists(caption_file):
         return (granularity, "no caption file", 0, 0)
+
+    # An interrupted eval leaves a partial cache: HippoRAG accumulates as it
+    # indexes, so the file is real but only covers captions reached so far.
+    # Merging tops it up instead of discarding it or re-extracting from scratch.
+    existing = {}
     if os.path.exists(target):
-        return (granularity, "target already exists, left alone", 0, 0)
+        if not merge:
+            return (granularity, "target exists, use --merge to top it up", 0, 0)
+        try:
+            with open(target, encoding="utf-8") as handle:
+                for doc in json.load(handle).get("docs", []):
+                    if doc.get("passage"):
+                        existing[chunk_id(doc["passage"])] = doc
+        except (json.JSONDecodeError, OSError) as exc:
+            return (granularity, f"target unreadable ({type(exc).__name__})", 0, 0)
+
+    if not candidates and not existing:
+        return (granularity, "no source file", 0, 0)
 
     ner, triples = {}, {}
     for candidate in candidates:
@@ -68,7 +82,7 @@ def rebuild_one(cache_dir, caption_file, granularity, model, write, extra_source
     with open(caption_file, encoding="utf-8") as handle:
         captions = json.load(handle)
 
-    docs, matched = [], 0
+    docs, added = [], 0
     seen = set()
     for entry in captions:
         text = entry.get("text", "")
@@ -77,10 +91,13 @@ def rebuild_one(cache_dir, caption_file, granularity, model, write, extra_source
         key = chunk_id(text)
         if key in seen:
             continue
+        seen.add(key)
+        if key in existing:
+            docs.append(existing[key])          # keep what the run already extracted
+            continue
         if key not in ner and key not in triples:
             continue
-        seen.add(key)
-        matched += 1
+        added += 1
         docs.append({
             "idx": key,
             "passage": text,
@@ -88,8 +105,12 @@ def rebuild_one(cache_dir, caption_file, granularity, model, write, extra_source
             "extracted_triples": triples.get(key, []),
         })
 
-    total_keys = len(set(ner) | set(triples))
-    if write and docs:
+    total_keys = len(captions)
+    if write and docs and (added or not existing):
+        if existing:
+            backup = target + ".bak"
+            if not os.path.exists(backup):
+                os.replace(target, backup)
         entity_count = sum(len(d["extracted_entities"]) for d in docs)
         chars = sum(len(e) for d in docs for e in d["extracted_entities"])
         words = sum(len(e.split()) for d in docs for e in d["extracted_entities"])
@@ -100,7 +121,12 @@ def rebuild_one(cache_dir, caption_file, granularity, model, write, extra_source
         }
         with open(target, "w", encoding="utf-8") as handle:
             json.dump(payload, handle)
-    return (granularity, "rebuilt" if write else "would rebuild", matched, total_keys)
+    if existing:
+        status = (f"merged (+{added})" if write else f"would merge (+{added})") if added \
+                 else "already complete"
+    else:
+        status = "rebuilt" if write else "would rebuild"
+    return (granularity, status, len(docs), total_keys)
 
 
 def main():
@@ -115,6 +141,7 @@ def main():
                              "the last batch written.")
     parser.add_argument("--metadata-dir", default="output/metadata",
                         help="Used to locate the preprocess OpenIE build automatically.")
+    parser.add_argument("--merge", action="store_true", help="Top up an existing cache instead of skipping it. The original is kept as <file>.bak.")
     parser.add_argument("--write", action="store_true", help="Actually write; default is a dry run.")
     args = parser.parse_args()
 
@@ -125,13 +152,13 @@ def main():
         extra.append(preprocess_build)
         print(f"merging preprocess build: {preprocess_build}\n")
 
-    print(f"{'granularity':<12} {'status':<34} {'recovered':>10} {'in source':>10}")
+    print(f"{'granularity':<12} {'status':<34} {'cached':>10} {'captions':>10}")
     print("-" * 70)
     total = 0
     for granularity in GRANULARITIES:
         caption_file = os.path.join(args.caption_dir, f"{args.subject}_{granularity}.json")
         g, status, matched, keys = rebuild_one(
-            args.cache_dir, caption_file, granularity, args.model, args.write, extra)
+            args.cache_dir, caption_file, granularity, args.model, args.write, extra, args.merge)
         total += matched
         print(f"{g:<12} {status:<34} {matched:>10} {keys:>10}")
     print("-" * 70)

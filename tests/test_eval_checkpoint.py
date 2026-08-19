@@ -20,10 +20,11 @@ _ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 _SOURCE = open(os.path.join(_ROOT, "eval", "eval_egolife.py"), encoding="utf-8").read()
 
 
-def _load(*names):
+def _load(*names, extra=None):
     """Lift functions out by source; eval_egolife.py imports torch at module scope."""
     ns: Dict[str, Any] = {"json": json, "os": os, "re": re,
                           "Dict": Dict, "List": List, "Any": Any}
+    ns.update(extra or {})
     import logging
     ns["logger"] = logging.getLogger("test")
     for name in names:
@@ -38,8 +39,11 @@ def _load(*names):
     return tuple(ns[n] for n in names)
 
 
-load_checkpoint, append_checkpoint, summarise = _load(
-    "load_checkpoint", "append_checkpoint", "summarise")
+# FAILURE_RESPONSES is a module constant the helpers rely on.
+_FR = re.search(r'FAILURE_RESPONSES = \(([^)]*)\)', _SOURCE).group(1)
+is_failed_entry, load_checkpoint, append_checkpoint, summarise = _load(
+    "is_failed_entry", "load_checkpoint", "append_checkpoint", "summarise",
+    extra={"FAILURE_RESPONSES": tuple(eval(f"({_FR})"))})
 
 _FAILURES = []
 
@@ -167,6 +171,58 @@ def test_run_tag_separates_arms():
     check("threshold appears in the tag", "egolife_eval_A1_JAKE_abstain0.6.jsonl" in tags)
 
 
+def test_failures_are_retried_not_frozen():
+    print("\n--- OOM failures must be retried, not baked in ---")
+    tmp = tempfile.mkdtemp()
+    try:
+        path = os.path.join(tmp, "run.jsonl")
+        append_checkpoint(path, {"ID": "q1", "response": "A", "evaluate": True,
+                                 "abstained": False, "failed": False})
+        # memory.py's fallback when generation raises
+        append_checkpoint(path, {"ID": "q2", "response": "Unable to generate answer",
+                                 "evaluate": None, "abstained": False, "failed": True})
+        # the eval loop's own fallback when answer() raises
+        append_checkpoint(path, {"ID": "q3", "response": "Error",
+                                 "evaluate": None, "abstained": False, "failed": True})
+        loaded = load_checkpoint(path)
+        completed = {r["ID"] for r in loaded if not is_failed_entry(r)}
+        check("successful question counts as done", "q1" in completed)
+        check("'Unable to generate answer' is retryable", "q2" not in completed)
+        check("'Error' is retryable", "q3" not in completed)
+
+        all_q = [{"ID": f"q{i}"} for i in (1, 2, 3, 4)]
+        pending = [q for q in all_q if q["ID"] not in completed]
+        check("failed questions reappear as pending",
+              [q["ID"] for q in pending] == ["q2", "q3", "q4"],
+              str([q["ID"] for q in pending]))
+
+        # A successful retry must supersede the failure.
+        append_checkpoint(path, {"ID": "q2", "response": "B", "evaluate": True,
+                                 "abstained": False, "failed": False})
+        loaded = load_checkpoint(path)
+        check("successful retry supersedes the failure",
+              "q2" in {r["ID"] for r in loaded if not is_failed_entry(r)})
+    finally:
+        shutil.rmtree(tmp)
+
+
+def test_failures_excluded_from_accuracy():
+    print("\n--- failures must not deflate accuracy ---")
+    results = [
+        {"ID": "a", "response": "A", "evaluate": True,  "abstained": False, "failed": False},
+        {"ID": "b", "response": "B", "evaluate": False, "abstained": False, "failed": False},
+        {"ID": "c", "response": "Unable to generate answer", "evaluate": None,
+         "abstained": False, "failed": True},
+        {"ID": "d", "response": "Error", "evaluate": None, "abstained": False, "failed": True},
+    ]
+    stats = summarise(results)
+    check("failures counted separately", stats["failed"] == 2, str(stats["failed"]))
+    check("answered excludes failures", stats["answered"] == 2, str(stats["answered"]))
+    check("accuracy not deflated by OOM", abs(stats["accuracy_answered"] - 0.5) < 1e-9,
+          f"{stats['accuracy_answered']:.4f} (would be 0.25 if failures counted wrong)")
+    check("wrong excludes failures", stats["wrong"] == 1, str(stats["wrong"]))
+
+
 def main():
     print("=" * 62)
     print("EVAL CHECKPOINT / RESUME TESTS")
@@ -177,6 +233,8 @@ def main():
     test_resume_skips_completed()
     test_metrics_are_restart_invariant()
     test_run_tag_separates_arms()
+    test_failures_are_retried_not_frozen()
+    test_failures_excluded_from_accuracy()
     print("\n" + "=" * 62)
     if _FAILURES:
         print(f"FAILED ({len(_FAILURES)}): " + "; ".join(_FAILURES))
