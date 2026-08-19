@@ -218,6 +218,18 @@ class HippoRAG:
 
         ner_results_dict, triple_results_dict = reformat_openie_results(all_openie_info)
 
+        # The cache may legitimately hold more chunks than are being indexed right
+        # now: it persists across runs, while the store only holds what has been
+        # indexed so far, and callers index incrementally by timestamp. Restrict to
+        # the chunks in play before asserting, otherwise a cache that is merely
+        # ahead of the store trips an equality check it was never meant to fail.
+        ner_results_dict = {k: v for k, v in ner_results_dict.items() if k in chunk_to_rows}
+        triple_results_dict = {k: v for k, v in triple_results_dict.items() if k in chunk_to_rows}
+
+        missing = set(chunk_to_rows) - set(ner_results_dict)
+        assert not missing, (
+            f"{len(missing)} indexed chunk(s) have no OpenIE result; "
+            f"cache is behind the embedding store")
         assert len(chunk_to_rows) == len(ner_results_dict) == len(triple_results_dict), f"len(chunk_to_rows): {len(chunk_to_rows)}, len(ner_results_dict): {len(ner_results_dict)}, len(triple_results_dict): {len(triple_results_dict)}"
 
         # prepare data_store
