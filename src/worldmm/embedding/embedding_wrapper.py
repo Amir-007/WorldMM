@@ -9,16 +9,25 @@ class EmbeddingModel:
     def __init__(self, 
                 text_model_name: str = "Qwen/Qwen3-Embedding-4B",
                 vis_model_name: str = "VLM2Vec/VLM2Vec-V2.0",
-                device: str = "cuda"):
+                device: str = "cuda",
+                text_device: Optional[str] = None,
+                vis_device: Optional[str] = None):
         """
         Initialize embedding models for different modalities
         
         Args:
             text_model_name: Model name for text embeddings (defaults to Qwen3-Embedding-4B)
             vis_model_name: Model name for visual embeddings (defaults to VLM2Vec V2.0)
-            device: Device to run models on
+            device: Default device for both models
+            text_device: Override device for the text model
+            vis_device: Override device for the visual model. At query time this
+                model only encodes the query string, because clip vectors come
+                from a precomputed file, so putting it on CPU frees several GB
+                of VRAM for a negligible latency cost.
         """
         self.device = device
+        self.text_device = text_device or device
+        self.vis_device = vis_device or device
         
         # Initialize models lazily
         self._text_model = None
@@ -37,7 +46,7 @@ class EmbeddingModel:
             from .qwen3_embedding import Qwen3EmbeddingModel as TextEmbeddingModel
             self._text_model = TextEmbeddingModel(
                 model_name=self.text_model_name,
-                device=self.device
+                device=self.text_device
             )
         return self._text_model
     
@@ -48,7 +57,7 @@ class EmbeddingModel:
             from .vlm2vecv2 import VLM2VecV2EmbeddingModel as VisEmbeddingModel
             self._vis_model = VisEmbeddingModel(
                 model_name=self.vis_model_name,
-                device=self.device
+                device=self.vis_device
             )
         return self._vis_model
 

@@ -11,6 +11,7 @@ PERSON="A1_JAKE" RET_MODEL="qwen3vl-30b" RESP_MODEL="gpt-5" MEM_MODEL="qwen3vl-3
 MAX_ROUNDS=5 MAX_ERRORS=5 EPISODIC_K=3 SEMANTIC_K=10 VISUAL_K=3
 OUTPUT_DIR="output" DATA_DIR="data/EgoLife" METADATA_DIR="output/metadata"
 SPATIAL_FLAGS="" CONF_THRESHOLD="0.75" RESUME_FLAG=""
+VIS_EMBED_DEV="cuda" TEXT_EMBED_DEV="cuda"
 
 cd "$(dirname "$0")/.."
 
@@ -33,6 +34,8 @@ while [[ $# -gt 0 ]]; do
         --enable-spatial) SPATIAL_FLAGS="$SPATIAL_FLAGS --enable-spatial"; shift ;;
         --enable-abstention) SPATIAL_FLAGS="$SPATIAL_FLAGS --enable-abstention"; shift ;;
         --confidence-threshold) CONF_THRESHOLD="$2"; shift 2 ;;
+        --visual-embed-device) VIS_EMBED_DEV="$2"; shift 2 ;;
+        --text-embed-device) TEXT_EMBED_DEV="$2"; shift 2 ;;
         --fresh) RESUME_FLAG="--fresh"; shift ;;
         --resume) RESUME_FLAG="--resume"; shift ;;
         *) echo "Unknown: $1"; exit 1 ;;
@@ -60,6 +63,8 @@ python eval/eval_egolife.py \
     --data-dir "$DATA_DIR" \
     --metadata-dir "$METADATA_DIR" \
     --confidence-threshold "$CONF_THRESHOLD" \
+    --visual-embed-device "$VIS_EMBED_DEV" \
+    --text-embed-device "$TEXT_EMBED_DEV" \
     $SPATIAL_FLAGS $RESUME_FLAG 2>&1 | tee "$LOG_FILE"
 
 echo -e "${BLUE}Eval Done! Results: ${OUTPUT_DIR}/${RET_MODEL//-/_}_${RESP_MODEL//-/_}/egolife_eval_${PERSON}.json${NC}"

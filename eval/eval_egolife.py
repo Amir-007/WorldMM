@@ -283,6 +283,11 @@ def main():
     parser.add_argument("--enable-spatial", action="store_true", help="Load the Entity ID bank so retrieval can distinguish same-named items by location.")
     parser.add_argument("--enable-abstention", action="store_true", help="Halt and ask a clarifying question when a query is ambiguous, instead of guessing. Implies --enable-spatial.")
     parser.add_argument("--confidence-threshold", type=float, default=0.75, help="Abstain below this confidence.")
+    parser.add_argument("--visual-embed-device", type=str, default="cuda", help="Device for the visual embedding model. 'cpu' frees several GB "
+                             "of VRAM; at query time it only encodes the query string, since "
+                             "clip vectors come from the precomputed embeddings file.")
+    parser.add_argument("--text-embed-device", type=str, default="cuda", help="Device for the text embedding model. 'cpu' frees more VRAM but "
+                             "slows indexing, which embeds every chunk, entity and fact.")
     resume_group = parser.add_mutually_exclusive_group()
     resume_group.add_argument("--resume", dest="resume", action="store_true", default=True, help="Skip questions already present in the results file (default).")
     resume_group.add_argument("--fresh", dest="resume", action="store_false", help="Ignore any existing results and start over.")
@@ -346,7 +351,13 @@ def main():
 
     # Initialize models
     logger.info("Initializing models...")
-    embedding_model = EmbeddingModel()
+    embedding_model = EmbeddingModel(
+        text_device=args.text_embed_device,
+        vis_device=args.visual_embed_device,
+    )
+    if args.visual_embed_device != "cuda" or args.text_embed_device != "cuda":
+        logger.info("Embedding devices: text=%s visual=%s",
+                    args.text_embed_device, args.visual_embed_device)
     
     # Local models consume VRAM per instance, unlike API models. When retriever and
     # responder are the same local model, load once and share the instance.
