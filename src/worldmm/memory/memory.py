@@ -120,6 +120,11 @@ class WorldMemory:
         # wall of repeated text. The reasoning step returns a small JSON object;
         # the answer step returns an option letter, or a short span when the
         # question has no choices.
+        # Frames returned per visual retrieval. The visual memory default is 64,
+        # which at roughly a thousand tokens per frame dominates the prompt and
+        # drives the KV cache far past what fits alongside the model weights.
+        self.visual_max_frames: int = 8
+
         self.max_reasoning_tokens: int = 512
         self.max_answer_tokens: int = 256
         self.max_open_answer_tokens: int = 512
@@ -431,6 +436,7 @@ Retrieved:
         result = self.visual_memory.retrieve(
             query=query,
             top_k=top_k,
+            max_frames=self.visual_max_frames,
             as_context=True,
         )
         
@@ -726,6 +732,7 @@ Step 2 (only if search): Pick one memory type (episodic/semantic/visual) and for
         episodic: Optional[int] = None,
         semantic: Optional[int] = None,
         visual: Optional[int] = None,
+        visual_max_frames: Optional[int] = None,
     ) -> None:
         """
         Configure the number of items to retrieve from each memory type.
@@ -741,3 +748,5 @@ Step 2 (only if search): Pick one memory type (episodic/semantic/visual) and for
             self.semantic_top_k = semantic
         if visual is not None:
             self.visual_top_k = visual
+        if visual_max_frames is not None:
+            self.visual_max_frames = visual_max_frames

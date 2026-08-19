@@ -283,6 +283,8 @@ def main():
     parser.add_argument("--enable-spatial", action="store_true", help="Load the Entity ID bank so retrieval can distinguish same-named items by location.")
     parser.add_argument("--enable-abstention", action="store_true", help="Halt and ask a clarifying question when a query is ambiguous, instead of guessing. Implies --enable-spatial.")
     parser.add_argument("--confidence-threshold", type=float, default=0.75, help="Abstain below this confidence.")
+    parser.add_argument("--visual-max-frames", type=int, default=8, help="Frames per visual retrieval. The underlying default is 64, "
+                             "which dominates the prompt and drives KV cache growth.")
     parser.add_argument("--visual-embed-device", type=str, default="cuda", help="Device for the visual embedding model. 'cpu' frees several GB "
                              "of VRAM; at query time it only encodes the query string, since "
                              "clip vectors come from the precomputed embeddings file.")
@@ -396,6 +398,7 @@ def main():
         episodic=args.episodic_top_k,
         semantic=args.semantic_top_k,
         visual=args.visual_top_k,
+        visual_max_frames=args.visual_max_frames,
     )
 
     # Load data (paths were resolved and verified before model loading)
