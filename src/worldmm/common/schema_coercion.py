@@ -24,6 +24,22 @@ __all__ = ["coerce_to_schema"]
 _UNWRAP_KEYS = ("entity", "name", "value", "text")
 
 
+def _flatten_cell(cell: Any) -> Any:
+    """
+    Coerce one triple slot to a scalar.
+
+    A null becomes an empty string. A nested list is joined into a phrase,
+    since the model wraps an intended object one level too deep rather than
+    meaning a genuine sequence. Anything already scalar is returned untouched.
+    """
+    if cell is None:
+        return ""
+    if isinstance(cell, (list, tuple)):
+        parts = [str(_flatten_cell(part)) for part in cell]
+        return " ".join(p for p in parts if p)
+    return cell
+
+
 def coerce_to_schema(json_data: Any, field_names: Sequence[str]) -> Any:
     """
     Reshape parsed JSON toward a schema with the given field names.
@@ -62,13 +78,18 @@ def coerce_to_schema(json_data: Any, field_names: Sequence[str]) -> Any:
     if len(fields) == 1 and fields[0] not in json_data and len(json_data) == 1:
         json_data = {fields[0]: next(iter(json_data.values()))}
 
-    # 4. Nulls inside a list of lists (triples). Only touched when every
+    # 4. Repair the rows of a list of lists (triples). Only touched when every
     #    element is itself a list, so integer-typed fields stay intact.
+    #
+    #    Two observed defects: a null where a string belongs, and a nested list
+    #    where a string belongs - the model writes
+    #    ["Katrina", "mentions", ["Katrina", "mentions buying items"]], which
+    #    fails validation and previously cost the whole chunk its triples.
+    #    Nested content is flattened rather than dropped, because it is usually
+    #    the intended object phrase wrapped one level too deep.
     for key, value in list(json_data.items()):
         if isinstance(value, list) and value and all(isinstance(v, list) for v in value):
-            json_data[key] = [
-                ["" if element is None else element for element in row] for row in value
-            ]
+            json_data[key] = [[_flatten_cell(cell) for cell in row] for row in value]
 
     # 5. Nulls inside a flat list (named entities).
     for key, value in list(json_data.items()):

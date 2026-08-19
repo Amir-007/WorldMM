@@ -257,6 +257,40 @@ def test_truncated_tail_is_discarded_not_guessed():
     assert value == {"entities": ["phone"]}
 
 
+def test_nested_list_in_a_triple_slot_is_flattened():
+    """
+    Observed on Eureka: the model wraps an object phrase one level too deep,
+    e.g. ["Katrina", "mentions", ["Katrina", "mentions buying items"]].
+    That failed schema validation and cost the chunk all of its triples.
+    """
+    data = {"triples": [
+        ["Katrina", "mentions", ["Katrina", "mentions buying items after lunchtime"]],
+        ["I", "hold", "phone"],
+    ]}
+    out = coerce_to_schema(data, ["triples"])
+    assert out["triples"][0] == [
+        "Katrina", "mentions", "Katrina mentions buying items after lunchtime"
+    ]
+    assert out["triples"][1] == ["I", "hold", "phone"], "well-formed rows must not change"
+    for row in out["triples"]:
+        assert all(isinstance(cell, str) for cell in row)
+
+
+def test_nested_list_with_nulls_is_flattened_cleanly():
+    out = coerce_to_schema({"triples": [["I", "say", [None, "hello", None]]]}, ["triples"])
+    assert out["triples"][0][2] == "hello"
+
+
+def test_deeply_nested_cell_is_flattened():
+    out = coerce_to_schema({"triples": [["I", "see", [["a", "b"], "c"]]]}, ["triples"])
+    assert out["triples"][0][2] == "a b c"
+
+
+def test_flattening_does_not_touch_integer_evidence_lists():
+    data = {"episodic_evidence": [0, 1, 2]}
+    assert coerce_to_schema(dict(data), ["episodic_evidence"]) == data
+
+
 def main() -> int:
     tests = [(n, o) for n, o in sorted(globals().items())
              if n.startswith("test_") and callable(o)]

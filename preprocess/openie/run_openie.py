@@ -62,26 +62,43 @@ def progress_path(output_dir: str, model: str, shard_id: int) -> str:
 
 
 def run_shard(args) -> int:
-    from worldmm.llm import LLMModel
-    from worldmm.memory.episodic.openie import (
-        NER_MAX_TOKENS, TRIPLE_MAX_TOKENS, OpenIE,
-    )
-
     chunks = load_chunks(args.chunks)
     assigned = shard_of(chunks, args.shard_id, args.num_shards)
     os.makedirs(args.output_dir, exist_ok=True)
 
     store = CheckpointStore(progress_path(args.output_dir, args.model, args.shard_id))
-    pending = list(store.pending(assigned, key=lambda c: c["chunk_id"]))
+
+    if args.retry_empty:
+        # Re-process chunks that have real text but produced no triples. These
+        # are parse failures, not genuinely empty passages, and they are not
+        # distributed evenly across conditions - longer chunks fail more often,
+        # which would bias the compression comparison if left in place.
+        # Recording again overwrites the earlier entry.
+        pending = [
+            c for c in assigned
+            if c["text"].strip() and not (store.get(c["chunk_id"]) or {}).get("triples")
+        ]
+        print(f"retry-empty: {len(pending):,} chunk(s) with text but no triples")
+    else:
+        pending = list(store.pending(assigned, key=lambda c: c["chunk_id"]))
 
     print(f"chunks total:    {len(chunks):,}")
     print(f"this shard:      {len(assigned):,}  (shard {args.shard_id}/{args.num_shards})")
-    print(f"already done:    {len(assigned) - len(pending):,}")
+    if not args.retry_empty:
+        print(f"already done:    {len(assigned) - len(pending):,}")
     print(f"to process:      {len(pending):,}")
-    print(f"token budgets:   ner={NER_MAX_TOKENS} triples={TRIPLE_MAX_TOKENS}")
     if not pending:
         print("Nothing to do.")
         return 0
+
+    # Imported here, not at the top: these pull in torch and the model stack,
+    # and there is no reason to pay that (or a 30-minute checkpoint load) just
+    # to discover the shard is already complete.
+    from worldmm.llm import LLMModel
+    from worldmm.memory.episodic.openie import (
+        NER_MAX_TOKENS, TRIPLE_MAX_TOKENS, OpenIE,
+    )
+    print(f"token budgets:   ner={NER_MAX_TOKENS} triples={TRIPLE_MAX_TOKENS}")
 
     load_start = time.perf_counter()
     llm_model = LLMModel(model_name=args.model)
@@ -204,6 +221,8 @@ def main() -> int:
     parser.add_argument("--shard-id", type=int, default=0)
     parser.add_argument("--num-shards", type=int, default=1)
     parser.add_argument("--merge", action="store_true", help="Combine finished shards.")
+    parser.add_argument("--retry-empty", action="store_true",
+                        help="Re-process only chunks that have text but no triples.")
     parser.add_argument("--allow-partial", action="store_true",
                         help="Merge even if some chunks have no result.")
     args = parser.parse_args()

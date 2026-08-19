@@ -8,6 +8,11 @@
 #   CONDITION=fixed SHARD=1 sbatch script/slurm/2_openie.sbatch
 #   CONDITION=event SHARD=0 sbatch script/slurm/2_openie.sbatch
 #
+# Extra arguments are forwarded to the runner, e.g. to re-process only the
+# chunks that came back with no triples:
+#
+#   CONDITION=fixed SHARD=0 sbatch script/slurm/2_openie.sbatch --retry-empty
+#
 # NUM_SHARDS must match across the shards of one condition, and the merge step
 # reads it too. Default 2.
 #
@@ -59,6 +64,7 @@ python preprocess/openie/run_openie.py \
     --output-dir "output/metadata/episodic_memory/${PERSON}_${CONDITION}" \
     --model "$MODEL" \
     --shard-id "$SHARD" \
-    --num-shards "$NUM_SHARDS"
+    --num-shards "$NUM_SHARDS" \
+    "$@"
 
 echo "finished: $(date)"
