@@ -97,6 +97,26 @@ def main() -> int:
     logging.basicConfig(level=logging.INFO, format="%(levelname)s %(message)s")
     os.makedirs(args.output_dir, exist_ok=True)
 
+    if not os.path.exists(args.semantic):
+        # Almost always an ordering problem rather than a typo: this stage
+        # consumes the merged output of semantic extraction, which is itself
+        # two steps (shards, then --merge).
+        logger.error("semantic extraction results not found: %s", args.semantic)
+        directory = os.path.dirname(args.semantic)
+        if os.path.isdir(directory):
+            present = sorted(os.listdir(directory))
+            logger.error("  %s exists and contains: %s",
+                         directory, present[:6] if present else "(empty)")
+            if any(n.startswith("semantic_progress") for n in present):
+                logger.error("  shard progress files are present but not merged; run:")
+                logger.error("    ... run_semantic.py --chunks ... --openie ... "
+                             "--output-dir %s --merge", directory)
+        else:
+            logger.error("  %s does not exist, so semantic extraction has not run yet.",
+                         directory)
+        logger.error("Chain the stages with --dependency=afterok so this cannot recur.")
+        return 1
+
     with open(args.semantic, "r", encoding="utf-8") as f:
         nodes = json.load(f)["semantic_triples"]
 
