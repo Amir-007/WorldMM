@@ -134,8 +134,12 @@ class WorldMemory:
         self.visual_max_frames: int = 8
 
         self.max_reasoning_tokens: int = 512
-        self.max_answer_tokens: int = 256
-        self.max_open_answer_tokens: int = 512
+        # 256 was too tight: the model reasons before committing to a letter, so
+        # the cap truncated it mid-explanation and 46% of responses arrived with
+        # no answer in them at all, each scored wrong. Measured on a 500-question
+        # run, successful answers ran to ~1,550 characters, so allow headroom.
+        self.max_answer_tokens: int = 768
+        self.max_open_answer_tokens: int = 768
         
     def load_episodic_captions(
         self,
@@ -674,7 +678,14 @@ Step 2 (only if search): Pick one memory type (episodic/semantic/visual) and for
         if choices:
             qa_content.append({
                 "type": "text", 
-                "text": "\nPlease provide only the final answer from the choices given (e.g., A, B, C, or D)."
+                # The model reasons before answering regardless of instruction, so
+                # rather than fight that, require the letter on its own final line.
+                # That keeps the answer recoverable even when the reply is long.
+                "text": ("\nAnswer with the letter of the correct choice. "
+                         "Think briefly if you need to, but you MUST end your reply "
+                         "with the final answer on its own last line, in exactly "
+                         "this form:\nFinal Answer: X\n"
+                         "where X is one of A, B, C, or D.")
             })
         
         qa_messages = copy.deepcopy(qa_prompt)
