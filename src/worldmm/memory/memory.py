@@ -138,8 +138,11 @@ class WorldMemory:
         # the cap truncated it mid-explanation and 46% of responses arrived with
         # no answer in them at all, each scored wrong. Measured on a 500-question
         # run, successful answers ran to ~1,550 characters, so allow headroom.
-        self.max_answer_tokens: int = 768
-        self.max_open_answer_tokens: int = 768
+        # 256 truncated 46% of answers mid-reasoning; 768 still truncated 26.5%,
+        # because the model writes ~4,000 characters of analysis before committing.
+        # Longest observed complete answer was 5,340 chars (~1,240 tokens).
+        self.max_answer_tokens: int = 1536
+        self.max_open_answer_tokens: int = 1536
         
     def load_episodic_captions(
         self,
@@ -681,11 +684,16 @@ Step 2 (only if search): Pick one memory type (episodic/semantic/visual) and for
                 # The model reasons before answering regardless of instruction, so
                 # rather than fight that, require the letter on its own final line.
                 # That keeps the answer recoverable even when the reply is long.
-                "text": ("\nAnswer with the letter of the correct choice. "
-                         "Think briefly if you need to, but you MUST end your reply "
-                         "with the final answer on its own last line, in exactly "
-                         "this form:\nFinal Answer: X\n"
-                         "where X is one of A, B, C, or D.")
+                # Two defences against losing the answer to truncation: bound the
+                # reasoning explicitly, and require the answer line. Reasoning is
+                # still permitted because it helps accuracy; it just cannot run on.
+                "text": ("\nAnswer with the letter of the correct choice.\n"
+                         "Give your reasoning in AT MOST 3 short sentences, then stop "
+                         "reasoning and give the answer.\n"
+                         "You MUST end your reply with the answer on its own last "
+                         "line, in exactly this form:\nFinal Answer: X\n"
+                         "where X is one of A, B, C, or D. Do not write anything "
+                         "after that line.")
             })
         
         qa_messages = copy.deepcopy(qa_prompt)
