@@ -19,16 +19,16 @@ PERSON="${PERSON:-A1_JAKE}"
 HERE="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 
 extract=$(CONDITION="$CONDITION" PERSON="$PERSON" \
-    sbatch --parsable --time=03:00:00 "$HERE/3_semantic.sbatch")
+    sbatch --parsable --time=06:00:00 "$HERE/3_semantic.sbatch")
 echo "semantic extract : $extract"
 
 merge=$(CONDITION="$CONDITION" PERSON="$PERSON" \
-    sbatch --parsable --time=00:20:00 --dependency=afterok:"$extract" \
+    sbatch --parsable --time=1:00:00 --dependency=afterok:"$extract" \
     "$HERE/3_semantic.sbatch" --merge)
 echo "semantic merge   : $merge  (after $extract)"
 
 consolidate=$(CONDITION="$CONDITION" PERSON="$PERSON" \
-    sbatch --parsable --time=01:00:00 --dependency=afterok:"$merge" \
+    sbatch --parsable --time=03:00:00 --dependency=afterok:"$merge" \
     "$HERE/4_consolidate.sbatch")
 echo "consolidation    : $consolidate  (after $merge)"
 
