@@ -576,6 +576,11 @@ def _print_summary(report: Dict[str, Any], conditions: List[str]) -> None:
                     "operating_threshold")
                 match = next((r for r in sweep if r["threshold"] == thresh), None)
                 cells.append(f"{match['n_final']:,}" if match else "-")
+            elif label.startswith("cuts detected") and not report["conditions"][
+                    condition]["chunking"].get("cut_origins"):
+                # The fixed grid has no detector, so this is inapplicable
+                # rather than zero.
+                cells.append("n/a")
             elif "MB" in label:
                 cells.append(f"{value / 1e6:,.1f}")
             else:

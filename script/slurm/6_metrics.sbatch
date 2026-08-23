@@ -6,7 +6,14 @@
 # real SemanticMemory.index(), which needs a GPU and the embedding model.
 #
 #   sbatch script/slurm/6_metrics.sbatch
-#   sbatch script/slurm/6_metrics.sbatch --with-model
+#
+# The --with-model variant times the real SemanticMemory.index() and therefore
+# needs a GPU, so override the partition on the command line and send it to a
+# separate directory - it is a superset of the plain run, and the two would
+# otherwise overwrite each other's output:
+#
+#   OUTDIR=output/metrics_model sbatch --partition=gpu --gres=gpu:3g.40gb:1 \
+#       script/slurm/6_metrics.sbatch --with-model
 #
 #SBATCH --job-name=trackA-metrics
 #SBATCH --partition=shared
@@ -22,6 +29,7 @@
 set -eo pipefail
 
 PERSON="${PERSON:-A1_JAKE}"
+OUTDIR="${OUTDIR:-output/metrics}"
 
 cd /parallel_scratch/ms04938/WorldMM
 mkdir -p /parallel_scratch/ms04938/logs
@@ -35,7 +43,7 @@ fi
 export PATH=/usr/local/bin:/usr/bin:/usr/local/sbin:/usr/sbin:/bin:$PATH
 source /parallel_scratch/ms04938/WorldMM/.venv/bin/activate
 
-python metrics/collect_metrics.py --person "$PERSON" "$@"
-python metrics/make_figures.py --metrics-dir output/metrics || true
+python metrics/collect_metrics.py --person "$PERSON" --output-dir "$OUTDIR" "$@"
+python metrics/make_figures.py --metrics-dir "$OUTDIR" || true
 
 echo "finished: $(date)"
