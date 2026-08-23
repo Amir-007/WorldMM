@@ -124,8 +124,8 @@ def main() -> int:
     print("=== WORLDMM CUMULATIVE BASELINE (same input) ===")
     print(f"  nodes                    {baseline['n_nodes']:>12,}")
     print(f"  final state triples      {baseline['final_state_triples']:>12,}")
-    print(f"  triples written to disk  {baseline['total_triples_written']:>12,}")
-    print(f"  write amplification      {baseline['write_amplification']:>12.1f}x")
+    print(f"  triples written (upper bound)  {baseline['total_triples_written_upper_bound']:>12,}")
+    print(f"  write amp (upper bound) {baseline['write_amplification_upper_bound']:>12.1f}x")
     print(f"  source file size         {_size_mb(args.semantic):>12.1f} MB")
 
     embedder = CachingEmbedder(args.embedding_model)

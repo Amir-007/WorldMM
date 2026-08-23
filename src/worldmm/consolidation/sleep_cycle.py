@@ -221,11 +221,18 @@ class SleepCycleConsolidator:
 
 def cumulative_baseline_size(nodes: Dict[str, Sequence[Sequence[str]]]) -> Dict[str, Any]:
     """
-    What WorldMM's serialisation costs on the same input.
+    An UPPER BOUND on WorldMM's serialisation cost - not its measured cost.
 
-    Reproduces its accounting without re-running it: every node stores the full
-    accumulation to that point, so the written total is the sum of the running
-    size. This is the figure the Objective 3 comparison is made against.
+    Every node stores the accumulation to that point, so the written total is
+    the sum of the running size. This assumes nothing is ever merged away.
+    WorldMM does merge, so its real output is smaller: on the inherited
+    A1_JAKE run this model predicts 1,478,203 written triples against an actual
+    611,350, overstating by 2.4x.
+
+    Report this as a bound on the unmerged case. The like-for-like storage
+    comparison is `IntervalTripleStore` against its own
+    `materialise_worldmm_format` output - identical content in the two
+    encodings, which is what `storage_reduction` measures.
     """
     running = 0
     written = 0
@@ -235,6 +242,6 @@ def cumulative_baseline_size(nodes: Dict[str, Sequence[Sequence[str]]]) -> Dict[
     return {
         "n_nodes": len(nodes),
         "final_state_triples": running,
-        "total_triples_written": written,
-        "write_amplification": written / max(1, running),
+        "total_triples_written_upper_bound": written,
+        "write_amplification_upper_bound": written / max(1, running),
     }

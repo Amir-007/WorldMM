@@ -149,8 +149,8 @@ def test_storage_is_linear_not_quadratic():
     nodes = {f"1{i:08d}": [["I", "act", str(i)]] for i in range(200)}
     baseline = cumulative_baseline_size(nodes)
     assert baseline["final_state_triples"] == 200
-    assert baseline["total_triples_written"] == 200 * 201 // 2
-    assert baseline["write_amplification"] > 100
+    assert baseline["total_triples_written_upper_bound"] == 200 * 201 // 2
+    assert baseline["write_amplification_upper_bound"] > 100
 
     store = IntervalTripleStore()
     for key, triples in nodes.items():
