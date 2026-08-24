@@ -597,6 +597,14 @@ def _print_summary(report: Dict[str, Any], conditions: List[str]) -> None:
               f"{reference['bytes'] / 1e6:.1f} MB")
 
     for condition in conditions:
+        modelled = report["conditions"][condition].get("latency_with_model", {})
+        if modelled.get("available"):
+            w = modelled["worldmm_format"]["index_seconds_mean"]
+            i = modelled["interval_store"]["index_seconds_mean"]
+            print(f"\n{condition}: SemanticMemory.index() {w:.2f}s -> {i:.2f}s "
+                  f"({modelled['index_speedup']:.2f}x, n={modelled['n_queries']})")
+
+    for condition in conditions:
         latency = report["conditions"][condition].get("latency", {})
         if latency.get("available"):
             w, i = latency["worldmm_format"], latency["interval_store"]
