@@ -130,6 +130,9 @@ def main() -> int:
     parser.add_argument("--root", default="output")
     parser.add_argument("--data-dir", default="data/EgoLife",
                         help="Source of EgoLifeQA, symlinked into the staged tree.")
+    parser.add_argument("--limit", type=int, default=None,
+                        help="Evaluate only the first N questions. Both conditions "
+                             "take the same slice, so the comparison holds.")
     parser.add_argument("--stage-dir", default=None,
                         help="Defaults to output/eval/<condition>.")
     args = parser.parse_args()
@@ -157,9 +160,20 @@ def main() -> int:
     qa_dest = os.path.join(qa_dir, f"EgoLifeQA_{person}.json")
     if os.path.lexists(qa_dest):
         os.remove(qa_dest)
-    os.symlink(os.path.abspath(qa_source), qa_dest)
     with open(qa_source, encoding="utf-8") as f:
-        logger.info("EgoLifeQA: %d question(s)", len(json.load(f)))
+        questions = json.load(f)
+    if args.limit:
+        # Truncate here rather than adding a flag to eval_egolife.py, so that
+        # file stays untouched. Both conditions take the same leading slice of
+        # the same source, so they are answering identical questions.
+        questions = questions[:args.limit]
+        with open(qa_dest, "w", encoding="utf-8") as f:
+            json.dump(questions, f, ensure_ascii=False)
+        logger.info("EgoLifeQA: %d question(s) (capped from the full set)",
+                    len(questions))
+    else:
+        os.symlink(os.path.abspath(qa_source), qa_dest)
+        logger.info("EgoLifeQA: %d question(s)", len(questions))
 
     # --- captions, semantic, visual --------------------------------------
     stage_captions(chunks, os.path.join(stage, "data", "EgoLifeCap", person), person)

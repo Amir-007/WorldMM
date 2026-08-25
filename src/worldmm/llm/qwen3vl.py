@@ -38,6 +38,9 @@ STRUCTURED_RETRY_PLAN: List[Dict[str, Any]] = [
     {"do_sample": True, "temperature": 1.0, "top_p": 0.95},    # try harder to differ
 ]
 
+# Ceiling on a single generation when the caller does not specify one.
+DEFAULT_MAX_NEW_TOKENS = int(os.environ.get("WORLDMM_MAX_NEW_TOKENS", "2048"))
+
 # Model configuration
 MODEL_DICT = {
     "qwen3vl-2b": "Qwen/Qwen3-VL-2B-Instruct",
@@ -452,9 +455,15 @@ class Qwen3VLModel:
             # Merge kwargs with instance kwargs (call-specific kwargs take precedence)
             gen_kwargs = {**self.kwargs, **kwargs}
             
-            # Set default generation parameters if not specified
+            # Set default generation parameters if not specified.
+            #
+            # The default is overridable because this model degenerates into
+            # thousands of tokens of repetition on some prompts, and at ~15
+            # tok/s an unbounded ramble costs minutes per call. Callers that
+            # know their answer is short - EgoLifeQA answers are a single
+            # letter - can cap it far lower without affecting anything else.
             if "max_new_tokens" not in gen_kwargs:
-                gen_kwargs["max_new_tokens"] = 2048
+                gen_kwargs["max_new_tokens"] = DEFAULT_MAX_NEW_TOKENS
             if "repetition_penalty" not in gen_kwargs:
                 gen_kwargs["repetition_penalty"] = 1.3
             if "do_sample" not in gen_kwargs:
