@@ -16,10 +16,16 @@
 # the footprint - visual retrieval feeds up to 8 frames through the 30B, and
 # those activations were the 1-4GB allocations that failed at 76-79GB of 80.
 #
-# So the defaults here are conservative: embedders on CPU (~12GB back),
-# visual retrieval off (removes the frame activations entirely), and an
-# expandable allocator to limit fragmentation. Set VISUAL_K>0 to re-enable
-# visual retrieval if you have headroom to spare.
+# The allocation that fails is inside Qwen3VL generation, and its size is the
+# prefill logits tensor: seq_len x vocab(151,936) x 4 bytes. A ~6,000-token
+# prompt is ~3.8GB, which is exactly what the log reports. So the binding
+# constraint is prompt length, and event chunks carry ~2.4x more text than
+# fixed ones - which is why only the event condition fails.
+#
+# Defaults are therefore conservative on every axis that feeds the prompt:
+# one retrieval round, 3 candidates, top-2 episodic, visual off, embedders on
+# CPU, and an expandable allocator. Both conditions use identical settings, so
+# the comparison still isolates chunking.
 #
 #SBATCH --job-name=trackA-eval
 #SBATCH --partition=gpu
@@ -38,18 +44,19 @@ set -eo pipefail
 PERSON="${PERSON:-A1_JAKE}"
 CONDITION="${CONDITION:-fixed}"
 MODEL="${MODEL:-qwen3vl-30b}"
-MAX_ROUNDS="${MAX_ROUNDS:-2}"
+MAX_ROUNDS="${MAX_ROUNDS:-1}"
 EMBED_DEVICE="${EMBED_DEVICE:-cpu}"
 VISUAL_K="${VISUAL_K:-0}"
 LIMIT="${LIMIT:-50}"
 MAX_NEW_TOKENS="${MAX_NEW_TOKENS:-512}"
-CANDIDATES="${CANDIDATES:-30sec:5}"
+CANDIDATES="${CANDIDATES:-30sec:3}"
+EPISODIC_K="${EPISODIC_K:-2}"
 
 cd /parallel_scratch/ms04938/WorldMM
 mkdir -p /parallel_scratch/ms04938/logs
 
 echo "host:      $(hostname)"
-echo "condition: $CONDITION  rounds: $MAX_ROUNDS  embed: $EMBED_DEVICE  visual_k: $VISUAL_K  limit: ${LIMIT:-all}  max_new_tokens: $MAX_NEW_TOKENS"
+echo "condition: $CONDITION  rounds: $MAX_ROUNDS  cands: $CANDIDATES  epi_k: $EPISODIC_K  visual_k: $VISUAL_K  limit: ${LIMIT:-all}  max_new_tokens: $MAX_NEW_TOKENS  embed: $EMBED_DEVICE"
 echo "started:   $(date)"
 
 if [ -f "/parallel_scratch/ms04938/env.sh" ]; then
@@ -87,6 +94,7 @@ python eval/eval_egolife.py \
     --metadata-dir "${STAGE}/metadata" \
     --output-dir "${STAGE}/results" \
     --episodic-candidates "$CANDIDATES" \
+    --episodic-top-k "$EPISODIC_K" \
     --visual-top-k "$VISUAL_K" \
     --max-rounds "$MAX_ROUNDS" \
     --text-embed-device "$EMBED_DEVICE" \
