@@ -1,0 +1,287 @@
+host:      gpu-node02
+condition: fixed  rounds: 2  embed: cpu  visual_k: 0  limit: 50  max_new_tokens: 512
+started:   Tue 25 Aug 12:43:38 BST 2026
+
+staged fixed -> output/eval/fixed
+  --data-dir     output/eval/fixed/data
+  --metadata-dir output/eval/fixed/metadata
+{'num_phrase_nodes': 3065, 'num_passage_nodes': 329, 'num_total_nodes': 3394, 'num_extracted_triples': 5808, 'num_triples_with_passage_node': 180, 'num_synonymy_triples': 11220, 'num_total_triples': 17208}
+Error parsing field fact_after_filter: 1 validation error for Fact
+fact
+  Field required [type=missing, input_value={}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.12/v/missing.
+
+		On attempting to parse the value
+```
+{}
+```
+Error parsing field fact_after_filter: 1 validation error for Fact
+fact
+  Field required [type=missing, input_value={}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.12/v/missing.
+
+		On attempting to parse the value
+```
+{}
+```
+Error parsing field fact_after_filter: 1 validation error for Fact
+fact
+  Field required [type=missing, input_value={}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.12/v/missing.
+
+		On attempting to parse the value
+```
+{}
+```
+Error parsing field fact_after_filter: 1 validation error for Fact
+fact
+  Field required [type=missing, input_value={}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.12/v/missing.
+
+		On attempting to parse the value
+```
+{}
+```
+Error parsing field fact_after_filter: 1 validation error for Fact
+fact
+  Field required [type=missing, input_value={}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.12/v/missing.
+
+		On attempting to parse the value
+```
+{}
+```
+Error parsing field fact_after_filter: 1 validation error for Fact
+fact
+  Field required [type=missing, input_value={}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.12/v/missing.
+
+		On attempting to parse the value
+```
+{}
+```
+{'num_phrase_nodes': 3049, 'num_passage_nodes': 329, 'num_total_nodes': 3378, 'num_extracted_triples': 5794, 'num_triples_with_passage_node': 180, 'num_synonymy_triples': 11249, 'num_total_triples': 17223}
+{'num_phrase_nodes': 3051, 'num_passage_nodes': 330, 'num_total_nodes': 3381, 'num_extracted_triples': 5780, 'num_triples_with_passage_node': 28, 'num_synonymy_triples': 11165, 'num_total_triples': 16973}
+{'num_phrase_nodes': 3034, 'num_passage_nodes': 330, 'num_total_nodes': 3364, 'num_extracted_triples': 5761, 'num_triples_with_passage_node': 28, 'num_synonymy_triples': 10963, 'num_total_triples': 16752}
+{'num_phrase_nodes': 3085, 'num_passage_nodes': 330, 'num_total_nodes': 3415, 'num_extracted_triples': 5829, 'num_triples_with_passage_node': 208, 'num_synonymy_triples': 11301, 'num_total_triples': 17338}
+{'num_phrase_nodes': 3069, 'num_passage_nodes': 330, 'num_total_nodes': 3399, 'num_extracted_triples': 5815, 'num_triples_with_passage_node': 208, 'num_synonymy_triples': 11332, 'num_total_triples': 17355}
+{'num_phrase_nodes': 3102, 'num_passage_nodes': 336, 'num_total_nodes': 3438, 'num_extracted_triples': 5868, 'num_triples_with_passage_node': 115, 'num_synonymy_triples': 11332, 'num_total_triples': 17315}
+{'num_phrase_nodes': 3085, 'num_passage_nodes': 336, 'num_total_nodes': 3421, 'num_extracted_triples': 5849, 'num_triples_with_passage_node': 115, 'num_synonymy_triples': 11130, 'num_total_triples': 17094}
+{'num_phrase_nodes': 3136, 'num_passage_nodes': 336, 'num_total_nodes': 3472, 'num_extracted_triples': 5917, 'num_triples_with_passage_node': 295, 'num_synonymy_triples': 11468, 'num_total_triples': 17680}
+{'num_phrase_nodes': 3120, 'num_passage_nodes': 336, 'num_total_nodes': 3456, 'num_extracted_triples': 5903, 'num_triples_with_passage_node': 295, 'num_synonymy_triples': 11499, 'num_total_triples': 17697}
+{'num_phrase_nodes': 3241, 'num_passage_nodes': 348, 'num_total_nodes': 3589, 'num_extracted_triples': 6091, 'num_triples_with_passage_node': 353, 'num_synonymy_triples': 11950, 'num_total_triples': 18394}
+{'num_phrase_nodes': 3224, 'num_passage_nodes': 348, 'num_total_nodes': 3572, 'num_extracted_triples': 6072, 'num_triples_with_passage_node': 352, 'num_synonymy_triples': 11747, 'num_total_triples': 18171}
+{'num_phrase_nodes': 3273, 'num_passage_nodes': 348, 'num_total_nodes': 3621, 'num_extracted_triples': 6139, 'num_triples_with_passage_node': 532, 'num_synonymy_triples': 12085, 'num_total_triples': 18756}
+{'num_phrase_nodes': 3261, 'num_passage_nodes': 348, 'num_total_nodes': 3609, 'num_extracted_triples': 6126, 'num_triples_with_passage_node': 532, 'num_synonymy_triples': 12133, 'num_total_triples': 18791}
+{'num_phrase_nodes': 3243, 'num_passage_nodes': 349, 'num_total_nodes': 3592, 'num_extracted_triples': 6112, 'num_triples_with_passage_node': 360, 'num_synonymy_triples': 11935, 'num_total_triples': 18407}
+{'num_phrase_nodes': 3240, 'num_passage_nodes': 349, 'num_total_nodes': 3589, 'num_extracted_triples': 6090, 'num_triples_with_passage_node': 374, 'num_synonymy_triples': 11801, 'num_total_triples': 18265}
+{'num_phrase_nodes': 3298, 'num_passage_nodes': 349, 'num_total_nodes': 3647, 'num_extracted_triples': 6169, 'num_triples_with_passage_node': 565, 'num_synonymy_triples': 12235, 'num_total_triples': 18969}
+{'num_phrase_nodes': 3261, 'num_passage_nodes': 349, 'num_total_nodes': 3610, 'num_extracted_triples': 6126, 'num_triples_with_passage_node': 532, 'num_synonymy_triples': 12133, 'num_total_triples': 18791}
+{'num_phrase_nodes': 3279, 'num_passage_nodes': 354, 'num_total_nodes': 3633, 'num_extracted_triples': 6203, 'num_triples_with_passage_node': 435, 'num_synonymy_triples': 12132, 'num_total_triples': 18770}
+{'num_phrase_nodes': 3276, 'num_passage_nodes': 354, 'num_total_nodes': 3630, 'num_extracted_triples': 6181, 'num_triples_with_passage_node': 449, 'num_synonymy_triples': 11996, 'num_total_triples': 18626}
+{'num_phrase_nodes': 3334, 'num_passage_nodes': 354, 'num_total_nodes': 3688, 'num_extracted_triples': 6260, 'num_triples_with_passage_node': 640, 'num_synonymy_triples': 12458, 'num_total_triples': 19358}
+{'num_phrase_nodes': 3297, 'num_passage_nodes': 354, 'num_total_nodes': 3651, 'num_extracted_triples': 6217, 'num_triples_with_passage_node': 607, 'num_synonymy_triples': 12328, 'num_total_triples': 19152}
+Error parsing field fact_after_filter: 1 validation error for Fact
+fact
+  Field required [type=missing, input_value={}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.12/v/missing.
+
+		On attempting to parse the value
+```
+{}
+```
+Error parsing field fact_after_filter: 1 validation error for Fact
+fact
+  Field required [type=missing, input_value={}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.12/v/missing.
+
+		On attempting to parse the value
+```
+{}
+```
+Error parsing field fact_after_filter: 1 validation error for Fact
+fact
+  Field required [type=missing, input_value={}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.12/v/missing.
+
+		On attempting to parse the value
+```
+{}
+```
+Error parsing field fact_after_filter: 1 validation error for Fact
+fact
+  Field required [type=missing, input_value={}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.12/v/missing.
+
+		On attempting to parse the value
+```
+{}
+```
+{'num_phrase_nodes': 3330, 'num_passage_nodes': 358, 'num_total_nodes': 3688, 'num_extracted_triples': 6290, 'num_triples_with_passage_node': 526, 'num_synonymy_triples': 12388, 'num_total_triples': 19204}
+{'num_phrase_nodes': 3328, 'num_passage_nodes': 358, 'num_total_nodes': 3686, 'num_extracted_triples': 6268, 'num_triples_with_passage_node': 540, 'num_synonymy_triples': 12268, 'num_total_triples': 19076}
+{'num_phrase_nodes': 3385, 'num_passage_nodes': 358, 'num_total_nodes': 3743, 'num_extracted_triples': 6347, 'num_triples_with_passage_node': 731, 'num_synonymy_triples': 12724, 'num_total_triples': 19802}
+{'num_phrase_nodes': 3348, 'num_passage_nodes': 358, 'num_total_nodes': 3706, 'num_extracted_triples': 6304, 'num_triples_with_passage_node': 698, 'num_synonymy_triples': 12586, 'num_total_triples': 19588}
+Error parsing field fact_after_filter: 1 validation error for Fact
+  Input should be a valid dictionary or instance of Fact [type=model_type, input_value='{"fact": [["katrina", "s... time to plan right"]}]', input_type=str]
+    For further information visit https://errors.pydantic.dev/2.12/v/model_type.
+
+		On attempting to parse the value
+```
+{"fact": [["katrina", "suggests", "we dont need to provide lunch but we can offer some sweets"], ["yes", "confirms", "no need to provide lunch"], ["we", "can or cannot provide lunch", "depending on the number of people"], ["lucia", "asks", "it also takes less time to plan right"]}]
+```
+Error parsing field fact_after_filter: 1 validation error for Fact
+  Input should be a valid dictionary or instance of Fact [type=model_type, input_value='{"fact": [["katrina", "s... time to plan right"]}]', input_type=str]
+    For further information visit https://errors.pydantic.dev/2.12/v/model_type.
+
+		On attempting to parse the value
+```
+{"fact": [["katrina", "suggests", "we dont need to provide lunch but we can offer some sweets"], ["yes", "confirms", "no need to provide lunch"], ["we", "can or cannot provide lunch", "depending on the number of people"], ["lucia", "asks", "it also takes less time to plan right"]}]
+```
+Error parsing field fact_after_filter: 1 validation error for Fact
+  Input should be a valid dictionary or instance of Fact [type=model_type, input_value='{"fact": [["katrina", "s... time to plan right"]}]', input_type=str]
+    For further information visit https://errors.pydantic.dev/2.12/v/model_type.
+
+		On attempting to parse the value
+```
+{"fact": [["katrina", "suggests", "we dont need to provide lunch but we can offer some sweets"], ["yes", "confirms", "no need to provide lunch"], ["we", "can or cannot provide lunch", "depending on the number of people"], ["lucia", "asks", "it also takes less time to plan right"]}]
+```
+Error parsing field fact_after_filter: 1 validation error for Fact
+  Input should be a valid dictionary or instance of Fact [type=model_type, input_value='{"fact": [["katrina", "s... time to plan right"]}]', input_type=str]
+    For further information visit https://errors.pydantic.dev/2.12/v/model_type.
+
+		On attempting to parse the value
+```
+{"fact": [["katrina", "suggests", "we dont need to provide lunch but we can offer some sweets"], ["yes", "confirms", "no need to provide lunch"], ["we", "can or cannot provide lunch", "depending on the number of people"], ["lucia", "asks", "it also takes less time to plan right"]}]
+```
+{'num_phrase_nodes': 3379, 'num_passage_nodes': 372, 'num_total_nodes': 3751, 'num_extracted_triples': 6428, 'num_triples_with_passage_node': 682, 'num_synonymy_triples': 12495, 'num_total_triples': 19605}
+{'num_phrase_nodes': 3377, 'num_passage_nodes': 372, 'num_total_nodes': 3749, 'num_extracted_triples': 6406, 'num_triples_with_passage_node': 696, 'num_synonymy_triples': 12377, 'num_total_triples': 19479}
+{'num_phrase_nodes': 3434, 'num_passage_nodes': 372, 'num_total_nodes': 3806, 'num_extracted_triples': 6485, 'num_triples_with_passage_node': 887, 'num_synonymy_triples': 12833, 'num_total_triples': 20205}
+{'num_phrase_nodes': 3397, 'num_passage_nodes': 372, 'num_total_nodes': 3769, 'num_extracted_triples': 6442, 'num_triples_with_passage_node': 854, 'num_synonymy_triples': 12701, 'num_total_triples': 19997}
+{'num_phrase_nodes': 3410, 'num_passage_nodes': 379, 'num_total_nodes': 3789, 'num_extracted_triples': 6515, 'num_triples_with_passage_node': 771, 'num_synonymy_triples': 12652, 'num_total_triples': 19938}
+{'num_phrase_nodes': 3412, 'num_passage_nodes': 379, 'num_total_nodes': 3791, 'num_extracted_triples': 6491, 'num_triples_with_passage_node': 786, 'num_synonymy_triples': 12548, 'num_total_triples': 19825}
+{'num_phrase_nodes': 3475, 'num_passage_nodes': 379, 'num_total_nodes': 3854, 'num_extracted_triples': 6594, 'num_triples_with_passage_node': 996, 'num_synonymy_triples': 13058, 'num_total_triples': 20648}
+{'num_phrase_nodes': 3430, 'num_passage_nodes': 379, 'num_total_nodes': 3809, 'num_extracted_triples': 6522, 'num_triples_with_passage_node': 944, 'num_synonymy_triples': 12841, 'num_total_triples': 20307}
+{'num_phrase_nodes': 3545, 'num_passage_nodes': 397, 'num_total_nodes': 3942, 'num_extracted_triples': 6708, 'num_triples_with_passage_node': 995, 'num_synonymy_triples': 13015, 'num_total_triples': 20718}
+{'num_phrase_nodes': 3547, 'num_passage_nodes': 397, 'num_total_nodes': 3944, 'num_extracted_triples': 6684, 'num_triples_with_passage_node': 1010, 'num_synonymy_triples': 12919, 'num_total_triples': 20613}
+{'num_phrase_nodes': 3610, 'num_passage_nodes': 397, 'num_total_nodes': 4007, 'num_extracted_triples': 6787, 'num_triples_with_passage_node': 1220, 'num_synonymy_triples': 13439, 'num_total_triples': 21446}
+{'num_phrase_nodes': 3565, 'num_passage_nodes': 397, 'num_total_nodes': 3962, 'num_extracted_triples': 6715, 'num_triples_with_passage_node': 1168, 'num_synonymy_triples': 13212, 'num_total_triples': 21095}
+{'num_phrase_nodes': 3564, 'num_passage_nodes': 399, 'num_total_nodes': 3963, 'num_extracted_triples': 6747, 'num_triples_with_passage_node': 1034, 'num_synonymy_triples': 13076, 'num_total_triples': 20857}
+{'num_phrase_nodes': 3566, 'num_passage_nodes': 399, 'num_total_nodes': 3965, 'num_extracted_triples': 6723, 'num_triples_with_passage_node': 1049, 'num_synonymy_triples': 12982, 'num_total_triples': 20754}
+{'num_phrase_nodes': 3629, 'num_passage_nodes': 399, 'num_total_nodes': 4028, 'num_extracted_triples': 6826, 'num_triples_with_passage_node': 1259, 'num_synonymy_triples': 13500, 'num_total_triples': 21585}
+{'num_phrase_nodes': 3584, 'num_passage_nodes': 399, 'num_total_nodes': 3983, 'num_extracted_triples': 6754, 'num_triples_with_passage_node': 1207, 'num_synonymy_triples': 13273, 'num_total_triples': 21234}
+{'num_phrase_nodes': 3671, 'num_passage_nodes': 412, 'num_total_nodes': 4083, 'num_extracted_triples': 6944, 'num_triples_with_passage_node': 1227, 'num_synonymy_triples': 13567, 'num_total_triples': 21738}
+{'num_phrase_nodes': 3676, 'num_passage_nodes': 412, 'num_total_nodes': 4088, 'num_extracted_triples': 6931, 'num_triples_with_passage_node': 1254, 'num_synonymy_triples': 13526, 'num_total_triples': 21711}
+{'num_phrase_nodes': 3744, 'num_passage_nodes': 412, 'num_total_nodes': 4156, 'num_extracted_triples': 7036, 'num_triples_with_passage_node': 1469, 'num_synonymy_triples': 14028, 'num_total_triples': 22533}
+{'num_phrase_nodes': 3703, 'num_passage_nodes': 412, 'num_total_nodes': 4115, 'num_extracted_triples': 6973, 'num_triples_with_passage_node': 1417, 'num_synonymy_triples': 13814, 'num_total_triples': 22204}
+{'num_phrase_nodes': 3686, 'num_passage_nodes': 415, 'num_total_nodes': 4101, 'num_extracted_triples': 6981, 'num_triples_with_passage_node': 1258, 'num_synonymy_triples': 13618, 'num_total_triples': 21857}
+{'num_phrase_nodes': 3691, 'num_passage_nodes': 415, 'num_total_nodes': 4106, 'num_extracted_triples': 6968, 'num_triples_with_passage_node': 1285, 'num_synonymy_triples': 13579, 'num_total_triples': 21832}
+{'num_phrase_nodes': 3759, 'num_passage_nodes': 415, 'num_total_nodes': 4174, 'num_extracted_triples': 7073, 'num_triples_with_passage_node': 1500, 'num_synonymy_triples': 14079, 'num_total_triples': 22652}
+{'num_phrase_nodes': 3718, 'num_passage_nodes': 415, 'num_total_nodes': 4133, 'num_extracted_triples': 7010, 'num_triples_with_passage_node': 1448, 'num_synonymy_triples': 13865, 'num_total_triples': 22323}
+{'num_phrase_nodes': 3737, 'num_passage_nodes': 422, 'num_total_nodes': 4159, 'num_extracted_triples': 7055, 'num_triples_with_passage_node': 1341, 'num_synonymy_triples': 13827, 'num_total_triples': 22223}
+{'num_phrase_nodes': 3742, 'num_passage_nodes': 422, 'num_total_nodes': 4164, 'num_extracted_triples': 7042, 'num_triples_with_passage_node': 1368, 'num_synonymy_triples': 13796, 'num_total_triples': 22206}
+{'num_phrase_nodes': 3810, 'num_passage_nodes': 422, 'num_total_nodes': 4232, 'num_extracted_triples': 7147, 'num_triples_with_passage_node': 1583, 'num_synonymy_triples': 14288, 'num_total_triples': 23018}
+{'num_phrase_nodes': 3769, 'num_passage_nodes': 422, 'num_total_nodes': 4191, 'num_extracted_triples': 7084, 'num_triples_with_passage_node': 1531, 'num_synonymy_triples': 14070, 'num_total_triples': 22685}
+{'num_phrase_nodes': 3756, 'num_passage_nodes': 424, 'num_total_nodes': 4180, 'num_extracted_triples': 7093, 'num_triples_with_passage_node': 1380, 'num_synonymy_triples': 13917, 'num_total_triples': 22390}
+{'num_phrase_nodes': 3761, 'num_passage_nodes': 424, 'num_total_nodes': 4185, 'num_extracted_triples': 7080, 'num_triples_with_passage_node': 1407, 'num_synonymy_triples': 13890, 'num_total_triples': 22377}
+{'num_phrase_nodes': 3829, 'num_passage_nodes': 424, 'num_total_nodes': 4253, 'num_extracted_triples': 7185, 'num_triples_with_passage_node': 1622, 'num_synonymy_triples': 14380, 'num_total_triples': 23187}
+{'num_phrase_nodes': 3792, 'num_passage_nodes': 424, 'num_total_nodes': 4216, 'num_extracted_triples': 7132, 'num_triples_with_passage_node': 1570, 'num_synonymy_triples': 14192, 'num_total_triples': 22894}
+{'num_phrase_nodes': 3867, 'num_passage_nodes': 436, 'num_total_nodes': 4303, 'num_extracted_triples': 7241, 'num_triples_with_passage_node': 1553, 'num_synonymy_triples': 14447, 'num_total_triples': 23241}
+{'num_phrase_nodes': 3872, 'num_passage_nodes': 436, 'num_total_nodes': 4308, 'num_extracted_triples': 7228, 'num_triples_with_passage_node': 1580, 'num_synonymy_triples': 14429, 'num_total_triples': 23237}
+{'num_phrase_nodes': 3940, 'num_passage_nodes': 436, 'num_total_nodes': 4376, 'num_extracted_triples': 7333, 'num_triples_with_passage_node': 1795, 'num_synonymy_triples': 14905, 'num_total_triples': 24033}
+{'num_phrase_nodes': 3903, 'num_passage_nodes': 436, 'num_total_nodes': 4339, 'num_extracted_triples': 7280, 'num_triples_with_passage_node': 1743, 'num_synonymy_triples': 14728, 'num_total_triples': 23751}
+Error parsing field fact_after_filter: 1 validation error for Fact
+fact
+  Field required [type=missing, input_value={}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.12/v/missing.
+
+		On attempting to parse the value
+```
+{}
+```
+Error parsing field fact_after_filter: 1 validation error for Fact
+fact
+  Field required [type=missing, input_value={}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.12/v/missing.
+
+		On attempting to parse the value
+```
+{}
+```
+Error parsing field fact_after_filter: 1 validation error for Fact
+fact
+  Field required [type=missing, input_value={}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.12/v/missing.
+
+		On attempting to parse the value
+```
+{}
+```
+Error parsing field fact_after_filter: 1 validation error for Fact
+fact
+  Field required [type=missing, input_value={}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.12/v/missing.
+
+		On attempting to parse the value
+```
+{}
+```
+{'num_phrase_nodes': 3937, 'num_passage_nodes': 450, 'num_total_nodes': 4387, 'num_extracted_triples': 7390, 'num_triples_with_passage_node': 1705, 'num_synonymy_triples': 14831, 'num_total_triples': 23926}
+{'num_phrase_nodes': 3941, 'num_passage_nodes': 450, 'num_total_nodes': 4391, 'num_extracted_triples': 7377, 'num_triples_with_passage_node': 1732, 'num_synonymy_triples': 14812, 'num_total_triples': 23921}
+{'num_phrase_nodes': 4009, 'num_passage_nodes': 450, 'num_total_nodes': 4459, 'num_extracted_triples': 7482, 'num_triples_with_passage_node': 1947, 'num_synonymy_triples': 15296, 'num_total_triples': 24725}
+{'num_phrase_nodes': 3972, 'num_passage_nodes': 450, 'num_total_nodes': 4422, 'num_extracted_triples': 7429, 'num_triples_with_passage_node': 1895, 'num_synonymy_triples': 15117, 'num_total_triples': 24441}
+{'num_phrase_nodes': 3957, 'num_passage_nodes': 452, 'num_total_nodes': 4409, 'num_extracted_triples': 7423, 'num_triples_with_passage_node': 1740, 'num_synonymy_triples': 14918, 'num_total_triples': 24081}
+{'num_phrase_nodes': 3961, 'num_passage_nodes': 452, 'num_total_nodes': 4413, 'num_extracted_triples': 7410, 'num_triples_with_passage_node': 1767, 'num_synonymy_triples': 14901, 'num_total_triples': 24078}
+{'num_phrase_nodes': 4029, 'num_passage_nodes': 452, 'num_total_nodes': 4481, 'num_extracted_triples': 7515, 'num_triples_with_passage_node': 1982, 'num_synonymy_triples': 15383, 'num_total_triples': 24880}
+{'num_phrase_nodes': 3992, 'num_passage_nodes': 452, 'num_total_nodes': 4444, 'num_extracted_triples': 7462, 'num_triples_with_passage_node': 1930, 'num_synonymy_triples': 15206, 'num_total_triples': 24598}
+{'num_phrase_nodes': 3996, 'num_passage_nodes': 455, 'num_total_nodes': 4451, 'num_extracted_triples': 7484, 'num_triples_with_passage_node': 1808, 'num_synonymy_triples': 15189, 'num_total_triples': 24481}
+{'num_phrase_nodes': 4000, 'num_passage_nodes': 455, 'num_total_nodes': 4455, 'num_extracted_triples': 7471, 'num_triples_with_passage_node': 1835, 'num_synonymy_triples': 15166, 'num_total_triples': 24472}
+{'num_phrase_nodes': 4068, 'num_passage_nodes': 455, 'num_total_nodes': 4523, 'num_extracted_triples': 7576, 'num_triples_with_passage_node': 2050, 'num_synonymy_triples': 15654, 'num_total_triples': 25280}
+{'num_phrase_nodes': 4031, 'num_passage_nodes': 455, 'num_total_nodes': 4486, 'num_extracted_triples': 7523, 'num_triples_with_passage_node': 1998, 'num_synonymy_triples': 15481, 'num_total_triples': 25002}
+{'num_phrase_nodes': 4271, 'num_passage_nodes': 492, 'num_total_nodes': 4763, 'num_extracted_triples': 7941, 'num_triples_with_passage_node': 2317, 'num_synonymy_triples': 16592, 'num_total_triples': 26850}
+{'num_phrase_nodes': 4275, 'num_passage_nodes': 492, 'num_total_nodes': 4767, 'num_extracted_triples': 7929, 'num_triples_with_passage_node': 2346, 'num_synonymy_triples': 16552, 'num_total_triples': 26827}
+{'num_phrase_nodes': 4351, 'num_passage_nodes': 492, 'num_total_nodes': 4843, 'num_extracted_triples': 8048, 'num_triples_with_passage_node': 2579, 'num_synonymy_triples': 17144, 'num_total_triples': 27771}
+{'num_phrase_nodes': 4306, 'num_passage_nodes': 492, 'num_total_nodes': 4798, 'num_extracted_triples': 7981, 'num_triples_with_passage_node': 2510, 'num_synonymy_triples': 16883, 'num_total_triples': 27374}
+{'num_phrase_nodes': 4600, 'num_passage_nodes': 533, 'num_total_nodes': 5133, 'num_extracted_triples': 8469, 'num_triples_with_passage_node': 2916, 'num_synonymy_triples': 18179, 'num_total_triples': 29564}
+{'num_phrase_nodes': 4606, 'num_passage_nodes': 533, 'num_total_nodes': 5139, 'num_extracted_triples': 8456, 'num_triples_with_passage_node': 2944, 'num_synonymy_triples': 18196, 'num_total_triples': 29596}
+{'num_phrase_nodes': 4680, 'num_passage_nodes': 533, 'num_total_nodes': 5213, 'num_extracted_triples': 8579, 'num_triples_with_passage_node': 3174, 'num_synonymy_triples': 18776, 'num_total_triples': 30529}
+{'num_phrase_nodes': 4635, 'num_passage_nodes': 533, 'num_total_nodes': 5168, 'num_extracted_triples': 8508, 'num_triples_with_passage_node': 3105, 'num_synonymy_triples': 18500, 'num_total_triples': 30113}
+{'num_phrase_nodes': 4614, 'num_passage_nodes': 536, 'num_total_nodes': 5150, 'num_extracted_triples': 8493, 'num_triples_with_passage_node': 2948, 'num_synonymy_triples': 18285, 'num_total_triples': 29726}
+{'num_phrase_nodes': 4617, 'num_passage_nodes': 536, 'num_total_nodes': 5153, 'num_extracted_triples': 8472, 'num_triples_with_passage_node': 2967, 'num_synonymy_triples': 18280, 'num_total_triples': 29719}
+{'num_phrase_nodes': 4693, 'num_passage_nodes': 536, 'num_total_nodes': 5229, 'num_extracted_triples': 8600, 'num_triples_with_passage_node': 3204, 'num_synonymy_triples': 18887, 'num_total_triples': 30691}
+{'num_phrase_nodes': 4649, 'num_passage_nodes': 536, 'num_total_nodes': 5185, 'num_extracted_triples': 8531, 'num_triples_with_passage_node': 3137, 'num_synonymy_triples': 18609, 'num_total_triples': 30277}
+Error parsing field fact_after_filter: 1 validation error for Fact
+fact
+  Field required [type=missing, input_value={}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.12/v/missing.
+
+		On attempting to parse the value
+```
+{}
+```
+Error parsing field fact_after_filter: 1 validation error for Fact
+fact
+  Field required [type=missing, input_value={}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.12/v/missing.
+
+		On attempting to parse the value
+```
+{}
+```
+Error parsing field fact_after_filter: 1 validation error for Fact
+fact
+  Field required [type=missing, input_value={}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.12/v/missing.
+
+		On attempting to parse the value
+```
+{}
+```
+{'num_phrase_nodes': 4701, 'num_passage_nodes': 546, 'num_total_nodes': 5247, 'num_extracted_triples': 8619, 'num_triples_with_passage_node': 3114, 'num_synonymy_triples': 18681, 'num_total_triples': 30414}
+{'num_phrase_nodes': 4716, 'num_passage_nodes': 546, 'num_total_nodes': 5262, 'num_extracted_triples': 8614, 'num_triples_with_passage_node': 3151, 'num_synonymy_triples': 18724, 'num_total_triples': 30489}
+{'num_phrase_nodes': 4780, 'num_passage_nodes': 546, 'num_total_nodes': 5326, 'num_extracted_triples': 8726, 'num_triples_with_passage_node': 3370, 'num_synonymy_triples': 19291, 'num_total_triples': 31387}
+{'num_phrase_nodes': 4736, 'num_passage_nodes': 546, 'num_total_nodes': 5282, 'num_extracted_triples': 8657, 'num_triples_with_passage_node': 3303, 'num_synonymy_triples': 19009, 'num_total_triples': 30969}
+{'num_phrase_nodes': 4832, 'num_passage_nodes': 562, 'num_total_nodes': 5394, 'num_extracted_triples': 8808, 'num_triples_with_passage_node': 3347, 'num_synonymy_triples': 19229, 'num_total_triples': 31384}
+{'num_phrase_nodes': 4847, 'num_passage_nodes': 562, 'num_total_nodes': 5409, 'num_extracted_triples': 8803, 'num_triples_with_passage_node': 3384, 'num_synonymy_triples': 19272, 'num_total_triples': 31459}
+{'num_phrase_nodes': 4908, 'num_passage_nodes': 562, 'num_total_nodes': 5470, 'num_extracted_triples': 8914, 'num_triples_with_passage_node': 3601, 'num_synonymy_triples': 19852, 'num_total_triples': 32367}
+{'num_phrase_nodes': 4868, 'num_passage_nodes': 562, 'num_total_nodes': 5430, 'num_extracted_triples': 8846, 'num_triples_with_passage_node': 3537, 'num_synonymy_triples': 19605, 'num_total_triples': 31988}
+finished: Tue 25 Aug 17:42:25 BST 2026

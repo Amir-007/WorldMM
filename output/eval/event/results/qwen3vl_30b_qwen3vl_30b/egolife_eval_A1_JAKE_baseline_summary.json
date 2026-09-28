@@ -1,0 +1,21 @@
+{
+    "subject": "A1_JAKE",
+    "run_tag": "baseline",
+    "retriever_model": "qwen3vl-30b",
+    "respond_model": "qwen3vl-30b",
+    "memory_model": "qwen3vl-30b",
+    "enable_spatial": false,
+    "enable_abstention": false,
+    "confidence_threshold": 0.75,
+    "expected_questions": 50,
+    "total": 50,
+    "answered": 38,
+    "abstained": 0,
+    "failed": 12,
+    "correct": 14,
+    "wrong": 24,
+    "accuracy_answered": 0.3684210526315789,
+    "accuracy_overall": 0.28,
+    "abstention_rate": 0.0,
+    "hallucination_rate": 0.48
+}

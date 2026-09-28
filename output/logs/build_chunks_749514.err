@@ -1,0 +1,32 @@
+INFO Loaded 97867 sync entries for A1_JAKE across 64 file(s), skipped 12 file(s)
+INFO Fixed windows (1 file(s) each): 808 chunks from 808 file(s)
+INFO Fixed windows (1 file(s) each): 852 chunks from 852 file(s)
+INFO Fixed windows (1 file(s) each): 908 chunks from 908 file(s)
+INFO Fixed windows (1 file(s) each): 949 chunks from 949 file(s)
+INFO Fixed windows (1 file(s) each): 938 chunks from 938 file(s)
+INFO Fixed windows (1 file(s) each): 701 chunks from 701 file(s)
+INFO Loaded 97867 sync entries for A1_JAKE across 64 file(s), skipped 12 file(s)
+INFO Excluded 1067 caption chunk(s) from day(s) [6]; 5156 remain
+WARNING Dropping 3 frame(s) with duplicate timestamps
+INFO Timeline has 17 gap(s) in observed video; each forces an event boundary
+INFO Event boundaries: 779 chunks from 1054 segment(s) (275 had no text and were dropped)
+INFO Excluded 1067 caption chunk(s) from day(s) [6]; 5156 remain
+WARNING Dropping 1 frame(s) with duplicate timestamps
+INFO Timeline has 5 gap(s) in observed video; each forces an event boundary
+INFO Event boundaries: 815 chunks from 1125 segment(s) (310 had no text and were dropped)
+INFO Excluded 1067 caption chunk(s) from day(s) [6]; 5156 remain
+WARNING Dropping 1 frame(s) with duplicate timestamps
+INFO Timeline has 4 gap(s) in observed video; each forces an event boundary
+INFO Event boundaries: 841 chunks from 1082 segment(s) (241 had no text and were dropped)
+INFO Excluded 1067 caption chunk(s) from day(s) [6]; 5156 remain
+WARNING Dropping 2 frame(s) with duplicate timestamps
+INFO Timeline has 3 gap(s) in observed video; each forces an event boundary
+INFO Event boundaries: 938 chunks from 1162 segment(s) (224 had no text and were dropped)
+INFO Excluded 1067 caption chunk(s) from day(s) [6]; 5156 remain
+WARNING Dropping 14 frame(s) with duplicate timestamps
+INFO Timeline has 6 gap(s) in observed video; each forces an event boundary
+INFO Event boundaries: 880 chunks from 1159 segment(s) (279 had no text and were dropped)
+INFO Excluded 1067 caption chunk(s) from day(s) [6]; 5156 remain
+INFO Timeline has 5 gap(s) in observed video; each forces an event boundary
+INFO Event boundaries: 669 chunks from 823 segment(s) (154 had no text and were dropped)
+WARNING 1 chunk(s) share an id because their text is identical; they will collapse to one entry in openie results

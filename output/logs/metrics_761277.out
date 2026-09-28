@@ -1,0 +1,39 @@
+host:    node29
+started: Sun 23 Aug 19:40:17 BST 2026
+fixed: collected  (missing: latency_with_model)
+event: collected  (missing: latency_with_model)
+
+                                           FIXED           EVENT
+----------------------------------------------------------------
+chunks                                     5,156           2,092
+mean chunk length (s)                       27.9            75.9
+median chunk length (s)                     29.0            37.5
+cuts detected (%)                            0.0            75.2
+episodic triples                          75,399          43,888
+episodic empty (%)                          3.63            7.80
+semantic nodes                               534             684
+semantic triples                           8,757          10,347
+consolidated triples                       5,366           6,398
+storage reduction (x)                      101.4           128.4
+DB total, interval (MB)                     47.5            23.2
+DB total, WorldMM (MB)                     191.3           236.4
+DB reduction (x)                             4.0            10.2
+
+WorldMM reference (inherited artifact, different input): 623 nodes, final state 1,582, 611,350 triples written (372x), 88% of steps non-decreasing, 56.2 MB
+
+fixed: DB load 1.28s -> 0.22s (5.7x), state 2715 -> 2715 triples (1.00x)
+
+event: DB load 2.10s -> 0.19s (11.2x), state 3245 -> 3245 triples (1.00x)
+
+wrote output/metrics/metrics.json and 6 file(s)
+matplotlib is not installed, so no images were rendered.
+
+The data for every figure is already in CSV:
+  fig_chunk_lengths.csv                7,248 rows   chunk-length distribution, both conditions
+  fig_growth_curve.csv                 1,841 rows   semantic state size per node (growth curve)
+  fig_consolidation_sweep.csv             10 rows   consolidation: compression vs similarity threshold
+  fig_boundary_sweep.csv                   7 rows   boundary detection: segments vs z-score threshold
+  fig_database_size.csv                    2 rows   database size by component
+
+Either plot these in your tool of choice, or `pip install matplotlib` and re-run.
+finished: Sun 23 Aug 19:41:03 BST 2026

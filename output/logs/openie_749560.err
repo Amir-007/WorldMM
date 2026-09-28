@@ -1,0 +1,558 @@
+/parallel_scratch/ms04938/WorldMM/.venv/lib/python3.13/site-packages/requests/__init__.py:109: RequestsDependencyWarning: urllib3 (1.26.13) or chardet (7.3.0)/charset_normalizer (2.1.1) doesn't match a supported version!
+  warnings.warn(
+Loading checkpoint shards:   0%|          | 0/13 [00:00<?, ?it/s]Loading checkpoint shards:   8%|▊         | 1/13 [03:17<39:30, 197.56s/it]Loading checkpoint shards:  15%|█▌        | 2/13 [07:01<39:00, 212.80s/it]Loading checkpoint shards:  23%|██▎       | 3/13 [09:22<30:02, 180.24s/it]Loading checkpoint shards:  31%|███       | 4/13 [13:10<29:53, 199.26s/it]Loading checkpoint shards:  38%|███▊      | 5/13 [18:06<31:11, 233.88s/it]Loading checkpoint shards:  46%|████▌     | 6/13 [20:28<23:38, 202.58s/it]Loading checkpoint shards:  54%|█████▍    | 7/13 [22:48<18:13, 182.25s/it]Loading checkpoint shards:  62%|██████▏   | 8/13 [25:15<14:15, 171.09s/it]Loading checkpoint shards:  69%|██████▉   | 9/13 [27:38<10:48, 162.23s/it]Loading checkpoint shards:  77%|███████▋  | 10/13 [30:00<07:47, 156.00s/it]Loading checkpoint shards:  85%|████████▍ | 11/13 [32:15<04:59, 149.75s/it]Loading checkpoint shards:  92%|█████████▏| 12/13 [34:32<02:25, 145.82s/it]Loading checkpoint shards: 100%|██████████| 13/13 [35:55<00:00, 126.69s/it]Loading checkpoint shards: 100%|██████████| 13/13 [35:55<00:00, 165.81s/it]
+INFO Initialized Qwen3VLModel with Qwen/Qwen3-VL-30B-A3B-Instruct
+INFO Loading templates from directory: /parallel_scratch/ms04938/WorldMM/src/worldmm/llm/templates
+The following generation flags are not valid and may be ignored: ['temperature', 'top_p', 'top_k']. Set `TRANSFORMERS_VERBOSITY=info` for more details.
+WARNING Unparseable structured output on attempt 1/3; raw head: '```json\n{\n  "triples": [\n    ["Katrina", "speaks to", "everyone"],\n    ["Lucia", "suggests", "dancing"],\n    ["Shure", "proposes", "timeline discussion"],\n    ["Alice", "says", "Dancing is better than'
+WARNING Unparseable structured output on attempt 1/3; raw head: '```json\n{\n  "triples": [\n    ["I", "turns head to", "left"],\n    ["I", "says", "\\"it\'s fine\\""],\n    ["I", "swings body to", "right"],\n    ["Tasha", "tells", "No, it\'s just buying a dessert table stan'
+WARNING Unparseable structured output on attempt 1/3; raw head: '```json\n{\n  "triples": [\n    ["I", "operates", "laptop"],\n    ["I", "uses", "right hand"],\n    ["I", "operates", "notebook"],\n    ["I", "looks at", "notebook"],\n    ["I", "sits", ""],\n    ["I", "steal'
+WARNING Unparseable structured output on attempt 2/3; raw head: '```json\n{\n  "triples": [\n    ["I", "operates", "laptop"],\n    ["I", "uses", "right hand"],\n    ["I", "operates", "notebook"],\n    ["I", "looks at", "notebook"],\n    ["I", "sits still", ""],\n    ["I", '
+WARNING Unparseable structured output on attempt 3/3; raw head: '```json\n{\n  "triples": [\n    ["I", "operates", "laptop"],\n    ["I", "uses", "right hand"],\n    ["I", "operates", "notebook"],\n    ["I", "looks at", "notebook"],\n    ["I", "sits", ""],\n    ["I", "steal'
+ERROR Giving up on structured output after 3 attempts; returning empty. Raw head: '```json\n{\n  "triples": [\n    ["I", "operates", "laptop"],\n    ["I", "uses", "right hand"],\n    ["I", "operates", "notebook"],\n    ["I", "looks at", "notebook"],\n    ["I", "sits", ""],\n    ["I", "steal'
+WARNING Structured response did not match the schema (25 validation errors for TripleRawOutput
+triples.18.2
+  Input should be a valid string [type=string_type, input_value=['Katrina', 'mentions buy... items after lunchtime'], input_type=list]
+    For further information visit https://errors.pydantic.dev/2.12/v/string_type
+triples.18.3
+  Input should be a valid string [type=string_type, input_value=['Katrina', 'opens', 'alarm clock'], input_type=list]
+    For further information visit https://errors.pydantic.dev/2.12/v/string_type
+triples.18.4
+  Input should be a valid string [type=string_type, input_value=['Katrina', 'operates', 'alarm clock'], input_type=list]
+    For further information visit https://errors.pydantic.dev/2.12/v/string_type
+triples.18.5
+  Input should be a valid string [type=string_type, input_value=['Katrina', 'confirms pla...hopping this afternoon'], input_type=list]
+    For further information visit https://errors.pydantic.dev/2.12/v/string_type
+triples.18.6
+  Input should be a valid string [type=string_type, input_value=['Tasha', 'points out', 'timer'], input_type=list]
+    For further information visit https://errors.pydantic.dev/2.12/v/string_type
+triples.18.7
+  Input should be a valid string [type=string_type, input_value=['Katrina', 'shows', 'timer'], input_type=list]
+    For further information visit https://errors.pydantic.dev/2.12/v/string_type
+triples.18.8
+  Input should be a valid string [type=string_type, input_value=['Katrina', 'shows', 'timer to Alice'], input_type=list]
+    For further information visit https://errors.pydantic.dev/2.12/v/string_type
+triples.18.9
+  Input should be a valid string [type=string_type, input_value=['Katrina', 'shows', 'timer to Tasha'], input_type=list]
+    For further information visit https://errors.pydantic.dev/2.12/v/string_type
+triples.18.10
+  Input should be a valid string [type=string_type, input_value=['Katrina', 'shows', 'timer to Shure'], input_type=list]
+    For further information visit https://errors.pydantic.dev/2.12/v/string_type
+triples.18.11
+  Input should be a valid string [type=string_type, input_value=['Katrina', 'shows', 'timer to Lucy'], input_type=list]
+    For further information visit https://errors.pydantic.dev/2.12/v/string_type
+triples.18.12
+  Input should be a valid string [type=string_type, input_value=['Katrina', 'shows', 'timer to Katrina'], input_type=list]
+    For further information visit https://errors.pydantic.dev/2.12/v/string_type
+triples.18.13
+  Input should be a valid string [type=string_type, input_value=['Lucy', 'observes', 'timer stopped'], input_type=list]
+    For further information visit https://errors.pydantic.dev/2.12/v/string_type
+triples.18.14
+  Input should be a valid string [type=string_type, input_value=['Shure', 'declares', 'it’s over'], input_type=list]
+    For further information visit https://errors.pydantic.dev/2.12/v/string_type
+triples.18.15
+  Input should be a valid string [type=string_type, input_value=['Katrina', 'finds', 'business card'], input_type=list]
+    For further information visit https://errors.pydantic.dev/2.12/v/string_type
+triples.18.16
+  Input should be a valid string [type=string_type, input_value=['Katrina', 'holds', 'phone'], input_type=list]
+    For further information visit https://errors.pydantic.dev/2.12/v/string_type
+triples.18.17
+  Input should be a valid string [type=string_type, input_value=['Katrina', 'operates', 'phone'], input_type=list]
+    For further information visit https://errors.pydantic.dev/2.12/v/string_type
+triples.18.18
+  Input should be a valid string [type=string_type, input_value=['Katrina', 'raises', 'left hand'], input_type=list]
+    For further information visit https://errors.pydantic.dev/2.12/v/string_type
+triples.18.19
+  Input should be a valid string [type=string_type, input_value=['Katrina', 'puts down', 'phone'], input_type=list]
+    For further information visit https://errors.pydantic.dev/2.12/v/string_type
+triples.18.20
+  Input should be a valid string [type=string_type, input_value=['Katrina', 'talks to others'], input_type=list]
+    For further information visit https://errors.pydantic.dev/2.12/v/string_type
+triples.18.21
+  Input should be a valid string [type=string_type, input_value=['Shure', 'references mov...e Do You Want to Live?'], input_type=list]
+    For further information visit https://errors.pydantic.dev/2.12/v/string_type
+triples.18.22
+  Input should be a valid string [type=string_type, input_value=['Shure', 'names director', 'Hayao Miyazaki'], input_type=list]
+    For further information visit https://errors.pydantic.dev/2.12/v/string_type
+triples.18.23
+  Input should be a valid string [type=string_type, input_value=['Katrina', 'watches analysis', 'later'], input_type=list]
+    For further information visit https://errors.pydantic.dev/2.12/v/string_type
+triples.18.24
+  Input should be a valid string [type=string_type, input_value=['Katrina', 'advises watc...is before viewing film'], input_type=list]
+    For further information visit https://errors.pydantic.dev/2.12/v/string_type
+triples.18.25
+  Input should be a valid string [type=string_type, input_value=['Alice', 'notes', 'battery level low'], input_type=list]
+    For further information visit https://errors.pydantic.dev/2.12/v/string_type
+triples.18.26
+  Input should be a valid string [type=string_type, input_value=['Alice'], input_type=list]
+    For further information visit https://errors.pydantic.dev/2.12/v/string_type). Raw head: '```json\n{\n  "triples": [\n    ["Katrina", "speaks during", "afternoon session"],\n    ["Katrina", "uses", "laptop computer"],\n    ["Katrina", "operates", "laptop computer"],\n    ["Katrina", "uses", "lef'
+WARNING Unparseable structured output on attempt 1/3; raw head: '```json\n{\n  "triples": [\n    ["Katrina", "speaks during", "afternoon session"],\n    ["Katrina", "uses", "laptop computer"],\n    ["Katrina", "operates", "laptop computer"],\n    ["Katrina", "uses", "lef'
+WARNING Unparseable structured output on attempt 1/3; raw head: '```json\n{\n  "triples": [\n    ["I", "operates", "phone"],\n    ["I", "opens", "WeChat"],\n    ["I", "looks at", "phone"],\n    ["I", "turns off", "phone"],\n    ["I", "walks forward", ""],\n    ["I", "talks'
+WARNING Unparseable structured output on attempt 2/3; raw head: '{\n  "triples": [\n    ["I", "operates", "phone"],\n    ["I", "opens", "WeChat"],\n    ["I", "looks at", "phone"],\n    ["I", "turns off", "phone"],\n    ["I", "walks forward", ""],\n    ["I", "talks to", "S'
+WARNING Unparseable structured output on attempt 3/3; raw head: '```json\n{\n  "triples": [\n    ["I", "operates", "phone"],\n    ["I", "opens", "WeChat"],\n    ["I", "looks at", "phone"],\n    ["I", "turns off", "phone"],\n    ["I", "walks forward", ""],\n    ["I", "talks'
+ERROR Giving up on structured output after 3 attempts; returning empty. Raw head: '```json\n{\n  "triples": [\n    ["I", "operates", "phone"],\n    ["I", "opens", "WeChat"],\n    ["I", "looks at", "phone"],\n    ["I", "turns off", "phone"],\n    ["I", "walks forward", ""],\n    ["I", "talks'
+WARNING Recovered structured output by repaired on attempt 1/3
+WARNING Unparseable structured output on attempt 1/3; raw head: '```json\n{\n  "triples": [\n    ["I", "am operating", "my phone"],\n    ["I", "am operating", "the phone"],\n    ["I", "am operating", "a smartphone"],\n    ["I", "am operating", "the mobile phone"],\n    ["'
+WARNING Unparseable structured output on attempt 1/3; raw head: '```json\n{\n  "triples": [\n    ["Alice", "speaks to", "Tasha"],\n    ["Alice", "asks about", "puzzle"],\n    ["Alice", "mentions", "tiramisu"],\n    ["Alice", "says", "this tiramisu, right, right, the fork'
+WARNING Unparseable structured output on attempt 2/3; raw head: '{\n  "triples": [\n    ["Alice", "speaks to", "Tasha"],\n    ["Alice", "asks", "Where\'s our puzzle?"],\n    ["Alice", "says", "Hey, where\'s our puzzle?"],\n    ["Alice", "comments", "This tiramisu, right, '
+WARNING Unparseable structured output on attempt 3/3; raw head: '```json\n{\n  "triples": [\n    ["Alice", "speaks to", "Tasha"],\n    ["Alice", "asks about", "puzzle"],\n    ["Alice", "mentions", "tiramisu"],\n    ["Alice", "says", "this tiramisu, right, right, the fork'
+ERROR Giving up on structured output after 3 attempts; returning empty. Raw head: '```json\n{\n  "triples": [\n    ["Alice", "speaks to", "Tasha"],\n    ["Alice", "asks about", "puzzle"],\n    ["Alice", "mentions", "tiramisu"],\n    ["Alice", "says", "this tiramisu, right, right, the fork'
+WARNING Recovered structured output by repaired on attempt 1/3
+WARNING Unparseable structured output on attempt 1/3; raw head: '```json\n{\n  "triples": [\n    ["Shure", "says", "it\'s very versatile"],\n    ["Shure", "says", "the grapefruit flavor is for the container"],\n    ["Shure", "says", "we can\'t drink all of this"],\n    ["S'
+WARNING Unparseable structured output on attempt 1/3; raw head: '```json\n{\n  "triples": [\n    ["Lucia", "speaks", ""],\n    ["Tasha", "asks", "What is S?"],\n    ["Alice", "thinks", "this kind of thing is meaningless"],\n    ["Lucia", "says", "No S, really?"],\n    ["L'
+WARNING Unparseable structured output on attempt 1/3; raw head: '```json\n{\n  "triples": [\n    ["Lucia", "speaks", ""],\n    ["Tasha", "speaks", ""],\n    ["Alice", "speaks", ""],\n    ["Shure", "speaks", ""],\n    ["Lucia", "cleans", "utensils"],\n    ["Tasha", "cleanin'
+WARNING Recovered structured output by sliced on attempt 1/3
+WARNING Unparseable structured output on attempt 1/3; raw head: '```json\n{\n  "triples": [\n    ["Lucia", "talks to", "Tasha"],\n    ["Lucia", "tells", "Put the filled ones in this car"],\n    ["Lucia", "says", "This wire always makes me feel weird"],\n    ["Lucia", "as'
+WARNING Unparseable structured output on attempt 1/3; raw head: '```json\n{\n  "triples": [\n    ["I", "adjusted", "the bag"],\n    ["I", "placed", "on my left hand"],\n    ["Lucia", "asked", "Can this go a bit back?"],\n    ["The car", "moved", "slowly"],\n    ["Lucia", '
+WARNING Unparseable structured output on attempt 1/3; raw head: '```json\n{\n  "triples": [\n    ["Lucia", "talks_to", "Tasha"],\n    ["Lucia", "talks_to", "Alice"],\n    ["Lucia", "asks", "Should we unpack this?"],\n    ["Lucia", "suggests", "put it in the fridge"],\n   '
+WARNING Unparseable structured output on attempt 1/3; raw head: '{\n  "triples": [\n    ["I", "am looking at", "computer"],\n    ["computer", "on", "table"],\n    ["Tasha", "looked at", "power bank"],\n    ["power bank", "on", "table"],\n    ["I", "picked up", "power ban'
+WARNING Unparseable structured output on attempt 2/3; raw head: '{\n  "triples": [\n    ["I", "am looking at", "computer"],\n    ["computer", "on", "table"],\n    ["Tasha", "picked up", "power bank"],\n    ["Tasha", "pick up", "battery pack"],\n    ["Lucia", "prepared", '
+WARNING Unparseable structured output on attempt 3/3; raw head: '{\n  "triples": [\n    ["I", "am looking at", "computer"],\n    ["computer", "on", "table"],\n    ["Tasha", "looked at", "power bank"],\n    ["power bank", "on", "table"],\n    ["I", "picked up", "power ban'
+ERROR Giving up on structured output after 3 attempts; returning empty. Raw head: '{\n  "triples": [\n    ["I", "am looking at", "computer"],\n    ["computer", "on", "table"],\n    ["Tasha", "looked at", "power bank"],\n    ["power bank", "on", "table"],\n    ["I", "picked up", "power ban'
+WARNING Recovered structured output by sliced on attempt 1/3
+WARNING Unparseable structured output on attempt 1/3; raw head: "Please provide the new text or content you'd like me to analyze so I can check it further. Once shared, I’ll process any additional information as needed."
+WARNING Unparseable structured output on attempt 1/3; raw head: 'The provided `named_entities` list does not match the content of the new paragraph ("I opened another video recording. Please continue checking. Still checking..."). The current named entities are unr'
+WARNING Recovered structured output by sliced on attempt 2/3
+WARNING Unparseable structured output on attempt 1/3; raw head: 'There are no specific named entities (such as proper names or dates) mentioned in this sentence.\n\nTherefore, the output would be an empty list:\n\n```json\n[]\n```'
+WARNING Unparseable structured output on attempt 2/3; raw head: 'There are no named entities mentioned in this sentence.  \nTherefore, the output is an empty list:  \n\n```json\n[]\n```'
+WARNING Unparseable structured output on attempt 3/3; raw head: 'There are no specific named entities (such as proper names or dates) mentioned in this sentence.\n\nTherefore, the output would be an empty list:\n\n```json\n[]\n```'
+ERROR Giving up on structured output after 3 attempts; returning empty. Raw head: 'There are no specific named entities (such as proper names or dates) mentioned in this sentence.\n\nTherefore, the output would be an empty list:\n\n```json\n[]\n```'
+WARNING Unparseable structured output on attempt 1/3; raw head: "There are no named entities in your sentence.  \nThe phrase “I'm pressing my nose” does not contain any proper nouns or specific names.\n\nTherefore, the output is an empty list:\n\n```json\n[]\n```"
+WARNING Recovered structured output by sliced on attempt 2/3
+WARNING Recovered structured output by sliced on attempt 1/3
+WARNING Unparseable structured output on attempt 1/3; raw head: 'There are no named entities in this sentence.'
+WARNING Unparseable structured output on attempt 2/3; raw head: 'There are no named entities in this sentence.'
+WARNING Unparseable structured output on attempt 3/3; raw head: 'There are no named entities in this sentence.'
+ERROR Giving up on structured output after 3 attempts; returning empty. Raw head: 'There are no named entities in this sentence.'
+WARNING Recovered structured output by sliced on attempt 1/3
+WARNING Recovered structured output by sliced on attempt 1/3
+WARNING Recovered structured output by sliced on attempt 1/3
+WARNING Unparseable structured output on attempt 1/3; raw head: "Hmm? Is there something you'd like help with regarding Radio City or anything else? 😊"
+WARNING Unparseable structured output on attempt 2/3; raw head: "Hmm? Is there something you'd like help with regarding Radio City or anything else? 😊"
+WARNING Unparseable structured output on attempt 3/3; raw head: "Hmm? Is there something you'd like help with regarding Radio City or anything else? 😊"
+ERROR Giving up on structured output after 3 attempts; returning empty. Raw head: "Hmm? Is there something you'd like help with regarding Radio City or anything else? 😊"
+WARNING Recovered structured output by repaired on attempt 1/3
+WARNING Recovered structured output by sliced on attempt 1/3
+WARNING Unparseable structured output on attempt 1/3; raw head: '```json\n{\n  "triples": [\n    ["Lucia", "asked", "How did you do it?"],\n    ["Lucia", "walked towards", "them"],\n    ["Tasha", "said", "They are still doing it."],\n    ["Tasha", "mentioned", "they are '
+WARNING Unparseable structured output on attempt 2/3; raw head: '```json\n{\n  "triples": [\n    ["Lucia", "asked", "How did you do it?"],\n    ["Lucia", "walked towards", "them"],\n    ["Tasha", "said", "They are still doing it."],\n    ["Tasha", "mentioned", "they are '
+WARNING Unparseable structured output on attempt 3/3; raw head: '```json\n{\n  "triples": [\n    ["Lucia", "asked", "How did you do it?"],\n    ["Lucia", "walked towards", "them"],\n    ["Tasha", "said", "They are still doing it."],\n    ["Tasha", "mentioned", "they are '
+ERROR Giving up on structured output after 3 attempts; returning empty. Raw head: '```json\n{\n  "triples": [\n    ["Lucia", "asked", "How did you do it?"],\n    ["Lucia", "walked towards", "them"],\n    ["Tasha", "said", "They are still doing it."],\n    ["Tasha", "mentioned", "they are '
+WARNING Unparseable structured output on attempt 1/3; raw head: '```json\n{\n  "triples": [\n    ["Lucia", "used", "Meituan"],\n    ["Lucia", "ordered via", "Meituan"],\n    ["Lucia", "asked for help from", "Tasha"],\n    ["Tasha", "helped", "Lucia"],\n    ["Lucia", "ente'
+WARNING Unparseable structured output on attempt 2/3; raw head: '{\n  "triples": [\n    ["Lucia", "operating on", "phone"],\n    ["Katrina", "studying", "things taken out of the fridge"],\n    ["Lucia", "asking for help from", "Tasha"],\n    ["Tasha", "suggests pouring"'
+WARNING Unparseable structured output on attempt 3/3; raw head: '```json\n{\n  "triples": [\n    ["Lucia", "used", "Meituan"],\n    ["Lucia", "ordered via", "Meituan"],\n    ["Lucia", "asked for help from", "Tasha"],\n    ["Tasha", "helped", "Lucia"],\n    ["Lucia", "ente'
+ERROR Giving up on structured output after 3 attempts; returning empty. Raw head: '```json\n{\n  "triples": [\n    ["Lucia", "used", "Meituan"],\n    ["Lucia", "ordered via", "Meituan"],\n    ["Lucia", "asked for help from", "Tasha"],\n    ["Tasha", "helped", "Lucia"],\n    ["Lucia", "ente'
+WARNING Unparseable structured output on attempt 1/3; raw head: '```json\n{\n  "triples": [\n    ["Alice", "talks to", "Lucia"],\n    ["Alice", "tells", "to drink it cold"],\n    ["Alice", "says", "no need to heat it"],\n    ["Alice", "walked back to", "living room"],\n  '
+WARNING Unparseable structured output on attempt 1/3; raw head: 'I cannot access or retrieve any personal data such as your phone or chat records. I am designed to respect user privacy and do not have the ability to interact with devices or view external content.\n\n'
+WARNING Unparseable structured output on attempt 2/3; raw head: 'I cannot access or retrieve any personal data such as your phone or chat records. I am designed to respect user privacy and do not have the ability to interact with devices or view external content li'
+WARNING Unparseable structured output on attempt 3/3; raw head: 'I cannot access or retrieve any personal data such as your phone or chat records. I am designed to respect user privacy and do not have the ability to interact with devices or view external content.\n\n'
+ERROR Giving up on structured output after 3 attempts; returning empty. Raw head: 'I cannot access or retrieve any personal data such as your phone or chat records. I am designed to respect user privacy and do not have the ability to interact with devices or view external content.\n\n'
+WARNING Unparseable structured output on attempt 1/3; raw head: 'There are no named entities in this sentence.  \n```json\n[]\n```'
+WARNING Unparseable structured output on attempt 2/3; raw head: 'There are no named entities in this sentence.  \n```json\n[]\n```'
+WARNING Unparseable structured output on attempt 3/3; raw head: 'There are no named entities in this sentence.  \n```json\n[]\n```'
+ERROR Giving up on structured output after 3 attempts; returning empty. Raw head: 'There are no named entities in this sentence.  \n```json\n[]\n```'
+WARNING Recovered structured output by sliced on attempt 1/3
+WARNING Unparseable structured output on attempt 1/3; raw head: 'There are no specific named entities mentioned in this sentence. Therefore, the output would be an empty list.\n\n```json\n[]\n```'
+WARNING Unparseable structured output on attempt 2/3; raw head: 'There are no specific named entities mentioned in this sentence. Therefore, the output would be an empty list:\n\n```json\n[]\n```'
+WARNING Unparseable structured output on attempt 3/3; raw head: 'There are no specific named entities mentioned in this sentence. Therefore, the output would be an empty list.\n\n```json\n[]\n```'
+ERROR Giving up on structured output after 3 attempts; returning empty. Raw head: 'There are no specific named entities mentioned in this sentence. Therefore, the output would be an empty list.\n\n```json\n[]\n```'
+WARNING Recovered structured output by sliced on attempt 1/3
+WARNING Unparseable structured output on attempt 1/3; raw head: '```json\n{\n  "triples": [\n    ["I", "turned head to look at", "Katrina"],\n    ["Tasha", "said", "Ha"],\n    ["Alice", "said", "So many people"],\n    ["I", "saw", "colleagues"],\n    ["colleagues", "were"'
+WARNING Unparseable structured output on attempt 1/3; raw head: '```json\n{\n  "triples": [\n    ["Lucia", "was located in", "Shanghai"],\n    ["Lucia", "signed up for", "swag or breaking class"],\n    ["Lucia", "gave up dancing"],\n\n    ["Katrina", "signs up for", "hip-'
+WARNING Recovered structured output by sliced on attempt 1/3
+WARNING Recovered structured output by sliced on attempt 1/3
+WARNING Unparseable structured output on attempt 1/3; raw head: '```json\n{\n  "triples": [\n    ["I", "look around", "surroundings"],\n    ["I", "listen to", "colleagues chating"],\n    ["I", "take out", "phone"],\n    ["I", "open", "phone"],\n    ["I", "swipe to the rig'
+WARNING Unparseable structured output on attempt 2/3; raw head: '```json\n{\n  "triples": [\n    ["I", "look around", "surroundings"],\n    ["I", "listen to", "colleagues chatter"],\n    ["I", "take out", "phone"],\n    ["I", "open", "phone"],\n    ["I", "swipe", "right"]'
+WARNING Unparseable structured output on attempt 3/3; raw head: '```json\n{\n  "triples": [\n    ["I", "look around", "surroundings"],\n    ["I", "listen to", "colleagues chating"],\n    ["I", "take out", "phone"],\n    ["I", "open", "phone"],\n    ["I", "swipe to the rig'
+ERROR Giving up on structured output after 3 attempts; returning empty. Raw head: '```json\n{\n  "triples": [\n    ["I", "look around", "surroundings"],\n    ["I", "listen to", "colleagues chating"],\n    ["I", "take out", "phone"],\n    ["I", "open", "phone"],\n    ["I", "swipe to the rig'
+WARNING Recovered structured output by repaired on attempt 1/3
+WARNING Recovered structured output by sliced on attempt 1/3
+WARNING Recovered structured output by sliced on attempt 1/3
+WARNING Recovered structured output by sliced on attempt 1/3
+WARNING Recovered structured output by sliced on attempt 1/3
+WARNING Recovered structured output by sliced on attempt 1/3
+WARNING Recovered structured output by repaired on attempt 1/3
+WARNING Unparseable structured output on attempt 1/3; raw head: '```json\n{\n  "triples": [\n    ["I", "picked up", "label"],\n    ["I", "tore off", "label"],\n    ["I", "walked toward", "whiteboard"],\n    ["Lucia", "said", "\\"Ah, Yuxuan wrote their name directly.\\""],\n'
+WARNING Unparseable structured output on attempt 2/3; raw head: '```json\n{\n  "triples": [\n    ["I", "picked up", "label"],\n    ["I", "tore off", "label"],\n    ["I", "walked toward", "whiteboard"],\n    ["Lucia", "said", "\\"Ah, Yuxuan wrote their name directly.\\""],\n'
+WARNING Unparseable structured output on attempt 3/3; raw head: '```json\n{\n  "triples": [\n    ["I", "picked up", "label"],\n    ["I", "tore off", "label"],\n    ["I", "walked toward", "whiteboard"],\n    ["Lucia", "said", "\\"Ah, Yuxuan wrote their name directly.\\""],\n'
+ERROR Giving up on structured output after 3 attempts; returning empty. Raw head: '```json\n{\n  "triples": [\n    ["I", "picked up", "label"],\n    ["I", "tore off", "label"],\n    ["I", "walked toward", "whiteboard"],\n    ["Lucia", "said", "\\"Ah, Yuxuan wrote their name directly.\\""],\n'
+WARNING Unparseable structured output on attempt 1/3; raw head: '```json\n{\n  "triples": [\n    ["I", "walked around in", "living room"],\n    ["I", "switched hands", ""],\n    ["I", "grabbed", "water bottle"],\n    ["I", "took out", "charging cable"],\n    ["I", "handed'
+WARNING Unparseable structured output on attempt 2/3; raw head: '{\n  "triples": [\n    ["I", "walked around in", "living room"],\n    ["I", "switched hands", ""],\n    ["I", "grabbed", "water bottle"],\n    ["I", "took out", "charging cable"],\n    ["I", "handed", "char'
+WARNING Unparseable structured output on attempt 3/3; raw head: '```json\n{\n  "triples": [\n    ["I", "walked around in", "living room"],\n    ["I", "switched hands", ""],\n    ["I", "grabbed", "water bottle"],\n    ["I", "took out", "charging cable"],\n    ["I", "handed'
+ERROR Giving up on structured output after 3 attempts; returning empty. Raw head: '```json\n{\n  "triples": [\n    ["I", "walked around in", "living room"],\n    ["I", "switched hands", ""],\n    ["I", "grabbed", "water bottle"],\n    ["I", "took out", "charging cable"],\n    ["I", "handed'
+WARNING Unparseable structured output on attempt 1/3; raw head: '```json\n{\n  "triples": [\n    ["I", "glanced at", "kitchen"],\n    ["I", "entered", "kitchen"],\n    ["I", "turned around", "group"],\n    ["I", "walked around", "living room"],\n    ["I", "looked at", "Ka'
+WARNING Structured response did not match the schema (1 validation error for TripleRawOutput
+triples.7.2
+  Input should be a valid string [type=string_type, input_value=True, input_type=bool]
+    For further information visit https://errors.pydantic.dev/2.12/v/string_type). Raw head: '```json\n{\n  "triples": [\n    ["Tasha", "talked_to", "Lucia"],\n    ["Tasha", "operated_phone", "phone"],\n    ["Tasha", "asked_Lucia_about_landlord_pickup", "?"],\n    ["Tasha", "mentioned_JD_com", "JD.c'
+WARNING Unparseable structured output on attempt 1/3; raw head: '```json\n{\n  "triples": [\n    ["Tasha", "talked_to", "Lucia"],\n    ["Tasha", "operated_phone", "phone"],\n    ["Tasha", "asked_Lucia_about_landlord_pickup", "?"],\n    ["Tasha", "mentioned_JD_com", "JD.c'
+WARNING Recovered structured output by sliced on attempt 1/3
+WARNING Recovered structured output by sliced on attempt 1/3
+WARNING Unparseable structured output on attempt 1/3; raw head: 'Here is an organized version of your narrative translated clearly into natural-sounding **English**, preserving context and flow:\n\n---\n\nI had been selecting a portion of files earlier, but then shifte'
+WARNING Unparseable structured output on attempt 2/3; raw head: 'Here is an organized version of your narrative translated clearly into coherent **English**, preserving context and flow:\n\n---\n\nAfter selecting a portion of the files, I shifted focus and glanced acro'
+WARNING Unparseable structured output on attempt 3/3; raw head: 'Here is an organized version of your narrative translated clearly into natural-sounding **English**, preserving context and flow:\n\n---\n\nI had been selecting a portion of files earlier, but then shifte'
+ERROR Giving up on structured output after 3 attempts; returning empty. Raw head: 'Here is an organized version of your narrative translated clearly into natural-sounding **English**, preserving context and flow:\n\n---\n\nI had been selecting a portion of files earlier, but then shifte'
+WARNING Recovered structured output by sliced on attempt 1/3
+WARNING Recovered structured output by repaired on attempt 1/3
+WARNING Unparseable structured output on attempt 1/3; raw head: '```json\n{\n  "triples": [\n    ["Tasha", "says", "There\'s a crack."],\n    ["Lucia", "describes", "traditional mix for Cuba Libre"],\n    ["Lucia", "clarifies", "This isn\'t rum and cola"],\n    ["Tasha", "'
+WARNING Unparseable structured output on attempt 2/3; raw head: '```json\n{\n  "triples": [\n    ["Tasha", "says", "There\'s a crack."],\n    ["Lucia", "explains", "This isn\'t rum and cola."],\n    ["Lucia", "describes", "It\'s the traditional mix for Cuba Libre."],\n    ['
+WARNING Unparseable structured output on attempt 3/3; raw head: '```json\n{\n  "triples": [\n    ["Tasha", "says", "There\'s a crack."],\n    ["Lucia", "describes", "traditional mix for Cuba Libre"],\n    ["Lucia", "clarifies", "This isn\'t rum and cola"],\n    ["Tasha", "'
+ERROR Giving up on structured output after 3 attempts; returning empty. Raw head: '```json\n{\n  "triples": [\n    ["Tasha", "says", "There\'s a crack."],\n    ["Lucia", "describes", "traditional mix for Cuba Libre"],\n    ["Lucia", "clarifies", "This isn\'t rum and cola"],\n    ["Tasha", "'
+WARNING Unparseable structured output on attempt 1/3; raw head: '```json\n{\n  "triples": [\n    ["Katrina", "asked", "Have we started cleaning?"],\n    ["Katrina", "looked_up_and_scanned_surroundings", ""],\n    ["Katrina", "pointed_at", "Tasha"],\n    ["Lucia", "said",'
+WARNING Unparseable structured output on attempt 2/3; raw head: '{\n  "triples": [\n    ["Katrina", "asked", "Have we started cleaning?"],\n    ["Katrina", "looked up", ""],\n    ["Katrina", "scanned", "the surroundings"],\n    ["Katrina", "pointed at", "Tasha"],\n    ["'
+WARNING Unparseable structured output on attempt 3/3; raw head: '```json\n{\n  "triples": [\n    ["Katrina", "asked", "Have we started cleaning?"],\n    ["Katrina", "looked_up_and_scanned_surroundings", ""],\n    ["Katrina", "pointed_at", "Tasha"],\n    ["Lucia", "said",'
+ERROR Giving up on structured output after 3 attempts; returning empty. Raw head: '```json\n{\n  "triples": [\n    ["Katrina", "asked", "Have we started cleaning?"],\n    ["Katrina", "looked_up_and_scanned_surroundings", ""],\n    ["Katrina", "pointed_at", "Tasha"],\n    ["Lucia", "said",'
+WARNING Recovered structured output by sliced on attempt 1/3
+WARNING Recovered structured output by sliced on attempt 1/3
+WARNING Recovered structured output by sliced on attempt 1/3
+WARNING Structured response did not match the schema (1 validation error for NerRawOutput
+named_entities
+  Field required [type=missing, input_value={'objects': ['phone', 'ya... 'opening', 'entering']}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.12/v/missing). Raw head: 'The sentence provided appears to be written in Chinese characters mixed with an incomplete phrase at the end ("来吧"). Let me analyze it carefully.\n\n"走走" means “Let’s go” or “Walk around,” which seems l'
+WARNING Unparseable structured output on attempt 1/3; raw head: 'The sentence provided appears to be written in Chinese characters mixed with an incomplete phrase at the end ("来吧"). Let me analyze it carefully.\n\n"走走" means “Let’s go” or “Walk around,” which seems l'
+WARNING Unparseable structured output on attempt 2/3; raw head: 'The sentence appears to be written as a mix of Chinese (in pinyin) and English:\n\n- “走走” means “Let’s go.” or “Walk.”\n- The rest of the text:  \n  *“I am walking in the yard with my phone in hand. I swu'
+WARNING Structured response did not match the schema (1 validation error for NerRawOutput
+named_entities
+  Field required [type=missing, input_value={'objects': ['phone', 'ya... 'opening', 'entering']}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.12/v/missing). Raw head: 'The sentence provided appears to be written in Chinese characters mixed with an incomplete phrase at the end ("来吧"). Let me analyze it carefully.\n\n"走走" means “Let’s go” or “Walk around,” which seems l'
+WARNING Unparseable structured output on attempt 3/3; raw head: 'The sentence provided appears to be written in Chinese characters mixed with an incomplete phrase at the end ("来吧"). Let me analyze it carefully.\n\n"走走" means “Let’s go” or “Walk around,” which seems l'
+ERROR Giving up on structured output after 3 attempts; returning empty. Raw head: 'The sentence provided appears to be written in Chinese characters mixed with an incomplete phrase at the end ("来吧"). Let me analyze it carefully.\n\n"走走" means “Let’s go” or “Walk around,” which seems l'
+WARNING Unparseable structured output on attempt 1/3; raw head: '```json\n{\n  "triples": [\n    ["I", "entered", "living room"],\n    ["I", "glanced at", "phone"],\n    ["I", "am walking in", "living room"],\n    ["I", "entered", "kitchen"],\n    ["I", "saw", "Lucia"],\n '
+WARNING Recovered structured output by repaired on attempt 2/3
+WARNING Unparseable structured output on attempt 1/3; raw head: '```json\n{\n  "triples": [\n    ["Lucia", "talked with", "Violet"],\n    ["Lucia", "talking with", "everyone"],\n    ["Lucia", "asked about multiple choices", ""],\n    ["Lucia", "said", "\\"That way, at lea'
+WARNING Recovered structured output by repaired on attempt 1/3
+WARNING Unparseable structured output on attempt 1/3; raw head: '```json\n{\n  "triples": [\n    ["Katrina", "suggests", "picnic"],\n    ["Katrina", "reaches for", "table"],\n    ["Katrina", "tells Lucía", "continue to the other side of the table"],\n    ["Katrina", "say'
+WARNING Unparseable structured output on attempt 2/3; raw head: '```json\n{\n  "triples": [\n    ["Katrina", "suggests", "picnic"],\n    ["Katrina", "tells", "continue to the other side of the table"],\n    ["Katrina", "says", "when we\'re tired from walking, we can have'
+WARNING Unparseable structured output on attempt 3/3; raw head: '```json\n{\n  "triples": [\n    ["Katrina", "suggests", "picnic"],\n    ["Katrina", "reaches for", "table"],\n    ["Katrina", "tells Lucía", "continue to the other side of the table"],\n    ["Katrina", "say'
+ERROR Giving up on structured output after 3 attempts; returning empty. Raw head: '```json\n{\n  "triples": [\n    ["Katrina", "suggests", "picnic"],\n    ["Katrina", "reaches for", "table"],\n    ["Katrina", "tells Lucía", "continue to the other side of the table"],\n    ["Katrina", "say'
+WARNING Unparseable structured output on attempt 1/3; raw head: '```json\n{\n  "triples": [\n    ["Katrina", "said", "It\'s a bird and a cat."],\n    ["He", "nodded while listening to", "Katrina"],\n    ["Katrina", "said", "I don\'t know what it means either."],\n    ["Kat'
+WARNING Unparseable structured output on attempt 1/3; raw head: '```json\n{\n  "triples": [\n    ["Lucia", "posted in", "our group"],\n    ["Lucia", "rolled", "dice"],\n    ["Lucia", "asked", "can everyone see my result?"],\n    ["Lucia", "sent", "one"],\n    ["Tasha", "s'
+WARNING Unparseable structured output on attempt 2/3; raw head: '```json\n{\n  "triples": [\n    ["Lucia", "posted in", "our group"],\n    ["Lucia", "rolled", "dice"],\n    ["Lucia", "asked", "can everyone see my result?"],\n    ["Lucia", "sent", "one"],  \n    ["Tasha", '
+WARNING Unparseable structured output on attempt 3/3; raw head: '```json\n{\n  "triples": [\n    ["Lucia", "posted in", "our group"],\n    ["Lucia", "rolled", "dice"],\n    ["Lucia", "asked", "can everyone see my result?"],\n    ["Lucia", "sent", "one"],\n    ["Tasha", "s'
+ERROR Giving up on structured output after 3 attempts; returning empty. Raw head: '```json\n{\n  "triples": [\n    ["Lucia", "posted in", "our group"],\n    ["Lucia", "rolled", "dice"],\n    ["Lucia", "asked", "can everyone see my result?"],\n    ["Lucia", "sent", "one"],\n    ["Tasha", "s'
+WARNING Unparseable structured output on attempt 1/3; raw head: "I'm sorry, but I can't turn on your device or control physical screens as I am an AI language model without access to hardware controls. However, if you're having trouble turning on your screen, here "
+WARNING Unparseable structured output on attempt 2/3; raw head: "I cannot turn on your device or interact with physical screens as I am an AI text-based assistant. However, if you're having trouble turning on your phone, tablet, TV, or computer, here are some gener"
+WARNING Unparseable structured output on attempt 3/3; raw head: "I'm sorry, but I can't turn on your device or control physical screens as I am an AI language model without access to hardware controls. However, if you're having trouble turning on your screen, here "
+ERROR Giving up on structured output after 3 attempts; returning empty. Raw head: "I'm sorry, but I can't turn on your device or control physical screens as I am an AI language model without access to hardware controls. However, if you're having trouble turning on your screen, here "
+WARNING Structured response did not match the schema (2 validation errors for TripleRawOutput
+triples.80
+  Input should be a valid list [type=list_type, input_value='weiming_lake', input_type=str]
+    For further information visit https://errors.pydantic.dev/2.12/v/list_type
+triples.81
+  Input should be a valid list [type=list_type, input_value='peking_university', input_type=str]
+    For further information visit https://errors.pydantic.dev/2.12/v/list_type). Raw head: '```json\n{\n  "triples": [\n    ["Lucia", "talks_to", "Shure"],\n    ["Lucia", "talks_to", "Tasha"],\n    ["Lucia", "talks_to", "Katrina"],\n    ["Lucia", "stands_between", "Violet"],\n    ["Lucia", "stands_'
+WARNING Unparseable structured output on attempt 1/3; raw head: '```json\n{\n  "triples": [\n    ["Lucia", "talks_to", "Shure"],\n    ["Lucia", "talks_to", "Tasha"],\n    ["Lucia", "talks_to", "Katrina"],\n    ["Lucia", "stands_between", "Violet"],\n    ["Lucia", "stands_'
+WARNING Unparseable structured output on attempt 2/3; raw head: '```json\n{\n  "triples": [\n    ["Lucia", "talks to", "Shure"],\n    ["Lucia", "stands between", "Violet"],\n    ["Lucia", "stands between", "Alice"],\n    ["Lucia", "gazes at", "Weiming Lake"],\n    ["Lucia'
+WARNING Structured response did not match the schema (2 validation errors for TripleRawOutput
+triples.80
+  Input should be a valid list [type=list_type, input_value='weiming_lake', input_type=str]
+    For further information visit https://errors.pydantic.dev/2.12/v/list_type
+triples.81
+  Input should be a valid list [type=list_type, input_value='peking_university', input_type=str]
+    For further information visit https://errors.pydantic.dev/2.12/v/list_type). Raw head: '```json\n{\n  "triples": [\n    ["Lucia", "talks_to", "Shure"],\n    ["Lucia", "talks_to", "Tasha"],\n    ["Lucia", "talks_to", "Katrina"],\n    ["Lucia", "stands_between", "Violet"],\n    ["Lucia", "stands_'
+WARNING Unparseable structured output on attempt 3/3; raw head: '```json\n{\n  "triples": [\n    ["Lucia", "talks_to", "Shure"],\n    ["Lucia", "talks_to", "Tasha"],\n    ["Lucia", "talks_to", "Katrina"],\n    ["Lucia", "stands_between", "Violet"],\n    ["Lucia", "stands_'
+ERROR Giving up on structured output after 3 attempts; returning empty. Raw head: '```json\n{\n  "triples": [\n    ["Lucia", "talks_to", "Shure"],\n    ["Lucia", "talks_to", "Tasha"],\n    ["Lucia", "talks_to", "Katrina"],\n    ["Lucia", "stands_between", "Violet"],\n    ["Lucia", "stands_'
+WARNING Recovered structured output by sliced on attempt 1/3
+WARNING Unparseable structured output on attempt 1/3; raw head: '```json\n{\n  "triples": [\n    ["I", "am using", "phone"],\n    ["I", "looked at", "Alice"],\n    ["I", "talked to", "Violet"],\n    ["I", "touched", "my nose"],\n    ["I", "took", "coin box"],\n    ["I", "h'
+WARNING Structured response did not match the schema (10 validation errors for TripleRawOutput
+triples.40.3
+  Input should be a valid string [type=string_type, input_value=['Lucia', 'reacted emotio...y', '"出师不利的"'], input_type=list]
+    For further information visit https://errors.pydantic.dev/2.12/v/string_type
+triples.40.4
+  Input should be a valid string [type=string_type, input_value=['Lucia', 'indicated dire...lso pointing at object'], input_type=list]
+    For further information visit https://errors.pydantic.dev/2.12/v/string_type
+triples.40.5
+  Input should be a valid string [type=string_type, input_value=['Lucia', 'recommended ac...', '"let Xiu shuo try"'], input_type=list]
+    For further information visit https://errors.pydantic.dev/2.12/v/string_type
+triples.40.6
+  Input should be a valid string [type=string_type, input_value=['Alice', 'suggested coll... '"我们一起抓吧"'], input_type=list]
+    For further information visit https://errors.pydantic.dev/2.12/v/string_type
+triples.40.7
+  Input should be a valid string [type=string_type, input_value=['Alice', 'declined parti...n', '"ah 不怎么玩"'], input_type=list]
+    For further information visit https://errors.pydantic.dev/2.12/v/string_type
+triples.40.8
+  Input should be a valid string [type=string_type, input_value=['Alice', 'observed envir...nts to pick up things.'], input_type=list]
+    For further information visit https://errors.pydantic.dev/2.12/v/string_type
+triples.40.9
+  Input should be a valid string [type=string_type, input_value=['Alice', 'inquired inter... '"What shall we get?"'], input_type=list]
+    For further information visit https://errors.pydantic.dev/2.12/v/string_type
+triples.40.10
+  Input should be a valid string [type=string_type, input_value=['Alice', 'discussed alte...r maybe dance machine"'], input_type=list]
+    For further information visit https://errors.pydantic.dev/2.12/v/string_type
+triples.40.11
+  Input should be a valid string [type=string_type, input_value=['Alice', 'called group m...bers", "come upstairs"'], input_type=list]
+    For further information visit https://errors.pydantic.dev/2.12/v/string_type
+triples.40.12
+  Input should be a valid string [type=string_type, input_value=['Alice', 'highlighted instrument type '], input_type=list]
+    For further information visit https://errors.pydantic.dev/2.12/v/string_type). Raw head: '```json\n{\n  "triples": [\n    ["I", "am looking at", "my phone"],\n    ["I", "touched", "my nose"],\n    ["I", "took", "the coin box"],\n    ["I", "held", "a coin box"],\n    ["I", "was holding", "somethin'
+WARNING Unparseable structured output on attempt 2/3; raw head: '```json\n{\n  "triples": [\n    ["I", "am looking at", "my phone"],\n    ["I", "touched", "my nose"],\n    ["I", "took", "the coin box"],\n    ["I", "held", "a coin box"],\n    ["I", "was holding", "somethin'
+WARNING Unparseable structured output on attempt 3/3; raw head: '```json\n{\n  "triples": [\n    ["I", "am using", "phone"],\n    ["I", "looked at", "Alice"],\n    ["I", "talked to", "Violet"],\n    ["I", "touched", "my nose"],\n    ["I", "took", "coin box"],\n    ["I", "h'
+ERROR Giving up on structured output after 3 attempts; returning empty. Raw head: '```json\n{\n  "triples": [\n    ["I", "am using", "phone"],\n    ["I", "looked at", "Alice"],\n    ["I", "talked to", "Violet"],\n    ["I", "touched", "my nose"],\n    ["I", "took", "coin box"],\n    ["I", "h'
+WARNING Unparseable structured output on attempt 1/3; raw head: '```json\n{\n  "triples": [\n    ["I", "am looking to", "left"],\n    ["I", "turn", "right"],\n    ["I", "keep going", "forward"],\n    ["I", "saw", "Tasha"],\n    ["Tasha", "asks", "Do we still have tokens?"'
+WARNING Recovered structured output by repaired on attempt 2/3
+WARNING Recovered structured output by repaired on attempt 1/3
+WARNING Unparseable structured output on attempt 1/3; raw head: '{\n  "triples": [\n    ["Lucia", "pointed at", "bowling game machine"],\n    ["Lucia", "watching", "everyone"],\n    ["Lucia", "asked", "Who\'s first?"],\n    ["Shure", "took a ball", ""],\n    ["Shure", "th'
+WARNING Unparseable structured output on attempt 1/3; raw head: '```json\n{\n  "triples": [\n    ["Alice", "walking with", "Tasha"],\n    ["Alice", "walking with", "Shure"],\n    ["Alice", "walking with", "Lucia"],\n    ["Tasha", "talking to", "Lucia"],\n    ["Tasha", "ta'
+WARNING Unparseable structured output on attempt 2/3; raw head: '```json\n{\n  "triples": [\n    ["Tasha", "talked to", "Lucia"],\n    ["Tasha", "talking to", "me"],\n    ["Tasha", "said", "We\'re a group of robots imitating human life"],\n    ["Tasha", "asked", "Why isn\''
+WARNING Unparseable structured output on attempt 3/3; raw head: '```json\n{\n  "triples": [\n    ["Alice", "walking with", "Tasha"],\n    ["Alice", "walking with", "Shure"],\n    ["Alice", "walking with", "Lucia"],\n    ["Tasha", "talking to", "Lucia"],\n    ["Tasha", "ta'
+ERROR Giving up on structured output after 3 attempts; returning empty. Raw head: '```json\n{\n  "triples": [\n    ["Alice", "walking with", "Tasha"],\n    ["Alice", "walking with", "Shure"],\n    ["Alice", "walking with", "Lucia"],\n    ["Tasha", "talking to", "Lucia"],\n    ["Tasha", "ta'
+WARNING Unparseable structured output on attempt 1/3; raw head: '```json\n{\n  "triples": [\n    ["Lucia", "put", "fruits in bag"],\n    ["Tasha", "looked down", ""],\n    ["Tasha", "glanced at", "Lucia"],\n    ["Tasha", "spoke to", "me"],\n    ["Tasha", "said about savin'
+WARNING Unparseable structured output on attempt 2/3; raw head: '```json\n{\n  "triples": [\n    ["Lucia", "put", "fruits"],\n    ["Lucia", "placed fruits in", "bag"],\n    ["Tasha", "looked down", "at Lucia"],\n    ["Tasha", "spoke to", "me"],\n    ["Tasha", "said about '
+WARNING Unparseable structured output on attempt 3/3; raw head: '```json\n{\n  "triples": [\n    ["Lucia", "put", "fruits in bag"],\n    ["Tasha", "looked down", ""],\n    ["Tasha", "glanced at", "Lucia"],\n    ["Tasha", "spoke to", "me"],\n    ["Tasha", "said about savin'
+ERROR Giving up on structured output after 3 attempts; returning empty. Raw head: '```json\n{\n  "triples": [\n    ["Lucia", "put", "fruits in bag"],\n    ["Tasha", "looked down", ""],\n    ["Tasha", "glanced at", "Lucia"],\n    ["Tasha", "spoke to", "me"],\n    ["Tasha", "said about savin'
+WARNING Recovered structured output by sliced on attempt 1/3
+WARNING Recovered structured output by sliced on attempt 1/3
+WARNING Recovered structured output by sliced on attempt 1/3
+WARNING Recovered structured output by sliced on attempt 1/3
+WARNING Unparseable structured output on attempt 1/3; raw head: '```json\n{\n  "triples": [\n    ["Shure", "is a", "well-known brand"],\n    ["Shure", "operates in", "audio industry"],\n    ["Shure", "produces", "high-quality microphones"],\n    ["Shure", "produces", "au'
+WARNING Unparseable structured output on attempt 1/3; raw head: "I'm sorry, but I can't assist with physical actions or movement as this platform does not support real-time interaction or navigation assistance.\n\nIf you're looking for guidance about an indoor space—"
+WARNING Unparseable structured output on attempt 2/3; raw head: "I cannot physically step forward or move through spaces as I am an AI model without physical presence. However, if you're describing a scene indoors—such as looking around a room—I can help visualize "
+WARNING Unparseable structured output on attempt 3/3; raw head: "I'm sorry, but I can't assist with physical actions or movement as this platform does not support real-time interaction or navigation assistance.\n\nIf you're looking for guidance about an indoor space—"
+ERROR Giving up on structured output after 3 attempts; returning empty. Raw head: "I'm sorry, but I can't assist with physical actions or movement as this platform does not support real-time interaction or navigation assistance.\n\nIf you're looking for guidance about an indoor space—"
+WARNING Unparseable structured output on attempt 1/3; raw head: '```json\n{\n  "triples": [\n    ["Shure", "says", "Playing around can get you in trouble."],\n    ["Shure", "tells kids", "do not imitate this."],\n    ["Shure", "exclaims", "Damn."],\n    ["Shure", "states'
+WARNING Structured response did not match the schema (1 validation error for TripleRawOutput
+triples.4
+  Input should be a valid list [type=list_type, input_value='You do it', input_type=str]
+    For further information visit https://errors.pydantic.dev/2.12/v/list_type). Raw head: '```json\n{\n  "triples": [\n    ["Tasha", "picked up", "mixing spoon"],\n    ["Tasha", "left", "meat"],\n    ["Tasha", "picking up", "egg mixture"],\n    ["Tasha", "said to", "I"], "You do it",\n    ["Tasha"'
+WARNING Unparseable structured output on attempt 1/3; raw head: '```json\n{\n  "triples": [\n    ["Tasha", "picked up", "mixing spoon"],\n    ["Tasha", "left", "meat"],\n    ["Tasha", "picking up", "egg mixture"],\n    ["Tasha", "said to", "I"], "You do it",\n    ["Tasha"'
+WARNING Unparseable structured output on attempt 1/3; raw head: 'The text provided appears to be dialogue-heavy narrative involving characters (Alice, Shure, Lucia) engaged in an activity—grilling food—and later dealing with electrical issues such as restoring powe'
+WARNING Unparseable structured output on attempt 1/3; raw head: '```json\n{\n  "triples": [\n    ["Alice", "is cooking", "meat"],\n    ["Alice", "talks to", "Shure"],\n    ["Alice", "asks", "Shure"],  \n    ["Alice", "requests", "sesame seeds"],\n    ["Alice", "tells", "S'
+WARNING Unparseable structured output on attempt 1/3; raw head: '```json\n{\n  "triples": [\n    ["Lucia", "says", "You are making progress."],\n    ["Lucia", "asks", "How much for two layers of cream?"],\n    ["Lucia", "comments", "Wow, perfect."],\n    ["Lucia", "compl'
+WARNING Unparseable structured output on attempt 1/3; raw head: '{\n  "triples": [\n    ["Lucia", "is doing", "spreading frosting"],  \n    ["Tasha", "takes over", "frosting application"],\n    ["Tasha", "wipes", "cake surface"],\n    ["Lucia", "talking to", "me"],\n    '
+WARNING Unparseable structured output on attempt 1/3; raw head: '```json\n{\n  "triples": [\n    ["Shure", "opened", "sealed bag"],\n    ["Shure", "looked at", "something inside"],  \n    ["Shure", "shook his head", ""],\n    ["Shure", "picked up", "object"],\n    ["Shure'
+WARNING Unparseable structured output on attempt 1/3; raw head: '```json\n{\n  "triples": [\n    ["I", "entered", "the hall"],\n    ["Tasha", "opened", "refrigerator"],\n    ["I", "walked into", "kitchen"],\n    ["I", "picked up", "knife"],\n    ["I", "turned on", "faucet'
+WARNING Unparseable structured output on attempt 2/3; raw head: '```json\n{\n  "triples": [\n    ["Tasha", "opened", "refrigerator"],\n    ["Tasha", "picked up", "cotton cloth"],\n    ["Tasha", "held", "bag"],\n    ["Tasha", "was eating", "cream"],\n    ["Tasha", "licked"'
+WARNING Unparseable structured output on attempt 3/3; raw head: '```json\n{\n  "triples": [\n    ["I", "entered", "the hall"],\n    ["Tasha", "opened", "refrigerator"],\n    ["I", "walked into", "kitchen"],\n    ["I", "picked up", "knife"],\n    ["I", "turned on", "faucet'
+ERROR Giving up on structured output after 3 attempts; returning empty. Raw head: '```json\n{\n  "triples": [\n    ["I", "entered", "the hall"],\n    ["Tasha", "opened", "refrigerator"],\n    ["I", "walked into", "kitchen"],\n    ["I", "picked up", "knife"],\n    ["I", "turned on", "faucet'
+WARNING Recovered structured output by sliced on attempt 1/3
+WARNING Recovered structured output by sliced on attempt 1/3
+WARNING Recovered structured output by sliced on attempt 1/3
+WARNING Structured response did not match the schema (1 validation error for NerRawOutput
+named_entities
+  Field required [type=missing, input_value={'progress': ['sitting up...-checking the machine']}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.12/v/missing). Raw head: '{\n  "progress": [\n    "sitting up straight",\n    "on the phone",\n    "looking at the computer",\n    "waiting",\n    "transmitting (completed)",\n    "chatting",\n    "going to sleep",\n    "supposed to wa'
+WARNING Unparseable structured output on attempt 1/3; raw head: '{\n  "progress": [\n    "sitting up straight",\n    "on the phone",\n    "looking at the computer",\n    "waiting",\n    "transmitting (completed)",\n    "chatting",\n    "going to sleep",\n    "supposed to wa'
+WARNING Structured response did not match the schema (1 validation error for NerRawOutput
+named_entities
+  Field required [type=missing, input_value={'progress': ['sitting up...arly', 'not awake yet']}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.12/v/missing). Raw head: '{\n  "progress": [\n    "sitting up straight",\n    "on the phone",\n    "looking at the computer",\n    "waiting",\n    "playing with my fingers"\n  ],\n  "status_updates": [\n    "still sleeping",\n    "feeli'
+WARNING Unparseable structured output on attempt 2/3; raw head: '{\n  "progress": [\n    "sitting up straight",\n    "on the phone",\n    "looking at the computer",\n    "waiting",\n    "playing with my fingers"\n  ],\n  "status_updates": [\n    "still sleeping",\n    "feeli'
+WARNING Structured response did not match the schema (1 validation error for NerRawOutput
+named_entities
+  Field required [type=missing, input_value={'progress': ['sitting up...-checking the machine']}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.12/v/missing). Raw head: '{\n  "progress": [\n    "sitting up straight",\n    "on the phone",\n    "looking at the computer",\n    "waiting",\n    "transmitting (completed)",\n    "chatting",\n    "going to sleep",\n    "supposed to wa'
+WARNING Unparseable structured output on attempt 3/3; raw head: '{\n  "progress": [\n    "sitting up straight",\n    "on the phone",\n    "looking at the computer",\n    "waiting",\n    "transmitting (completed)",\n    "chatting",\n    "going to sleep",\n    "supposed to wa'
+ERROR Giving up on structured output after 3 attempts; returning empty. Raw head: '{\n  "progress": [\n    "sitting up straight",\n    "on the phone",\n    "looking at the computer",\n    "waiting",\n    "transmitting (completed)",\n    "chatting",\n    "going to sleep",\n    "supposed to wa'
+WARNING Unparseable structured output on attempt 1/3; raw head: '```json\n{\n  "triples": [\n    ["Katrina", "washes dishes", "in the kitchen"],\n    ["Katrina", "holds", "her head"],  \n    ["Katrina", "studies", "something"],\n    ["Katrina", "shows", "original picture'
+WARNING Unparseable structured output on attempt 2/3; raw head: '```json\n{\n  "triples": [\n    ["Katrina", "washing dishes", "in the kitchen"],\n    ["Katrina", "standing near", "doorframe"],\n    ["Katrina", "studying", "flower patterns"],\n    ["Katrina", "showing im'
+WARNING Unparseable structured output on attempt 3/3; raw head: '```json\n{\n  "triples": [\n    ["Katrina", "washes dishes", "in the kitchen"],\n    ["Katrina", "holds", "her head"],  \n    ["Katrina", "studies", "something"],\n    ["Katrina", "shows", "original picture'
+ERROR Giving up on structured output after 3 attempts; returning empty. Raw head: '```json\n{\n  "triples": [\n    ["Katrina", "washes dishes", "in the kitchen"],\n    ["Katrina", "holds", "her head"],  \n    ["Katrina", "studies", "something"],\n    ["Katrina", "shows", "original picture'
+WARNING Unparseable structured output on attempt 1/3; raw head: 'The phrase **"this box"** appears multiple times throughout your text but lacks clear contextual reference — especially since several people ("Tasha," "Lucia") seem involved in handling objects togeth'
+WARNING Unparseable structured output on attempt 2/3; raw head: 'The phrase **"this box"** appears multiple times throughout your text, but its exact referent isn’t clearly defined — likely because context shifts between characters discussing objects they\'re handli'
+WARNING Unparseable structured output on attempt 3/3; raw head: 'The phrase **"this box"** appears multiple times throughout your text but lacks clear contextual reference — especially since several people ("Tasha," "Lucia") seem involved in handling objects togeth'
+ERROR Giving up on structured output after 3 attempts; returning empty. Raw head: 'The phrase **"this box"** appears multiple times throughout your text but lacks clear contextual reference — especially since several people ("Tasha," "Lucia") seem involved in handling objects togeth'
+WARNING Unparseable structured output on attempt 1/3; raw head: 'Since the provided `named_entities` list is empty (`[]`) and based solely on the content of the paragraph — which contains dialogue among several individuals including **Tasha**, **Lucia**, **Alice**,'
+WARNING Unparseable structured output on attempt 2/3; raw head: 'Since the provided `named_entities` list is empty (`[]`) and none of the proper nouns appear explicitly labeled beyond character references such as **Lucia**, **Tasha**, **Alice**, **Katrina** — which'
+WARNING Unparseable structured output on attempt 3/3; raw head: 'Since the provided `named_entities` list is empty (`[]`) and based solely on the content of the paragraph — which contains dialogue among several individuals including **Tasha**, **Lucia**, **Alice**,'
+ERROR Giving up on structured output after 3 attempts; returning empty. Raw head: 'Since the provided `named_entities` list is empty (`[]`) and based solely on the content of the paragraph — which contains dialogue among several individuals including **Tasha**, **Lucia**, **Alice**,'
+WARNING Unparseable structured output on attempt 1/3; raw head: "The text provided contains several names (e.g., characters' names) but lacks clear context or structured information about formal proper nouns beyond personal names.\n\nBased on standard **Named Entity "
+WARNING Recovered structured output by repaired on attempt 1/3
+WARNING Unparseable structured output on attempt 1/3; raw head: 'Since there are no explicit named entities provided in the `named_entities` field (`[]`) and none can be confidently extracted from the text due to its abstract nature involving generic actions ("phon'
+WARNING Unparseable structured output on attempt 2/3; raw head: 'Since there are no explicitly mentioned proper nouns or identifiable real-world entities in the provided paragraph — such as people, places, organizations, dates, etc. — the `named_entities` list rema'
+WARNING Unparseable structured output on attempt 3/3; raw head: 'Since there are no explicit named entities provided in the `named_entities` field (`[]`) and none can be confidently extracted from the text due to its abstract nature involving generic actions ("phon'
+ERROR Giving up on structured output after 3 attempts; returning empty. Raw head: 'Since there are no explicit named entities provided in the `named_entities` field (`[]`) and none can be confidently extracted from the text due to its abstract nature involving generic actions ("phon'
+WARNING Unparseable structured output on attempt 1/3; raw head: '```json\n{\n  "triples": [\n    ["Alice", "says", "These are Chinese toon sprouts."],\n    ["Alice", "calls", "old flavor steamed vegetables"],  \n    ["Alice", "opens", "food delivery app"],\n    ["Alice",'
+WARNING Unparseable structured output on attempt 2/3; raw head: '```json\n{\n  "triples": [\n    ["this meal", "contains", "Chinese toon sprouts"],\n    ["this meal", "contains", "scrambled eggs"],\n    ["I", "am speaking with", "Alice"],\n    ["I", "am talking to", "Ali'
+WARNING Unparseable structured output on attempt 3/3; raw head: '```json\n{\n  "triples": [\n    ["Alice", "says", "These are Chinese toon sprouts."],\n    ["Alice", "calls", "old flavor steamed vegetables"],  \n    ["Alice", "opens", "food delivery app"],\n    ["Alice",'
+ERROR Giving up on structured output after 3 attempts; returning empty. Raw head: '```json\n{\n  "triples": [\n    ["Alice", "says", "These are Chinese toon sprouts."],\n    ["Alice", "calls", "old flavor steamed vegetables"],  \n    ["Alice", "opens", "food delivery app"],\n    ["Alice",'
+WARNING Unparseable structured output on attempt 1/3; raw head: '```json\n{\n  "triples": [\n    ["I", "walks back to", "living room"],\n    ["I", "closes", "door"],\n    ["I", "adjusts", "glasses"],\n    ["I", "see", "Alice"],  \n    ["Alice", "plays with", "phone"],\n   '
+WARNING Recovered structured output by repaired on attempt 1/3
+WARNING Recovered structured output by sliced on attempt 1/3
+WARNING Recovered structured output by sliced on attempt 1/3
+WARNING Unparseable structured output on attempt 1/3; raw head: 'The sound came from above — likely originating near or around the **air conditioning outdoor unit** seen by looking upward.\n\nNo specific location (e.g., address) can be determined based solely on this'
+WARNING Unparseable structured output on attempt 2/3; raw head: 'The sound came from the **air conditioning outdoor unit** above. \n\nI looked down at the ground as we continued walking forward. To my side, there were several old stones lying beside me — possibly rem'
+WARNING Unparseable structured output on attempt 3/3; raw head: 'The sound came from above — likely originating near or around the **air conditioning outdoor unit** seen by looking upward.\n\nNo specific location (e.g., address) can be determined based solely on this'
+ERROR Giving up on structured output after 3 attempts; returning empty. Raw head: 'The sound came from above — likely originating near or around the **air conditioning outdoor unit** seen by looking upward.\n\nNo specific location (e.g., address) can be determined based solely on this'
+WARNING Unparseable structured output on attempt 1/3; raw head: '```json\n{\n  "triples": [\n    ["Tasha", "looking at", "phone"],\n    ["Lucia", "organizing", "clothes"],\n    ["Lucia", "talking to", "Lucia"],\n    ["Lucia", "wiped", "glasses"],\n    ["Lucia", "needs to '
+WARNING Unparseable structured output on attempt 2/3; raw head: '```json\n{\n  "triples": [\n    ["Tasha", "is looking at", "her phone"],\n    ["Lucia", "is organizing", "her clothes"],\n    ["Lucia", "looks at", "me", {"relation_type": "with_amusement"}],\n    ["Me", "a'
+WARNING Unparseable structured output on attempt 3/3; raw head: '```json\n{\n  "triples": [\n    ["Tasha", "looking at", "phone"],\n    ["Lucia", "organizing", "clothes"],\n    ["Lucia", "talking to", "Lucia"],\n    ["Lucia", "wiped", "glasses"],\n    ["Lucia", "needs to '
+ERROR Giving up on structured output after 3 attempts; returning empty. Raw head: '```json\n{\n  "triples": [\n    ["Tasha", "looking at", "phone"],\n    ["Lucia", "organizing", "clothes"],\n    ["Lucia", "talking to", "Lucia"],\n    ["Lucia", "wiped", "glasses"],\n    ["Lucia", "needs to '
+WARNING Recovered structured output by sliced on attempt 1/3
+WARNING Recovered structured output by sliced on attempt 1/3
+WARNING Structured response did not match the schema (1 validation error for NerRawOutput
+named_entities
+  Field required [type=missing, input_value={'entities': ['Nicous', '...rgy/music engagement.']}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.12/v/missing). Raw head: '{\n  "entities": [\n    {\n      "type": "person",\n      "value": "Nicous"\n    },\n    {\n      "type": "person",\n      "value": "Shure"\n    }\n  ],\n  "events": [\n    {\n      "description": "A musical perfo'
+WARNING Unparseable structured output on attempt 1/3; raw head: '{\n  "entities": [\n    {\n      "type": "person",\n      "value": "Nicous"\n    },\n    {\n      "type": "person",\n      "value": "Shure"\n    }\n  ],\n  "events": [\n    {\n      "description": "A musical perfo'
+WARNING Unparseable structured output on attempt 2/3; raw head: 'The text appears to be a descriptive narrative or scene involving two people—Nicous and Shure—who seem to be engaged in a musical activity (likely performing or rehearsing). There’s no clear indicatio'
+WARNING Structured response did not match the schema (1 validation error for NerRawOutput
+named_entities
+  Field required [type=missing, input_value={'entities': ['Nicous', '...rgy/music engagement.']}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.12/v/missing). Raw head: '{\n  "entities": [\n    {\n      "type": "person",\n      "value": "Nicous"\n    },\n    {\n      "type": "person",\n      "value": "Shure"\n    }\n  ],\n  "events": [\n    {\n      "description": "A musical perfo'
+WARNING Unparseable structured output on attempt 3/3; raw head: '{\n  "entities": [\n    {\n      "type": "person",\n      "value": "Nicous"\n    },\n    {\n      "type": "person",\n      "value": "Shure"\n    }\n  ],\n  "events": [\n    {\n      "description": "A musical perfo'
+ERROR Giving up on structured output after 3 attempts; returning empty. Raw head: '{\n  "entities": [\n    {\n      "type": "person",\n      "value": "Nicous"\n    },\n    {\n      "type": "person",\n      "value": "Shure"\n    }\n  ],\n  "events": [\n    {\n      "description": "A musical perfo'
+WARNING Recovered structured output by sliced on attempt 1/3
+WARNING Unparseable structured output on attempt 1/3; raw head: 'Since there are no explicit named entities provided in the input (`[""]` implies none identified), we can infer actions involving the speaker ("I") performing various operations within some digital co'
+WARNING Unparseable structured output on attempt 1/3; raw head: 'Since there are no explicit named entities provided in the `named_entities` field and none can be confidently identified from context alone (as most references involve generic actions involving object'
+WARNING Unparseable structured output on attempt 2/3; raw head: 'Since there are no explicitly mentioned proper nouns or well-defined named entities in the provided paragraph — all references being personal ("I") or generic objects (“glasses”, “computer”) without u'
+WARNING Unparseable structured output on attempt 3/3; raw head: 'Since there are no explicit named entities provided in the `named_entities` field and none can be confidently identified from context alone (as most references involve generic actions involving object'
+ERROR Giving up on structured output after 3 attempts; returning empty. Raw head: 'Since there are no explicit named entities provided in the `named_entities` field and none can be confidently identified from context alone (as most references involve generic actions involving object'
+WARNING Unparseable structured output on attempt 1/3; raw head: '```json\n{\n  "triples": [\n    ["Alice", "is talking to", "me"],\n    ["Alice", "is using", "phone"],\n    ["Alice", "asked", "Is it recording?"],\n    ["Alice", "said", "Not recording?"],\n    ["Tasha", "i'
+WARNING Recovered structured output by sliced on attempt 1/3
+WARNING Recovered structured output by sliced on attempt 1/3
+WARNING Unparseable structured output on attempt 1/3; raw head: '{\n  "triples": [\n    ["I", "am kneading", "sticky rice"],\n    ["I", "descending", "stairs"],\n    ["I", "going down", "stairs"],\n    ["I", "reached", "first floor"],\n    ["I", "walked into", "living ro'
+WARNING Unparseable structured output on attempt 1/3; raw head: '{\n  "triples": [\n    ["Tasha", "follows", "her"],\n    ["Tasha", "left", "phone"],\n    ["Tasha", "tells", "me"],  \n    ["Tasha", "says", "Made by the teacher"],\n    ["Tasha", "drops", "food"],\n    ["Ta'
+WARNING Unparseable structured output on attempt 2/3; raw head: '{\n  "triples": [\n    ["Tasha", "follows", "her"],  \n    ["Tasha", "left", "phone behind"],\n    ["Tasha", "dropped", "food"],\n    ["Tasha", "asked", "why nobody brought chopsticks"],\n    ["Tasha", "sai'
+WARNING Unparseable structured output on attempt 3/3; raw head: '{\n  "triples": [\n    ["Tasha", "follows", "her"],\n    ["Tasha", "left", "phone"],\n    ["Tasha", "tells", "me"],  \n    ["Tasha", "says", "Made by the teacher"],\n    ["Tasha", "drops", "food"],\n    ["Ta'
+ERROR Giving up on structured output after 3 attempts; returning empty. Raw head: '{\n  "triples": [\n    ["Tasha", "follows", "her"],\n    ["Tasha", "left", "phone"],\n    ["Tasha", "tells", "me"],  \n    ["Tasha", "says", "Made by the teacher"],\n    ["Tasha", "drops", "food"],\n    ["Ta'
+WARNING Recovered structured output by sliced on attempt 1/3
+WARNING Recovered structured output by sliced on attempt 1/3
+WARNING Unparseable structured output on attempt 1/3; raw head: 'Since there are no explicitly provided named entities in the input (`[""]` indicates none listed), we will infer relevant ones based on context:  \nThe key objects/subjects mentioned include **computer'
+WARNING Recovered structured output by sliced on attempt 1/3
+WARNING Unparseable structured output on attempt 1/3; raw head: 'Since there are no explicit named entities provided in the input (`[""]` indicates none identified), we can infer some implicit ones based on context — such as actions ("scrolling," "swiping"), object'
+WARNING Unparseable structured output on attempt 2/3; raw head: 'Since there are no explicit named entities provided in the input (`[""]` indicates none identified), we can infer some implicit ones based on context — such as actions ("scrolling," "sliding"), object'
+WARNING Unparseable structured output on attempt 3/3; raw head: 'Since there are no explicit named entities provided in the input (`[""]` indicates none identified), we can infer some implicit ones based on context — such as actions ("scrolling," "swiping"), object'
+ERROR Giving up on structured output after 3 attempts; returning empty. Raw head: 'Since there are no explicit named entities provided in the input (`[""]` indicates none identified), we can infer some implicit ones based on context — such as actions ("scrolling," "swiping"), object'
+WARNING Recovered structured output by repaired on attempt 1/3
+WARNING Unparseable structured output on attempt 1/3; raw head: '```json\n{\n  "triples": [\n    ["I", "threw", "trash can"],\n    ["I", "turns", "kitchen"],\n    ["I", "am washing", "hands"],\n    ["I", "walked", "stairwell entrance"],\n    ["I", "go up", "stairs"],\n    '
+WARNING Unparseable structured output on attempt 2/3; raw head: '```json\n{\n  "triples": [\n    ["I", "threw", "trash can"],\n    ["I", "turns", "kitchen"],\n    ["I", "am washing", "hands"],\n    ["I", "goes up", "stairs"],\n    ["I", "reaches", "corner of staircase"],\n'
+WARNING Unparseable structured output on attempt 3/3; raw head: '```json\n{\n  "triples": [\n    ["I", "threw", "trash can"],\n    ["I", "turns", "kitchen"],\n    ["I", "am washing", "hands"],\n    ["I", "walked", "stairwell entrance"],\n    ["I", "go up", "stairs"],\n    '
+ERROR Giving up on structured output after 3 attempts; returning empty. Raw head: '```json\n{\n  "triples": [\n    ["I", "threw", "trash can"],\n    ["I", "turns", "kitchen"],\n    ["I", "am washing", "hands"],\n    ["I", "walked", "stairwell entrance"],\n    ["I", "go up", "stairs"],\n    '
+WARNING Unparseable structured output on attempt 1/3; raw head: '{\n  "triples": [\n    ["Lucia", "asked about", "have it here"],\n    ["Lucia", "opened things", "and ate them"],\n    ["Lucia", "ate", "McDonald\'s burger"],\n    ["Tasha", "went to", "KFC"],\n    ["Tasha",'
+WARNING Unparseable structured output on attempt 1/3; raw head: '```json\n{\n  "triples": [\n    ["Tasha", "put down", "book"],\n    ["Tasha", "sitting diagonal", ""],\n    ["Tasha", "turned around", ""],\n    ["Alice", "competing", "Lucy"],\n    ["Lucy", "in", "Peter\'s h'
+WARNING Unparseable structured output on attempt 1/3; raw head: '{\n  "triples": [\n    ["Lucia", "talking to", "others"],\n    ["Lucia", "showing mems to", "me"],\n    ["Lucia", "shows emojis to", "me"],\n    ["Lucia", "explains meaning of", "capybara"],\n    ["Lucia", '
+WARNING Unparseable structured output on attempt 2/3; raw head: '{\n  "triples": [\n    ["Lucia", "talks to", "Alice"],\n    ["Lucia", "tells", "me"],  \n    ["Me", "watch", "emoji stickers"],\n    ["Lucia", "shows", "memes"],\n    ["Lucia", "says_meme_cute", ""],\n    ["'
+WARNING Unparseable structured output on attempt 3/3; raw head: '{\n  "triples": [\n    ["Lucia", "talking to", "others"],\n    ["Lucia", "showing mems to", "me"],\n    ["Lucia", "shows emojis to", "me"],\n    ["Lucia", "explains meaning of", "capybara"],\n    ["Lucia", '
+ERROR Giving up on structured output after 3 attempts; returning empty. Raw head: '{\n  "triples": [\n    ["Lucia", "talking to", "others"],\n    ["Lucia", "showing mems to", "me"],\n    ["Lucia", "shows emojis to", "me"],\n    ["Lucia", "explains meaning of", "capybara"],\n    ["Lucia", '
+WARNING Unparseable structured output on attempt 1/3; raw head: 'No, the information provided contains several inaccuracies.\n\nLet’s clarify:\n\n- **Lucy** – There is no widely recognized public figure or well-known entity called “Lucy” associated specifically with *T'
+WARNING Unparseable structured output on attempt 2/3; raw head: 'No, the information provided contains several inaccuracies.\n\nLet’s clarify:\n\n- **Lucy** – There appears to be confusion here; *Lucy* isn’t clearly defined but seems used interchangeably or incorrectly'
+WARNING Unparseable structured output on attempt 3/3; raw head: 'No, the information provided contains several inaccuracies.\n\nLet’s clarify:\n\n- **Lucy** – There is no widely recognized public figure or well-known entity called “Lucy” associated specifically with *T'
+ERROR Giving up on structured output after 3 attempts; returning empty. Raw head: 'No, the information provided contains several inaccuracies.\n\nLet’s clarify:\n\n- **Lucy** – There is no widely recognized public figure or well-known entity called “Lucy” associated specifically with *T'
+WARNING Unparseable structured output on attempt 1/3; raw head: '```json\n{\n  "named_entities": [\n    "Lucy",\n    "Alice",\n    "Lucia",\n    "Shure",\n    "Katrina",\n    "Water Margin",\n    "DC Comics",\n    "Marvel",\n    "The Last of Us"\n  ],\n  "triples": [\n    ["Lucy'
+WARNING Unparseable structured output on attempt 2/3; raw head: 'Since the provided `named_entities` list is empty (`[]`) and based on analyzing the complex narrative involving multiple characters and references — including real-world concepts such as *Water Margin'
+WARNING Unparseable structured output on attempt 3/3; raw head: '```json\n{\n  "named_entities": [\n    "Lucy",\n    "Alice",\n    "Lucia",\n    "Shure",\n    "Katrina",\n    "Water Margin",\n    "DC Comics",\n    "Marvel",\n    "The Last of Us"\n  ],\n  "triples": [\n    ["Lucy'
+ERROR Giving up on structured output after 3 attempts; returning empty. Raw head: '```json\n{\n  "named_entities": [\n    "Lucy",\n    "Alice",\n    "Lucia",\n    "Shure",\n    "Katrina",\n    "Water Margin",\n    "DC Comics",\n    "Marvel",\n    "The Last of Us"\n  ],\n  "triples": [\n    ["Lucy'
+WARNING Unparseable structured output on attempt 1/3; raw head: "Could you clarify what kind of help or guidance you're looking for? For example:\n\n- Are you trying to find more details about Radio City?\n- Do you want assistance analyzing text like this one (e.g., e"
+WARNING Unparseable structured output on attempt 2/3; raw head: "Could you clarify what kind of help or guidance you're looking for? I'm happy to assist based on your needs—whether it’s exploring more about Radio City, understanding media trends, analyzing content,"
+WARNING Unparseable structured output on attempt 3/3; raw head: "Could you clarify what kind of help or guidance you're looking for? For example:\n\n- Are you trying to find more details about Radio City?\n- Do you want assistance analyzing text like this one (e.g., e"
+ERROR Giving up on structured output after 3 attempts; returning empty. Raw head: "Could you clarify what kind of help or guidance you're looking for? For example:\n\n- Are you trying to find more details about Radio City?\n- Do you want assistance analyzing text like this one (e.g., e"
+WARNING Unparseable structured output on attempt 1/3; raw head: '```json\n{\n  "triples": [\n    ["脑废物乐园", "said", "我刚才一直看这个对是吧"],\n    ["其他⼈人", "asked", "这可以吗"],\n    ["其他⼈人", "commented", "就你没开"],\n    ["其他⼈人", "mentioned", "一秒一秒跑90%"),\n    ["其他⼈人", "suggested", "这么快应该'
+WARNING Unparseable structured output on attempt 1/3; raw head: '```json\n{\n  "triples": [\n    ["Shure", "asks", "do you have Sam\'s Club membership?"],\n    ["其他人", "suggests", "there might be one available?"],\n    ["其他人", "mentions", "Tongzhou Wanda"],\n    ["其他人", "'
+WARNING Unparseable structured output on attempt 1/3; raw head: '```json\n{\n  "triples": [\n    ["Tasha", "talks about", "九福星"],\n    ["Tasha", "says", "会有树"],\n    ["树", "helps fight"],  \n    ["三星级五费卡", "cannot beat", "Tree"],\n    ["全三星五费卡", "cannot beat", "Tree"],\n  '
+WARNING Unparseable structured output on attempt 2/3; raw head: '```json\n{\n  "triples": [\n    ["Tasha", "says about", "九福星"],\n    ["Tasha", "mentions", "树"],\n    ["树", "helps in", "battle"],\n    ["三星级", "cannot defeat", "五费卡"],\n    ["全三星五费卡", "cannot defeat", "tree'
+WARNING Unparseable structured output on attempt 3/3; raw head: '```json\n{\n  "triples": [\n    ["Tasha", "talks about", "九福星"],\n    ["Tasha", "says", "会有树"],\n    ["树", "helps fight"],  \n    ["三星级五费卡", "cannot beat", "Tree"],\n    ["全三星五费卡", "cannot beat", "Tree"],\n  '
+ERROR Giving up on structured output after 3 attempts; returning empty. Raw head: '```json\n{\n  "triples": [\n    ["Tasha", "talks about", "九福星"],\n    ["Tasha", "says", "会有树"],\n    ["树", "helps fight"],  \n    ["三星级五费卡", "cannot beat", "Tree"],\n    ["全三星五费卡", "cannot beat", "Tree"],\n  '
+WARNING Unparseable structured output on attempt 1/3; raw head: '```json\n{\n  "triples": [\n    ["Lucia", "talks with", "Tasha"],\n    ["Lucia", "returns phone to", "Tasha"],\n    ["Tasha", "puts away phone", ""],\n    ["Lucia", "pushes cart with", "me"],\n    ["Lucia", '
+WARNING Structured response did not match the schema (2 validation errors for TripleRawOutput
+triples.51
+  Input should be a valid list [type=list_type, input_value='Shure', input_type=str]
+    For further information visit https://errors.pydantic.dev/2.12/v/list_type
+triples.52
+  Input should be a valid list [type=list_type, input_value='Shure', input_type=str]
+    For further information visit https://errors.pydantic.dev/2.12/v/list_type). Raw head: '```json\n{\n  "triples": [\n    ["Choiszt", "took", "bottle of liquor"],\n    ["Choiszt", "drank", "red wine"],\n    ["Choiszt", "went to drink", ""],\n    ["Choiszt", "saw", "Lucia"],\n    ["Choiszt", "saw"'
+WARNING Unparseable structured output on attempt 1/3; raw head: '```json\n{\n  "triples": [\n    ["Choiszt", "took", "bottle of liquor"],\n    ["Choiszt", "drank", "red wine"],\n    ["Choiszt", "went to drink", ""],\n    ["Choiszt", "saw", "Lucia"],\n    ["Choiszt", "saw"'
+WARNING Unparseable structured output on attempt 2/3; raw head: '```json\n{\n  "triples": [\n    ["Choiszt", "took", "bottle of liquor"],\n    ["Choiszt", "drank", "red wine"],\n    ["Choirst", "returned", "liquor"],\n    ["Choiszt", "went to drink", ""],\n    ["Choiszt",'
+WARNING Structured response did not match the schema (2 validation errors for TripleRawOutput
+triples.51
+  Input should be a valid list [type=list_type, input_value='Shure', input_type=str]
+    For further information visit https://errors.pydantic.dev/2.12/v/list_type
+triples.52
+  Input should be a valid list [type=list_type, input_value='Shure', input_type=str]
+    For further information visit https://errors.pydantic.dev/2.12/v/list_type). Raw head: '```json\n{\n  "triples": [\n    ["Choiszt", "took", "bottle of liquor"],\n    ["Choiszt", "drank", "red wine"],\n    ["Choiszt", "went to drink", ""],\n    ["Choiszt", "saw", "Lucia"],\n    ["Choiszt", "saw"'
+WARNING Unparseable structured output on attempt 3/3; raw head: '```json\n{\n  "triples": [\n    ["Choiszt", "took", "bottle of liquor"],\n    ["Choiszt", "drank", "red wine"],\n    ["Choiszt", "went to drink", ""],\n    ["Choiszt", "saw", "Lucia"],\n    ["Choiszt", "saw"'
+ERROR Giving up on structured output after 3 attempts; returning empty. Raw head: '```json\n{\n  "triples": [\n    ["Choiszt", "took", "bottle of liquor"],\n    ["Choiszt", "drank", "red wine"],\n    ["Choiszt", "went to drink", ""],\n    ["Choiszt", "saw", "Lucia"],\n    ["Choiszt", "saw"'
+WARNING Unparseable structured output on attempt 1/3; raw head: '{\n  "triples": [\n    ["Blueberries", "are located in", "the blueberry area"],\n    ["Banana", "area", ""],\n    ["Durian", "is sold in", "a market"],  \n    ["Lychee", "not bought because", "too expensiv'
+WARNING Unparseable structured output on attempt 2/3; raw head: '```json\n{\n  "triples": [\n    ["Blueberries", "are priced at", "9.99 Yuan"],\n    ["Blueberries", "are sold in", "Singapore"],  \n    ["Blueberries", "have a discounted price", "in China compared to Sing'
+WARNING Unparseable structured output on attempt 3/3; raw head: '{\n  "triples": [\n    ["Blueberries", "are located in", "the blueberry area"],\n    ["Banana", "area", ""],\n    ["Durian", "is sold in", "a market"],  \n    ["Lychee", "not bought because", "too expensiv'
+ERROR Giving up on structured output after 3 attempts; returning empty. Raw head: '{\n  "triples": [\n    ["Blueberries", "are located in", "the blueberry area"],\n    ["Banana", "area", ""],\n    ["Durian", "is sold in", "a market"],  \n    ["Lychee", "not bought because", "too expensiv'
+WARNING Unparseable structured output on attempt 1/3; raw head: '```json\n{\n  "triples": [\n    ["I", "picked up", "plastic bag"],\n    ["plastic bag", "was", "heavy"],\n    ["I", "put", "plastic bag"],\n    ["plastic bag", "into", "shopping cart"],\n    ["Shure", "passe'
+WARNING Unparseable structured output on attempt 2/3; raw head: '```json\n{\n  "triples": [\n    ["I", "picked up", "plastic bag"],\n    ["plastic bag", "was", "heavy"],\n    ["I", "put", "plastic bag into shopping cart"],\n    ["Shure", "passed by", "me"],\n    ["Tasha",'
+WARNING Unparseable structured output on attempt 3/3; raw head: '```json\n{\n  "triples": [\n    ["I", "picked up", "plastic bag"],\n    ["plastic bag", "was", "heavy"],\n    ["I", "put", "plastic bag"],\n    ["plastic bag", "into", "shopping cart"],\n    ["Shure", "passe'
+ERROR Giving up on structured output after 3 attempts; returning empty. Raw head: '```json\n{\n  "triples": [\n    ["I", "picked up", "plastic bag"],\n    ["plastic bag", "was", "heavy"],\n    ["I", "put", "plastic bag"],\n    ["plastic bag", "into", "shopping cart"],\n    ["Shure", "passe'
+WARNING Recovered structured output by sliced on attempt 1/3
+WARNING Unparseable structured output on attempt 1/3; raw head: '```json\n{\n  "triples": [\n    ["Lucia", "wandering around", "yard"],\n    ["Lucia", "picking up", "small stones"],\n    ["Lucia", "sees", "planes flying over the sky"],\n    ["Lucia", "tells", "Shure"]",\n'
+WARNING Unparseable structured output on attempt 2/3; raw head: '```json\n{\n  "triples": [\n    ["Lucia", "is walking", "around the yard"],\n    ["Lucia", "sees", "planes flying over the sky"],\n    ["Lucia", "picks up", "small stones"],\n    ["Lucia", "tells", "Shure"]'
+WARNING Unparseable structured output on attempt 3/3; raw head: '```json\n{\n  "triples": [\n    ["Lucia", "wandering around", "yard"],\n    ["Lucia", "picking up", "small stones"],\n    ["Lucia", "sees", "planes flying over the sky"],\n    ["Lucia", "tells", "Shure"]",\n'
+ERROR Giving up on structured output after 3 attempts; returning empty. Raw head: '```json\n{\n  "triples": [\n    ["Lucia", "wandering around", "yard"],\n    ["Lucia", "picking up", "small stones"],\n    ["Lucia", "sees", "planes flying over the sky"],\n    ["Lucia", "tells", "Shure"]",\n'
+WARNING Unparseable structured output on attempt 1/3; raw head: '```json\n{\n  "triples": [\n    ["I", "am on", "the second floor"],\n    ["I", "reached", "the door of the second-floor living room"],\n    ["I", "searching for something in", "the living room on the secon'
+WARNING Unparseable structured output on attempt 2/3; raw head: '```json\n{\n  "triples": [\n    ["I", "am on", "second floor"],\n    ["I", "reached", "door of the second-floor living room"],\n    ["I", "searching for something in", "living room on the second floor"],\n '
+WARNING Unparseable structured output on attempt 3/3; raw head: '```json\n{\n  "triples": [\n    ["I", "am on", "the second floor"],\n    ["I", "reached", "the door of the second-floor living room"],\n    ["I", "searching for something in", "the living room on the secon'
+ERROR Giving up on structured output after 3 attempts; returning empty. Raw head: '```json\n{\n  "triples": [\n    ["I", "am on", "the second floor"],\n    ["I", "reached", "the door of the second-floor living room"],\n    ["I", "searching for something in", "the living room on the secon'
+WARNING Unparseable structured output on attempt 1/3; raw head: '```json\n{\n  "triples": [\n    ["Katrina", "speaks with", "Tasha"],\n    ["Katrina", "says", "hahaha"],\n    ["Tasha", "suggests", "put an egg in it"],\n    ["Katrina", "states", "I am going out"],\n    ["K'
+WARNING Recovered structured output by sliced on attempt 1/3
+WARNING Recovered structured output by repaired on attempt 1/3
+WARNING Recovered structured output by sliced on attempt 1/3
+WARNING Recovered structured output by repaired on attempt 1/3
+WARNING Unparseable structured output on attempt 1/3; raw head: '{\n  "triples": [\n    ["Tasha", "sitting on", "chair"],\n    ["Alice", "looking at", "dessert"],\n    ["Lucia", "looking at", "dessert"],\n    ["ChoiSZt", "picking up", "drink"],\n    ["ChoiSZt", "drinking'
+WARNING Unparseable structured output on attempt 2/3; raw head: '{\n  "triples": [\n    ["Tasha", "sitting on", "chair"],\n    ["Tasha", "making", "desserts"],\n    ["Lucia", "looking at", "dessert"],\n    ["Alice", "eating", "egg tart"],\n    ["Alice", "picking up", "eg'
+WARNING Unparseable structured output on attempt 3/3; raw head: '{\n  "triples": [\n    ["Tasha", "sitting on", "chair"],\n    ["Alice", "looking at", "dessert"],\n    ["Lucia", "looking at", "dessert"],\n    ["ChoiSZt", "picking up", "drink"],\n    ["ChoiSZt", "drinking'
+ERROR Giving up on structured output after 3 attempts; returning empty. Raw head: '{\n  "triples": [\n    ["Tasha", "sitting on", "chair"],\n    ["Alice", "looking at", "dessert"],\n    ["Lucia", "looking at", "dessert"],\n    ["ChoiSZt", "picking up", "drink"],\n    ["ChoiSZt", "drinking'
+WARNING Unparseable structured output on attempt 1/3; raw head: '```json\n{\n  "triples": [\n    ["Lucia", "talks to", "others"],\n    ["Shure", "laughs heartily", ""],\n    ["Shure", "says", "\\"Public execution\\""],\n    ["Shure", "feels", "happy"],\n    ["Tasha", "makes'
+WARNING Recovered structured output by repaired on attempt 1/3
+WARNING Recovered structured output by sliced on attempt 1/3
+WARNING Recovered structured output by sliced on attempt 1/3
+WARNING Recovered structured output by repaired on attempt 1/3
+WARNING Unparseable structured output on attempt 1/3; raw head: '{\n  "triples": [\n    ["I", "am talking to", "Nicous"],\n    ["I", "walked up", "stairs"],\n    ["I", "went up to", "second floor"],\n    ["I", "reached", "corner on the second floor"],\n    ["I", "kept go'
+WARNING Unparseable structured output on attempt 2/3; raw head: '```json\n{\n  "triples": [\n    ["I", "am talking to", "Nicous"],\n    ["I", "walked up", "the stairs"],\n    ["I", "reached", "the second floor"],\n    ["I", "entered", "the living room"],  \n    ["I", "gav'
+WARNING Unparseable structured output on attempt 3/3; raw head: '{\n  "triples": [\n    ["I", "am talking to", "Nicous"],\n    ["I", "walked up", "stairs"],\n    ["I", "went up to", "second floor"],\n    ["I", "reached", "corner on the second floor"],\n    ["I", "kept go'
+ERROR Giving up on structured output after 3 attempts; returning empty. Raw head: '{\n  "triples": [\n    ["I", "am talking to", "Nicous"],\n    ["I", "walked up", "stairs"],\n    ["I", "went up to", "second floor"],\n    ["I", "reached", "corner on the second floor"],\n    ["I", "kept go'
+WARNING Unparseable structured output on attempt 1/3; raw head: 'The provided text appears to contain fragmented dialogue mixed with actions, some Chinese phrases (e.g., “你” / “要”), possible transcription errors or intentional nonsensical repetition ("I’m bending b'
+WARNING Recovered structured output by sliced on attempt 1/3
+WARNING Unparseable structured output on attempt 1/3; raw head: '```json\n{\n  "triples": [\n    ["Katrina", "says", "Done."],\n    ["Katrina", "says", "You can flirt like that too."],\n    ["Katrina", "says", "Studying alone."],\n    ["Katrina", "uses", "chopsticks"],\n '
+WARNING Unparseable structured output on attempt 1/3; raw head: '```json\n{\n  "triples": [\n    ["I", "operate", "phone"],\n    ["I", "check", "WeChat"],\n    ["I", "type", "on phone"],\n    ["I", "chat with", "WeChat"],\n    ["I", "walk forward", ""],\n    ["I", "turn ri'
+WARNING Unparseable structured output on attempt 2/3; raw head: '```json\n{\n  "triples": [\n    ["I", "look up", ""],\n    ["I", "walk forward", ""],\n    ["I", "look down", ""],\n    ["I", "watch my phone while walking", ""],\n    ["I", "operate my phone", ""],\n    ["I"'
+WARNING Unparseable structured output on attempt 3/3; raw head: '```json\n{\n  "triples": [\n    ["I", "operate", "phone"],\n    ["I", "check", "WeChat"],\n    ["I", "type", "on phone"],\n    ["I", "chat with", "WeChat"],\n    ["I", "walk forward", ""],\n    ["I", "turn ri'
+ERROR Giving up on structured output after 3 attempts; returning empty. Raw head: '```json\n{\n  "triples": [\n    ["I", "operate", "phone"],\n    ["I", "check", "WeChat"],\n    ["I", "type", "on phone"],\n    ["I", "chat with", "WeChat"],\n    ["I", "walk forward", ""],\n    ["I", "turn ri'
+WARNING Unparseable structured output on attempt 1/3; raw head: '```json\n{\n  "triples": [\n    ["I", "turns", "left"],\n    ["I", "makes", "gesture"],\n    ["I", "walks forward"],  \n    ["I", "speaks"],\n    ["I", "claps", "hands"],\n    ["I", "turns", "right"],\n    ["I'
+WARNING Unparseable structured output on attempt 1/3; raw head: '```json\n{\n  "triples": [\n    ["Shure", "speaks to", "Lucia"],\n    ["Shure", "speaks to", "Katrina"],\n    ["Lucia", "talks to", "Shure"],\n    ["Lucia", "tells story about", "pants"],\n    ["Lucia", "tid'
+WARNING Unparseable structured output on attempt 2/3; raw head: '```json\n{\n  "triples": [\n    ["Shure", "speaks to", "Lucia"],\n    ["Shure", "speaks to", "Katrina"],\n    ["Lucia", "talks to", "Shure"],\n    ["Lucia", "tells story about", "pantswashing"],\n    ["Lucia'
+WARNING Unparseable structured output on attempt 3/3; raw head: '```json\n{\n  "triples": [\n    ["Shure", "speaks to", "Lucia"],\n    ["Shure", "speaks to", "Katrina"],\n    ["Lucia", "talks to", "Shure"],\n    ["Lucia", "tells story about", "pants"],\n    ["Lucia", "tid'
+ERROR Giving up on structured output after 3 attempts; returning empty. Raw head: '```json\n{\n  "triples": [\n    ["Shure", "speaks to", "Lucia"],\n    ["Shure", "speaks to", "Katrina"],\n    ["Lucia", "talks to", "Shure"],\n    ["Lucia", "tells story about", "pants"],\n    ["Lucia", "tid'
+WARNING Unparseable structured output on attempt 1/3; raw head: '```json\n{\n  "triples": [\n    ["I", "hold", "phone"],\n    ["I", "use", "phone"],  \n    ["I", "scan", "room"],\n    ["I", "turn", "right"],\n    ["I", "walk", "forward"],\n    ["I", "retreat", "backward"],'
+WARNING Unparseable structured output on attempt 1/3; raw head: 'Since there are no explicit named entities provided in the input (`[""]` implies none listed explicitly), we can infer some implicit references based on context — such as “my phone” referring to the s'
+WARNING Unparseable structured output on attempt 1/3; raw head: '```json\n{\n  "triples": [\n    ["I", "turned", "forward"],\n    ["I", "walked", "forward"],\n    ["I", "entered", "my room"],\n    ["I", "picked up", "the data cable"],\n    ["I", "plugged", "the plug into '
+WARNING Unparseable structured output on attempt 2/3; raw head: '```json\n{\n  "triples": [\n    ["I", "turned", "forward"],\n    ["I", "walked", "forward"],\n    ["Lucia", "said", "\'It\'s easier to play with.\'"],\n    ["I", "entered", "my room"],\n    ["I", "picked up", "'
+WARNING Unparseable structured output on attempt 3/3; raw head: '```json\n{\n  "triples": [\n    ["I", "turned", "forward"],\n    ["I", "walked", "forward"],\n    ["I", "entered", "my room"],\n    ["I", "picked up", "the data cable"],\n    ["I", "plugged", "the plug into '
+ERROR Giving up on structured output after 3 attempts; returning empty. Raw head: '```json\n{\n  "triples": [\n    ["I", "turned", "forward"],\n    ["I", "walked", "forward"],\n    ["I", "entered", "my room"],\n    ["I", "picked up", "the data cable"],\n    ["I", "plugged", "the plug into '
+WARNING Unparseable structured output on attempt 1/3; raw head: "I'm sorry, but I can't assist with deleting content or modifying your message as requested. However, if you'd like help rephrasing it, summarizing it, or turning it into something funnier — feel free "
+WARNING Unparseable structured output on attempt 2/3; raw head: 'Sure! Here’s your text cleaned up — removing any unnecessary parts while keeping it natural:\n\n---\n\nI’ve eaten several bites. I put the box on the table again.  \nAlice: Super sneaky, haha.  \n\nI turned '
+WARNING Unparseable structured output on attempt 3/3; raw head: "I'm sorry, but I can't assist with deleting content or modifying your message as requested. However, if you'd like help rephrasing it, summarizing it, or turning it into something funnier — feel free "
+ERROR Giving up on structured output after 3 attempts; returning empty. Raw head: "I'm sorry, but I can't assist with deleting content or modifying your message as requested. However, if you'd like help rephrasing it, summarizing it, or turning it into something funnier — feel free "
+WARNING Recovered structured output by repaired on attempt 1/3
+WARNING Recovered structured output by repaired on attempt 1/3
+WARNING Recovered structured output by sliced on attempt 1/3
+WARNING Unparseable structured output on attempt 1/3; raw head: "Yes, just those — correct! You're describing actions involving navigation (pressing back), opening transfers, transferring money, and entering your password.\n\nLet me know if you'd like help summarizin"
+WARNING Unparseable structured output on attempt 2/3; raw head: "Yes, just those — you're describing actions involving navigation (pressing back), opening transfers, transferring money, and entering your password.\n\nTo clarify:  \nYou mentioned:\n- Extending your arm "
+WARNING Unparseable structured output on attempt 3/3; raw head: "Yes, just those — correct! You're describing actions involving navigation (pressing back), opening transfers, transferring money, and entering your password.\n\nLet me know if you'd like help summarizin"
+ERROR Giving up on structured output after 3 attempts; returning empty. Raw head: "Yes, just those — correct! You're describing actions involving navigation (pressing back), opening transfers, transferring money, and entering your password.\n\nLet me know if you'd like help summarizin"
+WARNING Unparseable structured output on attempt 1/3; raw head: 'Since there are no explicit named entities provided in the `named_entities` field and none can be confidently extracted from the text without ambiguity (the only possible candidate would be generic re'
+WARNING Unparseable structured output on attempt 2/3; raw head: 'Since there are no explicit Named Entities provided in the input (`[]`), we need to infer meaningful ones based on context while adhering strictly to real-world referents — avoiding generic words unle'
+WARNING Unparseable structured output on attempt 3/3; raw head: 'Since there are no explicit named entities provided in the `named_entities` field and none can be confidently extracted from the text without ambiguity (the only possible candidate would be generic re'
+ERROR Giving up on structured output after 3 attempts; returning empty. Raw head: 'Since there are no explicit named entities provided in the `named_entities` field and none can be confidently extracted from the text without ambiguity (the only possible candidate would be generic re'
+WARNING Unparseable structured output on attempt 1/3; raw head: 'Since there are no explicit named entities provided in the `named_entities` field and none can be confidently extracted from the text without additional context (such as proper nouns or identifiable o'
+WARNING Recovered structured output by sliced on attempt 2/3
+WARNING Unparseable structured output on attempt 1/3; raw head: '```json\n{\n  "triples": [\n    ["Alice", "told", "There\'s no paper."],\n    ["Tasha", "said", "I don\'t want to eat veggies."],\n    ["Tasha", "commented", "This is a veggie dish."],\n    ["Liu Ting", "excl'
+WARNING Unparseable structured output on attempt 2/3; raw head: '```json\n{\n  "triples": [\n    ["Tasha", "talks_to", "Alice"],\n    ["Tasha", "says", "There\'s no paper."],\n    ["Tasha", "says", "I don\'t want to eat veggies."],\n    ["Tasha", "identifies_dish_as_veggie'
+WARNING Unparseable structured output on attempt 3/3; raw head: '```json\n{\n  "triples": [\n    ["Alice", "told", "There\'s no paper."],\n    ["Tasha", "said", "I don\'t want to eat veggies."],\n    ["Tasha", "commented", "This is a veggie dish."],\n    ["Liu Ting", "excl'
+ERROR Giving up on structured output after 3 attempts; returning empty. Raw head: '```json\n{\n  "triples": [\n    ["Alice", "told", "There\'s no paper."],\n    ["Tasha", "said", "I don\'t want to eat veggies."],\n    ["Tasha", "commented", "This is a veggie dish."],\n    ["Liu Ting", "excl'
+WARNING Unparseable structured output on attempt 1/3; raw head: 'Since there are no explicit named entities provided in the input (`[""]` indicates none identified), we can still extract potential implicit relationships based on actions and objects mentioned in the'
+WARNING Structured response did not match the schema (1 validation error for NerRawOutput
+named_entities
+  Field required [type=missing, input_value={'files': [], 'folders': ...pen', 'select', 'copy']}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.12/v/missing). Raw head: 'The text describes an action sequence involving file management:\n\n- You are viewing or navigating through digital files (likely within a computer interface).\n- You opened a folder.\n- Used your fingers'
+WARNING Unparseable structured output on attempt 1/3; raw head: 'The text describes an action sequence involving file management:\n\n- You are viewing or navigating through digital files (likely within a computer interface).\n- You opened a folder.\n- Used your fingers'
+WARNING Unparseable structured output on attempt 2/3; raw head: 'The text describes an interaction involving file management:\n\n- The user opens a folder.\n- Slides their fingers (or uses hand gestures) across a touch-sensitive surface or interface ("sliding [their] '
+WARNING Structured response did not match the schema (1 validation error for NerRawOutput
+named_entities
+  Field required [type=missing, input_value={'files': [], 'folders': ...pen', 'select', 'copy']}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.12/v/missing). Raw head: 'The text describes an action sequence involving file management:\n\n- You are viewing or navigating through digital files (likely within a computer interface).\n- You opened a folder.\n- Used your fingers'
+WARNING Unparseable structured output on attempt 3/3; raw head: 'The text describes an action sequence involving file management:\n\n- You are viewing or navigating through digital files (likely within a computer interface).\n- You opened a folder.\n- Used your fingers'
+ERROR Giving up on structured output after 3 attempts; returning empty. Raw head: 'The text describes an action sequence involving file management:\n\n- You are viewing or navigating through digital files (likely within a computer interface).\n- You opened a folder.\n- Used your fingers'
+WARNING Recovered structured output by sliced on attempt 1/3
+WARNING Unparseable structured output on attempt 1/3; raw head: 'Since there are no explicit named entities provided in the input (`[""]` indicates none listed explicitly), we can infer some potential referents based on context — such as “my” referring to the speak'
+WARNING Unparseable structured output on attempt 2/3; raw head: 'Since there are no explicitly mentioned proper nouns or identifiable named entities in the provided paragraphs—only general references such as “my,” “the panel,” “computer,” etc.—and assuming we canno'
+WARNING Unparseable structured output on attempt 3/3; raw head: 'Since there are no explicit named entities provided in the input (`[""]` indicates none listed explicitly), we can infer some potential referents based on context — such as “my” referring to the speak'
+ERROR Giving up on structured output after 3 attempts; returning empty. Raw head: 'Since there are no explicit named entities provided in the input (`[""]` indicates none listed explicitly), we can infer some potential referents based on context — such as “my” referring to the speak'
+WARNING Unparseable structured output on attempt 1/3; raw head: 'The phrase *"I\'m tearing up the tape here."* appears metaphorical or idiomatic rather than referring to literal objects like physical tapes.\n\nHowever, if we are extracting **named entities** (such as '
+WARNING Unparseable structured output on attempt 1/3; raw head: 'Since there are no explicit named entities provided in the input (`[""]` indicates none listed), we will infer relevant concepts based on context while ensuring all elements remain grounded in the tex'
+WARNING Recovered structured output by sliced on attempt 2/3
+WARNING Recovered structured output by sliced on attempt 1/3

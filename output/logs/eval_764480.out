@@ -1,0 +1,319 @@
+host:      gpu-node02
+condition: event  rounds: 2  embed: cpu  visual_k: 0  limit: 50  max_new_tokens: 512
+started:   Tue 25 Aug 14:53:37 BST 2026
+
+staged event -> output/eval/event
+  --data-dir     output/eval/event/data
+  --metadata-dir output/eval/event/metadata
+{'num_phrase_nodes': 3868, 'num_passage_nodes': 439, 'num_total_nodes': 4307, 'num_extracted_triples': 7401, 'num_triples_with_passage_node': 330, 'num_synonymy_triples': 14470, 'num_total_triples': 22201}
+{'num_phrase_nodes': 3869, 'num_passage_nodes': 439, 'num_total_nodes': 4308, 'num_extracted_triples': 7400, 'num_triples_with_passage_node': 326, 'num_synonymy_triples': 14373, 'num_total_triples': 22099}
+{'num_phrase_nodes': 3940, 'num_passage_nodes': 439, 'num_total_nodes': 4379, 'num_extracted_triples': 7504, 'num_triples_with_passage_node': 329, 'num_synonymy_triples': 14967, 'num_total_triples': 22800}
+{'num_phrase_nodes': 3925, 'num_passage_nodes': 439, 'num_total_nodes': 4364, 'num_extracted_triples': 7454, 'num_triples_with_passage_node': 438, 'num_synonymy_triples': 14842, 'num_total_triples': 22734}
+Error parsing field fact_after_filter: 1 validation error for Fact
+fact
+  Field required [type=missing, input_value={}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.12/v/missing.
+
+		On attempting to parse the value
+```
+{}
+```
+Error parsing field fact_after_filter: 1 validation error for Fact
+fact
+  Field required [type=missing, input_value={}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.12/v/missing.
+
+		On attempting to parse the value
+```
+{}
+```
+Error parsing field fact_after_filter: 1 validation error for Fact
+fact
+  Field required [type=missing, input_value={}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.12/v/missing.
+
+		On attempting to parse the value
+```
+{}
+```
+Error parsing field fact_after_filter: 1 validation error for Fact
+fact
+  Field required [type=missing, input_value={}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.12/v/missing.
+
+		On attempting to parse the value
+```
+{}
+```
+Error parsing field fact_after_filter: 1 validation error for Fact
+fact
+  Field required [type=missing, input_value={}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.12/v/missing.
+
+		On attempting to parse the value
+```
+{}
+```
+Error parsing field fact_after_filter: 1 validation error for Fact
+fact
+  Field required [type=missing, input_value={}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.12/v/missing.
+
+		On attempting to parse the value
+```
+{}
+```
+Error parsing field fact_after_filter: 1 validation error for Fact
+fact
+  Field required [type=missing, input_value={}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.12/v/missing.
+
+		On attempting to parse the value
+```
+{}
+```
+{'num_phrase_nodes': 3961, 'num_passage_nodes': 447, 'num_total_nodes': 4408, 'num_extracted_triples': 7628, 'num_triples_with_passage_node': 573, 'num_synonymy_triples': 14793, 'num_total_triples': 22994}
+{'num_phrase_nodes': 3963, 'num_passage_nodes': 447, 'num_total_nodes': 4410, 'num_extracted_triples': 7632, 'num_triples_with_passage_node': 569, 'num_synonymy_triples': 14705, 'num_total_triples': 22906}
+{'num_phrase_nodes': 4037, 'num_passage_nodes': 447, 'num_total_nodes': 4484, 'num_extracted_triples': 7739, 'num_triples_with_passage_node': 579, 'num_synonymy_triples': 15296, 'num_total_triples': 23614}
+{'num_phrase_nodes': 4022, 'num_passage_nodes': 447, 'num_total_nodes': 4469, 'num_extracted_triples': 7687, 'num_triples_with_passage_node': 687, 'num_synonymy_triples': 15165, 'num_total_triples': 23539}
+Error parsing field fact_after_filter: 1 validation error for Fact
+  Input should be a valid dictionary or instance of Fact [type=model_type, input_value='{"fact": [["katrina", "s...sion without inference:', input_type=str]
+    For further information visit https://errors.pydantic.dev/2.12/v/model_type.
+
+		On attempting to parse the value
+```
+{"fact": [["katrina", "says", "these flowers need to be prepared a bit"], ["katrina", "says", "yes  just put the flowers in it"], ["katrina", "needs", "flowers and stuff"], ["katrina", "said", "putting flowers on table helps organize space"]]} 
+
+Note: Since there's no explicit mention about placing flowers *specifically* on the table being helpful, I inferred one plausible interpretation ("help organizing space") but kept all direct statements related to Katrina’s actions regarding flower placement.
+However, since none explicitly state “placing flowers on the table” aids organization — we may instead keep strictly factual ones:
+
+Revised version without inference:
+```
+Error parsing field fact_after_filter: 1 validation error for Fact
+  Input should be a valid dictionary or instance of Fact [type=model_type, input_value='{"fact": [["katrina", "s...inal correct filtering:', input_type=str]
+    For further information visit https://errors.pydantic.dev/2.12/v/model_type.
+
+		On attempting to parse the value
+```
+{"fact": [["katrina", "says", "these flowers need to be prepared a bit"], ["katrina", "says", "yes  just put the flowers in it"], ["katrina", "needs", "flowers and stuff"]}  
+
+But still missing any clear link to **table** usage unless implied via context like ‘in’ = place → could mean container/plate/table? Not certain.
+
+Given ambiguity around actual phrase *"Putting flowers on table"* – perhaps best stick closest literal data available.
+
+Final correction per strict rule: Only include known info; do NOT infer unmentioned connections.
+
+Thus final correct filtering:
+```
+Error parsing field fact_after_filter: 1 validation error for Fact
+  Input should be a valid dictionary or instance of Fact [type=model_type, input_value='{"fact": [["katrina", "s... instruction/help role:', input_type=str]
+    For further information visit https://errors.pydantic.dev/2.12/v/model_type.
+
+		On attempting to parse the value
+```
+{"fact": [["katrina", "says", "yes  just put the flowers in it"], ["katrina", "says", "these flowers need to be prepared a bit"], ["katrina", "needs", "flowers and stuff"}}]  
+Wait - actually let me recheck original request again...
+
+The user says "**Katrina putting flowers on table helper**" which seems more likely asking how she might help others when doing so... So maybe focus on her instructions involving distribution/placement.
+
+Best match among candidates would involve action steps toward helping people handle/follow process after setup.
+
+So consider including statement suggesting shared responsibility post-placement:
+
+From above: `"katrina said everybody can distribute the flowers"` implies coordination AFTER initial act such as setting down / arranging.
+
+Therefore safest inclusion includes those two key lines showing guidance during handling phase.
+
+Hence revised selection reflecting intent behind instruction/help role:
+```
+Error parsing field fact_after_filter: 1 validation error for Fact
+  Input should be a valid dictionary or instance of Fact [type=model_type, input_value='{"fact": [["katrina", "s...e flowers and take care', input_type=str]
+    For further information visit https://errors.pydantic.dev/2.12/v/model_type.
+
+		On attempting to parse the value
+```
+{"fact": [["katrina", "says", "yes  just put the flowers in it"], ["katrina", "suggests", "everybody can distribute the flowers and take care
+```
+Error parsing field fact_after_filter: 1 validation error for Fact
+  Input should be a valid dictionary or instance of Fact [type=model_type, input_value='{"fact": [["katrina", "s...sion without inference:', input_type=str]
+    For further information visit https://errors.pydantic.dev/2.12/v/model_type.
+
+		On attempting to parse the value
+```
+{"fact": [["katrina", "says", "these flowers need to be prepared a bit"], ["katrina", "says", "yes  just put the flowers in it"], ["katrina", "needs", "flowers and stuff"], ["katrina", "said", "putting flowers on table helps organize space"]]} 
+
+Note: Since there's no explicit mention about placing flowers *specifically* on the table being helpful, I inferred one plausible interpretation ("help organizing space") but kept all direct statements related to Katrina’s actions regarding flower placement.
+However, since none explicitly state “placing flowers on the table” aids organization — we may instead keep strictly factual ones:
+
+Revised version without inference:
+```
+Error parsing field fact_after_filter: 1 validation error for Fact
+  Input should be a valid dictionary or instance of Fact [type=model_type, input_value='{"fact": [["katrina", "s...inal correct filtering:', input_type=str]
+    For further information visit https://errors.pydantic.dev/2.12/v/model_type.
+
+		On attempting to parse the value
+```
+{"fact": [["katrina", "says", "these flowers need to be prepared a bit"], ["katrina", "says", "yes  just put the flowers in it"], ["katrina", "needs", "flowers and stuff"]}  
+
+But still missing any clear link to **table** usage unless implied via context like ‘in’ = place → could mean container/plate/table? Not certain.
+
+Given ambiguity around actual phrase *"Putting flowers on table"* – perhaps best stick closest literal data available.
+
+Final correction per strict rule: Only include known info; do NOT infer unmentioned connections.
+
+Thus final correct filtering:
+```
+Error parsing field fact_after_filter: 1 validation error for Fact
+  Input should be a valid dictionary or instance of Fact [type=model_type, input_value='{"fact": [["katrina", "s... instruction/help role:', input_type=str]
+    For further information visit https://errors.pydantic.dev/2.12/v/model_type.
+
+		On attempting to parse the value
+```
+{"fact": [["katrina", "says", "yes  just put the flowers in it"], ["katrina", "says", "these flowers need to be prepared a bit"], ["katrina", "needs", "flowers and stuff"}}]  
+Wait - actually let me recheck original request again...
+
+The user says "**Katrina putting flowers on table helper**" which seems more likely asking how she might help others when doing so... So maybe focus on her instructions involving distribution/placement.
+
+Best match among candidates would involve action steps toward helping people handle/follow process after setup.
+
+So consider including statement suggesting shared responsibility post-placement:
+
+From above: `"katrina said everybody can distribute the flowers"` implies coordination AFTER initial act such as setting down / arranging.
+
+Therefore safest inclusion includes those two key lines showing guidance during handling phase.
+
+Hence revised selection reflecting intent behind instruction/help role:
+```
+Error parsing field fact_after_filter: 1 validation error for Fact
+  Input should be a valid dictionary or instance of Fact [type=model_type, input_value='{"fact": [["katrina", "s...e flowers and take care', input_type=str]
+    For further information visit https://errors.pydantic.dev/2.12/v/model_type.
+
+		On attempting to parse the value
+```
+{"fact": [["katrina", "says", "yes  just put the flowers in it"], ["katrina", "suggests", "everybody can distribute the flowers and take care
+```
+Error parsing field fact_after_filter: 1 validation error for Fact
+  Input should be a valid dictionary or instance of Fact [type=model_type, input_value='{"fact": [["katrina", "s...sion without inference:', input_type=str]
+    For further information visit https://errors.pydantic.dev/2.12/v/model_type.
+
+		On attempting to parse the value
+```
+{"fact": [["katrina", "says", "these flowers need to be prepared a bit"], ["katrina", "says", "yes  just put the flowers in it"], ["katrina", "needs", "flowers and stuff"], ["katrina", "said", "putting flowers on table helps organize space"]]} 
+
+Note: Since there's no explicit mention about placing flowers *specifically* on the table being helpful, I inferred one plausible interpretation ("help organizing space") but kept all direct statements related to Katrina’s actions regarding flower placement.
+However, since none explicitly state “placing flowers on the table” aids organization — we may instead keep strictly factual ones:
+
+Revised version without inference:
+```
+Error parsing field fact_after_filter: 1 validation error for Fact
+  Input should be a valid dictionary or instance of Fact [type=model_type, input_value='{"fact": [["katrina", "s...inal correct filtering:', input_type=str]
+    For further information visit https://errors.pydantic.dev/2.12/v/model_type.
+
+		On attempting to parse the value
+```
+{"fact": [["katrina", "says", "these flowers need to be prepared a bit"], ["katrina", "says", "yes  just put the flowers in it"], ["katrina", "needs", "flowers and stuff"]}  
+
+But still missing any clear link to **table** usage unless implied via context like ‘in’ = place → could mean container/plate/table? Not certain.
+
+Given ambiguity around actual phrase *"Putting flowers on table"* – perhaps best stick closest literal data available.
+
+Final correction per strict rule: Only include known info; do NOT infer unmentioned connections.
+
+Thus final correct filtering:
+```
+Error parsing field fact_after_filter: 1 validation error for Fact
+  Input should be a valid dictionary or instance of Fact [type=model_type, input_value='{"fact": [["katrina", "s... instruction/help role:', input_type=str]
+    For further information visit https://errors.pydantic.dev/2.12/v/model_type.
+
+		On attempting to parse the value
+```
+{"fact": [["katrina", "says", "yes  just put the flowers in it"], ["katrina", "says", "these flowers need to be prepared a bit"], ["katrina", "needs", "flowers and stuff"}}]  
+Wait - actually let me recheck original request again...
+
+The user says "**Katrina putting flowers on table helper**" which seems more likely asking how she might help others when doing so... So maybe focus on her instructions involving distribution/placement.
+
+Best match among candidates would involve action steps toward helping people handle/follow process after setup.
+
+So consider including statement suggesting shared responsibility post-placement:
+
+From above: `"katrina said everybody can distribute the flowers"` implies coordination AFTER initial act such as setting down / arranging.
+
+Therefore safest inclusion includes those two key lines showing guidance during handling phase.
+
+Hence revised selection reflecting intent behind instruction/help role:
+```
+Error parsing field fact_after_filter: 1 validation error for Fact
+  Input should be a valid dictionary or instance of Fact [type=model_type, input_value='{"fact": [["katrina", "s...e flowers and take care', input_type=str]
+    For further information visit https://errors.pydantic.dev/2.12/v/model_type.
+
+		On attempting to parse the value
+```
+{"fact": [["katrina", "says", "yes  just put the flowers in it"], ["katrina", "suggests", "everybody can distribute the flowers and take care
+```
+Error parsing field fact_after_filter: 1 validation error for Fact
+  Input should be a valid dictionary or instance of Fact [type=model_type, input_value='{"fact": [["katrina", "s...sion without inference:', input_type=str]
+    For further information visit https://errors.pydantic.dev/2.12/v/model_type.
+
+		On attempting to parse the value
+```
+{"fact": [["katrina", "says", "these flowers need to be prepared a bit"], ["katrina", "says", "yes  just put the flowers in it"], ["katrina", "needs", "flowers and stuff"], ["katrina", "said", "putting flowers on table helps organize space"]]} 
+
+Note: Since there's no explicit mention about placing flowers *specifically* on the table being helpful, I inferred one plausible interpretation ("help organizing space") but kept all direct statements related to Katrina’s actions regarding flower placement.
+However, since none explicitly state “placing flowers on the table” aids organization — we may instead keep strictly factual ones:
+
+Revised version without inference:
+```
+Error parsing field fact_after_filter: 1 validation error for Fact
+  Input should be a valid dictionary or instance of Fact [type=model_type, input_value='{"fact": [["katrina", "s...inal correct filtering:', input_type=str]
+    For further information visit https://errors.pydantic.dev/2.12/v/model_type.
+
+		On attempting to parse the value
+```
+{"fact": [["katrina", "says", "these flowers need to be prepared a bit"], ["katrina", "says", "yes  just put the flowers in it"], ["katrina", "needs", "flowers and stuff"]}  
+
+But still missing any clear link to **table** usage unless implied via context like ‘in’ = place → could mean container/plate/table? Not certain.
+
+Given ambiguity around actual phrase *"Putting flowers on table"* – perhaps best stick closest literal data available.
+
+Final correction per strict rule: Only include known info; do NOT infer unmentioned connections.
+
+Thus final correct filtering:
+```
+Error parsing field fact_after_filter: 1 validation error for Fact
+  Input should be a valid dictionary or instance of Fact [type=model_type, input_value='{"fact": [["katrina", "s... instruction/help role:', input_type=str]
+    For further information visit https://errors.pydantic.dev/2.12/v/model_type.
+
+		On attempting to parse the value
+```
+{"fact": [["katrina", "says", "yes  just put the flowers in it"], ["katrina", "says", "these flowers need to be prepared a bit"], ["katrina", "needs", "flowers and stuff"}}]  
+Wait - actually let me recheck original request again...
+
+The user says "**Katrina putting flowers on table helper**" which seems more likely asking how she might help others when doing so... So maybe focus on her instructions involving distribution/placement.
+
+Best match among candidates would involve action steps toward helping people handle/follow process after setup.
+
+So consider including statement suggesting shared responsibility post-placement:
+
+From above: `"katrina said everybody can distribute the flowers"` implies coordination AFTER initial act such as setting down / arranging.
+
+Therefore safest inclusion includes those two key lines showing guidance during handling phase.
+
+Hence revised selection reflecting intent behind instruction/help role:
+```
+Error parsing field fact_after_filter: 1 validation error for Fact
+  Input should be a valid dictionary or instance of Fact [type=model_type, input_value='{"fact": [["katrina", "s...e flowers and take care', input_type=str]
+    For further information visit https://errors.pydantic.dev/2.12/v/model_type.
+
+		On attempting to parse the value
+```
+{"fact": [["katrina", "says", "yes  just put the flowers in it"], ["katrina", "suggests", "everybody can distribute the flowers and take care
+```
+{'num_phrase_nodes': 4041, 'num_passage_nodes': 464, 'num_total_nodes': 4505, 'num_extracted_triples': 7868, 'num_triples_with_passage_node': 813, 'num_synonymy_triples': 15165, 'num_total_triples': 23846}
+{'num_phrase_nodes': 4078, 'num_passage_nodes': 464, 'num_total_nodes': 4542, 'num_extracted_triples': 7945, 'num_triples_with_passage_node': 873, 'num_synonymy_triples': 15210, 'num_total_triples': 24028}
+{'num_phrase_nodes': 4118, 'num_passage_nodes': 464, 'num_total_nodes': 4582, 'num_extracted_triples': 7978, 'num_triples_with_passage_node': 819, 'num_synonymy_triples': 15689, 'num_total_triples': 24486}
+{'num_phrase_nodes': 4111, 'num_passage_nodes': 464, 'num_total_nodes': 4575, 'num_extracted_triples': 7964, 'num_triples_with_passage_node': 962, 'num_synonymy_triples': 15568, 'num_total_triples': 24494}
+{'num_phrase_nodes': 4156, 'num_passage_nodes': 473, 'num_total_nodes': 4629, 'num_extracted_triples': 8089, 'num_triples_with_passage_node': 1062, 'num_synonymy_triples': 15606, 'num_total_triples': 24757}
+{'num_phrase_nodes': 4176, 'num_passage_nodes': 473, 'num_total_nodes': 4649, 'num_extracted_triples': 8176, 'num_triples_with_passage_node': 1116, 'num_synonymy_triples': 15585, 'num_total_triples': 24877}
+{'num_phrase_nodes': 4225, 'num_passage_nodes': 473, 'num_total_nodes': 4698, 'num_extracted_triples': 8182, 'num_triples_with_passage_node': 1050, 'num_synonymy_triples': 16113, 'num_total_triples': 25345}
+{'num_phrase_nodes': 4206, 'num_passage_nodes': 473, 'num_total_nodes': 4679, 'num_extracted_triples': 8173, 'num_triples_with_passage_node': 1198, 'num_synonymy_triples': 15929, 'num_total_triples': 25300}
+finished: Tue 25 Aug 15:17:09 BST 2026

@@ -1,0 +1,413 @@
+host:      gpu-node02
+condition: event  rounds: 1  cands: 30sec:3  epi_k: 2  visual_k: 0  limit: 50  max_new_tokens: 512  embed: cpu
+started:   Wed 26 Aug 01:51:51 BST 2026
+
+staged event -> output/eval/event
+  --data-dir     output/eval/event/data
+  --metadata-dir output/eval/event/metadata
+Error parsing field fact_after_filter: 1 validation error for Fact
+fact
+  Field required [type=missing, input_value={}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.12/v/missing.
+
+		On attempting to parse the value
+```
+{}
+```
+Error parsing field fact_after_filter: 1 validation error for Fact
+fact
+  Field required [type=missing, input_value={}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.12/v/missing.
+
+		On attempting to parse the value
+```
+{}
+```
+Error parsing field fact_after_filter: 1 validation error for Fact
+fact
+  Field required [type=missing, input_value={}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.12/v/missing.
+
+		On attempting to parse the value
+```
+{}
+```
+Error parsing field fact_after_filter: 1 validation error for Fact
+fact
+  Field required [type=missing, input_value={}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.12/v/missing.
+
+		On attempting to parse the value
+```
+{}
+```
+Error parsing field fact_after_filter: 1 validation error for Fact
+fact
+  Field required [type=missing, input_value={}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.12/v/missing.
+
+		On attempting to parse the value
+```
+{}
+```
+Error parsing field fact_after_filter: 1 validation error for Fact
+fact
+  Field required [type=missing, input_value={}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.12/v/missing.
+
+		On attempting to parse the value
+```
+{}
+```
+Error parsing field fact_after_filter: 1 validation error for Fact
+fact
+  Field required [type=missing, input_value={}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.12/v/missing.
+
+		On attempting to parse the value
+```
+{}
+```
+Error parsing field fact_after_filter: 1 validation error for Fact
+fact
+  Field required [type=missing, input_value={}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.12/v/missing.
+
+		On attempting to parse the value
+```
+{}
+```
+Error parsing field fact_after_filter: 1 validation error for Fact
+fact
+  Field required [type=missing, input_value={}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.12/v/missing.
+
+		On attempting to parse the value
+```
+{}
+```
+Error parsing field fact_after_filter: 1 validation error for Fact
+fact
+  Field required [type=missing, input_value={}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.12/v/missing.
+
+		On attempting to parse the value
+```
+{}
+```
+Error parsing field fact_after_filter: 1 validation error for Fact
+fact
+  Field required [type=missing, input_value={}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.12/v/missing.
+
+		On attempting to parse the value
+```
+{}
+```
+Error parsing field fact_after_filter: 1 validation error for Fact
+fact
+  Field required [type=missing, input_value={}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.12/v/missing.
+
+		On attempting to parse the value
+```
+{}
+```
+Error parsing field fact_after_filter: 1 validation error for Fact
+fact
+  Field required [type=missing, input_value={}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.12/v/missing.
+
+		On attempting to parse the value
+```
+{}
+```
+Error parsing field fact_after_filter: 1 validation error for Fact
+fact
+  Field required [type=missing, input_value={}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.12/v/missing.
+
+		On attempting to parse the value
+```
+{}
+```
+Error parsing field fact_after_filter: 1 validation error for Fact
+  Input should be a valid dictionary or instance of Fact [type=model_type, input_value='{"fact": [["katrina", "o...erating", "my phone")]}', input_type=str]
+    For further information visit https://errors.pydantic.dev/2.12/v/model_type.
+
+		On attempting to parse the value
+```
+{"fact": [["katrina", "operates mobile phone", "open the app and operate my phone"], ["someone", "uses", "mobile phone"], ["pointing at the phone", "and talking about it", ""), ("i", "am standing in place while operating", "my phone")]}
+```
+Error parsing field fact_after_filter: 1 validation error for Fact
+  Input should be a valid dictionary or instance of Fact [type=model_type, input_value='{"fact": [["someone", "u...alking about it", ""]}]', input_type=str]
+    For further information visit https://errors.pydantic.dev/2.12/v/model_type.
+
+		On attempting to parse the value
+```
+{"fact": [["someone", "uses", "mobile phone"], ["pointing at the phone", "and talking about it", ""]}]
+```
+Error parsing field fact_after_filter: 1 validation error for Fact
+  Input should be a valid dictionary or instance of Fact [type=model_type, input_value='{"fact": [["someone", "u...alking about it", ""]}]', input_type=str]
+    For further information visit https://errors.pydantic.dev/2.12/v/model_type.
+
+		On attempting to parse the value
+```
+{"fact": [["someone", "uses", "mobile phone"], ["pointing at the phone", "and talking about it", ""]}]
+```
+Error parsing field fact_after_filter: 1 validation error for Fact
+fact
+  Field required [type=missing, input_value={}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.12/v/missing.
+
+		On attempting to parse the value
+```
+{}
+```
+Error parsing field fact_after_filter: 1 validation error for Fact
+  Input should be a valid dictionary or instance of Fact [type=model_type, input_value='{"fact": [["everybody pl...te/unanswerable claims:', input_type=str]
+    For further information visit https://errors.pydantic.dev/2.12/v/model_type.
+
+		On attempting to parse the value
+```
+{"fact": [["everybody plays puzzles at once.", "no one moves the piece before others."]]}
+
+Wait — let's re-express carefully using actual triples:
+
+The original data contains incomplete/invalid entries like `""`, which cannot form proper subject-predicate-object tuples. We need clean factual statements about movement order.
+
+Re-evaluating inputs:
+
+None explicitly state *when* someone moved the puzzle board—only general actions ("plays," "putting together"). No mention of sequence or timing.
+
+Thus, **none** provide direct evidence regarding “first” mover.
+
+Therefore, we can't infer any specific person moving the puzzle board first; all available info suggests collaborative play without temporal ordering.
+
+Hence, after filtering irrelevant/incomplete/unanswerable claims:
+```
+Error parsing field fact_after_filter: 1 validation error for Fact
+  Input should be a valid dictionary or instance of Fact [type=model_type, input_value='{"fact": [["everyone", "...or", "puzzle pieces"]}]', input_type=str]
+    For further information visit https://errors.pydantic.dev/2.12/v/model_type.
+
+		On attempting to parse the value
+```
+{"fact": [["everyone", "discusses", "how to solve the puzzle"], ["everyone", "looks for", "puzzle pieces"]}]
+```
+Error parsing field fact_after_filter: 1 validation error for Fact
+fact
+  Field required [type=missing, input_value={}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.12/v/missing.
+
+		On attempting to parse the value
+```
+{}
+```
+Error parsing field fact_after_filter: 1 validation error for Fact
+fact
+  Field required [type=missing, input_value={}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.12/v/missing.
+
+		On attempting to parse the value
+```
+{}
+```
+Error parsing field fact_after_filter: 1 validation error for Fact
+fact
+  Field required [type=missing, input_value={}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.12/v/missing.
+
+		On attempting to parse the value
+```
+{}
+```
+Error parsing field fact_after_filter: 1 validation error for Fact
+  Input should be a valid dictionary or instance of Fact [type=model_type, input_value='{"fact": [["i", "pick up the scissors", ""]}]', input_type=str]
+    For further information visit https://errors.pydantic.dev/2.12/v/model_type.
+
+		On attempting to parse the value
+```
+{"fact": [["i", "pick up the scissors", ""]}]
+```
+Error parsing field fact_after_filter: 1 validation error for Fact
+  Input should be a valid dictionary or instance of Fact [type=model_type, input_value='{"fact": [["i", "pick up the scissors", ""]}]', input_type=str]
+    For further information visit https://errors.pydantic.dev/2.12/v/model_type.
+
+		On attempting to parse the value
+```
+{"fact": [["i", "pick up the scissors", ""]}]
+```
+Error parsing field fact_after_filter: 1 validation error for Fact
+  Input should be a valid dictionary or instance of Fact [type=model_type, input_value='{"fact": [["i", "pick up the scissors", ""]}]', input_type=str]
+    For further information visit https://errors.pydantic.dev/2.12/v/model_type.
+
+		On attempting to parse the value
+```
+{"fact": [["i", "pick up the scissors", ""]}]
+```
+Error parsing field fact_after_filter: 1 validation error for Fact
+fact
+  Field required [type=missing, input_value={}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.12/v/missing.
+
+		On attempting to parse the value
+```
+{}
+```
+Error parsing field fact_after_filter: 1 validation error for Fact
+fact
+  Field required [type=missing, input_value={}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.12/v/missing.
+
+		On attempting to parse the value
+```
+{}
+```
+Error parsing field fact_after_filter: 1 validation error for Fact
+fact
+  Field required [type=missing, input_value={}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.12/v/missing.
+
+		On attempting to parse the value
+```
+{}
+```
+Error parsing field fact_after_filter: 1 validation error for Fact
+fact
+  Field required [type=missing, input_value={}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.12/v/missing.
+
+		On attempting to parse the value
+```
+{}
+```
+{'num_phrase_nodes': 6030, 'num_passage_nodes': 706, 'num_total_nodes': 6736, 'num_extracted_triples': 11753, 'num_triples_with_passage_node': 56, 'num_synonymy_triples': 28247, 'num_total_triples': 40056}
+{'num_phrase_nodes': 6034, 'num_passage_nodes': 706, 'num_total_nodes': 6740, 'num_extracted_triples': 11821, 'num_triples_with_passage_node': 56, 'num_synonymy_triples': 27874, 'num_total_triples': 39751}
+{'num_phrase_nodes': 6082, 'num_passage_nodes': 706, 'num_total_nodes': 6788, 'num_extracted_triples': 11830, 'num_triples_with_passage_node': 56, 'num_synonymy_triples': 28564, 'num_total_triples': 40450}
+{'num_phrase_nodes': 6068, 'num_passage_nodes': 706, 'num_total_nodes': 6774, 'num_extracted_triples': 11817, 'num_triples_with_passage_node': 56, 'num_synonymy_triples': 28627, 'num_total_triples': 40500}
+Error parsing field fact_after_filter: 1 validation error for Fact
+fact
+  Field required [type=missing, input_value={}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.12/v/missing.
+
+		On attempting to parse the value
+```
+{}
+```
+{'num_phrase_nodes': 6044, 'num_passage_nodes': 707, 'num_total_nodes': 6751, 'num_extracted_triples': 11780, 'num_triples_with_passage_node': 91, 'num_synonymy_triples': 28300, 'num_total_triples': 40171}
+{'num_phrase_nodes': 6048, 'num_passage_nodes': 707, 'num_total_nodes': 6755, 'num_extracted_triples': 11848, 'num_triples_with_passage_node': 91, 'num_synonymy_triples': 27929, 'num_total_triples': 39868}
+{'num_phrase_nodes': 6096, 'num_passage_nodes': 707, 'num_total_nodes': 6803, 'num_extracted_triples': 11857, 'num_triples_with_passage_node': 91, 'num_synonymy_triples': 28621, 'num_total_triples': 40569}
+{'num_phrase_nodes': 6082, 'num_passage_nodes': 707, 'num_total_nodes': 6789, 'num_extracted_triples': 11844, 'num_triples_with_passage_node': 91, 'num_synonymy_triples': 28680, 'num_total_triples': 40615}
+{'num_phrase_nodes': 6089, 'num_passage_nodes': 714, 'num_total_nodes': 6803, 'num_extracted_triples': 11887, 'num_triples_with_passage_node': 234, 'num_synonymy_triples': 28482, 'num_total_triples': 40603}
+{'num_phrase_nodes': 6093, 'num_passage_nodes': 714, 'num_total_nodes': 6807, 'num_extracted_triples': 11954, 'num_triples_with_passage_node': 234, 'num_synonymy_triples': 28116, 'num_total_triples': 40304}
+{'num_phrase_nodes': 6141, 'num_passage_nodes': 714, 'num_total_nodes': 6855, 'num_extracted_triples': 11962, 'num_triples_with_passage_node': 234, 'num_synonymy_triples': 28807, 'num_total_triples': 41003}
+{'num_phrase_nodes': 6127, 'num_passage_nodes': 714, 'num_total_nodes': 6841, 'num_extracted_triples': 11951, 'num_triples_with_passage_node': 234, 'num_synonymy_triples': 28862, 'num_total_triples': 41047}
+{'num_phrase_nodes': 6123, 'num_passage_nodes': 717, 'num_total_nodes': 6840, 'num_extracted_triples': 11996, 'num_triples_with_passage_node': 303, 'num_synonymy_triples': 28741, 'num_total_triples': 41040}
+{'num_phrase_nodes': 6123, 'num_passage_nodes': 717, 'num_total_nodes': 6840, 'num_extracted_triples': 12062, 'num_triples_with_passage_node': 303, 'num_synonymy_triples': 28332, 'num_total_triples': 40697}
+{'num_phrase_nodes': 6172, 'num_passage_nodes': 717, 'num_total_nodes': 6889, 'num_extracted_triples': 12065, 'num_triples_with_passage_node': 303, 'num_synonymy_triples': 29036, 'num_total_triples': 41404}
+{'num_phrase_nodes': 6161, 'num_passage_nodes': 717, 'num_total_nodes': 6878, 'num_extracted_triples': 12057, 'num_triples_with_passage_node': 303, 'num_synonymy_triples': 29128, 'num_total_triples': 41488}
+{'num_phrase_nodes': 6180, 'num_passage_nodes': 721, 'num_total_nodes': 6901, 'num_extracted_triples': 12096, 'num_triples_with_passage_node': 422, 'num_synonymy_triples': 28983, 'num_total_triples': 41501}
+{'num_phrase_nodes': 6180, 'num_passage_nodes': 721, 'num_total_nodes': 6901, 'num_extracted_triples': 12162, 'num_triples_with_passage_node': 422, 'num_synonymy_triples': 28572, 'num_total_triples': 41156}
+{'num_phrase_nodes': 6229, 'num_passage_nodes': 721, 'num_total_nodes': 6950, 'num_extracted_triples': 12165, 'num_triples_with_passage_node': 422, 'num_synonymy_triples': 29278, 'num_total_triples': 41865}
+{'num_phrase_nodes': 6218, 'num_passage_nodes': 721, 'num_total_nodes': 6939, 'num_extracted_triples': 12157, 'num_triples_with_passage_node': 422, 'num_synonymy_triples': 29370, 'num_total_triples': 41949}
+{'num_phrase_nodes': 6195, 'num_passage_nodes': 723, 'num_total_nodes': 6918, 'num_extracted_triples': 12127, 'num_triples_with_passage_node': 459, 'num_synonymy_triples': 29113, 'num_total_triples': 41699}
+{'num_phrase_nodes': 6190, 'num_passage_nodes': 723, 'num_total_nodes': 6913, 'num_extracted_triples': 12179, 'num_triples_with_passage_node': 444, 'num_synonymy_triples': 28661, 'num_total_triples': 41284}
+{'num_phrase_nodes': 6239, 'num_passage_nodes': 723, 'num_total_nodes': 6962, 'num_extracted_triples': 12182, 'num_triples_with_passage_node': 444, 'num_synonymy_triples': 29369, 'num_total_triples': 41995}
+{'num_phrase_nodes': 6239, 'num_passage_nodes': 723, 'num_total_nodes': 6962, 'num_extracted_triples': 12198, 'num_triples_with_passage_node': 475, 'num_synonymy_triples': 29511, 'num_total_triples': 42184}
+{'num_phrase_nodes': 6201, 'num_passage_nodes': 725, 'num_total_nodes': 6926, 'num_extracted_triples': 12191, 'num_triples_with_passage_node': 477, 'num_synonymy_triples': 29125, 'num_total_triples': 41793}
+{'num_phrase_nodes': 6196, 'num_passage_nodes': 725, 'num_total_nodes': 6921, 'num_extracted_triples': 12242, 'num_triples_with_passage_node': 462, 'num_synonymy_triples': 28672, 'num_total_triples': 41376}
+{'num_phrase_nodes': 6245, 'num_passage_nodes': 725, 'num_total_nodes': 6970, 'num_extracted_triples': 12246, 'num_triples_with_passage_node': 462, 'num_synonymy_triples': 29383, 'num_total_triples': 42091}
+{'num_phrase_nodes': 6245, 'num_passage_nodes': 725, 'num_total_nodes': 6970, 'num_extracted_triples': 12262, 'num_triples_with_passage_node': 493, 'num_synonymy_triples': 29521, 'num_total_triples': 42276}
+{'num_phrase_nodes': 6226, 'num_passage_nodes': 726, 'num_total_nodes': 6952, 'num_extracted_triples': 12221, 'num_triples_with_passage_node': 514, 'num_synonymy_triples': 29305, 'num_total_triples': 42040}
+{'num_phrase_nodes': 6221, 'num_passage_nodes': 726, 'num_total_nodes': 6947, 'num_extracted_triples': 12272, 'num_triples_with_passage_node': 499, 'num_synonymy_triples': 28850, 'num_total_triples': 41621}
+{'num_phrase_nodes': 6270, 'num_passage_nodes': 726, 'num_total_nodes': 6996, 'num_extracted_triples': 12276, 'num_triples_with_passage_node': 499, 'num_synonymy_triples': 29563, 'num_total_triples': 42338}
+{'num_phrase_nodes': 6270, 'num_passage_nodes': 726, 'num_total_nodes': 6996, 'num_extracted_triples': 12292, 'num_triples_with_passage_node': 530, 'num_synonymy_triples': 29701, 'num_total_triples': 42523}
+{'num_phrase_nodes': 6239, 'num_passage_nodes': 727, 'num_total_nodes': 6966, 'num_extracted_triples': 12246, 'num_triples_with_passage_node': 548, 'num_synonymy_triples': 29362, 'num_total_triples': 42156}
+{'num_phrase_nodes': 6234, 'num_passage_nodes': 727, 'num_total_nodes': 6961, 'num_extracted_triples': 12297, 'num_triples_with_passage_node': 533, 'num_synonymy_triples': 28911, 'num_total_triples': 41741}
+{'num_phrase_nodes': 6283, 'num_passage_nodes': 727, 'num_total_nodes': 7010, 'num_extracted_triples': 12301, 'num_triples_with_passage_node': 533, 'num_synonymy_triples': 29622, 'num_total_triples': 42456}
+{'num_phrase_nodes': 6283, 'num_passage_nodes': 727, 'num_total_nodes': 7010, 'num_extracted_triples': 12317, 'num_triples_with_passage_node': 564, 'num_synonymy_triples': 29760, 'num_total_triples': 42641}
+Error parsing field fact_after_filter: 1 validation error for Fact
+  Input should be a valid dictionary or instance of Fact [type=model_type, input_value='{"fact": [["tashas", "sa...prepare dessert", ""]}}', input_type=str]
+    For further information visit https://errors.pydantic.dev/2.12/v/model_type.
+
+		On attempting to parse the value
+```
+{"fact": [["tashas", "said they will use items for making", "tiramisu"], ["tiramasu", "requires ingredients including", "non sterilized eggs"], ["tasha", "mentions", "tiramisu"], ["tasha", "explains how to prepare dessert", ""]}}
+```
+Error parsing field fact_after_filter: 1 validation error for Fact
+  Input should be a valid dictionary or instance of Fact [type=model_type, input_value='{"fact": [["tashas", "sa...prepare dessert", ""]}}', input_type=str]
+    For further information visit https://errors.pydantic.dev/2.12/v/model_type.
+
+		On attempting to parse the value
+```
+{"fact": [["tashas", "said they will use items for making", "tiramisu"], ["tiramasu", "requires ingredients including", "non sterilized eggs"], ["tasha", "mentions", "tiramisu"], ["tasha", "explains how to prepare dessert", ""]}}
+```
+{'num_phrase_nodes': 6260, 'num_passage_nodes': 729, 'num_total_nodes': 6989, 'num_extracted_triples': 12293, 'num_triples_with_passage_node': 593, 'num_synonymy_triples': 29529, 'num_total_triples': 42415}
+{'num_phrase_nodes': 6255, 'num_passage_nodes': 729, 'num_total_nodes': 6984, 'num_extracted_triples': 12344, 'num_triples_with_passage_node': 578, 'num_synonymy_triples': 29072, 'num_total_triples': 41994}
+{'num_phrase_nodes': 6304, 'num_passage_nodes': 729, 'num_total_nodes': 7033, 'num_extracted_triples': 12348, 'num_triples_with_passage_node': 578, 'num_synonymy_triples': 29791, 'num_total_triples': 42717}
+{'num_phrase_nodes': 6304, 'num_passage_nodes': 729, 'num_total_nodes': 7033, 'num_extracted_triples': 12364, 'num_triples_with_passage_node': 609, 'num_synonymy_triples': 29923, 'num_total_triples': 42896}
+{'num_phrase_nodes': 6291, 'num_passage_nodes': 732, 'num_total_nodes': 7023, 'num_extracted_triples': 12359, 'num_triples_with_passage_node': 659, 'num_synonymy_triples': 29760, 'num_total_triples': 42778}
+{'num_phrase_nodes': 6286, 'num_passage_nodes': 732, 'num_total_nodes': 7018, 'num_extracted_triples': 12410, 'num_triples_with_passage_node': 644, 'num_synonymy_triples': 29301, 'num_total_triples': 42355}
+{'num_phrase_nodes': 6335, 'num_passage_nodes': 732, 'num_total_nodes': 7067, 'num_extracted_triples': 12414, 'num_triples_with_passage_node': 644, 'num_synonymy_triples': 30024, 'num_total_triples': 43082}
+{'num_phrase_nodes': 6335, 'num_passage_nodes': 732, 'num_total_nodes': 7067, 'num_extracted_triples': 12430, 'num_triples_with_passage_node': 675, 'num_synonymy_triples': 30152, 'num_total_triples': 43257}
+Error parsing field fact_after_filter: 1 validation error for Fact
+  Input should be a valid dictionary or instance of Fact [type=model_type, input_value='{"fact": [["katrina", "s... to buy alcohol", ""]}}', input_type=str]
+    For further information visit https://errors.pydantic.dev/2.12/v/model_type.
+
+		On attempting to parse the value
+```
+{"fact": [["katrina", "suggests buying", "beer for cocktails"], ["katrina", "proposes going to buy alcohol", ""]}}
+```
+Error parsing field fact_after_filter: 1 validation error for Fact
+  Input should be a valid dictionary or instance of Fact [type=model_type, input_value='{"fact": [["katrina", "s... to buy alcohol", ""]}}', input_type=str]
+    For further information visit https://errors.pydantic.dev/2.12/v/model_type.
+
+		On attempting to parse the value
+```
+{"fact": [["katrina", "suggests buying", "beer for cocktails"], ["katrina", "proposes going to buy alcohol", ""]}}
+```
+Error parsing field fact_after_filter: 1 validation error for Fact
+  Input should be a valid dictionary or instance of Fact [type=model_type, input_value='{"fact": [["katrina", "s... to buy alcohol", ""]}}', input_type=str]
+    For further information visit https://errors.pydantic.dev/2.12/v/model_type.
+
+		On attempting to parse the value
+```
+{"fact": [["katrina", "suggests buying", "beer for cocktails"], ["katrina", "proposes going to buy alcohol", ""]}}
+```
+Error parsing field fact_after_filter: 1 validation error for Fact
+  Input should be a valid dictionary or instance of Fact [type=model_type, input_value='{"fact": [["katrina", "s... to buy alcohol", ""]}}', input_type=str]
+    For further information visit https://errors.pydantic.dev/2.12/v/model_type.
+
+		On attempting to parse the value
+```
+{"fact": [["katrina", "suggests buying", "beer for cocktails"], ["katrina", "proposes going to buy alcohol", ""]}}
+```
+{'num_phrase_nodes': 6293, 'num_passage_nodes': 733, 'num_total_nodes': 7026, 'num_extracted_triples': 12378, 'num_triples_with_passage_node': 683, 'num_synonymy_triples': 29761, 'num_total_triples': 42822}
+{'num_phrase_nodes': 6288, 'num_passage_nodes': 733, 'num_total_nodes': 7021, 'num_extracted_triples': 12429, 'num_triples_with_passage_node': 668, 'num_synonymy_triples': 29302, 'num_total_triples': 42399}
+{'num_phrase_nodes': 6337, 'num_passage_nodes': 733, 'num_total_nodes': 7070, 'num_extracted_triples': 12433, 'num_triples_with_passage_node': 668, 'num_synonymy_triples': 30025, 'num_total_triples': 43126}
+{'num_phrase_nodes': 6337, 'num_passage_nodes': 733, 'num_total_nodes': 7070, 'num_extracted_triples': 12449, 'num_triples_with_passage_node': 699, 'num_synonymy_triples': 30153, 'num_total_triples': 43301}
+{'num_phrase_nodes': 6294, 'num_passage_nodes': 734, 'num_total_nodes': 7028, 'num_extracted_triples': 12381, 'num_triples_with_passage_node': 688, 'num_synonymy_triples': 29770, 'num_total_triples': 42839}
+{'num_phrase_nodes': 6289, 'num_passage_nodes': 734, 'num_total_nodes': 7023, 'num_extracted_triples': 12432, 'num_triples_with_passage_node': 673, 'num_synonymy_triples': 29311, 'num_total_triples': 42416}
+{'num_phrase_nodes': 6338, 'num_passage_nodes': 734, 'num_total_nodes': 7072, 'num_extracted_triples': 12436, 'num_triples_with_passage_node': 673, 'num_synonymy_triples': 30034, 'num_total_triples': 43143}
+{'num_phrase_nodes': 6338, 'num_passage_nodes': 734, 'num_total_nodes': 7072, 'num_extracted_triples': 12452, 'num_triples_with_passage_node': 704, 'num_synonymy_triples': 30162, 'num_total_triples': 43318}
+{'num_phrase_nodes': 6448, 'num_passage_nodes': 745, 'num_total_nodes': 7193, 'num_extracted_triples': 12642, 'num_triples_with_passage_node': 989, 'num_synonymy_triples': 30522, 'num_total_triples': 44153}
+{'num_phrase_nodes': 6443, 'num_passage_nodes': 745, 'num_total_nodes': 7188, 'num_extracted_triples': 12694, 'num_triples_with_passage_node': 974, 'num_synonymy_triples': 30065, 'num_total_triples': 43733}
+{'num_phrase_nodes': 6492, 'num_passage_nodes': 745, 'num_total_nodes': 7237, 'num_extracted_triples': 12697, 'num_triples_with_passage_node': 974, 'num_synonymy_triples': 30799, 'num_total_triples': 44470}
+{'num_phrase_nodes': 6492, 'num_passage_nodes': 745, 'num_total_nodes': 7237, 'num_extracted_triples': 12714, 'num_triples_with_passage_node': 1005, 'num_synonymy_triples': 30926, 'num_total_triples': 44645}
+{'num_phrase_nodes': 6534, 'num_passage_nodes': 752, 'num_total_nodes': 7286, 'num_extracted_triples': 12828, 'num_triples_with_passage_node': 1195, 'num_synonymy_triples': 31071, 'num_total_triples': 45094}
+{'num_phrase_nodes': 6507, 'num_passage_nodes': 752, 'num_total_nodes': 7259, 'num_extracted_triples': 12849, 'num_triples_with_passage_node': 1141, 'num_synonymy_triples': 30505, 'num_total_triples': 44495}
+{'num_phrase_nodes': 6584, 'num_passage_nodes': 752, 'num_total_nodes': 7336, 'num_extracted_triples': 12890, 'num_triples_with_passage_node': 1186, 'num_synonymy_triples': 31413, 'num_total_triples': 45489}
+{'num_phrase_nodes': 6580, 'num_passage_nodes': 752, 'num_total_nodes': 7332, 'num_extracted_triples': 12917, 'num_triples_with_passage_node': 1224, 'num_synonymy_triples': 31572, 'num_total_triples': 45713}
+{'num_phrase_nodes': 6536, 'num_passage_nodes': 753, 'num_total_nodes': 7289, 'num_extracted_triples': 12861, 'num_triples_with_passage_node': 1204, 'num_synonymy_triples': 31068, 'num_total_triples': 45133}
+{'num_phrase_nodes': 6509, 'num_passage_nodes': 753, 'num_total_nodes': 7262, 'num_extracted_triples': 12882, 'num_triples_with_passage_node': 1150, 'num_synonymy_triples': 30504, 'num_total_triples': 44536}
+{'num_phrase_nodes': 6586, 'num_passage_nodes': 753, 'num_total_nodes': 7339, 'num_extracted_triples': 12923, 'num_triples_with_passage_node': 1195, 'num_synonymy_triples': 31410, 'num_total_triples': 45528}
+{'num_phrase_nodes': 6582, 'num_passage_nodes': 753, 'num_total_nodes': 7335, 'num_extracted_triples': 12949, 'num_triples_with_passage_node': 1233, 'num_synonymy_triples': 31570, 'num_total_triples': 45752}
+{'num_phrase_nodes': 6583, 'num_passage_nodes': 756, 'num_total_nodes': 7339, 'num_extracted_triples': 12932, 'num_triples_with_passage_node': 1309, 'num_synonymy_triples': 31339, 'num_total_triples': 45580}
+{'num_phrase_nodes': 6555, 'num_passage_nodes': 756, 'num_total_nodes': 7311, 'num_extracted_triples': 12953, 'num_triples_with_passage_node': 1255, 'num_synonymy_triples': 30767, 'num_total_triples': 44975}
+{'num_phrase_nodes': 6633, 'num_passage_nodes': 756, 'num_total_nodes': 7389, 'num_extracted_triples': 12994, 'num_triples_with_passage_node': 1300, 'num_synonymy_triples': 31687, 'num_total_triples': 45981}
+{'num_phrase_nodes': 6629, 'num_passage_nodes': 756, 'num_total_nodes': 7385, 'num_extracted_triples': 13020, 'num_triples_with_passage_node': 1338, 'num_synonymy_triples': 31843, 'num_total_triples': 46201}
+{'num_phrase_nodes': 6655, 'num_passage_nodes': 762, 'num_total_nodes': 7417, 'num_extracted_triples': 13061, 'num_triples_with_passage_node': 1473, 'num_synonymy_triples': 31787, 'num_total_triples': 46321}
+{'num_phrase_nodes': 6627, 'num_passage_nodes': 762, 'num_total_nodes': 7389, 'num_extracted_triples': 13085, 'num_triples_with_passage_node': 1418, 'num_synonymy_triples': 31204, 'num_total_triples': 45707}
+{'num_phrase_nodes': 6707, 'num_passage_nodes': 762, 'num_total_nodes': 7469, 'num_extracted_triples': 13125, 'num_triples_with_passage_node': 1466, 'num_synonymy_triples': 32137, 'num_total_triples': 46728}
+{'num_phrase_nodes': 6698, 'num_passage_nodes': 762, 'num_total_nodes': 7460, 'num_extracted_triples': 13146, 'num_triples_with_passage_node': 1503, 'num_synonymy_triples': 32256, 'num_total_triples': 46905}
+finished: Wed 26 Aug 04:46:25 BST 2026

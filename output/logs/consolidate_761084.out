@@ -1,0 +1,28 @@
+host:      gpu-node01
+condition: event
+started:   Sun 23 Aug 18:45:32 BST 2026
+=== WORLDMM CUMULATIVE BASELINE (same input) ===
+  nodes                             684
+  final state triples            10,347
+  triples written to disk     3,608,558
+  write amplification             348.8x
+  source file size                  1.0 MB
+embedding model load: 356s
+
+=== SLEEP-CYCLE CONSOLIDATION ===
+    thresh     final    ratio  mean sup   singles    preds     sec
+      0.78     3,515     2.90      2.90     2,449    3,356   381.4
+      0.82     4,870     2.09      2.09     3,766    4,629     1.2
+      0.86     6,398     1.59      1.59     5,355    6,011    17.4
+      0.90     7,802     1.31      1.31     6,984    7,250    73.6
+      0.94     9,016     1.13      1.13     8,522    8,264   120.9
+
+  embedding calls: 9,795   LLM calls: 0   (WorldMM issues one generation per new triple)
+
+=== STORAGE ===
+  interval store                    1.7 MB
+  materialised (nested)           214.9 MB (2,341,514 triples written)
+  storage reduction               128.4x
+
+wrote output/consolidation/A1_JAKE_event/
+finished: Sun 23 Aug 18:55:33 BST 2026

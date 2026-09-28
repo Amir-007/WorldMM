@@ -1,0 +1,60 @@
+host:      gpu-node02
+condition: event   shard: 1/2   model: qwen3vl-30b
+started:   Tue 18 Aug 22:46:23 BST 2026
+index, name, memory.total [MiB]
+0, NVIDIA A100 80GB PCIe, 81920 MiB
+1, NVIDIA A100 80GB PCIe, 81920 MiB
+chunks total:    2,092
+this shard:      1,046  (shard 1/2)
+already done:    0
+to process:      1,046
+token budgets:   ner=512 triples=4096
+model load:      2158s
+[25/1046] 53.0s/chunk, ~15.0 h remaining, empty=4, repairs=1, failures=3
+[50/1046] 41.9s/chunk, ~11.6 h remaining, empty=5, repairs=1, failures=3
+[75/1046] 36.9s/chunk, ~10.0 h remaining, empty=5, repairs=1, failures=3
+[100/1046] 38.0s/chunk, ~10.0 h remaining, empty=8, repairs=3, failures=5
+[125/1046] 34.8s/chunk, ~8.9 h remaining, empty=10, repairs=4, failures=6
+[150/1046] 30.9s/chunk, ~7.7 h remaining, empty=21, repairs=11, failures=9
+[175/1046] 32.1s/chunk, ~7.8 h remaining, empty=25, repairs=11, failures=13
+[200/1046] 31.9s/chunk, ~7.5 h remaining, empty=34, repairs=15, failures=18
+[225/1046] 31.0s/chunk, ~7.1 h remaining, empty=35, repairs=17, failures=19
+[250/1046] 31.2s/chunk, ~6.9 h remaining, empty=39, repairs=17, failures=21
+[275/1046] 35.1s/chunk, ~7.5 h remaining, empty=41, repairs=19, failures=24
+[300/1046] 34.3s/chunk, ~7.1 h remaining, empty=43, repairs=21, failures=25
+[325/1046] 34.9s/chunk, ~7.0 h remaining, empty=47, repairs=23, failures=27
+[350/1046] 34.0s/chunk, ~6.6 h remaining, empty=48, repairs=24, failures=27
+[375/1046] 33.8s/chunk, ~6.3 h remaining, empty=49, repairs=24, failures=28
+[400/1046] 34.5s/chunk, ~6.2 h remaining, empty=52, repairs=25, failures=31
+[425/1046] 34.7s/chunk, ~6.0 h remaining, empty=56, repairs=27, failures=32
+[450/1046] 34.8s/chunk, ~5.8 h remaining, empty=59, repairs=28, failures=34
+[475/1046] 34.5s/chunk, ~5.5 h remaining, empty=59, repairs=28, failures=34
+[500/1046] 34.1s/chunk, ~5.2 h remaining, empty=59, repairs=28, failures=34
+[525/1046] 33.7s/chunk, ~4.9 h remaining, empty=63, repairs=32, failures=34
+[550/1046] 33.4s/chunk, ~4.6 h remaining, empty=71, repairs=35, failures=37
+[575/1046] 33.3s/chunk, ~4.4 h remaining, empty=73, repairs=38, failures=38
+[600/1046] 33.3s/chunk, ~4.1 h remaining, empty=75, repairs=39, failures=41
+[625/1046] 32.8s/chunk, ~3.8 h remaining, empty=76, repairs=42, failures=42
+[650/1046] 32.8s/chunk, ~3.6 h remaining, empty=76, repairs=46, failures=43
+[675/1046] 33.0s/chunk, ~3.4 h remaining, empty=83, repairs=48, failures=48
+[700/1046] 32.6s/chunk, ~3.1 h remaining, empty=84, repairs=50, failures=49
+[725/1046] 32.2s/chunk, ~2.9 h remaining, empty=85, repairs=51, failures=50
+[750/1046] 32.3s/chunk, ~2.7 h remaining, empty=89, repairs=52, failures=52
+[775/1046] 32.0s/chunk, ~2.4 h remaining, empty=90, repairs=53, failures=53
+[800/1046] 32.1s/chunk, ~2.2 h remaining, empty=93, repairs=54, failures=56
+[825/1046] 32.7s/chunk, ~2.0 h remaining, empty=98, repairs=54, failures=59
+[850/1046] 32.4s/chunk, ~1.8 h remaining, empty=100, repairs=57, failures=59
+[875/1046] 32.6s/chunk, ~1.5 h remaining, empty=102, repairs=58, failures=61
+[900/1046] 32.4s/chunk, ~1.3 h remaining, empty=103, repairs=59, failures=62
+[925/1046] 32.1s/chunk, ~1.1 h remaining, empty=104, repairs=59, failures=62
+[950/1046] 31.9s/chunk, ~0.9 h remaining, empty=105, repairs=60, failures=62
+[975/1046] 31.7s/chunk, ~0.6 h remaining, empty=107, repairs=60, failures=63
+[1000/1046] 31.4s/chunk, ~0.4 h remaining, empty=110, repairs=62, failures=63
+[1025/1046] 31.5s/chunk, ~0.2 h remaining, empty=114, repairs=63, failures=65
+[1046/1046] 31.0s/chunk, ~0.0 h remaining, empty=119, repairs=65, failures=66
+
+=== SHARD 1 DONE in 9.02 h (31.0s/chunk) ===
+  chunks with text but no triples: 119/1046
+  parse repairs:  65
+  parse failures: 66
+finished: Wed 19 Aug 08:23:51 BST 2026

@@ -1,0 +1,557 @@
+host:      gpu-node02
+condition: event  rounds: 1  embed: cpu  visual_k: 0  limit: 50  max_new_tokens: 512
+started:   Tue 25 Aug 18:04:54 BST 2026
+
+staged event -> output/eval/event
+  --data-dir     output/eval/event/data
+  --metadata-dir output/eval/event/metadata
+{'num_phrase_nodes': 4882, 'num_passage_nodes': 568, 'num_total_nodes': 5450, 'num_extracted_triples': 8911, 'num_triples_with_passage_node': 129, 'num_synonymy_triples': 19538, 'num_total_triples': 28578}
+{'num_phrase_nodes': 4897, 'num_passage_nodes': 568, 'num_total_nodes': 5465, 'num_extracted_triples': 8941, 'num_triples_with_passage_node': 135, 'num_synonymy_triples': 19544, 'num_total_triples': 28620}
+{'num_phrase_nodes': 4963, 'num_passage_nodes': 568, 'num_total_nodes': 5531, 'num_extracted_triples': 9054, 'num_triples_with_passage_node': 138, 'num_synonymy_triples': 20248, 'num_total_triples': 29440}
+{'num_phrase_nodes': 4942, 'num_passage_nodes': 568, 'num_total_nodes': 5510, 'num_extracted_triples': 8979, 'num_triples_with_passage_node': 154, 'num_synonymy_triples': 20008, 'num_total_triples': 29141}
+Error parsing field fact_after_filter: 1 validation error for Fact
+fact
+  Field required [type=missing, input_value={}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.12/v/missing.
+
+		On attempting to parse the value
+```
+{}
+```
+Error parsing field fact_after_filter: 1 validation error for Fact
+fact
+  Field required [type=missing, input_value={}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.12/v/missing.
+
+		On attempting to parse the value
+```
+{}
+```
+Error parsing field fact_after_filter: 1 validation error for Fact
+fact
+  Field required [type=missing, input_value={}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.12/v/missing.
+
+		On attempting to parse the value
+```
+{}
+```
+Error parsing field fact_after_filter: 1 validation error for Fact
+fact
+  Field required [type=missing, input_value={}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.12/v/missing.
+
+		On attempting to parse the value
+```
+{}
+```
+{'num_phrase_nodes': 4962, 'num_passage_nodes': 579, 'num_total_nodes': 5541, 'num_extracted_triples': 9153, 'num_triples_with_passage_node': 330, 'num_synonymy_triples': 19967, 'num_total_triples': 29450}
+{'num_phrase_nodes': 4974, 'num_passage_nodes': 579, 'num_total_nodes': 5553, 'num_extracted_triples': 9161, 'num_triples_with_passage_node': 326, 'num_synonymy_triples': 19935, 'num_total_triples': 29422}
+{'num_phrase_nodes': 5038, 'num_passage_nodes': 579, 'num_total_nodes': 5617, 'num_extracted_triples': 9271, 'num_triples_with_passage_node': 329, 'num_synonymy_triples': 20641, 'num_total_triples': 30241}
+{'num_phrase_nodes': 5023, 'num_passage_nodes': 579, 'num_total_nodes': 5602, 'num_extracted_triples': 9215, 'num_triples_with_passage_node': 355, 'num_synonymy_triples': 20455, 'num_total_triples': 30025}
+Error parsing field fact_after_filter: 1 validation error for Fact
+fact
+  Field required [type=missing, input_value={}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.12/v/missing.
+
+		On attempting to parse the value
+```
+{}
+```
+Error parsing field fact_after_filter: 1 validation error for Fact
+fact
+  Field required [type=missing, input_value={}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.12/v/missing.
+
+		On attempting to parse the value
+```
+{}
+```
+Error parsing field fact_after_filter: 1 validation error for Fact
+fact
+  Field required [type=missing, input_value={}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.12/v/missing.
+
+		On attempting to parse the value
+```
+{}
+```
+Error parsing field fact_after_filter: 1 validation error for Fact
+fact
+  Field required [type=missing, input_value={}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.12/v/missing.
+
+		On attempting to parse the value
+```
+{}
+```
+Error parsing field fact_after_filter: 1 validation error for Fact
+fact
+  Field required [type=missing, input_value={}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.12/v/missing.
+
+		On attempting to parse the value
+```
+{}
+```
+Error parsing field fact_after_filter: 1 validation error for Fact
+fact
+  Field required [type=missing, input_value={}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.12/v/missing.
+
+		On attempting to parse the value
+```
+{}
+```
+Error parsing field fact_after_filter: 1 validation error for Fact
+fact
+  Field required [type=missing, input_value={}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.12/v/missing.
+
+		On attempting to parse the value
+```
+{}
+```
+{'num_phrase_nodes': 5054, 'num_passage_nodes': 587, 'num_total_nodes': 5641, 'num_extracted_triples': 9379, 'num_triples_with_passage_node': 573, 'num_synonymy_triples': 20309, 'num_total_triples': 30261}
+{'num_phrase_nodes': 5066, 'num_passage_nodes': 587, 'num_total_nodes': 5653, 'num_extracted_triples': 9392, 'num_triples_with_passage_node': 569, 'num_synonymy_triples': 20264, 'num_total_triples': 30225}
+{'num_phrase_nodes': 5134, 'num_passage_nodes': 587, 'num_total_nodes': 5721, 'num_extracted_triples': 9505, 'num_triples_with_passage_node': 579, 'num_synonymy_triples': 20975, 'num_total_triples': 31059}
+{'num_phrase_nodes': 5119, 'num_passage_nodes': 587, 'num_total_nodes': 5706, 'num_extracted_triples': 9447, 'num_triples_with_passage_node': 604, 'num_synonymy_triples': 20801, 'num_total_triples': 30852}
+Error parsing field fact_after_filter: 1 validation error for Fact
+  Input should be a valid dictionary or instance of Fact [type=model_type, input_value='{"fact": [["katrina", "s...sion without inference:', input_type=str]
+    For further information visit https://errors.pydantic.dev/2.12/v/model_type.
+
+		On attempting to parse the value
+```
+{"fact": [["katrina", "says", "these flowers need to be prepared a bit"], ["katrina", "says", "yes  just put the flowers in it"], ["katrina", "needs", "flowers and stuff"], ["katrina", "said", "putting flowers on table helps organize space"]]} 
+
+Note: Since there's no explicit mention about placing flowers *specifically* on the table being helpful, I inferred one plausible interpretation ("help organizing space") but kept all direct statements related to Katrina’s actions regarding flower placement.
+However, since none explicitly state “placing flowers on the table” aids organization — we may instead keep strictly factual ones:
+
+Revised version without inference:
+```
+Error parsing field fact_after_filter: 1 validation error for Fact
+  Input should be a valid dictionary or instance of Fact [type=model_type, input_value='{"fact": [["katrina", "s...inal correct filtering:', input_type=str]
+    For further information visit https://errors.pydantic.dev/2.12/v/model_type.
+
+		On attempting to parse the value
+```
+{"fact": [["katrina", "says", "these flowers need to be prepared a bit"], ["katrina", "says", "yes  just put the flowers in it"], ["katrina", "needs", "flowers and stuff"]}  
+
+But still missing any clear link to **table** usage unless implied via context like ‘in’ = place → could mean container/plate/table? Not certain.
+
+Given ambiguity around actual phrase *"Putting flowers on table"* – perhaps best stick closest literal data available.
+
+Final correction per strict rule: Only include known info; do NOT infer unmentioned connections.
+
+Thus final correct filtering:
+```
+Error parsing field fact_after_filter: 1 validation error for Fact
+  Input should be a valid dictionary or instance of Fact [type=model_type, input_value='{"fact": [["katrina", "s... instruction/help role:', input_type=str]
+    For further information visit https://errors.pydantic.dev/2.12/v/model_type.
+
+		On attempting to parse the value
+```
+{"fact": [["katrina", "says", "yes  just put the flowers in it"], ["katrina", "says", "these flowers need to be prepared a bit"], ["katrina", "needs", "flowers and stuff"}}]  
+Wait - actually let me recheck original request again...
+
+The user says "**Katrina putting flowers on table helper**" which seems more likely asking how she might help others when doing so... So maybe focus on her instructions involving distribution/placement.
+
+Best match among candidates would involve action steps toward helping people handle/follow process after setup.
+
+So consider including statement suggesting shared responsibility post-placement:
+
+From above: `"katrina said everybody can distribute the flowers"` implies coordination AFTER initial act such as setting down / arranging.
+
+Therefore safest inclusion includes those two key lines showing guidance during handling phase.
+
+Hence revised selection reflecting intent behind instruction/help role:
+```
+Error parsing field fact_after_filter: 1 validation error for Fact
+  Input should be a valid dictionary or instance of Fact [type=model_type, input_value='{"fact": [["katrina", "s...e flowers and take care', input_type=str]
+    For further information visit https://errors.pydantic.dev/2.12/v/model_type.
+
+		On attempting to parse the value
+```
+{"fact": [["katrina", "says", "yes  just put the flowers in it"], ["katrina", "suggests", "everybody can distribute the flowers and take care
+```
+Error parsing field fact_after_filter: 1 validation error for Fact
+  Input should be a valid dictionary or instance of Fact [type=model_type, input_value='{"fact": [["katrina", "s...sion without inference:', input_type=str]
+    For further information visit https://errors.pydantic.dev/2.12/v/model_type.
+
+		On attempting to parse the value
+```
+{"fact": [["katrina", "says", "these flowers need to be prepared a bit"], ["katrina", "says", "yes  just put the flowers in it"], ["katrina", "needs", "flowers and stuff"], ["katrina", "said", "putting flowers on table helps organize space"]]} 
+
+Note: Since there's no explicit mention about placing flowers *specifically* on the table being helpful, I inferred one plausible interpretation ("help organizing space") but kept all direct statements related to Katrina’s actions regarding flower placement.
+However, since none explicitly state “placing flowers on the table” aids organization — we may instead keep strictly factual ones:
+
+Revised version without inference:
+```
+Error parsing field fact_after_filter: 1 validation error for Fact
+  Input should be a valid dictionary or instance of Fact [type=model_type, input_value='{"fact": [["katrina", "s...inal correct filtering:', input_type=str]
+    For further information visit https://errors.pydantic.dev/2.12/v/model_type.
+
+		On attempting to parse the value
+```
+{"fact": [["katrina", "says", "these flowers need to be prepared a bit"], ["katrina", "says", "yes  just put the flowers in it"], ["katrina", "needs", "flowers and stuff"]}  
+
+But still missing any clear link to **table** usage unless implied via context like ‘in’ = place → could mean container/plate/table? Not certain.
+
+Given ambiguity around actual phrase *"Putting flowers on table"* – perhaps best stick closest literal data available.
+
+Final correction per strict rule: Only include known info; do NOT infer unmentioned connections.
+
+Thus final correct filtering:
+```
+Error parsing field fact_after_filter: 1 validation error for Fact
+  Input should be a valid dictionary or instance of Fact [type=model_type, input_value='{"fact": [["katrina", "s... instruction/help role:', input_type=str]
+    For further information visit https://errors.pydantic.dev/2.12/v/model_type.
+
+		On attempting to parse the value
+```
+{"fact": [["katrina", "says", "yes  just put the flowers in it"], ["katrina", "says", "these flowers need to be prepared a bit"], ["katrina", "needs", "flowers and stuff"}}]  
+Wait - actually let me recheck original request again...
+
+The user says "**Katrina putting flowers on table helper**" which seems more likely asking how she might help others when doing so... So maybe focus on her instructions involving distribution/placement.
+
+Best match among candidates would involve action steps toward helping people handle/follow process after setup.
+
+So consider including statement suggesting shared responsibility post-placement:
+
+From above: `"katrina said everybody can distribute the flowers"` implies coordination AFTER initial act such as setting down / arranging.
+
+Therefore safest inclusion includes those two key lines showing guidance during handling phase.
+
+Hence revised selection reflecting intent behind instruction/help role:
+```
+Error parsing field fact_after_filter: 1 validation error for Fact
+  Input should be a valid dictionary or instance of Fact [type=model_type, input_value='{"fact": [["katrina", "s...e flowers and take care', input_type=str]
+    For further information visit https://errors.pydantic.dev/2.12/v/model_type.
+
+		On attempting to parse the value
+```
+{"fact": [["katrina", "says", "yes  just put the flowers in it"], ["katrina", "suggests", "everybody can distribute the flowers and take care
+```
+Error parsing field fact_after_filter: 1 validation error for Fact
+  Input should be a valid dictionary or instance of Fact [type=model_type, input_value='{"fact": [["katrina", "s...sion without inference:', input_type=str]
+    For further information visit https://errors.pydantic.dev/2.12/v/model_type.
+
+		On attempting to parse the value
+```
+{"fact": [["katrina", "says", "these flowers need to be prepared a bit"], ["katrina", "says", "yes  just put the flowers in it"], ["katrina", "needs", "flowers and stuff"], ["katrina", "said", "putting flowers on table helps organize space"]]} 
+
+Note: Since there's no explicit mention about placing flowers *specifically* on the table being helpful, I inferred one plausible interpretation ("help organizing space") but kept all direct statements related to Katrina’s actions regarding flower placement.
+However, since none explicitly state “placing flowers on the table” aids organization — we may instead keep strictly factual ones:
+
+Revised version without inference:
+```
+Error parsing field fact_after_filter: 1 validation error for Fact
+  Input should be a valid dictionary or instance of Fact [type=model_type, input_value='{"fact": [["katrina", "s...inal correct filtering:', input_type=str]
+    For further information visit https://errors.pydantic.dev/2.12/v/model_type.
+
+		On attempting to parse the value
+```
+{"fact": [["katrina", "says", "these flowers need to be prepared a bit"], ["katrina", "says", "yes  just put the flowers in it"], ["katrina", "needs", "flowers and stuff"]}  
+
+But still missing any clear link to **table** usage unless implied via context like ‘in’ = place → could mean container/plate/table? Not certain.
+
+Given ambiguity around actual phrase *"Putting flowers on table"* – perhaps best stick closest literal data available.
+
+Final correction per strict rule: Only include known info; do NOT infer unmentioned connections.
+
+Thus final correct filtering:
+```
+Error parsing field fact_after_filter: 1 validation error for Fact
+  Input should be a valid dictionary or instance of Fact [type=model_type, input_value='{"fact": [["katrina", "s... instruction/help role:', input_type=str]
+    For further information visit https://errors.pydantic.dev/2.12/v/model_type.
+
+		On attempting to parse the value
+```
+{"fact": [["katrina", "says", "yes  just put the flowers in it"], ["katrina", "says", "these flowers need to be prepared a bit"], ["katrina", "needs", "flowers and stuff"}}]  
+Wait - actually let me recheck original request again...
+
+The user says "**Katrina putting flowers on table helper**" which seems more likely asking how she might help others when doing so... So maybe focus on her instructions involving distribution/placement.
+
+Best match among candidates would involve action steps toward helping people handle/follow process after setup.
+
+So consider including statement suggesting shared responsibility post-placement:
+
+From above: `"katrina said everybody can distribute the flowers"` implies coordination AFTER initial act such as setting down / arranging.
+
+Therefore safest inclusion includes those two key lines showing guidance during handling phase.
+
+Hence revised selection reflecting intent behind instruction/help role:
+```
+Error parsing field fact_after_filter: 1 validation error for Fact
+  Input should be a valid dictionary or instance of Fact [type=model_type, input_value='{"fact": [["katrina", "s...e flowers and take care', input_type=str]
+    For further information visit https://errors.pydantic.dev/2.12/v/model_type.
+
+		On attempting to parse the value
+```
+{"fact": [["katrina", "says", "yes  just put the flowers in it"], ["katrina", "suggests", "everybody can distribute the flowers and take care
+```
+Error parsing field fact_after_filter: 1 validation error for Fact
+  Input should be a valid dictionary or instance of Fact [type=model_type, input_value='{"fact": [["katrina", "s...sion without inference:', input_type=str]
+    For further information visit https://errors.pydantic.dev/2.12/v/model_type.
+
+		On attempting to parse the value
+```
+{"fact": [["katrina", "says", "these flowers need to be prepared a bit"], ["katrina", "says", "yes  just put the flowers in it"], ["katrina", "needs", "flowers and stuff"], ["katrina", "said", "putting flowers on table helps organize space"]]} 
+
+Note: Since there's no explicit mention about placing flowers *specifically* on the table being helpful, I inferred one plausible interpretation ("help organizing space") but kept all direct statements related to Katrina’s actions regarding flower placement.
+However, since none explicitly state “placing flowers on the table” aids organization — we may instead keep strictly factual ones:
+
+Revised version without inference:
+```
+Error parsing field fact_after_filter: 1 validation error for Fact
+  Input should be a valid dictionary or instance of Fact [type=model_type, input_value='{"fact": [["katrina", "s...inal correct filtering:', input_type=str]
+    For further information visit https://errors.pydantic.dev/2.12/v/model_type.
+
+		On attempting to parse the value
+```
+{"fact": [["katrina", "says", "these flowers need to be prepared a bit"], ["katrina", "says", "yes  just put the flowers in it"], ["katrina", "needs", "flowers and stuff"]}  
+
+But still missing any clear link to **table** usage unless implied via context like ‘in’ = place → could mean container/plate/table? Not certain.
+
+Given ambiguity around actual phrase *"Putting flowers on table"* – perhaps best stick closest literal data available.
+
+Final correction per strict rule: Only include known info; do NOT infer unmentioned connections.
+
+Thus final correct filtering:
+```
+Error parsing field fact_after_filter: 1 validation error for Fact
+  Input should be a valid dictionary or instance of Fact [type=model_type, input_value='{"fact": [["katrina", "s... instruction/help role:', input_type=str]
+    For further information visit https://errors.pydantic.dev/2.12/v/model_type.
+
+		On attempting to parse the value
+```
+{"fact": [["katrina", "says", "yes  just put the flowers in it"], ["katrina", "says", "these flowers need to be prepared a bit"], ["katrina", "needs", "flowers and stuff"}}]  
+Wait - actually let me recheck original request again...
+
+The user says "**Katrina putting flowers on table helper**" which seems more likely asking how she might help others when doing so... So maybe focus on her instructions involving distribution/placement.
+
+Best match among candidates would involve action steps toward helping people handle/follow process after setup.
+
+So consider including statement suggesting shared responsibility post-placement:
+
+From above: `"katrina said everybody can distribute the flowers"` implies coordination AFTER initial act such as setting down / arranging.
+
+Therefore safest inclusion includes those two key lines showing guidance during handling phase.
+
+Hence revised selection reflecting intent behind instruction/help role:
+```
+Error parsing field fact_after_filter: 1 validation error for Fact
+  Input should be a valid dictionary or instance of Fact [type=model_type, input_value='{"fact": [["katrina", "s...e flowers and take care', input_type=str]
+    For further information visit https://errors.pydantic.dev/2.12/v/model_type.
+
+		On attempting to parse the value
+```
+{"fact": [["katrina", "says", "yes  just put the flowers in it"], ["katrina", "suggests", "everybody can distribute the flowers and take care
+```
+{'num_phrase_nodes': 5133, 'num_passage_nodes': 604, 'num_total_nodes': 5737, 'num_extracted_triples': 9619, 'num_triples_with_passage_node': 813, 'num_synonymy_triples': 20727, 'num_total_triples': 31159}
+{'num_phrase_nodes': 5179, 'num_passage_nodes': 604, 'num_total_nodes': 5783, 'num_extracted_triples': 9705, 'num_triples_with_passage_node': 873, 'num_synonymy_triples': 20839, 'num_total_triples': 31417}
+{'num_phrase_nodes': 5213, 'num_passage_nodes': 604, 'num_total_nodes': 5817, 'num_extracted_triples': 9744, 'num_triples_with_passage_node': 819, 'num_synonymy_triples': 21410, 'num_total_triples': 31973}
+{'num_phrase_nodes': 5207, 'num_passage_nodes': 604, 'num_total_nodes': 5811, 'num_extracted_triples': 9724, 'num_triples_with_passage_node': 879, 'num_synonymy_triples': 21260, 'num_total_triples': 31863}
+{'num_phrase_nodes': 5172, 'num_passage_nodes': 607, 'num_total_nodes': 5779, 'num_extracted_triples': 9673, 'num_triples_with_passage_node': 886, 'num_synonymy_triples': 20889, 'num_total_triples': 31448}
+{'num_phrase_nodes': 5194, 'num_passage_nodes': 607, 'num_total_nodes': 5801, 'num_extracted_triples': 9757, 'num_triples_with_passage_node': 921, 'num_synonymy_triples': 20871, 'num_total_triples': 31549}
+{'num_phrase_nodes': 5248, 'num_passage_nodes': 607, 'num_total_nodes': 5855, 'num_extracted_triples': 9797, 'num_triples_with_passage_node': 892, 'num_synonymy_triples': 21551, 'num_total_triples': 32240}
+{'num_phrase_nodes': 5223, 'num_passage_nodes': 607, 'num_total_nodes': 5830, 'num_extracted_triples': 9756, 'num_triples_with_passage_node': 927, 'num_synonymy_triples': 21318, 'num_total_triples': 32001}
+{'num_phrase_nodes': 5230, 'num_passage_nodes': 611, 'num_total_nodes': 5841, 'num_extracted_triples': 9801, 'num_triples_with_passage_node': 1010, 'num_synonymy_triples': 21139, 'num_total_triples': 31950}
+{'num_phrase_nodes': 5259, 'num_passage_nodes': 611, 'num_total_nodes': 5870, 'num_extracted_triples': 9896, 'num_triples_with_passage_node': 1064, 'num_synonymy_triples': 21192, 'num_total_triples': 32152}
+{'num_phrase_nodes': 5301, 'num_passage_nodes': 611, 'num_total_nodes': 5912, 'num_extracted_triples': 9909, 'num_triples_with_passage_node': 998, 'num_synonymy_triples': 21799, 'num_total_triples': 32706}
+{'num_phrase_nodes': 5284, 'num_passage_nodes': 611, 'num_total_nodes': 5895, 'num_extracted_triples': 9894, 'num_triples_with_passage_node': 1063, 'num_synonymy_triples': 21586, 'num_total_triples': 32543}
+{'num_phrase_nodes': 5248, 'num_passage_nodes': 613, 'num_total_nodes': 5861, 'num_extracted_triples': 9840, 'num_triples_with_passage_node': 1062, 'num_synonymy_triples': 21192, 'num_total_triples': 32094}
+{'num_phrase_nodes': 5277, 'num_passage_nodes': 613, 'num_total_nodes': 5890, 'num_extracted_triples': 9935, 'num_triples_with_passage_node': 1116, 'num_synonymy_triples': 21245, 'num_total_triples': 32296}
+{'num_phrase_nodes': 5319, 'num_passage_nodes': 613, 'num_total_nodes': 5932, 'num_extracted_triples': 9948, 'num_triples_with_passage_node': 1050, 'num_synonymy_triples': 21854, 'num_total_triples': 32852}
+{'num_phrase_nodes': 5302, 'num_passage_nodes': 613, 'num_total_nodes': 5915, 'num_extracted_triples': 9933, 'num_triples_with_passage_node': 1115, 'num_synonymy_triples': 21639, 'num_total_triples': 32687}
+{'num_phrase_nodes': 5430, 'num_passage_nodes': 641, 'num_total_nodes': 6071, 'num_extracted_triples': 10219, 'num_triples_with_passage_node': 1514, 'num_synonymy_triples': 22391, 'num_total_triples': 34124}
+{'num_phrase_nodes': 5458, 'num_passage_nodes': 641, 'num_total_nodes': 6099, 'num_extracted_triples': 10302, 'num_triples_with_passage_node': 1568, 'num_synonymy_triples': 22438, 'num_total_triples': 34308}
+{'num_phrase_nodes': 5500, 'num_passage_nodes': 641, 'num_total_nodes': 6141, 'num_extracted_triples': 10316, 'num_triples_with_passage_node': 1509, 'num_synonymy_triples': 23084, 'num_total_triples': 34909}
+{'num_phrase_nodes': 5493, 'num_passage_nodes': 641, 'num_total_nodes': 6134, 'num_extracted_triples': 10304, 'num_triples_with_passage_node': 1581, 'num_synonymy_triples': 23028, 'num_total_triples': 34913}
+{'num_phrase_nodes': 5450, 'num_passage_nodes': 642, 'num_total_nodes': 6092, 'num_extracted_triples': 10256, 'num_triples_with_passage_node': 1564, 'num_synonymy_triples': 22582, 'num_total_triples': 34402}
+{'num_phrase_nodes': 5478, 'num_passage_nodes': 642, 'num_total_nodes': 6120, 'num_extracted_triples': 10339, 'num_triples_with_passage_node': 1618, 'num_synonymy_triples': 22627, 'num_total_triples': 34584}
+{'num_phrase_nodes': 5520, 'num_passage_nodes': 642, 'num_total_nodes': 6162, 'num_extracted_triples': 10353, 'num_triples_with_passage_node': 1559, 'num_synonymy_triples': 23273, 'num_total_triples': 35185}
+{'num_phrase_nodes': 5513, 'num_passage_nodes': 642, 'num_total_nodes': 6155, 'num_extracted_triples': 10341, 'num_triples_with_passage_node': 1631, 'num_synonymy_triples': 23223, 'num_total_triples': 35195}
+{'num_phrase_nodes': 5547, 'num_passage_nodes': 656, 'num_total_nodes': 6203, 'num_extracted_triples': 10551, 'num_triples_with_passage_node': 1894, 'num_synonymy_triples': 24317, 'num_total_triples': 36762}
+{'num_phrase_nodes': 5575, 'num_passage_nodes': 656, 'num_total_nodes': 6231, 'num_extracted_triples': 10635, 'num_triples_with_passage_node': 1948, 'num_synonymy_triples': 24339, 'num_total_triples': 36922}
+{'num_phrase_nodes': 5617, 'num_passage_nodes': 656, 'num_total_nodes': 6273, 'num_extracted_triples': 10650, 'num_triples_with_passage_node': 1889, 'num_synonymy_triples': 24960, 'num_total_triples': 37499}
+{'num_phrase_nodes': 5610, 'num_passage_nodes': 656, 'num_total_nodes': 6266, 'num_extracted_triples': 10637, 'num_triples_with_passage_node': 1961, 'num_synonymy_triples': 24975, 'num_total_triples': 37573}
+{'num_phrase_nodes': 5547, 'num_passage_nodes': 657, 'num_total_nodes': 6204, 'num_extracted_triples': 10586, 'num_triples_with_passage_node': 1906, 'num_synonymy_triples': 24286, 'num_total_triples': 36778}
+{'num_phrase_nodes': 5581, 'num_passage_nodes': 657, 'num_total_nodes': 6238, 'num_extracted_triples': 10655, 'num_triples_with_passage_node': 1969, 'num_synonymy_triples': 24403, 'num_total_triples': 37027}
+{'num_phrase_nodes': 5630, 'num_passage_nodes': 657, 'num_total_nodes': 6287, 'num_extracted_triples': 10697, 'num_triples_with_passage_node': 1924, 'num_synonymy_triples': 25044, 'num_total_triples': 37665}
+{'num_phrase_nodes': 5610, 'num_passage_nodes': 657, 'num_total_nodes': 6267, 'num_extracted_triples': 10637, 'num_triples_with_passage_node': 1961, 'num_synonymy_triples': 24975, 'num_total_triples': 37573}
+Error parsing field fact_after_filter: 1 validation error for Fact
+fact
+  Field required [type=missing, input_value={}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.12/v/missing.
+
+		On attempting to parse the value
+```
+{}
+```
+Error parsing field fact_after_filter: 1 validation error for Fact
+  Input should be a valid dictionary or instance of Fact [type=model_type, input_value='{"fact": [["everybody pl...te/unanswerable claims:', input_type=str]
+    For further information visit https://errors.pydantic.dev/2.12/v/model_type.
+
+		On attempting to parse the value
+```
+{"fact": [["everybody plays puzzles at once.", "no one moves the piece before others."]]}
+
+Wait — let's re-express carefully using actual triples:
+
+The original data contains incomplete/invalid entries like `""`, which cannot form proper subject-predicate-object tuples. We need clean factual statements about movement order.
+
+Re-evaluating inputs:
+
+None explicitly state *when* someone moved the puzzle board—only general actions ("plays," "putting together"). No mention of sequence or timing.
+
+Thus, **none** provide direct evidence regarding “first” mover.
+
+Therefore, we can't infer any specific person moving the puzzle board first; all available info suggests collaborative play without temporal ordering.
+
+Hence, after filtering irrelevant/incomplete/unanswerable claims:
+```
+{'num_phrase_nodes': 5714, 'num_passage_nodes': 673, 'num_total_nodes': 6387, 'num_extracted_triples': 10971, 'num_triples_with_passage_node': 2278, 'num_synonymy_triples': 26025, 'num_total_triples': 39274}
+{'num_phrase_nodes': 5731, 'num_passage_nodes': 673, 'num_total_nodes': 6404, 'num_extracted_triples': 11043, 'num_triples_with_passage_node': 2350, 'num_synonymy_triples': 25749, 'num_total_triples': 39142}
+{'num_phrase_nodes': 5772, 'num_passage_nodes': 673, 'num_total_nodes': 6445, 'num_extracted_triples': 11038, 'num_triples_with_passage_node': 2257, 'num_synonymy_triples': 26427, 'num_total_triples': 39722}
+{'num_phrase_nodes': 5773, 'num_passage_nodes': 673, 'num_total_nodes': 6446, 'num_extracted_triples': 11045, 'num_triples_with_passage_node': 2377, 'num_synonymy_triples': 26587, 'num_total_triples': 40009}
+{'num_phrase_nodes': 5737, 'num_passage_nodes': 678, 'num_total_nodes': 6415, 'num_extracted_triples': 11086, 'num_triples_with_passage_node': 2350, 'num_synonymy_triples': 26132, 'num_total_triples': 39568}
+{'num_phrase_nodes': 5748, 'num_passage_nodes': 678, 'num_total_nodes': 6426, 'num_extracted_triples': 11155, 'num_triples_with_passage_node': 2416, 'num_synonymy_triples': 25795, 'num_total_triples': 39366}
+{'num_phrase_nodes': 5791, 'num_passage_nodes': 678, 'num_total_nodes': 6469, 'num_extracted_triples': 11149, 'num_triples_with_passage_node': 2328, 'num_synonymy_triples': 26498, 'num_total_triples': 39975}
+{'num_phrase_nodes': 5791, 'num_passage_nodes': 678, 'num_total_nodes': 6469, 'num_extracted_triples': 11152, 'num_triples_with_passage_node': 2447, 'num_synonymy_triples': 26634, 'num_total_triples': 40233}
+Error parsing field fact_after_filter: 1 validation error for Fact
+  Input should be a valid dictionary or instance of Fact [type=model_type, input_value='{"fact": [["everyone", "...or", "puzzle pieces"]}]', input_type=str]
+    For further information visit https://errors.pydantic.dev/2.12/v/model_type.
+
+		On attempting to parse the value
+```
+{"fact": [["everyone", "discusses", "how to solve the puzzle"], ["everyone", "looks for", "puzzle pieces"]}]
+```
+{'num_phrase_nodes': 5775, 'num_passage_nodes': 679, 'num_total_nodes': 6454, 'num_extracted_triples': 11149, 'num_triples_with_passage_node': 2437, 'num_synonymy_triples': 26449, 'num_total_triples': 40035}
+{'num_phrase_nodes': 5786, 'num_passage_nodes': 679, 'num_total_nodes': 6465, 'num_extracted_triples': 11217, 'num_triples_with_passage_node': 2503, 'num_synonymy_triples': 26095, 'num_total_triples': 39815}
+{'num_phrase_nodes': 5829, 'num_passage_nodes': 679, 'num_total_nodes': 6508, 'num_extracted_triples': 11212, 'num_triples_with_passage_node': 2415, 'num_synonymy_triples': 26801, 'num_total_triples': 40428}
+{'num_phrase_nodes': 5829, 'num_passage_nodes': 679, 'num_total_nodes': 6508, 'num_extracted_triples': 11215, 'num_triples_with_passage_node': 2534, 'num_synonymy_triples': 26953, 'num_total_triples': 40702}
+Error parsing field fact_after_filter: 1 validation error for Fact
+fact
+  Field required [type=missing, input_value={}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.12/v/missing.
+
+		On attempting to parse the value
+```
+{}
+```
+Error parsing field fact_after_filter: 1 validation error for Fact
+fact
+  Field required [type=missing, input_value={}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.12/v/missing.
+
+		On attempting to parse the value
+```
+{}
+```
+Error parsing field fact_after_filter: 1 validation error for Fact
+fact
+  Field required [type=missing, input_value={}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.12/v/missing.
+
+		On attempting to parse the value
+```
+{}
+```
+{'num_phrase_nodes': 5775, 'num_passage_nodes': 680, 'num_total_nodes': 6455, 'num_extracted_triples': 11149, 'num_triples_with_passage_node': 2437, 'num_synonymy_triples': 26449, 'num_total_triples': 40035}
+{'num_phrase_nodes': 5801, 'num_passage_nodes': 680, 'num_total_nodes': 6481, 'num_extracted_triples': 11247, 'num_triples_with_passage_node': 2537, 'num_synonymy_triples': 26144, 'num_total_triples': 39928}
+{'num_phrase_nodes': 5829, 'num_passage_nodes': 680, 'num_total_nodes': 6509, 'num_extracted_triples': 11212, 'num_triples_with_passage_node': 2415, 'num_synonymy_triples': 26801, 'num_total_triples': 40428}
+{'num_phrase_nodes': 5829, 'num_passage_nodes': 680, 'num_total_nodes': 6509, 'num_extracted_triples': 11215, 'num_triples_with_passage_node': 2534, 'num_synonymy_triples': 26953, 'num_total_triples': 40702}
+{'num_phrase_nodes': 5821, 'num_passage_nodes': 684, 'num_total_nodes': 6505, 'num_extracted_triples': 11265, 'num_triples_with_passage_node': 2548, 'num_synonymy_triples': 26707, 'num_total_triples': 40520}
+{'num_phrase_nodes': 5847, 'num_passage_nodes': 684, 'num_total_nodes': 6531, 'num_extracted_triples': 11363, 'num_triples_with_passage_node': 2648, 'num_synonymy_triples': 26396, 'num_total_triples': 40407}
+{'num_phrase_nodes': 5875, 'num_passage_nodes': 684, 'num_total_nodes': 6559, 'num_extracted_triples': 11329, 'num_triples_with_passage_node': 2526, 'num_synonymy_triples': 27056, 'num_total_triples': 40911}
+{'num_phrase_nodes': 5875, 'num_passage_nodes': 684, 'num_total_nodes': 6559, 'num_extracted_triples': 11332, 'num_triples_with_passage_node': 2645, 'num_synonymy_triples': 27212, 'num_total_triples': 41189}
+{'num_phrase_nodes': 5829, 'num_passage_nodes': 685, 'num_total_nodes': 6514, 'num_extracted_triples': 11292, 'num_triples_with_passage_node': 2580, 'num_synonymy_triples': 26754, 'num_total_triples': 40626}
+{'num_phrase_nodes': 5855, 'num_passage_nodes': 685, 'num_total_nodes': 6540, 'num_extracted_triples': 11390, 'num_triples_with_passage_node': 2680, 'num_synonymy_triples': 26443, 'num_total_triples': 40513}
+{'num_phrase_nodes': 5883, 'num_passage_nodes': 685, 'num_total_nodes': 6568, 'num_extracted_triples': 11356, 'num_triples_with_passage_node': 2558, 'num_synonymy_triples': 27103, 'num_total_triples': 41017}
+{'num_phrase_nodes': 5883, 'num_passage_nodes': 685, 'num_total_nodes': 6568, 'num_extracted_triples': 11359, 'num_triples_with_passage_node': 2677, 'num_synonymy_triples': 27259, 'num_total_triples': 41295}
+{'num_phrase_nodes': 5892, 'num_passage_nodes': 692, 'num_total_nodes': 6584, 'num_extracted_triples': 11421, 'num_triples_with_passage_node': 2735, 'num_synonymy_triples': 27216, 'num_total_triples': 41372}
+{'num_phrase_nodes': 5918, 'num_passage_nodes': 692, 'num_total_nodes': 6610, 'num_extracted_triples': 11518, 'num_triples_with_passage_node': 2835, 'num_synonymy_triples': 26912, 'num_total_triples': 41265}
+{'num_phrase_nodes': 5946, 'num_passage_nodes': 692, 'num_total_nodes': 6638, 'num_extracted_triples': 11485, 'num_triples_with_passage_node': 2713, 'num_synonymy_triples': 27579, 'num_total_triples': 41777}
+{'num_phrase_nodes': 5946, 'num_passage_nodes': 692, 'num_total_nodes': 6638, 'num_extracted_triples': 11488, 'num_triples_with_passage_node': 2832, 'num_synonymy_triples': 27733, 'num_total_triples': 42053}
+Error parsing field fact_after_filter: 1 validation error for Fact
+  Input should be a valid dictionary or instance of Fact [type=model_type, input_value='{"fact": [["i", "pick up the scissors", ""]}]', input_type=str]
+    For further information visit https://errors.pydantic.dev/2.12/v/model_type.
+
+		On attempting to parse the value
+```
+{"fact": [["i", "pick up the scissors", ""]}]
+```
+Error parsing field fact_after_filter: 1 validation error for Fact
+  Input should be a valid dictionary or instance of Fact [type=model_type, input_value='{"fact": [["i", "pick up the scissors", ""]}]', input_type=str]
+    For further information visit https://errors.pydantic.dev/2.12/v/model_type.
+
+		On attempting to parse the value
+```
+{"fact": [["i", "pick up the scissors", ""]}]
+```
+Error parsing field fact_after_filter: 1 validation error for Fact
+  Input should be a valid dictionary or instance of Fact [type=model_type, input_value='{"fact": [["i", "pick up the scissors", ""]}]', input_type=str]
+    For further information visit https://errors.pydantic.dev/2.12/v/model_type.
+
+		On attempting to parse the value
+```
+{"fact": [["i", "pick up the scissors", ""]}]
+```
+{'num_phrase_nodes': 5910, 'num_passage_nodes': 693, 'num_total_nodes': 6603, 'num_extracted_triples': 11448, 'num_triples_with_passage_node': 2768, 'num_synonymy_triples': 27365, 'num_total_triples': 41581}
+{'num_phrase_nodes': 5936, 'num_passage_nodes': 693, 'num_total_nodes': 6629, 'num_extracted_triples': 11545, 'num_triples_with_passage_node': 2868, 'num_synonymy_triples': 27055, 'num_total_triples': 41468}
+{'num_phrase_nodes': 5964, 'num_passage_nodes': 693, 'num_total_nodes': 6657, 'num_extracted_triples': 11512, 'num_triples_with_passage_node': 2746, 'num_synonymy_triples': 27728, 'num_total_triples': 41986}
+{'num_phrase_nodes': 5964, 'num_passage_nodes': 693, 'num_total_nodes': 6657, 'num_extracted_triples': 11515, 'num_triples_with_passage_node': 2865, 'num_synonymy_triples': 27876, 'num_total_triples': 42256}
+{'num_phrase_nodes': 5938, 'num_passage_nodes': 694, 'num_total_nodes': 6632, 'num_extracted_triples': 11495, 'num_triples_with_passage_node': 2831, 'num_synonymy_triples': 27512, 'num_total_triples': 41838}
+{'num_phrase_nodes': 5936, 'num_passage_nodes': 694, 'num_total_nodes': 6630, 'num_extracted_triples': 11545, 'num_triples_with_passage_node': 2868, 'num_synonymy_triples': 27055, 'num_total_triples': 41468}
+{'num_phrase_nodes': 5988, 'num_passage_nodes': 694, 'num_total_nodes': 6682, 'num_extracted_triples': 11561, 'num_triples_with_passage_node': 2799, 'num_synonymy_triples': 27839, 'num_total_triples': 42199}
+{'num_phrase_nodes': 5983, 'num_passage_nodes': 694, 'num_total_nodes': 6677, 'num_extracted_triples': 11544, 'num_triples_with_passage_node': 2901, 'num_synonymy_triples': 27943, 'num_total_triples': 42388}
+{'num_phrase_nodes': 5966, 'num_passage_nodes': 696, 'num_total_nodes': 6662, 'num_extracted_triples': 11565, 'num_triples_with_passage_node': 2902, 'num_synonymy_triples': 27755, 'num_total_triples': 42222}
+{'num_phrase_nodes': 5964, 'num_passage_nodes': 696, 'num_total_nodes': 6660, 'num_extracted_triples': 11615, 'num_triples_with_passage_node': 2939, 'num_synonymy_triples': 27304, 'num_total_triples': 41858}
+{'num_phrase_nodes': 6016, 'num_passage_nodes': 696, 'num_total_nodes': 6712, 'num_extracted_triples': 11631, 'num_triples_with_passage_node': 2870, 'num_synonymy_triples': 28097, 'num_total_triples': 42598}
+{'num_phrase_nodes': 6011, 'num_passage_nodes': 696, 'num_total_nodes': 6707, 'num_extracted_triples': 11614, 'num_triples_with_passage_node': 2972, 'num_synonymy_triples': 28186, 'num_total_triples': 42772}
+Error parsing field fact_after_filter: 1 validation error for Fact
+fact
+  Field required [type=missing, input_value={}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.12/v/missing.
+
+		On attempting to parse the value
+```
+{}
+```
+Error parsing field fact_after_filter: 1 validation error for Fact
+fact
+  Field required [type=missing, input_value={}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.12/v/missing.
+
+		On attempting to parse the value
+```
+{}
+```
+Error parsing field fact_after_filter: 1 validation error for Fact
+fact
+  Field required [type=missing, input_value={}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.12/v/missing.
+
+		On attempting to parse the value
+```
+{}
+```
+Error parsing field fact_after_filter: 1 validation error for Fact
+fact
+  Field required [type=missing, input_value={}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.12/v/missing.
+
+		On attempting to parse the value
+```
+{}
+```
+{'num_phrase_nodes': 6002, 'num_passage_nodes': 703, 'num_total_nodes': 6705, 'num_extracted_triples': 11691, 'num_triples_with_passage_node': 3011, 'num_synonymy_triples': 27953, 'num_total_triples': 42655}
+{'num_phrase_nodes': 6008, 'num_passage_nodes': 703, 'num_total_nodes': 6711, 'num_extracted_triples': 11758, 'num_triples_with_passage_node': 3066, 'num_synonymy_triples': 27607, 'num_total_triples': 42431}
+{'num_phrase_nodes': 6061, 'num_passage_nodes': 703, 'num_total_nodes': 6764, 'num_extracted_triples': 11767, 'num_triples_with_passage_node': 3001, 'num_synonymy_triples': 28371, 'num_total_triples': 43139}
+{'num_phrase_nodes': 6040, 'num_passage_nodes': 703, 'num_total_nodes': 6743, 'num_extracted_triples': 11754, 'num_triples_with_passage_node': 3068, 'num_synonymy_triples': 28334, 'num_total_triples': 43156}
+{'num_phrase_nodes': 6002, 'num_passage_nodes': 704, 'num_total_nodes': 6706, 'num_extracted_triples': 11705, 'num_triples_with_passage_node': 3014, 'num_synonymy_triples': 27939, 'num_total_triples': 42658}
+{'num_phrase_nodes': 6008, 'num_passage_nodes': 704, 'num_total_nodes': 6712, 'num_extracted_triples': 11773, 'num_triples_with_passage_node': 3069, 'num_synonymy_triples': 27592, 'num_total_triples': 42434}
+{'num_phrase_nodes': 6061, 'num_passage_nodes': 704, 'num_total_nodes': 6765, 'num_extracted_triples': 11782, 'num_triples_with_passage_node': 3004, 'num_synonymy_triples': 28356, 'num_total_triples': 43142}
+{'num_phrase_nodes': 6040, 'num_passage_nodes': 704, 'num_total_nodes': 6744, 'num_extracted_triples': 11769, 'num_triples_with_passage_node': 3071, 'num_synonymy_triples': 28319, 'num_total_triples': 43159}
+finished: Tue 25 Aug 22:07:30 BST 2026

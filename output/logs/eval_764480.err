@@ -1,0 +1,1764 @@
+INFO condition=event  chunks=2092
+INFO EgoLifeQA: 50 question(s) (capped from the full set)
+INFO captions: 2092 entries -> output/eval/event/data/EgoLifeCap/A1_JAKE/A1_JAKE_30sec.json (+3 copies for the pre-flight check)
+INFO semantic: 684 node(s) from the materialised file -> output/eval/event/metadata/semantic_memory/A1_JAKE/semantic_consolidation_results_qwen3vl-30b.json
+INFO visual: 2022/2092 chunk(s) embedded (351 partially covered, 70 with no segment in the bank) -> output/eval/event/metadata/visual_memory/A1_JAKE/visual_embeddings.pkl
+INFO:__main__:All 7 required input files found
+INFO:__main__:Initializing models...
+INFO:__main__:Embedding devices: text=cpu visual=cpu
+INFO:__main__:Sharing one instance for retriever and responder (qwen3vl-30b)
+/parallel_scratch/ms04938/WorldMM/.venv/lib/python3.13/site-packages/requests/__init__.py:109: RequestsDependencyWarning: urllib3 (1.26.13) or chardet (7.3.0)/charset_normalizer (2.1.1) doesn't match a supported version!
+  warnings.warn(
+Loading checkpoint shards:   0%|          | 0/13 [00:00<?, ?it/s]Loading checkpoint shards:   8%|▊         | 1/13 [00:06<01:23,  6.93s/it]Loading checkpoint shards:  15%|█▌        | 2/13 [00:58<06:05, 33.26s/it]Loading checkpoint shards:  23%|██▎       | 3/13 [02:11<08:32, 51.27s/it]Loading checkpoint shards:  31%|███       | 4/13 [05:42<17:11, 114.57s/it]Loading checkpoint shards:  38%|███▊      | 5/13 [09:09<19:40, 147.59s/it]Loading checkpoint shards:  46%|████▌     | 6/13 [10:02<13:28, 115.50s/it]Loading checkpoint shards:  54%|█████▍    | 7/13 [10:02<07:47, 77.97s/it] Loading checkpoint shards:  62%|██████▏   | 8/13 [10:04<04:28, 53.65s/it]Loading checkpoint shards:  69%|██████▉   | 9/13 [10:06<02:29, 37.37s/it]Loading checkpoint shards:  77%|███████▋  | 10/13 [10:29<01:39, 33.08s/it]Loading checkpoint shards:  85%|████████▍ | 11/13 [10:37<00:50, 25.50s/it]Loading checkpoint shards:  92%|█████████▏| 12/13 [12:03<00:43, 43.81s/it]Loading checkpoint shards: 100%|██████████| 13/13 [13:00<00:00, 47.81s/it]Loading checkpoint shards: 100%|██████████| 13/13 [13:00<00:00, 60.05s/it]
+INFO:worldmm.llm.qwen3vl:Initialized Qwen3VLModel with Qwen/Qwen3-VL-30B-A3B-Instruct
+INFO:worldmm.llm.prompt_template_manager:Loading templates from directory: /parallel_scratch/ms04938/WorldMM/src/worldmm/llm/templates
+INFO:__main__:Initializing WorldMemory...
+INFO:__main__:Loading data...
+INFO:__main__:Loading data into WorldMemory...
+INFO:worldmm.memory.episodic.memory:Loaded 2092 captions for granularity 30sec
+INFO:worldmm.memory.episodic.memory:Loaded 2092 captions for granularity 3min
+INFO:worldmm.memory.episodic.memory:Loaded 2092 captions for granularity 10min
+INFO:worldmm.memory.episodic.memory:Loaded 2092 captions for granularity 1h
+INFO:worldmm.memory.semantic.memory:Loaded semantic triples across 684 timestamps
+INFO:worldmm.memory.visual.memory:Loaded 2005 video embeddings from output/eval/event/metadata/visual_memory/A1_JAKE/visual_embeddings.pkl
+INFO:worldmm.memory.visual.memory:Loaded 2092 video clips
+INFO:__main__:Resuming from output/eval/event/results/qwen3vl_30b_qwen3vl_30b/egolife_eval_A1_JAKE_baseline.jsonl with 500 question(s) already done
+INFO:__main__:496 previously failed question(s) will be retried
+INFO:__main__:Evaluating 46 of 50 question(s); 4 already complete
+  0%|          | 0/46 [00:00<?, ?it/s]INFO:__main__:Processing ID 2: Where was the black marker in Shure's hand before?...
+INFO:worldmm.memory.memory:Indexing all memories up to DAY1 11:35:00
+WARNING:worldmm.memory.episodic.memory:No captions loaded for granularity 10sec
+INFO:worldmm.llm.prompt_template_manager:Loading templates from directory: /parallel_scratch/ms04938/WorldMM/src/worldmm/llm/templates
+INFO:hipporag.HippoRAG:Loaded graph from .cache/episodic_memory/30sec/qwen3vl-30b_Qwen_Qwen3-Embedding-4B/graph.pickle with 4159 nodes, 526411 edges
+INFO:hipporag.embedding_store:Loaded 422 records from .cache/episodic_memory/30sec/qwen3vl-30b_Qwen_Qwen3-Embedding-4B/chunk_embeddings/vdb_chunk.parquet
+INFO:hipporag.embedding_store:Loaded 3737 records from .cache/episodic_memory/30sec/qwen3vl-30b_Qwen_Qwen3-Embedding-4B/entity_embeddings/vdb_entity.parquet
+INFO:hipporag.embedding_store:Loaded 7055 records from .cache/episodic_memory/30sec/qwen3vl-30b_Qwen_Qwen3-Embedding-4B/fact_embeddings/vdb_fact.parquet
+INFO:worldmm.llm.prompt_template_manager:Loading templates from directory: /parallel_scratch/ms04938/WorldMM/src/worldmm/llm/templates
+INFO:hipporag.HippoRAG:Indexing Documents
+INFO:hipporag.HippoRAG:Performing OpenIE
+INFO:hipporag.embedding_store:Inserting 17 new records, 0 records already exist.
+INFO:datasets:PyTorch version 2.8.0+cu128 available.
+INFO:datasets:Polars version 1.39.3 available.
+INFO:sentence_transformers.SentenceTransformer:Use pytorch device_name: cuda:0
+INFO:sentence_transformers.SentenceTransformer:Load pretrained SentenceTransformer: Qwen/Qwen3-Embedding-4B
+
+Loading checkpoint shards:   0%|          | 0/2 [00:00<?, ?it/s][ALoading checkpoint shards: 100%|██████████| 2/2 [00:00<00:00, 35.68it/s]
+INFO:sentence_transformers.SentenceTransformer:1 prompt is loaded, with the key: query
+
+Batches:   0%|          | 0/1 [00:00<?, ?it/s][A
+Batches: 100%|██████████| 1/1 [00:03<00:00,  3.09s/it][ABatches: 100%|██████████| 1/1 [00:03<00:00,  3.09s/it]
+INFO:hipporag.embedding_store:Saving new records.
+INFO:hipporag.embedding_store:Saved 439 records to .cache/episodic_memory/30sec/qwen3vl-30b_Qwen_Qwen3-Embedding-4B/chunk_embeddings/vdb_chunk.parquet
+INFO:hipporag.HippoRAG:OpenIE results saved to .cache/episodic_memory/30sec/openie_results_ner_qwen3vl-30b.json
+INFO:hipporag.HippoRAG:Encoding Entities
+INFO:hipporag.embedding_store:Inserting 131 new records, 3737 records already exist.
+
+Batches:   0%|          | 0/2 [00:00<?, ?it/s][A
+Batches: 100%|██████████| 2/2 [00:00<00:00,  5.41it/s][ABatches: 100%|██████████| 2/2 [00:00<00:00,  5.38it/s]
+INFO:hipporag.embedding_store:Saving new records.
+INFO:hipporag.embedding_store:Saved 3868 records to .cache/episodic_memory/30sec/qwen3vl-30b_Qwen_Qwen3-Embedding-4B/entity_embeddings/vdb_entity.parquet
+INFO:hipporag.HippoRAG:Encoding Facts
+INFO:hipporag.embedding_store:Inserting 346 new records, 7055 records already exist.
+
+Batches:   0%|          | 0/3 [00:00<?, ?it/s][A
+Batches:  33%|███▎      | 1/3 [00:00<00:00,  6.09it/s][A
+Batches:  67%|██████▋   | 2/3 [00:00<00:00,  6.97it/s][ABatches: 100%|██████████| 3/3 [00:00<00:00,  7.85it/s]
+INFO:hipporag.embedding_store:Saving new records.
+INFO:hipporag.embedding_store:Saved 7401 records to .cache/episodic_memory/30sec/qwen3vl-30b_Qwen_Qwen3-Embedding-4B/fact_embeddings/vdb_fact.parquet
+INFO:hipporag.HippoRAG:Constructing Graph
+INFO:hipporag.HippoRAG:Adding OpenIE triples to graph.
+
+0it [00:00, ?it/s][A439it [00:00, 24389.69it/s]
+INFO:hipporag.HippoRAG:Connecting passage nodes to phrase nodes.
+
+0it [00:00, ?it/s][A439it [00:00, 1533138.60it/s]
+INFO:hipporag.HippoRAG:Found 17 new chunks to save into graph.
+INFO:hipporag.HippoRAG:Expanding graph with synonymy edges
+INFO:hipporag.HippoRAG:Performing KNN retrieval for each phrase nodes (3868).
+
+KNN for Queries:   0%|          | 0/4 [00:00<?, ?it/s][A
+KNN for Queries:  25%|██▌       | 1/4 [00:00<00:01,  2.58it/s][A
+KNN for Queries:  50%|█████     | 2/4 [00:00<00:00,  2.99it/s][A
+KNN for Queries:  75%|███████▌  | 3/4 [00:00<00:00,  3.23it/s][A
+KNN for Queries: 100%|██████████| 4/4 [00:01<00:00,  3.51it/s][AKNN for Queries: 100%|██████████| 4/4 [00:01<00:00,  3.29it/s]
+
+  0%|          | 0/3868 [00:00<?, ?it/s][A100%|██████████| 3868/3868 [00:00<00:00, 40922.31it/s]
+INFO:hipporag.HippoRAG:Graph construction completed!
+INFO:hipporag.HippoRAG:Writing graph with 4307 nodes, 548610 edges
+INFO:hipporag.HippoRAG:Saving graph completed!
+INFO:worldmm.memory.episodic.memory:Indexed 17 captions for granularity 30sec
+INFO:worldmm.llm.prompt_template_manager:Loading templates from directory: /parallel_scratch/ms04938/WorldMM/src/worldmm/llm/templates
+INFO:hipporag.HippoRAG:Loaded graph from .cache/episodic_memory/3min/qwen3vl-30b_Qwen_Qwen3-Embedding-4B/graph.pickle with 4164 nodes, 522628 edges
+INFO:hipporag.embedding_store:Loaded 422 records from .cache/episodic_memory/3min/qwen3vl-30b_Qwen_Qwen3-Embedding-4B/chunk_embeddings/vdb_chunk.parquet
+INFO:hipporag.embedding_store:Loaded 3742 records from .cache/episodic_memory/3min/qwen3vl-30b_Qwen_Qwen3-Embedding-4B/entity_embeddings/vdb_entity.parquet
+INFO:hipporag.embedding_store:Loaded 7042 records from .cache/episodic_memory/3min/qwen3vl-30b_Qwen_Qwen3-Embedding-4B/fact_embeddings/vdb_fact.parquet
+INFO:worldmm.llm.prompt_template_manager:Loading templates from directory: /parallel_scratch/ms04938/WorldMM/src/worldmm/llm/templates
+INFO:hipporag.HippoRAG:Indexing Documents
+INFO:hipporag.HippoRAG:Performing OpenIE
+INFO:hipporag.embedding_store:Inserting 17 new records, 0 records already exist.
+
+Batches:   0%|          | 0/1 [00:00<?, ?it/s][A
+Batches: 100%|██████████| 1/1 [00:02<00:00,  2.12s/it][ABatches: 100%|██████████| 1/1 [00:02<00:00,  2.13s/it]
+INFO:hipporag.embedding_store:Saving new records.
+INFO:hipporag.embedding_store:Saved 439 records to .cache/episodic_memory/3min/qwen3vl-30b_Qwen_Qwen3-Embedding-4B/chunk_embeddings/vdb_chunk.parquet
+INFO:hipporag.HippoRAG:OpenIE results saved to .cache/episodic_memory/3min/openie_results_ner_qwen3vl-30b.json
+INFO:hipporag.HippoRAG:Encoding Entities
+INFO:hipporag.embedding_store:Inserting 127 new records, 3742 records already exist.
+
+Batches:   0%|          | 0/1 [00:00<?, ?it/s][ABatches: 100%|██████████| 1/1 [00:00<00:00, 10.72it/s]
+INFO:hipporag.embedding_store:Saving new records.
+INFO:hipporag.embedding_store:Saved 3869 records to .cache/episodic_memory/3min/qwen3vl-30b_Qwen_Qwen3-Embedding-4B/entity_embeddings/vdb_entity.parquet
+INFO:hipporag.HippoRAG:Encoding Facts
+INFO:hipporag.embedding_store:Inserting 358 new records, 7042 records already exist.
+
+Batches:   0%|          | 0/3 [00:00<?, ?it/s][A
+Batches:  33%|███▎      | 1/3 [00:00<00:00,  6.07it/s][A
+Batches:  67%|██████▋   | 2/3 [00:00<00:00,  6.94it/s][A
+Batches: 100%|██████████| 3/3 [00:00<00:00,  8.04it/s][ABatches: 100%|██████████| 3/3 [00:00<00:00,  7.56it/s]
+INFO:hipporag.embedding_store:Saving new records.
+INFO:hipporag.embedding_store:Saved 7400 records to .cache/episodic_memory/3min/qwen3vl-30b_Qwen_Qwen3-Embedding-4B/fact_embeddings/vdb_fact.parquet
+INFO:hipporag.HippoRAG:Constructing Graph
+INFO:hipporag.HippoRAG:Adding OpenIE triples to graph.
+
+0it [00:00, ?it/s][A439it [00:00, 23813.09it/s]
+INFO:hipporag.HippoRAG:Connecting passage nodes to phrase nodes.
+
+0it [00:00, ?it/s][A439it [00:00, 1487317.82it/s]
+INFO:hipporag.HippoRAG:Found 17 new chunks to save into graph.
+INFO:hipporag.HippoRAG:Expanding graph with synonymy edges
+INFO:hipporag.HippoRAG:Performing KNN retrieval for each phrase nodes (3869).
+
+KNN for Queries:   0%|          | 0/4 [00:00<?, ?it/s][A
+KNN for Queries:  25%|██▌       | 1/4 [00:00<00:00,  3.40it/s][A
+KNN for Queries:  50%|█████     | 2/4 [00:00<00:00,  3.39it/s][A
+KNN for Queries:  75%|███████▌  | 3/4 [00:00<00:00,  3.45it/s][A
+KNN for Queries: 100%|██████████| 4/4 [00:01<00:00,  3.57it/s][AKNN for Queries: 100%|██████████| 4/4 [00:01<00:00,  3.50it/s]
+
+  0%|          | 0/3869 [00:00<?, ?it/s][A100%|██████████| 3869/3869 [00:00<00:00, 43532.21it/s]
+INFO:hipporag.HippoRAG:Graph construction completed!
+INFO:hipporag.HippoRAG:Writing graph with 4308 nodes, 544725 edges
+INFO:hipporag.HippoRAG:Saving graph completed!
+INFO:worldmm.memory.episodic.memory:Indexed 17 captions for granularity 3min
+INFO:worldmm.llm.prompt_template_manager:Loading templates from directory: /parallel_scratch/ms04938/WorldMM/src/worldmm/llm/templates
+INFO:hipporag.HippoRAG:Loaded graph from .cache/episodic_memory/10min/qwen3vl-30b_Qwen_Qwen3-Embedding-4B/graph.pickle with 4232 nodes, 533510 edges
+INFO:hipporag.embedding_store:Loaded 422 records from .cache/episodic_memory/10min/qwen3vl-30b_Qwen_Qwen3-Embedding-4B/chunk_embeddings/vdb_chunk.parquet
+INFO:hipporag.embedding_store:Loaded 3810 records from .cache/episodic_memory/10min/qwen3vl-30b_Qwen_Qwen3-Embedding-4B/entity_embeddings/vdb_entity.parquet
+INFO:hipporag.embedding_store:Loaded 7147 records from .cache/episodic_memory/10min/qwen3vl-30b_Qwen_Qwen3-Embedding-4B/fact_embeddings/vdb_fact.parquet
+INFO:worldmm.llm.prompt_template_manager:Loading templates from directory: /parallel_scratch/ms04938/WorldMM/src/worldmm/llm/templates
+INFO:hipporag.HippoRAG:Indexing Documents
+INFO:hipporag.HippoRAG:Performing OpenIE
+INFO:hipporag.embedding_store:Inserting 17 new records, 0 records already exist.
+
+Batches:   0%|          | 0/1 [00:00<?, ?it/s][A
+Batches: 100%|██████████| 1/1 [00:02<00:00,  2.13s/it][ABatches: 100%|██████████| 1/1 [00:02<00:00,  2.13s/it]
+INFO:hipporag.embedding_store:Saving new records.
+INFO:hipporag.embedding_store:Saved 439 records to .cache/episodic_memory/10min/qwen3vl-30b_Qwen_Qwen3-Embedding-4B/chunk_embeddings/vdb_chunk.parquet
+INFO:hipporag.HippoRAG:OpenIE results saved to .cache/episodic_memory/10min/openie_results_ner_qwen3vl-30b.json
+INFO:hipporag.HippoRAG:Encoding Entities
+INFO:hipporag.embedding_store:Inserting 130 new records, 3810 records already exist.
+
+Batches:   0%|          | 0/2 [00:00<?, ?it/s][A
+Batches: 100%|██████████| 2/2 [00:00<00:00, 15.19it/s][ABatches: 100%|██████████| 2/2 [00:00<00:00, 14.98it/s]
+INFO:hipporag.embedding_store:Saving new records.
+INFO:hipporag.embedding_store:Saved 3940 records to .cache/episodic_memory/10min/qwen3vl-30b_Qwen_Qwen3-Embedding-4B/entity_embeddings/vdb_entity.parquet
+INFO:hipporag.HippoRAG:Encoding Facts
+INFO:hipporag.embedding_store:Inserting 357 new records, 7147 records already exist.
+
+Batches:   0%|          | 0/3 [00:00<?, ?it/s][A
+Batches:  33%|███▎      | 1/3 [00:00<00:00,  6.01it/s][A
+Batches:  67%|██████▋   | 2/3 [00:00<00:00,  6.62it/s][A
+Batches: 100%|██████████| 3/3 [00:00<00:00,  7.81it/s][ABatches: 100%|██████████| 3/3 [00:00<00:00,  7.34it/s]
+INFO:hipporag.embedding_store:Saving new records.
+INFO:hipporag.embedding_store:Saved 7504 records to .cache/episodic_memory/10min/qwen3vl-30b_Qwen_Qwen3-Embedding-4B/fact_embeddings/vdb_fact.parquet
+INFO:hipporag.HippoRAG:Constructing Graph
+INFO:hipporag.HippoRAG:Adding OpenIE triples to graph.
+
+0it [00:00, ?it/s][A439it [00:00, 18363.05it/s]
+INFO:hipporag.HippoRAG:Connecting passage nodes to phrase nodes.
+
+0it [00:00, ?it/s][A439it [00:00, 1400227.72it/s]
+INFO:hipporag.HippoRAG:Found 17 new chunks to save into graph.
+INFO:hipporag.HippoRAG:Expanding graph with synonymy edges
+INFO:hipporag.HippoRAG:Performing KNN retrieval for each phrase nodes (3940).
+
+KNN for Queries:   0%|          | 0/4 [00:00<?, ?it/s][A
+KNN for Queries:  25%|██▌       | 1/4 [00:00<00:01,  2.86it/s][A
+KNN for Queries:  50%|█████     | 2/4 [00:00<00:00,  3.19it/s][A
+KNN for Queries:  75%|███████▌  | 3/4 [00:00<00:00,  3.25it/s][A
+KNN for Queries: 100%|██████████| 4/4 [00:01<00:00,  3.45it/s][AKNN for Queries: 100%|██████████| 4/4 [00:01<00:00,  3.32it/s]
+
+  0%|          | 0/3940 [00:00<?, ?it/s][A100%|██████████| 3940/3940 [00:00<00:00, 40515.34it/s]
+INFO:hipporag.HippoRAG:Graph construction completed!
+INFO:hipporag.HippoRAG:Writing graph with 4379 nodes, 556308 edges
+INFO:hipporag.HippoRAG:Saving graph completed!
+INFO:worldmm.memory.episodic.memory:Indexed 17 captions for granularity 10min
+INFO:worldmm.llm.prompt_template_manager:Loading templates from directory: /parallel_scratch/ms04938/WorldMM/src/worldmm/llm/templates
+INFO:hipporag.HippoRAG:Loaded graph from .cache/episodic_memory/1h/qwen3vl-30b_Qwen_Qwen3-Embedding-4B/graph.pickle with 4133 nodes, 506039 edges
+INFO:hipporag.embedding_store:Loaded 422 records from .cache/episodic_memory/1h/qwen3vl-30b_Qwen_Qwen3-Embedding-4B/chunk_embeddings/vdb_chunk.parquet
+INFO:hipporag.embedding_store:Loaded 3718 records from .cache/episodic_memory/1h/qwen3vl-30b_Qwen_Qwen3-Embedding-4B/entity_embeddings/vdb_entity.parquet
+INFO:hipporag.embedding_store:Loaded 7010 records from .cache/episodic_memory/1h/qwen3vl-30b_Qwen_Qwen3-Embedding-4B/fact_embeddings/vdb_fact.parquet
+INFO:worldmm.llm.prompt_template_manager:Loading templates from directory: /parallel_scratch/ms04938/WorldMM/src/worldmm/llm/templates
+INFO:hipporag.HippoRAG:Indexing Documents
+INFO:hipporag.HippoRAG:Performing OpenIE
+INFO:hipporag.embedding_store:Inserting 17 new records, 0 records already exist.
+
+Batches:   0%|          | 0/1 [00:00<?, ?it/s][A
+Batches: 100%|██████████| 1/1 [00:02<00:00,  2.13s/it][ABatches: 100%|██████████| 1/1 [00:02<00:00,  2.13s/it]
+INFO:hipporag.embedding_store:Saving new records.
+INFO:hipporag.embedding_store:Saved 439 records to .cache/episodic_memory/1h/qwen3vl-30b_Qwen_Qwen3-Embedding-4B/chunk_embeddings/vdb_chunk.parquet
+
+NER:   0%|          | 0/7 [00:00<?, ?it/s][AThe following generation flags are not valid and may be ignored: ['temperature', 'top_p', 'top_k']. Set `TRANSFORMERS_VERBOSITY=info` for more details.
+
+NER:  14%|█▍        | 1/7 [00:01<00:10,  1.79s/it][A
+NER:  29%|██▊       | 2/7 [00:03<00:09,  1.99s/it][A
+NER:  43%|████▎     | 3/7 [00:05<00:06,  1.63s/it][A
+NER:  57%|█████▋    | 4/7 [00:06<00:04,  1.52s/it][A
+NER:  71%|███████▏  | 5/7 [00:07<00:02,  1.24s/it][A
+NER:  86%|████████▌ | 6/7 [00:09<00:01,  1.62s/it][A
+NER: 100%|██████████| 7/7 [00:10<00:00,  1.52s/it][ANER: 100%|██████████| 7/7 [00:10<00:00,  1.56s/it]
+
+Extracting triples:   0%|          | 0/7 [00:00<?, ?it/s][A
+Extracting triples:  14%|█▍        | 1/7 [00:13<01:20, 13.34s/it][AWARNING:worldmm.llm.qwen3vl:Unparseable structured output on attempt 1/3; raw head: '```json\n{\n  "triples": [\n    ["Lucia", "asked", "Which one of us?"],\n    ["Shure", "responded", "Both of you"],\n    ["Shure", "said", "Let me see what you guys bought"],\n    ["Shure", "commented", "Yo'
+WARNING:worldmm.llm.qwen3vl:Recovered structured output by repaired on attempt 2/3
+
+Extracting triples:  29%|██▊       | 2/7 [00:54<02:28, 29.61s/it][A
+Extracting triples:  43%|████▎     | 3/7 [01:00<01:15, 18.78s/it][A
+Extracting triples:  57%|█████▋    | 4/7 [01:07<00:42, 14.07s/it][AWARNING:worldmm.llm.qwen3vl:Recovered structured output by sliced on attempt 1/3
+
+Extracting triples:  71%|███████▏  | 5/7 [01:24<00:30, 15.45s/it][A
+Extracting triples:  86%|████████▌ | 6/7 [01:37<00:14, 14.32s/it][A
+Extracting triples: 100%|██████████| 7/7 [01:45<00:00, 12.36s/it][AExtracting triples: 100%|██████████| 7/7 [01:45<00:00, 15.06s/it]
+INFO:worldmm.memory.episodic.openie:Results saved to .cache/episodic_memory/1h/openie_results_qwen3vl-30b.json
+INFO:hipporag.HippoRAG:OpenIE results saved to .cache/episodic_memory/1h/openie_results_ner_qwen3vl-30b.json
+INFO:hipporag.HippoRAG:Encoding Entities
+INFO:hipporag.embedding_store:Inserting 207 new records, 3718 records already exist.
+
+Batches:   0%|          | 0/2 [00:00<?, ?it/s][A
+Batches:  50%|█████     | 1/2 [00:00<00:00,  8.98it/s][ABatches: 100%|██████████| 2/2 [00:00<00:00, 12.56it/s]
+INFO:hipporag.embedding_store:Saving new records.
+INFO:hipporag.embedding_store:Saved 3925 records to .cache/episodic_memory/1h/qwen3vl-30b_Qwen_Qwen3-Embedding-4B/entity_embeddings/vdb_entity.parquet
+INFO:hipporag.HippoRAG:Encoding Facts
+INFO:hipporag.embedding_store:Inserting 444 new records, 7010 records already exist.
+
+Batches:   0%|          | 0/4 [00:00<?, ?it/s][A
+Batches:  25%|██▌       | 1/4 [00:00<00:00,  5.64it/s][A
+Batches:  50%|█████     | 2/4 [00:00<00:00,  6.46it/s][A
+Batches:  75%|███████▌  | 3/4 [00:00<00:00,  6.93it/s][ABatches: 100%|██████████| 4/4 [00:00<00:00,  7.83it/s]
+INFO:hipporag.embedding_store:Saving new records.
+INFO:hipporag.embedding_store:Saved 7454 records to .cache/episodic_memory/1h/qwen3vl-30b_Qwen_Qwen3-Embedding-4B/fact_embeddings/vdb_fact.parquet
+INFO:hipporag.HippoRAG:Constructing Graph
+INFO:hipporag.HippoRAG:Adding OpenIE triples to graph.
+
+0it [00:00, ?it/s][A439it [00:00, 22955.41it/s]
+INFO:hipporag.HippoRAG:Connecting passage nodes to phrase nodes.
+
+0it [00:00, ?it/s][A439it [00:00, 798481.98it/s]
+INFO:hipporag.HippoRAG:Found 24 new chunks to save into graph.
+INFO:hipporag.HippoRAG:Expanding graph with synonymy edges
+INFO:hipporag.HippoRAG:Performing KNN retrieval for each phrase nodes (3925).
+
+KNN for Queries:   0%|          | 0/4 [00:00<?, ?it/s][A
+KNN for Queries:  25%|██▌       | 1/4 [00:00<00:01,  2.94it/s][A
+KNN for Queries:  50%|█████     | 2/4 [00:00<00:00,  3.24it/s][A
+KNN for Queries:  75%|███████▌  | 3/4 [00:00<00:00,  3.08it/s][A
+KNN for Queries: 100%|██████████| 4/4 [00:01<00:00,  3.35it/s][AKNN for Queries: 100%|██████████| 4/4 [00:01<00:00,  3.25it/s]
+
+  0%|          | 0/3925 [00:00<?, ?it/s][A100%|██████████| 3925/3925 [00:00<00:00, 89317.01it/s]
+INFO:hipporag.HippoRAG:Graph construction completed!
+INFO:hipporag.HippoRAG:Writing graph with 4364 nodes, 528771 edges
+INFO:hipporag.HippoRAG:Saving graph completed!
+INFO:worldmm.memory.episodic.memory:Indexed 17 captions for granularity 1h
+
+Batches:   0%|          | 0/1 [00:00<?, ?it/s][A
+Batches: 100%|██████████| 1/1 [00:00<00:00,  9.21it/s][ABatches: 100%|██████████| 1/1 [00:00<00:00,  9.07it/s]
+INFO:worldmm.memory.semantic.memory:Indexed 107 semantic triples from timestamp 111320315 (query time: 111350000)
+INFO:worldmm.memory.visual.memory:Indexed 17 video clips up to 111350000
+INFO:worldmm.memory.memory:Indexing complete for all memory types
+INFO:worldmm.memory.memory:Reasoning round 1
+INFO:worldmm.memory.memory:Decision: search
+INFO:worldmm.memory.memory:Searching episodic: black marker in Shure's hand location
+INFO:hipporag.HippoRAG:Preparing for fast retrieval.
+INFO:hipporag.HippoRAG:Loading keys.
+INFO:hipporag.HippoRAG:Loading embeddings.
+INFO:hipporag.HippoRAG:Encoding 1 queries for query_to_fact.
+
+Batches:   0%|          | 0/1 [00:00<?, ?it/s][ABatches: 100%|██████████| 1/1 [00:00<00:00, 30.51it/s]
+INFO:hipporag.HippoRAG:Encoding 1 queries for query_to_passage.
+
+Batches:   0%|          | 0/1 [00:00<?, ?it/s][ABatches: 100%|██████████| 1/1 [00:00<00:00, 34.26it/s]
+
+Retrieving:   0%|          | 0/1 [00:00<?, ?it/s][AINFO:hipporag.HippoRAG:No facts found after reranking, return DPR results
+
+Retrieving: 100%|██████████| 1/1 [00:02<00:00,  2.17s/it][ARetrieving: 100%|██████████| 1/1 [00:02<00:00,  2.17s/it]
+WARNING:worldmm.memory.episodic.memory:Could not find CaptionEntry for retrieved text: Shure: Uh, this is the personnel. Shure walked ove...
+WARNING:worldmm.memory.episodic.memory:Could not find CaptionEntry for retrieved text: I looked up, holding my hands on the chair, watchi...
+WARNING:worldmm.memory.episodic.memory:Could not find CaptionEntry for retrieved text: Shure: Should we stop? I'm speaking. I'm watching ...
+INFO:hipporag.HippoRAG:Preparing for fast retrieval.
+INFO:hipporag.HippoRAG:Loading keys.
+INFO:hipporag.HippoRAG:Loading embeddings.
+INFO:hipporag.HippoRAG:Encoding 1 queries for query_to_fact.
+
+Batches:   0%|          | 0/1 [00:00<?, ?it/s][ABatches: 100%|██████████| 1/1 [00:00<00:00, 32.21it/s]
+INFO:hipporag.HippoRAG:Encoding 1 queries for query_to_passage.
+
+Batches:   0%|          | 0/1 [00:00<?, ?it/s][ABatches: 100%|██████████| 1/1 [00:00<00:00, 33.91it/s]
+
+Retrieving:   0%|          | 0/1 [00:00<?, ?it/s][AINFO:hipporag.HippoRAG:No facts found after reranking, return DPR results
+
+Retrieving: 100%|██████████| 1/1 [00:02<00:00,  2.13s/it][ARetrieving: 100%|██████████| 1/1 [00:02<00:00,  2.13s/it]
+WARNING:worldmm.memory.episodic.memory:Could not find CaptionEntry for retrieved text: Shure: Uh, this is the personnel. Shure walked ove...
+WARNING:worldmm.memory.episodic.memory:Could not find CaptionEntry for retrieved text: I looked up, holding my hands on the chair, watchi...
+WARNING:worldmm.memory.episodic.memory:Could not find CaptionEntry for retrieved text: Shure: Should we stop? I'm speaking. I'm watching ...
+INFO:hipporag.HippoRAG:Preparing for fast retrieval.
+INFO:hipporag.HippoRAG:Loading keys.
+INFO:hipporag.HippoRAG:Loading embeddings.
+INFO:hipporag.HippoRAG:Encoding 1 queries for query_to_fact.
+
+Batches:   0%|          | 0/1 [00:00<?, ?it/s][ABatches: 100%|██████████| 1/1 [00:00<00:00, 32.32it/s]
+INFO:hipporag.HippoRAG:Encoding 1 queries for query_to_passage.
+
+Batches:   0%|          | 0/1 [00:00<?, ?it/s][ABatches: 100%|██████████| 1/1 [00:00<00:00, 34.17it/s]
+
+Retrieving:   0%|          | 0/1 [00:00<?, ?it/s][AINFO:hipporag.HippoRAG:No facts found after reranking, return DPR results
+
+Retrieving: 100%|██████████| 1/1 [00:02<00:00,  2.13s/it][ARetrieving: 100%|██████████| 1/1 [00:02<00:00,  2.14s/it]
+WARNING:worldmm.memory.episodic.memory:Could not find CaptionEntry for retrieved text: Shure: Uh, this is the personnel. Shure walked ove...
+WARNING:worldmm.memory.episodic.memory:Could not find CaptionEntry for retrieved text: I looked up, holding my hands on the chair, watchi...
+WARNING:worldmm.memory.episodic.memory:Could not find CaptionEntry for retrieved text: Shure: Should we stop? I'm speaking. I'm watching ...
+INFO:hipporag.HippoRAG:Preparing for fast retrieval.
+INFO:hipporag.HippoRAG:Loading keys.
+INFO:hipporag.HippoRAG:Loading embeddings.
+INFO:hipporag.HippoRAG:Encoding 1 queries for query_to_fact.
+
+Batches:   0%|          | 0/1 [00:00<?, ?it/s][ABatches: 100%|██████████| 1/1 [00:00<00:00, 31.72it/s]
+INFO:hipporag.HippoRAG:Encoding 1 queries for query_to_passage.
+
+Batches:   0%|          | 0/1 [00:00<?, ?it/s][ABatches: 100%|██████████| 1/1 [00:00<00:00, 33.78it/s]
+
+Retrieving:   0%|          | 0/1 [00:00<?, ?it/s][AINFO:hipporag.HippoRAG:No facts found after reranking, return DPR results
+
+Retrieving: 100%|██████████| 1/1 [00:02<00:00,  2.12s/it][ARetrieving: 100%|██████████| 1/1 [00:02<00:00,  2.12s/it]
+WARNING:worldmm.memory.episodic.memory:Could not find CaptionEntry for retrieved text: Shure: Uh, this is the personnel. Shure walked ove...
+WARNING:worldmm.memory.episodic.memory:Could not find CaptionEntry for retrieved text: I looked up, holding my hands on the chair, watchi...
+WARNING:worldmm.memory.episodic.memory:Could not find CaptionEntry for retrieved text: Shure: Should we stop? I'm speaking. I'm watching ...
+ERROR:worldmm.llm.qwen3vl:Qwen3VL generation error: CUDA out of memory. Tried to allocate 3.84 GiB. GPU 0 has a total capacity of 79.15 GiB of which 2.49 GiB is free. Including non-PyTorch memory, this process has 76.65 GiB memory in use. Of the allocated memory 76.04 GiB is allocated by PyTorch, and 98.85 MiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)
+ERROR:worldmm.llm.qwen3vl:Qwen3VL generation error: CUDA out of memory. Tried to allocate 3.84 GiB. GPU 0 has a total capacity of 79.15 GiB of which 2.53 GiB is free. Including non-PyTorch memory, this process has 76.61 GiB memory in use. Of the allocated memory 76.04 GiB is allocated by PyTorch, and 58.85 MiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)
+ERROR:worldmm.llm.qwen3vl:Qwen3VL generation error: CUDA out of memory. Tried to allocate 3.84 GiB. GPU 0 has a total capacity of 79.15 GiB of which 2.51 GiB is free. Including non-PyTorch memory, this process has 76.63 GiB memory in use. Of the allocated memory 76.04 GiB is allocated by PyTorch, and 78.85 MiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)
+ERROR:worldmm.memory.episodic.memory:LLM filtering failed: RetryError[<Future at 0x7f1ebf118cd0 state=finished raised Qwen3VLModelError>]
+INFO:worldmm.memory.memory:Reasoning round 2
+ERROR:worldmm.llm.qwen3vl:Qwen3VL generation error: CUDA out of memory. Tried to allocate 516.00 MiB. GPU 0 has a total capacity of 79.15 GiB of which 129.25 MiB is free. Including non-PyTorch memory, this process has 79.01 GiB memory in use. Of the allocated memory 78.43 GiB is allocated by PyTorch, and 81.11 MiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)
+ERROR:worldmm.llm.qwen3vl:Qwen3VL generation error: CUDA out of memory. Tried to allocate 516.00 MiB. GPU 0 has a total capacity of 79.15 GiB of which 129.25 MiB is free. Including non-PyTorch memory, this process has 79.01 GiB memory in use. Of the allocated memory 78.43 GiB is allocated by PyTorch, and 81.11 MiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)
+ERROR:worldmm.llm.qwen3vl:Qwen3VL generation error: CUDA out of memory. Tried to allocate 516.00 MiB. GPU 0 has a total capacity of 79.15 GiB of which 129.25 MiB is free. Including non-PyTorch memory, this process has 79.01 GiB memory in use. Of the allocated memory 78.43 GiB is allocated by PyTorch, and 81.11 MiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)
+ERROR:worldmm.memory.memory:Reasoning failed: RetryError[<Future at 0x7f1e00e369d0 state=finished raised Qwen3VLModelError>]
+INFO:worldmm.memory.memory:Generating answer from accumulated context
+ERROR:worldmm.llm.qwen3vl:Qwen3VL generation error: CUDA out of memory. Tried to allocate 998.00 MiB. GPU 0 has a total capacity of 79.15 GiB of which 103.25 MiB is free. Including non-PyTorch memory, this process has 79.04 GiB memory in use. Of the allocated memory 78.46 GiB is allocated by PyTorch, and 77.65 MiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)
+ERROR:worldmm.llm.qwen3vl:Qwen3VL generation error: CUDA out of memory. Tried to allocate 998.00 MiB. GPU 0 has a total capacity of 79.15 GiB of which 103.25 MiB is free. Including non-PyTorch memory, this process has 79.04 GiB memory in use. Of the allocated memory 78.46 GiB is allocated by PyTorch, and 77.65 MiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)
+ERROR:worldmm.llm.qwen3vl:Qwen3VL generation error: CUDA out of memory. Tried to allocate 998.00 MiB. GPU 0 has a total capacity of 79.15 GiB of which 103.25 MiB is free. Including non-PyTorch memory, this process has 79.04 GiB memory in use. Of the allocated memory 78.46 GiB is allocated by PyTorch, and 77.65 MiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)
+ERROR:worldmm.memory.memory:Answer generation failed: RetryError[<Future at 0x7f1e00e34cd0 state=finished raised Qwen3VLModelError>]
+INFO:__main__:ID 2 Answer: Unable to generate answer, Gold: C, Correct: None // Accuracy: 2/4 = 0.5000 // Abstained: 0 // Done: 501/50
+  2%|▏         | 1/46 [03:50<2:53:02, 230.73s/it]INFO:__main__:Processing ID 3: Where was the small clapperboard on the table plac...
+INFO:worldmm.memory.memory:Indexing all memories up to DAY1 11:35:19
+WARNING:worldmm.memory.episodic.memory:No captions loaded for granularity 10sec
+INFO:hipporag.HippoRAG:Indexing Documents
+INFO:hipporag.HippoRAG:Performing OpenIE
+INFO:hipporag.embedding_store:Inserting 0 new records, 17 records already exist.
+INFO:hipporag.HippoRAG:OpenIE results saved to .cache/episodic_memory/30sec/openie_results_ner_qwen3vl-30b.json
+INFO:hipporag.HippoRAG:Encoding Entities
+INFO:hipporag.embedding_store:Inserting 0 new records, 3868 records already exist.
+INFO:hipporag.HippoRAG:Encoding Facts
+INFO:hipporag.embedding_store:Inserting 0 new records, 7401 records already exist.
+INFO:hipporag.HippoRAG:Constructing Graph
+INFO:hipporag.HippoRAG:Adding OpenIE triples to graph.
+
+0it [00:00, ?it/s][A439it [00:00, 22432.17it/s]
+INFO:hipporag.HippoRAG:Connecting passage nodes to phrase nodes.
+
+0it [00:00, ?it/s][A439it [00:00, 4820155.64it/s]
+INFO:worldmm.memory.episodic.memory:Indexed 17 captions for granularity 30sec
+INFO:hipporag.HippoRAG:Indexing Documents
+INFO:hipporag.HippoRAG:Performing OpenIE
+INFO:hipporag.embedding_store:Inserting 0 new records, 17 records already exist.
+INFO:hipporag.HippoRAG:OpenIE results saved to .cache/episodic_memory/3min/openie_results_ner_qwen3vl-30b.json
+INFO:hipporag.HippoRAG:Encoding Entities
+INFO:hipporag.embedding_store:Inserting 0 new records, 3869 records already exist.
+INFO:hipporag.HippoRAG:Encoding Facts
+INFO:hipporag.embedding_store:Inserting 0 new records, 7400 records already exist.
+INFO:hipporag.HippoRAG:Constructing Graph
+INFO:hipporag.HippoRAG:Adding OpenIE triples to graph.
+
+0it [00:00, ?it/s][A439it [00:00, 22142.45it/s]
+INFO:hipporag.HippoRAG:Connecting passage nodes to phrase nodes.
+
+0it [00:00, ?it/s][A439it [00:00, 4770205.84it/s]
+INFO:worldmm.memory.episodic.memory:Indexed 17 captions for granularity 3min
+INFO:hipporag.HippoRAG:Indexing Documents
+INFO:hipporag.HippoRAG:Performing OpenIE
+INFO:hipporag.embedding_store:Inserting 0 new records, 17 records already exist.
+INFO:hipporag.HippoRAG:OpenIE results saved to .cache/episodic_memory/10min/openie_results_ner_qwen3vl-30b.json
+INFO:hipporag.HippoRAG:Encoding Entities
+INFO:hipporag.embedding_store:Inserting 0 new records, 3940 records already exist.
+INFO:hipporag.HippoRAG:Encoding Facts
+INFO:hipporag.embedding_store:Inserting 0 new records, 7504 records already exist.
+INFO:hipporag.HippoRAG:Constructing Graph
+INFO:hipporag.HippoRAG:Adding OpenIE triples to graph.
+
+0it [00:00, ?it/s][A439it [00:00, 21194.33it/s]
+INFO:hipporag.HippoRAG:Connecting passage nodes to phrase nodes.
+
+0it [00:00, ?it/s][A439it [00:00, 4832806.97it/s]
+INFO:worldmm.memory.episodic.memory:Indexed 17 captions for granularity 10min
+INFO:hipporag.HippoRAG:Indexing Documents
+INFO:hipporag.HippoRAG:Performing OpenIE
+INFO:hipporag.embedding_store:Inserting 0 new records, 17 records already exist.
+INFO:hipporag.HippoRAG:OpenIE results saved to .cache/episodic_memory/1h/openie_results_ner_qwen3vl-30b.json
+INFO:hipporag.HippoRAG:Encoding Entities
+INFO:hipporag.embedding_store:Inserting 0 new records, 3925 records already exist.
+INFO:hipporag.HippoRAG:Encoding Facts
+INFO:hipporag.embedding_store:Inserting 0 new records, 7454 records already exist.
+INFO:hipporag.HippoRAG:Constructing Graph
+INFO:hipporag.HippoRAG:Adding OpenIE triples to graph.
+
+0it [00:00, ?it/s][A439it [00:00, 21720.10it/s]
+INFO:hipporag.HippoRAG:Connecting passage nodes to phrase nodes.
+
+0it [00:00, ?it/s][A439it [00:00, 4782595.99it/s]
+INFO:worldmm.memory.episodic.memory:Indexed 17 captions for granularity 1h
+INFO:worldmm.memory.visual.memory:Indexed 17 video clips up to 111351911
+INFO:worldmm.memory.memory:Indexing complete for all memory types
+INFO:worldmm.memory.memory:Reasoning round 1
+INFO:worldmm.memory.memory:Decision: search
+INFO:worldmm.memory.memory:Searching episodic: small clapperboard on table placement history
+INFO:hipporag.HippoRAG:Preparing for fast retrieval.
+INFO:hipporag.HippoRAG:Loading keys.
+INFO:hipporag.HippoRAG:Loading embeddings.
+INFO:hipporag.HippoRAG:Encoding 1 queries for query_to_fact.
+
+Batches:   0%|          | 0/1 [00:00<?, ?it/s][ABatches: 100%|██████████| 1/1 [00:00<00:00, 31.00it/s]
+INFO:hipporag.HippoRAG:Encoding 1 queries for query_to_passage.
+
+Batches:   0%|          | 0/1 [00:00<?, ?it/s][ABatches: 100%|██████████| 1/1 [00:00<00:00, 34.37it/s]
+
+Retrieving:   0%|          | 0/1 [00:00<?, ?it/s][AINFO:hipporag.HippoRAG:No facts found after reranking, return DPR results
+
+Retrieving: 100%|██████████| 1/1 [00:02<00:00,  2.14s/it][ARetrieving: 100%|██████████| 1/1 [00:02<00:00,  2.14s/it]
+WARNING:worldmm.memory.episodic.memory:Could not find CaptionEntry for retrieved text: I get up. Lucia: Yeah, this seems pretty similar I...
+WARNING:worldmm.memory.episodic.memory:Could not find CaptionEntry for retrieved text: Lucia: Wow, amazing. Brilliant. Lucia: I just foun...
+WARNING:worldmm.memory.episodic.memory:Could not find CaptionEntry for retrieved text: I wiped the whiteboard. Lucia: Hey, doesn't this w...
+WARNING:worldmm.memory.episodic.memory:Could not find CaptionEntry for retrieved text: I place my hand on the table. I am lying on the ta...
+WARNING:worldmm.memory.episodic.memory:Could not find CaptionEntry for retrieved text: I'm holding a board. I'm playing with the board. I...
+INFO:hipporag.HippoRAG:Preparing for fast retrieval.
+INFO:hipporag.HippoRAG:Loading keys.
+INFO:hipporag.HippoRAG:Loading embeddings.
+INFO:hipporag.HippoRAG:Encoding 1 queries for query_to_fact.
+
+Batches:   0%|          | 0/1 [00:00<?, ?it/s][ABatches: 100%|██████████| 1/1 [00:00<00:00, 32.01it/s]
+INFO:hipporag.HippoRAG:Encoding 1 queries for query_to_passage.
+
+Batches:   0%|          | 0/1 [00:00<?, ?it/s][ABatches: 100%|██████████| 1/1 [00:00<00:00, 34.08it/s]
+
+Retrieving:   0%|          | 0/1 [00:00<?, ?it/s][AINFO:hipporag.HippoRAG:No facts found after reranking, return DPR results
+
+Retrieving: 100%|██████████| 1/1 [00:02<00:00,  2.13s/it][ARetrieving: 100%|██████████| 1/1 [00:02<00:00,  2.13s/it]
+WARNING:worldmm.memory.episodic.memory:Could not find CaptionEntry for retrieved text: I get up. Lucia: Yeah, this seems pretty similar I...
+WARNING:worldmm.memory.episodic.memory:Could not find CaptionEntry for retrieved text: Lucia: Wow, amazing. Brilliant. Lucia: I just foun...
+WARNING:worldmm.memory.episodic.memory:Could not find CaptionEntry for retrieved text: I wiped the whiteboard. Lucia: Hey, doesn't this w...
+WARNING:worldmm.memory.episodic.memory:Could not find CaptionEntry for retrieved text: I place my hand on the table. I am lying on the ta...
+WARNING:worldmm.memory.episodic.memory:Could not find CaptionEntry for retrieved text: I'm holding a board. I'm playing with the board. I...
+INFO:hipporag.HippoRAG:Preparing for fast retrieval.
+INFO:hipporag.HippoRAG:Loading keys.
+INFO:hipporag.HippoRAG:Loading embeddings.
+INFO:hipporag.HippoRAG:Encoding 1 queries for query_to_fact.
+
+Batches:   0%|          | 0/1 [00:00<?, ?it/s][ABatches: 100%|██████████| 1/1 [00:00<00:00, 32.19it/s]
+INFO:hipporag.HippoRAG:Encoding 1 queries for query_to_passage.
+
+Batches:   0%|          | 0/1 [00:00<?, ?it/s][ABatches: 100%|██████████| 1/1 [00:00<00:00, 34.03it/s]
+
+Retrieving:   0%|          | 0/1 [00:00<?, ?it/s][AINFO:hipporag.HippoRAG:No facts found after reranking, return DPR results
+
+Retrieving: 100%|██████████| 1/1 [00:02<00:00,  2.34s/it][ARetrieving: 100%|██████████| 1/1 [00:02<00:00,  2.34s/it]
+WARNING:worldmm.memory.episodic.memory:Could not find CaptionEntry for retrieved text: I get up. Lucia: Yeah, this seems pretty similar I...
+WARNING:worldmm.memory.episodic.memory:Could not find CaptionEntry for retrieved text: Lucia: Wow, amazing. Brilliant. Lucia: I just foun...
+WARNING:worldmm.memory.episodic.memory:Could not find CaptionEntry for retrieved text: I wiped the whiteboard. Lucia: Hey, doesn't this w...
+WARNING:worldmm.memory.episodic.memory:Could not find CaptionEntry for retrieved text: I place my hand on the table. I am lying on the ta...
+WARNING:worldmm.memory.episodic.memory:Could not find CaptionEntry for retrieved text: I'm holding a board. I'm playing with the board. I...
+INFO:hipporag.HippoRAG:Preparing for fast retrieval.
+INFO:hipporag.HippoRAG:Loading keys.
+INFO:hipporag.HippoRAG:Loading embeddings.
+INFO:hipporag.HippoRAG:Encoding 1 queries for query_to_fact.
+
+Batches:   0%|          | 0/1 [00:00<?, ?it/s][ABatches: 100%|██████████| 1/1 [00:00<00:00, 32.57it/s]
+INFO:hipporag.HippoRAG:Encoding 1 queries for query_to_passage.
+
+Batches:   0%|          | 0/1 [00:00<?, ?it/s][ABatches: 100%|██████████| 1/1 [00:00<00:00, 34.06it/s]
+
+Retrieving:   0%|          | 0/1 [00:00<?, ?it/s][AINFO:hipporag.HippoRAG:No facts found after reranking, return DPR results
+
+Retrieving: 100%|██████████| 1/1 [00:02<00:00,  2.12s/it][ARetrieving: 100%|██████████| 1/1 [00:02<00:00,  2.13s/it]
+WARNING:worldmm.memory.episodic.memory:Could not find CaptionEntry for retrieved text: I get up. Lucia: Yeah, this seems pretty similar I...
+WARNING:worldmm.memory.episodic.memory:Could not find CaptionEntry for retrieved text: Lucia: Wow, amazing. Brilliant. Lucia: I just foun...
+WARNING:worldmm.memory.episodic.memory:Could not find CaptionEntry for retrieved text: I wiped the whiteboard. Lucia: Hey, doesn't this w...
+WARNING:worldmm.memory.episodic.memory:Could not find CaptionEntry for retrieved text: I place my hand on the table. I am lying on the ta...
+WARNING:worldmm.memory.episodic.memory:Could not find CaptionEntry for retrieved text: I'm holding a board. I'm playing with the board. I...
+WARNING:worldmm.memory.episodic.memory:No candidates retrieved from any granularity level
+INFO:worldmm.memory.memory:Reasoning round 2
+INFO:worldmm.memory.memory:Decision: search
+INFO:worldmm.memory.memory:Searching visual: small clapperboard on table location snapshot
+INFO:worldmm.embedding.VLM2Vec.src.utils:Loading processor from: VLM2Vec/VLM2Vec-V2.0
+INFO:worldmm.embedding.VLM2Vec.src.utils:Loading backbone [qwen2_vl] from VLM2Vec/VLM2Vec-V2.0
+`torch_dtype` is deprecated! Use `dtype` instead!
+
+Fetching 2 files:   0%|          | 0/2 [00:00<?, ?it/s][AFetching 2 files: 100%|██████████| 2/2 [00:00<00:00, 48210.39it/s]
+
+Loading checkpoint shards:   0%|          | 0/2 [00:00<?, ?it/s][ALoading checkpoint shards: 100%|██████████| 2/2 [00:00<00:00, 32.77it/s]
+INFO:worldmm.embedding.VLM2Vec.src.utils:Loading LoRA from VLM2Vec/VLM2Vec-V2.0
+/parallel_scratch/ms04938/WorldMM/.venv/lib/python3.13/site-packages/peft/tuners/tuners_utils.py:285: UserWarning: Already found a `peft_config` attribute in the model. This will lead to having multiple adapters in the model. Make sure to know what you are doing!
+  warnings.warn(
+INFO:root:Successfully loaded VLM2Vec V2.0 model: VLM2Vec/VLM2Vec-V2.0
+INFO:worldmm.memory.memory:Generating answer from accumulated context
+INFO:__main__:ID 3 Answer: The clue indicates "the little black thing" which refers to the clapperboard being found at home near where it had been used previously for filming. The mention of “on top” suggests placement prior to use but doesn’t specify location directly; however, since no other specific place like 'Shure’s' or ‘second-floor’ tables were mentioned earlier, we infer proximity through common sense—likely within personal space such as rooms. Given options include both general locations ("my room") versus more precise ones (“living room”), yet only option **(C)** aligns logically if assuming typical behavior around film equipment storage by someone familiar enough to have left items behind casually without formal setup elsewhere.
+
+Final Answer: C, Gold: D, Correct: False // Accuracy: 2/5 = 0.4000 // Abstained: 0 // Done: 502/50
+  4%|▍         | 2/46 [04:41<1:31:37, 124.94s/it]INFO:__main__:Processing ID 4: Who just helped Katrina put the flowers on the tab...
+INFO:worldmm.memory.memory:Indexing all memories up to DAY1 11:43:08
+WARNING:worldmm.memory.episodic.memory:No captions loaded for granularity 10sec
+INFO:hipporag.HippoRAG:Indexing Documents
+INFO:hipporag.HippoRAG:Performing OpenIE
+INFO:hipporag.embedding_store:Inserting 8 new records, 17 records already exist.
+
+Batches:   0%|          | 0/1 [00:00<?, ?it/s][A
+Batches: 100%|██████████| 1/1 [00:00<00:00,  2.19it/s][ABatches: 100%|██████████| 1/1 [00:00<00:00,  2.18it/s]
+INFO:hipporag.embedding_store:Saving new records.
+INFO:hipporag.embedding_store:Saved 447 records to .cache/episodic_memory/30sec/qwen3vl-30b_Qwen_Qwen3-Embedding-4B/chunk_embeddings/vdb_chunk.parquet
+INFO:hipporag.HippoRAG:OpenIE results saved to .cache/episodic_memory/30sec/openie_results_ner_qwen3vl-30b.json
+INFO:hipporag.HippoRAG:Encoding Entities
+INFO:hipporag.embedding_store:Inserting 93 new records, 3868 records already exist.
+
+Batches:   0%|          | 0/1 [00:00<?, ?it/s][ABatches: 100%|██████████| 1/1 [00:00<00:00, 11.44it/s]
+INFO:hipporag.embedding_store:Saving new records.
+INFO:hipporag.embedding_store:Saved 3961 records to .cache/episodic_memory/30sec/qwen3vl-30b_Qwen_Qwen3-Embedding-4B/entity_embeddings/vdb_entity.parquet
+INFO:hipporag.HippoRAG:Encoding Facts
+INFO:hipporag.embedding_store:Inserting 227 new records, 7401 records already exist.
+
+Batches:   0%|          | 0/2 [00:00<?, ?it/s][A
+Batches:  50%|█████     | 1/2 [00:00<00:00,  5.78it/s][A
+Batches: 100%|██████████| 2/2 [00:00<00:00,  7.65it/s][ABatches: 100%|██████████| 2/2 [00:00<00:00,  7.25it/s]
+INFO:hipporag.embedding_store:Saving new records.
+INFO:hipporag.embedding_store:Saved 7628 records to .cache/episodic_memory/30sec/qwen3vl-30b_Qwen_Qwen3-Embedding-4B/fact_embeddings/vdb_fact.parquet
+INFO:hipporag.HippoRAG:Constructing Graph
+INFO:hipporag.HippoRAG:Adding OpenIE triples to graph.
+
+0it [00:00, ?it/s][A447it [00:00, 21262.15it/s]
+INFO:hipporag.HippoRAG:Connecting passage nodes to phrase nodes.
+
+0it [00:00, ?it/s][A447it [00:00, 1498684.16it/s]
+INFO:hipporag.HippoRAG:Found 8 new chunks to save into graph.
+INFO:hipporag.HippoRAG:Expanding graph with synonymy edges
+INFO:hipporag.HippoRAG:Performing KNN retrieval for each phrase nodes (3961).
+
+KNN for Queries:   0%|          | 0/4 [00:00<?, ?it/s][A
+KNN for Queries:  25%|██▌       | 1/4 [00:00<00:01,  2.98it/s][A
+KNN for Queries:  50%|█████     | 2/4 [00:00<00:00,  2.79it/s][A
+KNN for Queries:  75%|███████▌  | 3/4 [00:01<00:00,  3.01it/s][A
+KNN for Queries: 100%|██████████| 4/4 [00:01<00:00,  3.17it/s][AKNN for Queries: 100%|██████████| 4/4 [00:01<00:00,  3.08it/s]
+
+  0%|          | 0/3961 [00:00<?, ?it/s][A100%|██████████| 3961/3961 [00:00<00:00, 63166.60it/s]
+INFO:hipporag.HippoRAG:Graph construction completed!
+INFO:hipporag.HippoRAG:Writing graph with 4408 nodes, 571602 edges
+INFO:hipporag.HippoRAG:Saving graph completed!
+INFO:worldmm.memory.episodic.memory:Indexed 25 captions for granularity 30sec
+INFO:hipporag.HippoRAG:Indexing Documents
+INFO:hipporag.HippoRAG:Performing OpenIE
+INFO:hipporag.embedding_store:Inserting 8 new records, 17 records already exist.
+
+Batches:   0%|          | 0/1 [00:00<?, ?it/s][A
+Batches: 100%|██████████| 1/1 [00:00<00:00,  2.19it/s][ABatches: 100%|██████████| 1/1 [00:00<00:00,  2.18it/s]
+INFO:hipporag.embedding_store:Saving new records.
+INFO:hipporag.embedding_store:Saved 447 records to .cache/episodic_memory/3min/qwen3vl-30b_Qwen_Qwen3-Embedding-4B/chunk_embeddings/vdb_chunk.parquet
+INFO:hipporag.HippoRAG:OpenIE results saved to .cache/episodic_memory/3min/openie_results_ner_qwen3vl-30b.json
+INFO:hipporag.HippoRAG:Encoding Entities
+INFO:hipporag.embedding_store:Inserting 94 new records, 3869 records already exist.
+
+Batches:   0%|          | 0/1 [00:00<?, ?it/s][ABatches: 100%|██████████| 1/1 [00:00<00:00, 11.56it/s]
+INFO:hipporag.embedding_store:Saving new records.
+INFO:hipporag.embedding_store:Saved 3963 records to .cache/episodic_memory/3min/qwen3vl-30b_Qwen_Qwen3-Embedding-4B/entity_embeddings/vdb_entity.parquet
+INFO:hipporag.HippoRAG:Encoding Facts
+INFO:hipporag.embedding_store:Inserting 232 new records, 7400 records already exist.
+
+Batches:   0%|          | 0/2 [00:00<?, ?it/s][A
+Batches:  50%|█████     | 1/2 [00:00<00:00,  5.80it/s][A
+Batches: 100%|██████████| 2/2 [00:00<00:00,  7.55it/s][ABatches: 100%|██████████| 2/2 [00:00<00:00,  7.18it/s]
+INFO:hipporag.embedding_store:Saving new records.
+INFO:hipporag.embedding_store:Saved 7632 records to .cache/episodic_memory/3min/qwen3vl-30b_Qwen_Qwen3-Embedding-4B/fact_embeddings/vdb_fact.parquet
+INFO:hipporag.HippoRAG:Constructing Graph
+INFO:hipporag.HippoRAG:Adding OpenIE triples to graph.
+
+0it [00:00, ?it/s][A447it [00:00, 20227.36it/s]
+INFO:hipporag.HippoRAG:Connecting passage nodes to phrase nodes.
+
+0it [00:00, ?it/s][A447it [00:00, 1503491.49it/s]
+INFO:hipporag.HippoRAG:Found 8 new chunks to save into graph.
+INFO:hipporag.HippoRAG:Expanding graph with synonymy edges
+INFO:hipporag.HippoRAG:Performing KNN retrieval for each phrase nodes (3963).
+
+KNN for Queries:   0%|          | 0/4 [00:00<?, ?it/s][A
+KNN for Queries:  25%|██▌       | 1/4 [00:00<00:00,  3.91it/s][A
+KNN for Queries:  50%|█████     | 2/4 [00:00<00:00,  3.62it/s][A
+KNN for Queries:  75%|███████▌  | 3/4 [00:00<00:00,  3.56it/s][A
+KNN for Queries: 100%|██████████| 4/4 [00:01<00:00,  3.53it/s][AKNN for Queries: 100%|██████████| 4/4 [00:01<00:00,  3.57it/s]
+
+  0%|          | 0/3963 [00:00<?, ?it/s][A
+ 51%|█████     | 2021/3963 [00:00<00:00, 20132.31it/s][A100%|██████████| 3963/3963 [00:00<00:00, 35939.13it/s]
+INFO:hipporag.HippoRAG:Graph construction completed!
+INFO:hipporag.HippoRAG:Writing graph with 4410 nodes, 567629 edges
+INFO:hipporag.HippoRAG:Saving graph completed!
+INFO:worldmm.memory.episodic.memory:Indexed 25 captions for granularity 3min
+INFO:hipporag.HippoRAG:Indexing Documents
+INFO:hipporag.HippoRAG:Performing OpenIE
+INFO:hipporag.embedding_store:Inserting 8 new records, 17 records already exist.
+
+Batches:   0%|          | 0/1 [00:00<?, ?it/s][A
+Batches: 100%|██████████| 1/1 [00:00<00:00,  2.20it/s][ABatches: 100%|██████████| 1/1 [00:00<00:00,  2.19it/s]
+INFO:hipporag.embedding_store:Saving new records.
+INFO:hipporag.embedding_store:Saved 447 records to .cache/episodic_memory/10min/qwen3vl-30b_Qwen_Qwen3-Embedding-4B/chunk_embeddings/vdb_chunk.parquet
+INFO:hipporag.HippoRAG:OpenIE results saved to .cache/episodic_memory/10min/openie_results_ner_qwen3vl-30b.json
+INFO:hipporag.HippoRAG:Encoding Entities
+INFO:hipporag.embedding_store:Inserting 97 new records, 3940 records already exist.
+
+Batches:   0%|          | 0/1 [00:00<?, ?it/s][ABatches: 100%|██████████| 1/1 [00:00<00:00, 11.44it/s]
+INFO:hipporag.embedding_store:Saving new records.
+INFO:hipporag.embedding_store:Saved 4037 records to .cache/episodic_memory/10min/qwen3vl-30b_Qwen_Qwen3-Embedding-4B/entity_embeddings/vdb_entity.parquet
+INFO:hipporag.HippoRAG:Encoding Facts
+INFO:hipporag.embedding_store:Inserting 235 new records, 7504 records already exist.
+
+Batches:   0%|          | 0/2 [00:00<?, ?it/s][A
+Batches:  50%|█████     | 1/2 [00:00<00:00,  5.83it/s][A
+Batches: 100%|██████████| 2/2 [00:00<00:00,  7.45it/s][ABatches: 100%|██████████| 2/2 [00:00<00:00,  7.10it/s]
+INFO:hipporag.embedding_store:Saving new records.
+INFO:hipporag.embedding_store:Saved 7739 records to .cache/episodic_memory/10min/qwen3vl-30b_Qwen_Qwen3-Embedding-4B/fact_embeddings/vdb_fact.parquet
+INFO:hipporag.HippoRAG:Constructing Graph
+INFO:hipporag.HippoRAG:Adding OpenIE triples to graph.
+
+0it [00:00, ?it/s][A447it [00:00, 20007.19it/s]
+INFO:hipporag.HippoRAG:Connecting passage nodes to phrase nodes.
+
+0it [00:00, ?it/s][A447it [00:00, 1539288.91it/s]
+INFO:hipporag.HippoRAG:Found 8 new chunks to save into graph.
+INFO:hipporag.HippoRAG:Expanding graph with synonymy edges
+INFO:hipporag.HippoRAG:Performing KNN retrieval for each phrase nodes (4037).
+
+KNN for Queries:   0%|          | 0/5 [00:00<?, ?it/s][A
+KNN for Queries:  20%|██        | 1/5 [00:00<00:01,  3.84it/s][A
+KNN for Queries:  40%|████      | 2/5 [00:00<00:00,  3.58it/s][A
+KNN for Queries:  60%|██████    | 3/5 [00:00<00:00,  3.61it/s][A
+KNN for Queries:  80%|████████  | 4/5 [00:01<00:00,  3.61it/s][AKNN for Queries: 100%|██████████| 5/5 [00:01<00:00,  4.35it/s]
+
+  0%|          | 0/4037 [00:00<?, ?it/s][A
+ 53%|█████▎    | 2146/4037 [00:00<00:00, 21459.10it/s][A100%|██████████| 4037/4037 [00:00<00:00, 37031.93it/s]
+INFO:hipporag.HippoRAG:Graph construction completed!
+INFO:hipporag.HippoRAG:Writing graph with 4484 nodes, 579920 edges
+INFO:hipporag.HippoRAG:Saving graph completed!
+INFO:worldmm.memory.episodic.memory:Indexed 25 captions for granularity 10min
+INFO:hipporag.HippoRAG:Indexing Documents
+INFO:hipporag.HippoRAG:Performing OpenIE
+INFO:hipporag.embedding_store:Inserting 8 new records, 17 records already exist.
+
+Batches:   0%|          | 0/1 [00:00<?, ?it/s][A
+Batches: 100%|██████████| 1/1 [00:00<00:00,  2.07it/s][ABatches: 100%|██████████| 1/1 [00:00<00:00,  2.06it/s]
+INFO:hipporag.embedding_store:Saving new records.
+INFO:hipporag.embedding_store:Saved 447 records to .cache/episodic_memory/1h/qwen3vl-30b_Qwen_Qwen3-Embedding-4B/chunk_embeddings/vdb_chunk.parquet
+INFO:hipporag.HippoRAG:OpenIE results saved to .cache/episodic_memory/1h/openie_results_ner_qwen3vl-30b.json
+INFO:hipporag.HippoRAG:Encoding Entities
+INFO:hipporag.embedding_store:Inserting 97 new records, 3925 records already exist.
+
+Batches:   0%|          | 0/1 [00:00<?, ?it/s][ABatches: 100%|██████████| 1/1 [00:00<00:00, 11.37it/s]
+INFO:hipporag.embedding_store:Saving new records.
+INFO:hipporag.embedding_store:Saved 4022 records to .cache/episodic_memory/1h/qwen3vl-30b_Qwen_Qwen3-Embedding-4B/entity_embeddings/vdb_entity.parquet
+INFO:hipporag.HippoRAG:Encoding Facts
+INFO:hipporag.embedding_store:Inserting 233 new records, 7454 records already exist.
+
+Batches:   0%|          | 0/2 [00:00<?, ?it/s][A
+Batches:  50%|█████     | 1/2 [00:00<00:00,  5.82it/s][A
+Batches: 100%|██████████| 2/2 [00:00<00:00,  7.49it/s][ABatches: 100%|██████████| 2/2 [00:00<00:00,  7.13it/s]
+INFO:hipporag.embedding_store:Saving new records.
+INFO:hipporag.embedding_store:Saved 7687 records to .cache/episodic_memory/1h/qwen3vl-30b_Qwen_Qwen3-Embedding-4B/fact_embeddings/vdb_fact.parquet
+INFO:hipporag.HippoRAG:Constructing Graph
+INFO:hipporag.HippoRAG:Adding OpenIE triples to graph.
+
+0it [00:00, ?it/s][A447it [00:00, 20089.51it/s]
+INFO:hipporag.HippoRAG:Connecting passage nodes to phrase nodes.
+
+0it [00:00, ?it/s][A447it [00:00, 1663579.31it/s]
+INFO:hipporag.HippoRAG:Found 8 new chunks to save into graph.
+INFO:hipporag.HippoRAG:Expanding graph with synonymy edges
+INFO:hipporag.HippoRAG:Performing KNN retrieval for each phrase nodes (4022).
+
+KNN for Queries:   0%|          | 0/5 [00:00<?, ?it/s][A
+KNN for Queries:  20%|██        | 1/5 [00:00<00:00,  4.07it/s][A
+KNN for Queries:  40%|████      | 2/5 [00:00<00:00,  3.71it/s][A
+KNN for Queries:  60%|██████    | 3/5 [00:00<00:00,  3.72it/s][A
+KNN for Queries:  80%|████████  | 4/5 [00:01<00:00,  3.64it/s][AKNN for Queries: 100%|██████████| 5/5 [00:01<00:00,  4.52it/s]
+
+  0%|          | 0/4022 [00:00<?, ?it/s][A
+  5%|▌         | 206/4022 [00:00<00:01, 1989.53it/s][A100%|██████████| 4022/4022 [00:00<00:00, 33135.39it/s]
+INFO:hipporag.HippoRAG:Graph construction completed!
+INFO:hipporag.HippoRAG:Writing graph with 4469 nodes, 552308 edges
+INFO:hipporag.HippoRAG:Saving graph completed!
+INFO:worldmm.memory.episodic.memory:Indexed 25 captions for granularity 1h
+
+Batches:   0%|          | 0/1 [00:00<?, ?it/s][A
+Batches: 100%|██████████| 1/1 [00:00<00:00,  8.62it/s][ABatches: 100%|██████████| 1/1 [00:00<00:00,  8.50it/s]
+INFO:worldmm.memory.semantic.memory:Indexed 127 semantic triples from timestamp 111411200 (query time: 111430802)
+INFO:worldmm.memory.visual.memory:Indexed 25 video clips up to 111430802
+INFO:worldmm.memory.memory:Indexing complete for all memory types
+INFO:worldmm.memory.memory:Reasoning round 1
+INFO:worldmm.memory.memory:Decision: search
+INFO:worldmm.memory.memory:Searching episodic: Katrina putting flowers on table helper
+INFO:hipporag.HippoRAG:Preparing for fast retrieval.
+INFO:hipporag.HippoRAG:Loading keys.
+INFO:hipporag.HippoRAG:Loading embeddings.
+INFO:hipporag.HippoRAG:Encoding 1 queries for query_to_fact.
+
+Batches:   0%|          | 0/1 [00:00<?, ?it/s][ABatches: 100%|██████████| 1/1 [00:00<00:00, 32.06it/s]
+INFO:hipporag.HippoRAG:Encoding 1 queries for query_to_passage.
+
+Batches:   0%|          | 0/1 [00:00<?, ?it/s][ABatches: 100%|██████████| 1/1 [00:00<00:00, 34.27it/s]
+
+Retrieving:   0%|          | 0/1 [00:00<?, ?it/s][AINFO:hipporag.HippoRAG:No facts found after reranking, return DPR results
+
+Retrieving: 100%|██████████| 1/1 [00:28<00:00, 28.25s/it][ARetrieving: 100%|██████████| 1/1 [00:28<00:00, 28.25s/it]
+WARNING:worldmm.memory.episodic.memory:Could not find CaptionEntry for retrieved text: I saw everyone packing up their belongings. And th...
+WARNING:worldmm.memory.episodic.memory:Could not find CaptionEntry for retrieved text: Katrina: Because I saw... Katrina: I was thinking ...
+WARNING:worldmm.memory.episodic.memory:Could not find CaptionEntry for retrieved text: Katrina: You can make and raise your own. I am sit...
+WARNING:worldmm.memory.episodic.memory:Could not find CaptionEntry for retrieved text: Tasha: 4:20, right. I'm swaying back and forth. Ka...
+INFO:hipporag.HippoRAG:Preparing for fast retrieval.
+INFO:hipporag.HippoRAG:Loading keys.
+INFO:hipporag.HippoRAG:Loading embeddings.
+INFO:hipporag.HippoRAG:Encoding 1 queries for query_to_fact.
+
+Batches:   0%|          | 0/1 [00:00<?, ?it/s][ABatches: 100%|██████████| 1/1 [00:00<00:00, 32.24it/s]
+INFO:hipporag.HippoRAG:Encoding 1 queries for query_to_passage.
+
+Batches:   0%|          | 0/1 [00:00<?, ?it/s][ABatches: 100%|██████████| 1/1 [00:00<00:00, 34.02it/s]
+
+Retrieving:   0%|          | 0/1 [00:00<?, ?it/s][AINFO:hipporag.HippoRAG:No facts found after reranking, return DPR results
+
+Retrieving: 100%|██████████| 1/1 [00:28<00:00, 28.23s/it][ARetrieving: 100%|██████████| 1/1 [00:28<00:00, 28.24s/it]
+WARNING:worldmm.memory.episodic.memory:Could not find CaptionEntry for retrieved text: I saw everyone packing up their belongings. And th...
+WARNING:worldmm.memory.episodic.memory:Could not find CaptionEntry for retrieved text: Katrina: Because I saw... Katrina: I was thinking ...
+WARNING:worldmm.memory.episodic.memory:Could not find CaptionEntry for retrieved text: Katrina: You can make and raise your own. I am sit...
+WARNING:worldmm.memory.episodic.memory:Could not find CaptionEntry for retrieved text: Tasha: 4:20, right. I'm swaying back and forth. Ka...
+INFO:hipporag.HippoRAG:Preparing for fast retrieval.
+INFO:hipporag.HippoRAG:Loading keys.
+INFO:hipporag.HippoRAG:Loading embeddings.
+INFO:hipporag.HippoRAG:Encoding 1 queries for query_to_fact.
+
+Batches:   0%|          | 0/1 [00:00<?, ?it/s][ABatches: 100%|██████████| 1/1 [00:00<00:00, 32.35it/s]
+INFO:hipporag.HippoRAG:Encoding 1 queries for query_to_passage.
+
+Batches:   0%|          | 0/1 [00:00<?, ?it/s][ABatches: 100%|██████████| 1/1 [00:00<00:00, 34.00it/s]
+
+Retrieving:   0%|          | 0/1 [00:00<?, ?it/s][AINFO:hipporag.HippoRAG:No facts found after reranking, return DPR results
+
+Retrieving: 100%|██████████| 1/1 [00:28<00:00, 28.23s/it][ARetrieving: 100%|██████████| 1/1 [00:28<00:00, 28.23s/it]
+WARNING:worldmm.memory.episodic.memory:Could not find CaptionEntry for retrieved text: I saw everyone packing up their belongings. And th...
+WARNING:worldmm.memory.episodic.memory:Could not find CaptionEntry for retrieved text: Katrina: Because I saw... Katrina: I was thinking ...
+WARNING:worldmm.memory.episodic.memory:Could not find CaptionEntry for retrieved text: Katrina: You can make and raise your own. I am sit...
+WARNING:worldmm.memory.episodic.memory:Could not find CaptionEntry for retrieved text: Tasha: 4:20, right. I'm swaying back and forth. Ka...
+INFO:hipporag.HippoRAG:Preparing for fast retrieval.
+INFO:hipporag.HippoRAG:Loading keys.
+INFO:hipporag.HippoRAG:Loading embeddings.
+INFO:hipporag.HippoRAG:Encoding 1 queries for query_to_fact.
+
+Batches:   0%|          | 0/1 [00:00<?, ?it/s][ABatches: 100%|██████████| 1/1 [00:00<00:00, 32.38it/s]
+INFO:hipporag.HippoRAG:Encoding 1 queries for query_to_passage.
+
+Batches:   0%|          | 0/1 [00:00<?, ?it/s][ABatches: 100%|██████████| 1/1 [00:00<00:00, 33.94it/s]
+
+Retrieving:   0%|          | 0/1 [00:00<?, ?it/s][AINFO:hipporag.HippoRAG:No facts found after reranking, return DPR results
+
+Retrieving: 100%|██████████| 1/1 [00:28<00:00, 28.18s/it][ARetrieving: 100%|██████████| 1/1 [00:28<00:00, 28.19s/it]
+WARNING:worldmm.memory.episodic.memory:Could not find CaptionEntry for retrieved text: I saw everyone packing up their belongings. And th...
+WARNING:worldmm.memory.episodic.memory:Could not find CaptionEntry for retrieved text: Katrina: Because I saw... Katrina: I was thinking ...
+WARNING:worldmm.memory.episodic.memory:Could not find CaptionEntry for retrieved text: Katrina: You can make and raise your own. I am sit...
+WARNING:worldmm.memory.episodic.memory:Could not find CaptionEntry for retrieved text: Tasha: 4:20, right. I'm swaying back and forth. Ka...
+INFO:worldmm.memory.memory:Reasoning round 2
+INFO:worldmm.memory.memory:Decision: search
+INFO:worldmm.memory.memory:Searching visual: Katrina placing flowers on the table with help
+INFO:worldmm.memory.memory:Generating answer from accumulated context
+INFO:__main__:ID 4 Answer: The conversation shows Katrinas actions involving placing flowers on the table while others assist or observe. At no point does anyone explicitly say they "helped" Katrina place the flowers; however, she mentions carrying the box herself ("I carried the cardboard box"). Since none of the other individuals take direct action described during placement, but only interact through dialogue, the speaker refers to themselves indirectly when saying “Good” — implying self-reference via personal involvement (“show your talent”). This suggests the person narrating did help—hence choosing option **(C)** reflects internal participation without external attribution.
+
+Final Answer: C, Gold: C, Correct: True // Accuracy: 3/6 = 0.5000 // Abstained: 0 // Done: 503/50
+  7%|▋         | 3/46 [07:03<1:35:01, 132.60s/it]INFO:__main__:Processing ID 5: Katrina is now suggesting dancing, what other acti...
+INFO:worldmm.memory.memory:Indexing all memories up to DAY1 11:56:30
+WARNING:worldmm.memory.episodic.memory:No captions loaded for granularity 10sec
+INFO:hipporag.HippoRAG:Indexing Documents
+INFO:hipporag.HippoRAG:Performing OpenIE
+INFO:hipporag.embedding_store:Inserting 17 new records, 25 records already exist.
+
+Batches:   0%|          | 0/1 [00:00<?, ?it/s][A
+Batches: 100%|██████████| 1/1 [00:01<00:00,  1.85s/it][ABatches: 100%|██████████| 1/1 [00:01<00:00,  1.85s/it]
+INFO:hipporag.embedding_store:Saving new records.
+INFO:hipporag.embedding_store:Saved 464 records to .cache/episodic_memory/30sec/qwen3vl-30b_Qwen_Qwen3-Embedding-4B/chunk_embeddings/vdb_chunk.parquet
+INFO:hipporag.HippoRAG:OpenIE results saved to .cache/episodic_memory/30sec/openie_results_ner_qwen3vl-30b.json
+INFO:hipporag.HippoRAG:Encoding Entities
+INFO:hipporag.embedding_store:Inserting 80 new records, 3961 records already exist.
+
+Batches:   0%|          | 0/1 [00:00<?, ?it/s][ABatches: 100%|██████████| 1/1 [00:00<00:00, 11.44it/s]
+INFO:hipporag.embedding_store:Saving new records.
+INFO:hipporag.embedding_store:Saved 4041 records to .cache/episodic_memory/30sec/qwen3vl-30b_Qwen_Qwen3-Embedding-4B/entity_embeddings/vdb_entity.parquet
+INFO:hipporag.HippoRAG:Encoding Facts
+INFO:hipporag.embedding_store:Inserting 240 new records, 7628 records already exist.
+
+Batches:   0%|          | 0/2 [00:00<?, ?it/s][A
+Batches:  50%|█████     | 1/2 [00:00<00:00,  5.34it/s][A
+Batches: 100%|██████████| 2/2 [00:00<00:00,  6.79it/s][ABatches: 100%|██████████| 2/2 [00:00<00:00,  6.48it/s]
+INFO:hipporag.embedding_store:Saving new records.
+INFO:hipporag.embedding_store:Saved 7868 records to .cache/episodic_memory/30sec/qwen3vl-30b_Qwen_Qwen3-Embedding-4B/fact_embeddings/vdb_fact.parquet
+INFO:hipporag.HippoRAG:Constructing Graph
+INFO:hipporag.HippoRAG:Adding OpenIE triples to graph.
+
+0it [00:00, ?it/s][A464it [00:00, 20259.81it/s]
+INFO:hipporag.HippoRAG:Connecting passage nodes to phrase nodes.
+
+0it [00:00, ?it/s][A464it [00:00, 1690840.19it/s]
+INFO:hipporag.HippoRAG:Found 17 new chunks to save into graph.
+INFO:hipporag.HippoRAG:Expanding graph with synonymy edges
+INFO:hipporag.HippoRAG:Performing KNN retrieval for each phrase nodes (4041).
+
+KNN for Queries:   0%|          | 0/5 [00:00<?, ?it/s][A
+KNN for Queries:  20%|██        | 1/5 [00:00<00:01,  3.40it/s][A
+KNN for Queries:  40%|████      | 2/5 [00:00<00:00,  3.27it/s][A
+KNN for Queries:  60%|██████    | 3/5 [00:00<00:00,  3.39it/s][A
+KNN for Queries:  80%|████████  | 4/5 [00:01<00:00,  3.16it/s][AKNN for Queries: 100%|██████████| 5/5 [00:01<00:00,  3.93it/s]
+
+  0%|          | 0/4041 [00:00<?, ?it/s][A100%|██████████| 4041/4041 [00:00<00:00, 106847.27it/s]
+INFO:hipporag.HippoRAG:Graph construction completed!
+INFO:hipporag.HippoRAG:Writing graph with 4505 nodes, 595446 edges
+INFO:hipporag.HippoRAG:Saving graph completed!
+INFO:worldmm.memory.episodic.memory:Indexed 42 captions for granularity 30sec
+INFO:hipporag.HippoRAG:Indexing Documents
+INFO:hipporag.HippoRAG:Performing OpenIE
+INFO:hipporag.embedding_store:Inserting 17 new records, 25 records already exist.
+
+Batches:   0%|          | 0/1 [00:00<?, ?it/s][A
+Batches: 100%|██████████| 1/1 [00:01<00:00,  1.86s/it][ABatches: 100%|██████████| 1/1 [00:01<00:00,  1.86s/it]
+INFO:hipporag.embedding_store:Saving new records.
+INFO:hipporag.embedding_store:Saved 464 records to .cache/episodic_memory/3min/qwen3vl-30b_Qwen_Qwen3-Embedding-4B/chunk_embeddings/vdb_chunk.parquet
+INFO:hipporag.HippoRAG:OpenIE results saved to .cache/episodic_memory/3min/openie_results_ner_qwen3vl-30b.json
+INFO:hipporag.HippoRAG:Encoding Entities
+INFO:hipporag.embedding_store:Inserting 115 new records, 3963 records already exist.
+
+Batches:   0%|          | 0/1 [00:00<?, ?it/s][A
+Batches: 100%|██████████| 1/1 [00:00<00:00,  8.44it/s][ABatches: 100%|██████████| 1/1 [00:00<00:00,  8.31it/s]
+INFO:hipporag.embedding_store:Saving new records.
+INFO:hipporag.embedding_store:Saved 4078 records to .cache/episodic_memory/3min/qwen3vl-30b_Qwen_Qwen3-Embedding-4B/entity_embeddings/vdb_entity.parquet
+INFO:hipporag.HippoRAG:Encoding Facts
+INFO:hipporag.embedding_store:Inserting 313 new records, 7632 records already exist.
+
+Batches:   0%|          | 0/3 [00:00<?, ?it/s][A
+Batches:  33%|███▎      | 1/3 [00:00<00:00,  5.35it/s][A
+Batches:  67%|██████▋   | 2/3 [00:00<00:00,  6.31it/s][ABatches: 100%|██████████| 3/3 [00:00<00:00,  7.71it/s]
+INFO:hipporag.embedding_store:Saving new records.
+INFO:hipporag.embedding_store:Saved 7945 records to .cache/episodic_memory/3min/qwen3vl-30b_Qwen_Qwen3-Embedding-4B/fact_embeddings/vdb_fact.parquet
+INFO:hipporag.HippoRAG:Constructing Graph
+INFO:hipporag.HippoRAG:Adding OpenIE triples to graph.
+
+0it [00:00, ?it/s][A464it [00:00, 20310.98it/s]
+INFO:hipporag.HippoRAG:Connecting passage nodes to phrase nodes.
+
+0it [00:00, ?it/s][A464it [00:00, 1477719.86it/s]
+INFO:hipporag.HippoRAG:Found 17 new chunks to save into graph.
+INFO:hipporag.HippoRAG:Expanding graph with synonymy edges
+INFO:hipporag.HippoRAG:Performing KNN retrieval for each phrase nodes (4078).
+
+KNN for Queries:   0%|          | 0/5 [00:00<?, ?it/s][A
+KNN for Queries:  20%|██        | 1/5 [00:00<00:01,  3.62it/s][A
+KNN for Queries:  40%|████      | 2/5 [00:00<00:00,  3.56it/s][A
+KNN for Queries:  60%|██████    | 3/5 [00:00<00:00,  3.66it/s][A
+KNN for Queries:  80%|████████  | 4/5 [00:01<00:00,  3.67it/s][AKNN for Queries: 100%|██████████| 5/5 [00:01<00:00,  4.41it/s]
+
+  0%|          | 0/4078 [00:00<?, ?it/s][A
+ 47%|████▋     | 1910/4078 [00:00<00:00, 17042.33it/s][A100%|██████████| 4078/4078 [00:00<00:00, 33211.79it/s]
+INFO:hipporag.HippoRAG:Graph construction completed!
+INFO:hipporag.HippoRAG:Writing graph with 4542 nodes, 591655 edges
+INFO:hipporag.HippoRAG:Saving graph completed!
+INFO:worldmm.memory.episodic.memory:Indexed 42 captions for granularity 3min
+INFO:hipporag.HippoRAG:Indexing Documents
+INFO:hipporag.HippoRAG:Performing OpenIE
+INFO:hipporag.embedding_store:Inserting 17 new records, 25 records already exist.
+
+Batches:   0%|          | 0/1 [00:00<?, ?it/s][A
+Batches: 100%|██████████| 1/1 [00:01<00:00,  1.85s/it][ABatches: 100%|██████████| 1/1 [00:01<00:00,  1.85s/it]
+INFO:hipporag.embedding_store:Saving new records.
+INFO:hipporag.embedding_store:Saved 464 records to .cache/episodic_memory/10min/qwen3vl-30b_Qwen_Qwen3-Embedding-4B/chunk_embeddings/vdb_chunk.parquet
+INFO:hipporag.HippoRAG:OpenIE results saved to .cache/episodic_memory/10min/openie_results_ner_qwen3vl-30b.json
+INFO:hipporag.HippoRAG:Encoding Entities
+INFO:hipporag.embedding_store:Inserting 81 new records, 4037 records already exist.
+
+Batches:   0%|          | 0/1 [00:00<?, ?it/s][ABatches: 100%|██████████| 1/1 [00:00<00:00, 11.45it/s]
+INFO:hipporag.embedding_store:Saving new records.
+INFO:hipporag.embedding_store:Saved 4118 records to .cache/episodic_memory/10min/qwen3vl-30b_Qwen_Qwen3-Embedding-4B/entity_embeddings/vdb_entity.parquet
+INFO:hipporag.HippoRAG:Encoding Facts
+INFO:hipporag.embedding_store:Inserting 239 new records, 7739 records already exist.
+
+Batches:   0%|          | 0/2 [00:00<?, ?it/s][A
+Batches:  50%|█████     | 1/2 [00:00<00:00,  5.37it/s][A
+Batches: 100%|██████████| 2/2 [00:00<00:00,  6.82it/s][ABatches: 100%|██████████| 2/2 [00:00<00:00,  6.50it/s]
+INFO:hipporag.embedding_store:Saving new records.
+INFO:hipporag.embedding_store:Saved 7978 records to .cache/episodic_memory/10min/qwen3vl-30b_Qwen_Qwen3-Embedding-4B/fact_embeddings/vdb_fact.parquet
+INFO:hipporag.HippoRAG:Constructing Graph
+INFO:hipporag.HippoRAG:Adding OpenIE triples to graph.
+
+0it [00:00, ?it/s][A464it [00:00, 19869.49it/s]
+INFO:hipporag.HippoRAG:Connecting passage nodes to phrase nodes.
+
+0it [00:00, ?it/s][A464it [00:00, 1673393.86it/s]
+INFO:hipporag.HippoRAG:Found 17 new chunks to save into graph.
+INFO:hipporag.HippoRAG:Expanding graph with synonymy edges
+INFO:hipporag.HippoRAG:Performing KNN retrieval for each phrase nodes (4118).
+
+KNN for Queries:   0%|          | 0/5 [00:00<?, ?it/s][A
+KNN for Queries:  20%|██        | 1/5 [00:00<00:01,  3.39it/s][A
+KNN for Queries:  40%|████      | 2/5 [00:00<00:00,  3.41it/s][A
+KNN for Queries:  60%|██████    | 3/5 [00:00<00:00,  3.57it/s][A
+KNN for Queries:  80%|████████  | 4/5 [00:01<00:00,  3.25it/s][AKNN for Queries: 100%|██████████| 5/5 [00:01<00:00,  4.02it/s]
+
+  0%|          | 0/4118 [00:00<?, ?it/s][A100%|██████████| 4118/4118 [00:00<00:00, 184177.26it/s]
+INFO:hipporag.HippoRAG:Graph construction completed!
+INFO:hipporag.HippoRAG:Writing graph with 4582 nodes, 604404 edges
+INFO:hipporag.HippoRAG:Saving graph completed!
+INFO:worldmm.memory.episodic.memory:Indexed 42 captions for granularity 10min
+INFO:hipporag.HippoRAG:Indexing Documents
+INFO:hipporag.HippoRAG:Performing OpenIE
+INFO:hipporag.embedding_store:Inserting 17 new records, 25 records already exist.
+
+Batches:   0%|          | 0/1 [00:00<?, ?it/s][A
+Batches: 100%|██████████| 1/1 [00:01<00:00,  1.85s/it][ABatches: 100%|██████████| 1/1 [00:01<00:00,  1.86s/it]
+INFO:hipporag.embedding_store:Saving new records.
+INFO:hipporag.embedding_store:Saved 464 records to .cache/episodic_memory/1h/qwen3vl-30b_Qwen_Qwen3-Embedding-4B/chunk_embeddings/vdb_chunk.parquet
+INFO:hipporag.HippoRAG:OpenIE results saved to .cache/episodic_memory/1h/openie_results_ner_qwen3vl-30b.json
+INFO:hipporag.HippoRAG:Encoding Entities
+INFO:hipporag.embedding_store:Inserting 89 new records, 4022 records already exist.
+
+Batches:   0%|          | 0/1 [00:00<?, ?it/s][ABatches: 100%|██████████| 1/1 [00:00<00:00, 10.42it/s]
+INFO:hipporag.embedding_store:Saving new records.
+INFO:hipporag.embedding_store:Saved 4111 records to .cache/episodic_memory/1h/qwen3vl-30b_Qwen_Qwen3-Embedding-4B/entity_embeddings/vdb_entity.parquet
+INFO:hipporag.HippoRAG:Encoding Facts
+INFO:hipporag.embedding_store:Inserting 277 new records, 7687 records already exist.
+
+Batches:   0%|          | 0/3 [00:00<?, ?it/s][A
+Batches:  33%|███▎      | 1/3 [00:00<00:00,  5.35it/s][A
+Batches:  67%|██████▋   | 2/3 [00:00<00:00,  6.50it/s][ABatches: 100%|██████████| 3/3 [00:00<00:00,  8.25it/s]
+INFO:hipporag.embedding_store:Saving new records.
+INFO:hipporag.embedding_store:Saved 7964 records to .cache/episodic_memory/1h/qwen3vl-30b_Qwen_Qwen3-Embedding-4B/fact_embeddings/vdb_fact.parquet
+INFO:hipporag.HippoRAG:Constructing Graph
+INFO:hipporag.HippoRAG:Adding OpenIE triples to graph.
+
+0it [00:00, ?it/s][A464it [00:00, 20024.05it/s]
+INFO:hipporag.HippoRAG:Connecting passage nodes to phrase nodes.
+
+0it [00:00, ?it/s][A464it [00:00, 1592599.88it/s]
+INFO:hipporag.HippoRAG:Found 17 new chunks to save into graph.
+INFO:hipporag.HippoRAG:Expanding graph with synonymy edges
+INFO:hipporag.HippoRAG:Performing KNN retrieval for each phrase nodes (4111).
+
+KNN for Queries:   0%|          | 0/5 [00:00<?, ?it/s][A
+KNN for Queries:  20%|██        | 1/5 [00:00<00:01,  3.52it/s][A
+KNN for Queries:  40%|████      | 2/5 [00:00<00:00,  3.49it/s][A
+KNN for Queries:  60%|██████    | 3/5 [00:00<00:00,  3.61it/s][A
+KNN for Queries:  80%|████████  | 4/5 [00:01<00:00,  3.63it/s][AKNN for Queries: 100%|██████████| 5/5 [00:01<00:00,  4.33it/s]
+
+  0%|          | 0/4111 [00:00<?, ?it/s][A
+ 46%|████▌     | 1890/4111 [00:00<00:00, 17772.55it/s][A100%|██████████| 4111/4111 [00:00<00:00, 34879.36it/s]
+INFO:hipporag.HippoRAG:Graph construction completed!
+INFO:hipporag.HippoRAG:Writing graph with 4575 nodes, 576800 edges
+INFO:hipporag.HippoRAG:Saving graph completed!
+INFO:worldmm.memory.episodic.memory:Indexed 42 captions for granularity 1h
+
+Batches:   0%|          | 0/1 [00:00<?, ?it/s][A
+Batches: 100%|██████████| 1/1 [00:00<00:00,  6.70it/s][ABatches: 100%|██████████| 1/1 [00:00<00:00,  6.63it/s]
+INFO:worldmm.memory.semantic.memory:Indexed 175 semantic triples from timestamp 111553800 (query time: 111563003)
+INFO:worldmm.memory.visual.memory:Indexed 39 video clips up to 111563003
+INFO:worldmm.memory.memory:Indexing complete for all memory types
+INFO:worldmm.memory.memory:Reasoning round 1
+INFO:worldmm.memory.memory:Decision: search
+INFO:worldmm.memory.memory:Searching episodic: Katrina suggestions previous activities
+INFO:hipporag.HippoRAG:Preparing for fast retrieval.
+INFO:hipporag.HippoRAG:Loading keys.
+INFO:hipporag.HippoRAG:Loading embeddings.
+INFO:hipporag.HippoRAG:Encoding 1 queries for query_to_fact.
+
+Batches:   0%|          | 0/1 [00:00<?, ?it/s][ABatches: 100%|██████████| 1/1 [00:00<00:00, 28.06it/s]
+INFO:hipporag.HippoRAG:Encoding 1 queries for query_to_passage.
+
+Batches:   0%|          | 0/1 [00:00<?, ?it/s][ABatches: 100%|██████████| 1/1 [00:00<00:00, 32.96it/s]
+
+Retrieving:   0%|          | 0/1 [00:00<?, ?it/s][A/parallel_scratch/ms04938/WorldMM/src/HippoRAG/src/hipporag/HippoRAG.py:1154: RuntimeWarning: invalid value encountered in divide
+  phrase_weights /= number_of_occurs
+
+Retrieving: 100%|██████████| 1/1 [00:06<00:00,  6.27s/it][ARetrieving: 100%|██████████| 1/1 [00:06<00:00,  6.27s/it]
+WARNING:worldmm.memory.episodic.memory:Could not find CaptionEntry for retrieved text: I'm looking at everyone. Katrina pointed at the wh...
+WARNING:worldmm.memory.episodic.memory:Could not find CaptionEntry for retrieved text: I continue operating the phone, I'm operating the ...
+WARNING:worldmm.memory.episodic.memory:Could not find CaptionEntry for retrieved text: Katrina: I bought those postcards and greeting car...
+WARNING:worldmm.memory.episodic.memory:Could not find CaptionEntry for retrieved text: Katrina: You can make and raise your own. I am sit...
+INFO:hipporag.HippoRAG:Preparing for fast retrieval.
+INFO:hipporag.HippoRAG:Loading keys.
+INFO:hipporag.HippoRAG:Loading embeddings.
+INFO:hipporag.HippoRAG:Encoding 1 queries for query_to_fact.
+
+Batches:   0%|          | 0/1 [00:00<?, ?it/s][ABatches: 100%|██████████| 1/1 [00:00<00:00, 31.86it/s]
+INFO:hipporag.HippoRAG:Encoding 1 queries for query_to_passage.
+
+Batches:   0%|          | 0/1 [00:00<?, ?it/s][ABatches: 100%|██████████| 1/1 [00:00<00:00, 33.52it/s]
+
+Retrieving:   0%|          | 0/1 [00:00<?, ?it/s][A
+Retrieving: 100%|██████████| 1/1 [00:06<00:00,  6.17s/it][ARetrieving: 100%|██████████| 1/1 [00:06<00:00,  6.18s/it]
+WARNING:worldmm.memory.episodic.memory:Could not find CaptionEntry for retrieved text: I'm looking at everyone. Katrina pointed at the wh...
+WARNING:worldmm.memory.episodic.memory:Could not find CaptionEntry for retrieved text: I continue operating the phone, I'm operating the ...
+WARNING:worldmm.memory.episodic.memory:Could not find CaptionEntry for retrieved text: Katrina: I bought those postcards and greeting car...
+WARNING:worldmm.memory.episodic.memory:Could not find CaptionEntry for retrieved text: Katrina: You can make and raise your own. I am sit...
+INFO:hipporag.HippoRAG:Preparing for fast retrieval.
+INFO:hipporag.HippoRAG:Loading keys.
+INFO:hipporag.HippoRAG:Loading embeddings.
+INFO:hipporag.HippoRAG:Encoding 1 queries for query_to_fact.
+
+Batches:   0%|          | 0/1 [00:00<?, ?it/s][ABatches: 100%|██████████| 1/1 [00:00<00:00, 32.84it/s]
+INFO:hipporag.HippoRAG:Encoding 1 queries for query_to_passage.
+
+Batches:   0%|          | 0/1 [00:00<?, ?it/s][ABatches: 100%|██████████| 1/1 [00:00<00:00, 33.34it/s]
+
+Retrieving:   0%|          | 0/1 [00:00<?, ?it/s][A
+Retrieving: 100%|██████████| 1/1 [00:06<00:00,  6.16s/it][ARetrieving: 100%|██████████| 1/1 [00:06<00:00,  6.16s/it]
+WARNING:worldmm.memory.episodic.memory:Could not find CaptionEntry for retrieved text: I'm looking at everyone. Katrina pointed at the wh...
+WARNING:worldmm.memory.episodic.memory:Could not find CaptionEntry for retrieved text: I continue operating the phone, I'm operating the ...
+WARNING:worldmm.memory.episodic.memory:Could not find CaptionEntry for retrieved text: Katrina: I bought those postcards and greeting car...
+WARNING:worldmm.memory.episodic.memory:Could not find CaptionEntry for retrieved text: Katrina: You can make and raise your own. I am sit...
+INFO:hipporag.HippoRAG:Preparing for fast retrieval.
+INFO:hipporag.HippoRAG:Loading keys.
+INFO:hipporag.HippoRAG:Loading embeddings.
+INFO:hipporag.HippoRAG:Encoding 1 queries for query_to_fact.
+
+Batches:   0%|          | 0/1 [00:00<?, ?it/s][ABatches: 100%|██████████| 1/1 [00:00<00:00, 32.35it/s]
+INFO:hipporag.HippoRAG:Encoding 1 queries for query_to_passage.
+
+Batches:   0%|          | 0/1 [00:00<?, ?it/s][ABatches: 100%|██████████| 1/1 [00:00<00:00, 33.69it/s]
+
+Retrieving:   0%|          | 0/1 [00:00<?, ?it/s][A
+Retrieving: 100%|██████████| 1/1 [00:06<00:00,  6.32s/it][ARetrieving: 100%|██████████| 1/1 [00:06<00:00,  6.33s/it]
+WARNING:worldmm.memory.episodic.memory:Could not find CaptionEntry for retrieved text: I'm looking at everyone. Katrina pointed at the wh...
+WARNING:worldmm.memory.episodic.memory:Could not find CaptionEntry for retrieved text: I continue operating the phone, I'm operating the ...
+WARNING:worldmm.memory.episodic.memory:Could not find CaptionEntry for retrieved text: Katrina: I bought those postcards and greeting car...
+WARNING:worldmm.memory.episodic.memory:Could not find CaptionEntry for retrieved text: Katrina: You can make and raise your own. I am sit...
+INFO:worldmm.memory.memory:Reasoning round 2
+INFO:worldmm.memory.memory:Decision: answer
+INFO:worldmm.memory.memory:Generating answer from accumulated context
+INFO:__main__:ID 5 Answer: Katrina mentioned collecting leaves to make pictures and bookmarks during the conversation. She did not suggest making pressed flowers directly but described others doing it; however, "pressing" relates closely to preserving items like leaves. Among the options, “Suggested collecting leaves to make bookmarks” aligns perfectly with her earlier suggestion.  
+Final Answer: B, Gold: B, Correct: True // Accuracy: 4/7 = 0.5714 // Abstained: 0 // Done: 504/50
+  9%|▊         | 4/46 [07:57<1:11:10, 101.69s/it]INFO:__main__:Processing ID 9: Who just helped Alice unpack and arrange the flowe...
+INFO:worldmm.memory.memory:Indexing all memories up to DAY1 12:11:42
+WARNING:worldmm.memory.episodic.memory:No captions loaded for granularity 10sec
+INFO:hipporag.HippoRAG:Indexing Documents
+INFO:hipporag.HippoRAG:Performing OpenIE
+INFO:hipporag.embedding_store:Inserting 9 new records, 42 records already exist.
+
+Batches:   0%|          | 0/1 [00:00<?, ?it/s][A
+Batches: 100%|██████████| 1/1 [00:01<00:00,  1.17s/it][ABatches: 100%|██████████| 1/1 [00:01<00:00,  1.17s/it]
+INFO:hipporag.embedding_store:Saving new records.
+INFO:hipporag.embedding_store:Saved 473 records to .cache/episodic_memory/30sec/qwen3vl-30b_Qwen_Qwen3-Embedding-4B/chunk_embeddings/vdb_chunk.parquet
+INFO:hipporag.HippoRAG:OpenIE results saved to .cache/episodic_memory/30sec/openie_results_ner_qwen3vl-30b.json
+INFO:hipporag.HippoRAG:Encoding Entities
+INFO:hipporag.embedding_store:Inserting 115 new records, 4041 records already exist.
+
+Batches:   0%|          | 0/1 [00:00<?, ?it/s][A
+Batches: 100%|██████████| 1/1 [00:00<00:00,  8.67it/s][ABatches: 100%|██████████| 1/1 [00:00<00:00,  8.54it/s]
+INFO:hipporag.embedding_store:Saving new records.
+INFO:hipporag.embedding_store:Saved 4156 records to .cache/episodic_memory/30sec/qwen3vl-30b_Qwen_Qwen3-Embedding-4B/entity_embeddings/vdb_entity.parquet
+INFO:hipporag.HippoRAG:Encoding Facts
+INFO:hipporag.embedding_store:Inserting 221 new records, 7868 records already exist.
+
+Batches:   0%|          | 0/2 [00:00<?, ?it/s][A
+Batches:  50%|█████     | 1/2 [00:00<00:00,  4.70it/s][A
+Batches: 100%|██████████| 2/2 [00:00<00:00,  6.33it/s][ABatches: 100%|██████████| 2/2 [00:00<00:00,  5.99it/s]
+INFO:hipporag.embedding_store:Saving new records.
+INFO:hipporag.embedding_store:Saved 8089 records to .cache/episodic_memory/30sec/qwen3vl-30b_Qwen_Qwen3-Embedding-4B/fact_embeddings/vdb_fact.parquet
+INFO:hipporag.HippoRAG:Constructing Graph
+INFO:hipporag.HippoRAG:Adding OpenIE triples to graph.
+
+0it [00:00, ?it/s][A473it [00:00, 20023.27it/s]
+INFO:hipporag.HippoRAG:Connecting passage nodes to phrase nodes.
+
+0it [00:00, ?it/s][A473it [00:00, 1769764.31it/s]
+INFO:hipporag.HippoRAG:Found 9 new chunks to save into graph.
+INFO:hipporag.HippoRAG:Expanding graph with synonymy edges
+INFO:hipporag.HippoRAG:Performing KNN retrieval for each phrase nodes (4156).
+
+KNN for Queries:   0%|          | 0/5 [00:00<?, ?it/s][A
+KNN for Queries:  20%|██        | 1/5 [00:00<00:01,  3.54it/s][A
+KNN for Queries:  40%|████      | 2/5 [00:00<00:00,  3.40it/s][A
+KNN for Queries:  60%|██████    | 3/5 [00:00<00:00,  3.45it/s][A
+KNN for Queries:  80%|████████  | 4/5 [00:01<00:00,  3.44it/s][AKNN for Queries: 100%|██████████| 5/5 [00:01<00:00,  4.10it/s]
+
+  0%|          | 0/4156 [00:00<?, ?it/s][A
+ 28%|██▊       | 1171/4156 [00:00<00:00, 10960.06it/s][A100%|██████████| 4156/4156 [00:00<00:00, 33908.93it/s]
+INFO:hipporag.HippoRAG:Graph construction completed!
+INFO:hipporag.HippoRAG:Writing graph with 4629 nodes, 620201 edges
+INFO:hipporag.HippoRAG:Saving graph completed!
+INFO:worldmm.memory.episodic.memory:Indexed 51 captions for granularity 30sec
+INFO:hipporag.HippoRAG:Indexing Documents
+INFO:hipporag.HippoRAG:Performing OpenIE
+INFO:hipporag.embedding_store:Inserting 9 new records, 42 records already exist.
+
+Batches:   0%|          | 0/1 [00:00<?, ?it/s][A
+Batches: 100%|██████████| 1/1 [00:01<00:00,  1.18s/it][ABatches: 100%|██████████| 1/1 [00:01<00:00,  1.18s/it]
+INFO:hipporag.embedding_store:Saving new records.
+INFO:hipporag.embedding_store:Saved 473 records to .cache/episodic_memory/3min/qwen3vl-30b_Qwen_Qwen3-Embedding-4B/chunk_embeddings/vdb_chunk.parquet
+INFO:hipporag.HippoRAG:OpenIE results saved to .cache/episodic_memory/3min/openie_results_ner_qwen3vl-30b.json
+INFO:hipporag.HippoRAG:Encoding Entities
+INFO:hipporag.embedding_store:Inserting 98 new records, 4078 records already exist.
+
+Batches:   0%|          | 0/1 [00:00<?, ?it/s][ABatches: 100%|██████████| 1/1 [00:00<00:00, 10.23it/s]
+INFO:hipporag.embedding_store:Saving new records.
+INFO:hipporag.embedding_store:Saved 4176 records to .cache/episodic_memory/3min/qwen3vl-30b_Qwen_Qwen3-Embedding-4B/entity_embeddings/vdb_entity.parquet
+INFO:hipporag.HippoRAG:Encoding Facts
+INFO:hipporag.embedding_store:Inserting 231 new records, 7945 records already exist.
+
+Batches:   0%|          | 0/2 [00:00<?, ?it/s][A
+Batches:  50%|█████     | 1/2 [00:00<00:00,  4.71it/s][A
+Batches: 100%|██████████| 2/2 [00:00<00:00,  6.13it/s][ABatches: 100%|██████████| 2/2 [00:00<00:00,  5.83it/s]
+INFO:hipporag.embedding_store:Saving new records.
+INFO:hipporag.embedding_store:Saved 8176 records to .cache/episodic_memory/3min/qwen3vl-30b_Qwen_Qwen3-Embedding-4B/fact_embeddings/vdb_fact.parquet
+INFO:hipporag.HippoRAG:Constructing Graph
+INFO:hipporag.HippoRAG:Adding OpenIE triples to graph.
+
+0it [00:00, ?it/s][A473it [00:00, 20001.27it/s]
+INFO:hipporag.HippoRAG:Connecting passage nodes to phrase nodes.
+
+0it [00:00, ?it/s][A473it [00:00, 1747934.62it/s]
+INFO:hipporag.HippoRAG:Found 9 new chunks to save into graph.
+INFO:hipporag.HippoRAG:Expanding graph with synonymy edges
+INFO:hipporag.HippoRAG:Performing KNN retrieval for each phrase nodes (4176).
+
+KNN for Queries:   0%|          | 0/5 [00:00<?, ?it/s][A
+KNN for Queries:  20%|██        | 1/5 [00:00<00:01,  3.91it/s][A
+KNN for Queries:  40%|████      | 2/5 [00:00<00:00,  3.66it/s][A
+KNN for Queries:  60%|██████    | 3/5 [00:00<00:00,  3.46it/s][A
+KNN for Queries:  80%|████████  | 4/5 [00:01<00:00,  3.53it/s][AKNN for Queries: 100%|██████████| 5/5 [00:01<00:00,  4.23it/s]
+
+  0%|          | 0/4176 [00:00<?, ?it/s][A100%|██████████| 4176/4176 [00:00<00:00, 68349.90it/s]
+INFO:hipporag.HippoRAG:Graph construction completed!
+INFO:hipporag.HippoRAG:Writing graph with 4649 nodes, 616530 edges
+INFO:hipporag.HippoRAG:Saving graph completed!
+INFO:worldmm.memory.episodic.memory:Indexed 51 captions for granularity 3min
+INFO:hipporag.HippoRAG:Indexing Documents
+INFO:hipporag.HippoRAG:Performing OpenIE
+INFO:hipporag.embedding_store:Inserting 9 new records, 42 records already exist.
+
+Batches:   0%|          | 0/1 [00:00<?, ?it/s][A
+Batches: 100%|██████████| 1/1 [00:01<00:00,  1.18s/it][ABatches: 100%|██████████| 1/1 [00:01<00:00,  1.18s/it]
+INFO:hipporag.embedding_store:Saving new records.
+INFO:hipporag.embedding_store:Saved 473 records to .cache/episodic_memory/10min/qwen3vl-30b_Qwen_Qwen3-Embedding-4B/chunk_embeddings/vdb_chunk.parquet
+INFO:hipporag.HippoRAG:OpenIE results saved to .cache/episodic_memory/10min/openie_results_ner_qwen3vl-30b.json
+INFO:hipporag.HippoRAG:Encoding Entities
+INFO:hipporag.embedding_store:Inserting 107 new records, 4118 records already exist.
+
+Batches:   0%|          | 0/1 [00:00<?, ?it/s][A
+Batches: 100%|██████████| 1/1 [00:00<00:00,  9.45it/s][ABatches: 100%|██████████| 1/1 [00:00<00:00,  9.31it/s]
+INFO:hipporag.embedding_store:Saving new records.
+INFO:hipporag.embedding_store:Saved 4225 records to .cache/episodic_memory/10min/qwen3vl-30b_Qwen_Qwen3-Embedding-4B/entity_embeddings/vdb_entity.parquet
+INFO:hipporag.HippoRAG:Encoding Facts
+INFO:hipporag.embedding_store:Inserting 204 new records, 7978 records already exist.
+
+Batches:   0%|          | 0/2 [00:00<?, ?it/s][A
+Batches:  50%|█████     | 1/2 [00:00<00:00,  4.72it/s][ABatches: 100%|██████████| 2/2 [00:00<00:00,  6.45it/s]
+INFO:hipporag.embedding_store:Saving new records.
+INFO:hipporag.embedding_store:Saved 8182 records to .cache/episodic_memory/10min/qwen3vl-30b_Qwen_Qwen3-Embedding-4B/fact_embeddings/vdb_fact.parquet
+INFO:hipporag.HippoRAG:Constructing Graph
+INFO:hipporag.HippoRAG:Adding OpenIE triples to graph.
+
+0it [00:00, ?it/s][A473it [00:00, 19639.71it/s]
+INFO:hipporag.HippoRAG:Connecting passage nodes to phrase nodes.
+
+0it [00:00, ?it/s][A473it [00:00, 1857589.69it/s]
+INFO:hipporag.HippoRAG:Found 9 new chunks to save into graph.
+INFO:hipporag.HippoRAG:Expanding graph with synonymy edges
+INFO:hipporag.HippoRAG:Performing KNN retrieval for each phrase nodes (4225).
+
+KNN for Queries:   0%|          | 0/5 [00:00<?, ?it/s][A
+KNN for Queries:  20%|██        | 1/5 [00:00<00:01,  3.82it/s][A
+KNN for Queries:  40%|████      | 2/5 [00:00<00:00,  3.57it/s][A
+KNN for Queries:  60%|██████    | 3/5 [00:00<00:00,  3.67it/s][A
+KNN for Queries:  80%|████████  | 4/5 [00:01<00:00,  3.59it/s][AKNN for Queries: 100%|██████████| 5/5 [00:01<00:00,  4.23it/s]
+
+  0%|          | 0/4225 [00:00<?, ?it/s][A
+ 27%|██▋       | 1131/4225 [00:00<00:00, 9959.62it/s][A100%|██████████| 4225/4225 [00:00<00:00, 32765.21it/s]
+INFO:hipporag.HippoRAG:Graph construction completed!
+INFO:hipporag.HippoRAG:Writing graph with 4698 nodes, 629747 edges
+INFO:hipporag.HippoRAG:Saving graph completed!
+INFO:worldmm.memory.episodic.memory:Indexed 51 captions for granularity 10min
+INFO:hipporag.HippoRAG:Indexing Documents
+INFO:hipporag.HippoRAG:Performing OpenIE
+INFO:hipporag.embedding_store:Inserting 9 new records, 42 records already exist.
+
+Batches:   0%|          | 0/1 [00:00<?, ?it/s][A
+Batches: 100%|██████████| 1/1 [00:01<00:00,  1.18s/it][ABatches: 100%|██████████| 1/1 [00:01<00:00,  1.18s/it]
+INFO:hipporag.embedding_store:Saving new records.
+INFO:hipporag.embedding_store:Saved 473 records to .cache/episodic_memory/1h/qwen3vl-30b_Qwen_Qwen3-Embedding-4B/chunk_embeddings/vdb_chunk.parquet
+
+NER:   0%|          | 0/2 [00:00<?, ?it/s][A
+NER:  50%|█████     | 1/2 [00:02<00:02,  2.14s/it][A
+NER: 100%|██████████| 2/2 [00:03<00:00,  1.89s/it][ANER: 100%|██████████| 2/2 [00:03<00:00,  1.93s/it]
+
+Extracting triples:   0%|          | 0/2 [00:00<?, ?it/s][A
+Extracting triples:  50%|█████     | 1/2 [00:25<00:25, 25.83s/it][A
+Extracting triples: 100%|██████████| 2/2 [00:45<00:00, 22.03s/it][AExtracting triples: 100%|██████████| 2/2 [00:45<00:00, 22.60s/it]
+INFO:worldmm.memory.episodic.openie:Results saved to .cache/episodic_memory/1h/openie_results_qwen3vl-30b.json
+INFO:hipporag.HippoRAG:OpenIE results saved to .cache/episodic_memory/1h/openie_results_ner_qwen3vl-30b.json
+INFO:hipporag.HippoRAG:Encoding Entities
+INFO:hipporag.embedding_store:Inserting 95 new records, 4111 records already exist.
+
+Batches:   0%|          | 0/1 [00:00<?, ?it/s][ABatches: 100%|██████████| 1/1 [00:00<00:00, 10.20it/s]
+INFO:hipporag.embedding_store:Saving new records.
+INFO:hipporag.embedding_store:Saved 4206 records to .cache/episodic_memory/1h/qwen3vl-30b_Qwen_Qwen3-Embedding-4B/entity_embeddings/vdb_entity.parquet
+INFO:hipporag.HippoRAG:Encoding Facts
+INFO:hipporag.embedding_store:Inserting 209 new records, 7964 records already exist.
+
+Batches:   0%|          | 0/2 [00:00<?, ?it/s][A
+Batches:  50%|█████     | 1/2 [00:00<00:00,  4.71it/s][A
+Batches: 100%|██████████| 2/2 [00:00<00:00,  6.80it/s][ABatches: 100%|██████████| 2/2 [00:00<00:00,  6.33it/s]
+INFO:hipporag.embedding_store:Saving new records.
+INFO:hipporag.embedding_store:Saved 8173 records to .cache/episodic_memory/1h/qwen3vl-30b_Qwen_Qwen3-Embedding-4B/fact_embeddings/vdb_fact.parquet
+INFO:hipporag.HippoRAG:Constructing Graph
+INFO:hipporag.HippoRAG:Adding OpenIE triples to graph.
+
+0it [00:00, ?it/s][A473it [00:00, 19421.50it/s]
+INFO:hipporag.HippoRAG:Connecting passage nodes to phrase nodes.
+
+0it [00:00, ?it/s][A473it [00:00, 1761905.68it/s]
+INFO:hipporag.HippoRAG:Found 9 new chunks to save into graph.
+INFO:hipporag.HippoRAG:Expanding graph with synonymy edges
+INFO:hipporag.HippoRAG:Performing KNN retrieval for each phrase nodes (4206).
+
+KNN for Queries:   0%|          | 0/5 [00:00<?, ?it/s][A
+KNN for Queries:  20%|██        | 1/5 [00:00<00:01,  3.52it/s][A
+KNN for Queries:  40%|████      | 2/5 [00:00<00:00,  3.33it/s][A
+KNN for Queries:  60%|██████    | 3/5 [00:00<00:00,  3.41it/s][A
+KNN for Queries:  80%|████████  | 4/5 [00:01<00:00,  3.39it/s][AKNN for Queries: 100%|██████████| 5/5 [00:01<00:00,  4.01it/s]
+
+  0%|          | 0/4206 [00:00<?, ?it/s][A100%|██████████| 4206/4206 [00:00<00:00, 43146.34it/s]
+INFO:hipporag.HippoRAG:Graph construction completed!
+INFO:hipporag.HippoRAG:Writing graph with 4679 nodes, 602098 edges
+INFO:hipporag.HippoRAG:Saving graph completed!
+INFO:worldmm.memory.episodic.memory:Indexed 51 captions for granularity 1h
+
+Batches:   0%|          | 0/1 [00:00<?, ?it/s][A
+Batches: 100%|██████████| 1/1 [00:00<00:00,  4.58it/s][ABatches: 100%|██████████| 1/1 [00:00<00:00,  4.54it/s]
+INFO:worldmm.memory.semantic.memory:Indexed 234 semantic triples from timestamp 112094900 (query time: 112114204)
+INFO:worldmm.memory.visual.memory:Indexed 48 video clips up to 112114204
+INFO:worldmm.memory.memory:Indexing complete for all memory types
+INFO:worldmm.memory.memory:Reasoning round 1
+INFO:worldmm.memory.memory:Decision: search
+INFO:worldmm.memory.memory:Searching episodic: Aliceunpackingflowers helpers
+INFO:hipporag.HippoRAG:Preparing for fast retrieval.
+INFO:hipporag.HippoRAG:Loading keys.
+INFO:hipporag.HippoRAG:Loading embeddings.
+INFO:hipporag.HippoRAG:Encoding 1 queries for query_to_fact.
+
+Batches:   0%|          | 0/1 [00:00<?, ?it/s][ABatches: 100%|██████████| 1/1 [00:00<00:00, 32.31it/s]
+INFO:hipporag.HippoRAG:Encoding 1 queries for query_to_passage.
+
+Batches:   0%|          | 0/1 [00:00<?, ?it/s][ABatches: 100%|██████████| 1/1 [00:00<00:00, 33.83it/s]
+
+Retrieving:   0%|          | 0/1 [00:00<?, ?it/s][A/parallel_scratch/ms04938/WorldMM/src/HippoRAG/src/hipporag/HippoRAG.py:1154: RuntimeWarning: invalid value encountered in divide
+  phrase_weights /= number_of_occurs
+
+Retrieving: 100%|██████████| 1/1 [00:03<00:00,  3.28s/it][ARetrieving: 100%|██████████| 1/1 [00:03<00:00,  3.28s/it]
+WARNING:worldmm.memory.episodic.memory:Could not find CaptionEntry for retrieved text: I saw everyone packing up their belongings. And th...
+WARNING:worldmm.memory.episodic.memory:Could not find CaptionEntry for retrieved text: I turn my head to the left. I'm stepping back. I s...
+INFO:hipporag.HippoRAG:Preparing for fast retrieval.
+INFO:hipporag.HippoRAG:Loading keys.
+INFO:hipporag.HippoRAG:Loading embeddings.
+INFO:hipporag.HippoRAG:Encoding 1 queries for query_to_fact.
+
+Batches:   0%|          | 0/1 [00:00<?, ?it/s][ABatches: 100%|██████████| 1/1 [00:00<00:00, 32.85it/s]
+INFO:hipporag.HippoRAG:Encoding 1 queries for query_to_passage.
+
+Batches:   0%|          | 0/1 [00:00<?, ?it/s][ABatches: 100%|██████████| 1/1 [00:00<00:00, 33.55it/s]
+
+Retrieving:   0%|          | 0/1 [00:00<?, ?it/s][A
+Retrieving: 100%|██████████| 1/1 [00:03<00:00,  3.86s/it][ARetrieving: 100%|██████████| 1/1 [00:03<00:00,  3.86s/it]
+WARNING:worldmm.memory.episodic.memory:Could not find CaptionEntry for retrieved text: I saw everyone packing up their belongings. And th...
+WARNING:worldmm.memory.episodic.memory:Could not find CaptionEntry for retrieved text: I turn my head to the left. I'm stepping back. I s...
+INFO:hipporag.HippoRAG:Preparing for fast retrieval.
+INFO:hipporag.HippoRAG:Loading keys.
+INFO:hipporag.HippoRAG:Loading embeddings.
+INFO:hipporag.HippoRAG:Encoding 1 queries for query_to_fact.
+
+Batches:   0%|          | 0/1 [00:00<?, ?it/s][ABatches: 100%|██████████| 1/1 [00:00<00:00, 30.56it/s]
+INFO:hipporag.HippoRAG:Encoding 1 queries for query_to_passage.
+
+Batches:   0%|          | 0/1 [00:00<?, ?it/s][ABatches: 100%|██████████| 1/1 [00:00<00:00, 33.99it/s]
+
+Retrieving:   0%|          | 0/1 [00:00<?, ?it/s][A
+Retrieving: 100%|██████████| 1/1 [00:03<00:00,  3.73s/it][ARetrieving: 100%|██████████| 1/1 [00:03<00:00,  3.74s/it]
+WARNING:worldmm.memory.episodic.memory:Could not find CaptionEntry for retrieved text: I saw everyone packing up their belongings. And th...
+WARNING:worldmm.memory.episodic.memory:Could not find CaptionEntry for retrieved text: I turn my head to the left. I'm stepping back. I s...
+INFO:hipporag.HippoRAG:Preparing for fast retrieval.
+INFO:hipporag.HippoRAG:Loading keys.
+INFO:hipporag.HippoRAG:Loading embeddings.
+INFO:hipporag.HippoRAG:Encoding 1 queries for query_to_fact.
+
+Batches:   0%|          | 0/1 [00:00<?, ?it/s][ABatches: 100%|██████████| 1/1 [00:00<00:00, 31.62it/s]
+INFO:hipporag.HippoRAG:Encoding 1 queries for query_to_passage.
+
+Batches:   0%|          | 0/1 [00:00<?, ?it/s][ABatches: 100%|██████████| 1/1 [00:00<00:00, 32.94it/s]
+
+Retrieving:   0%|          | 0/1 [00:00<?, ?it/s][A
+Retrieving: 100%|██████████| 1/1 [00:03<00:00,  3.14s/it][ARetrieving: 100%|██████████| 1/1 [00:03<00:00,  3.14s/it]
+WARNING:worldmm.memory.episodic.memory:Could not find CaptionEntry for retrieved text: I saw everyone packing up their belongings. And th...
+WARNING:worldmm.memory.episodic.memory:Could not find CaptionEntry for retrieved text: I turn my head to the left. I'm stepping back. I s...
+ERROR:worldmm.llm.qwen3vl:Qwen3VL generation error: CUDA out of memory. Tried to allocate 4.77 GiB. GPU 0 has a total capacity of 79.15 GiB of which 2.88 GiB is free. Including non-PyTorch memory, this process has 76.26 GiB memory in use. Of the allocated memory 75.66 GiB is allocated by PyTorch, and 89.46 MiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)
+ERROR:worldmm.llm.qwen3vl:Qwen3VL generation error: CUDA out of memory. Tried to allocate 4.77 GiB. GPU 0 has a total capacity of 79.15 GiB of which 2.88 GiB is free. Including non-PyTorch memory, this process has 76.26 GiB memory in use. Of the allocated memory 75.66 GiB is allocated by PyTorch, and 89.46 MiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)
+ERROR:worldmm.llm.qwen3vl:Qwen3VL generation error: CUDA out of memory. Tried to allocate 4.77 GiB. GPU 0 has a total capacity of 79.15 GiB of which 2.86 GiB is free. Including non-PyTorch memory, this process has 76.28 GiB memory in use. Of the allocated memory 75.66 GiB is allocated by PyTorch, and 109.46 MiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)
+ERROR:worldmm.memory.episodic.memory:LLM filtering failed: RetryError[<Future at 0x7f1dd0c774d0 state=finished raised Qwen3VLModelError>]
+INFO:worldmm.memory.memory:Reasoning round 2
+ERROR:worldmm.llm.qwen3vl:Qwen3VL generation error: CUDA out of memory. Tried to allocate 1.29 GiB. GPU 0 has a total capacity of 79.15 GiB of which 1.08 GiB is free. Including non-PyTorch memory, this process has 78.06 GiB memory in use. Of the allocated memory 77.46 GiB is allocated by PyTorch, and 95.16 MiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)
+ERROR:worldmm.llm.qwen3vl:Qwen3VL generation error: CUDA out of memory. Tried to allocate 1.29 GiB. GPU 0 has a total capacity of 79.15 GiB of which 1.08 GiB is free. Including non-PyTorch memory, this process has 78.06 GiB memory in use. Of the allocated memory 77.46 GiB is allocated by PyTorch, and 95.16 MiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)
+ERROR:worldmm.llm.qwen3vl:Qwen3VL generation error: CUDA out of memory. Tried to allocate 1.29 GiB. GPU 0 has a total capacity of 79.15 GiB of which 1.08 GiB is free. Including non-PyTorch memory, this process has 78.06 GiB memory in use. Of the allocated memory 77.46 GiB is allocated by PyTorch, and 95.16 MiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)
+ERROR:worldmm.memory.memory:Reasoning failed: RetryError[<Future at 0x7f1dd0c76250 state=finished raised Qwen3VLModelError>]
+INFO:worldmm.memory.memory:Generating answer from accumulated context
+ERROR:worldmm.llm.qwen3vl:Qwen3VL generation error: CUDA out of memory. Tried to allocate 712.00 MiB. GPU 0 has a total capacity of 79.15 GiB of which 163.31 MiB is free. Including non-PyTorch memory, this process has 78.98 GiB memory in use. Of the allocated memory 78.41 GiB is allocated by PyTorch, and 62.65 MiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)
+ERROR:worldmm.llm.qwen3vl:Qwen3VL generation error: CUDA out of memory. Tried to allocate 712.00 MiB. GPU 0 has a total capacity of 79.15 GiB of which 163.31 MiB is free. Including non-PyTorch memory, this process has 78.98 GiB memory in use. Of the allocated memory 78.41 GiB is allocated by PyTorch, and 62.65 MiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)
+ERROR:worldmm.llm.qwen3vl:Qwen3VL generation error: CUDA out of memory. Tried to allocate 712.00 MiB. GPU 0 has a total capacity of 79.15 GiB of which 163.31 MiB is free. Including non-PyTorch memory, this process has 78.98 GiB memory in use. Of the allocated memory 78.41 GiB is allocated by PyTorch, and 62.65 MiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)
+ERROR:worldmm.memory.memory:Answer generation failed: RetryError[<Future at 0x7f1ebf148050 state=finished raised Qwen3VLModelError>]
+INFO:__main__:ID 9 Answer: Unable to generate answer, Gold: D, Correct: None // Accuracy: 4/7 = 0.5714 // Abstained: 0 // Done: 505/50
+ 11%|█         | 5/46 [09:32<1:07:50, 99.28s/it] INFO:__main__:Processing ID 10: Who was the first to write the meeting notes on th...
+INFO:worldmm.memory.memory:Indexing all memories up to DAY1 12:17:27
+WARNING:worldmm.memory.episodic.memory:No captions loaded for granularity 10sec
+INFO:hipporag.HippoRAG:Indexing Documents
+INFO:hipporag.HippoRAG:Performing OpenIE
+INFO:hipporag.embedding_store:Inserting 15 new records, 52 records already exist.
+
+Batches:   0%|          | 0/1 [00:00<?, ?it/s][ABatches:   0%|          | 0/1 [00:00<?, ?it/s]
+ERROR:__main__:Error processing ID 10: CUDA out of memory. Tried to allocate 66.00 MiB. GPU 0 has a total capacity of 79.15 GiB of which 3.31 MiB is free. Including non-PyTorch memory, this process has 79.13 GiB memory in use. Of the allocated memory 78.55 GiB is allocated by PyTorch, and 82.88 MiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)
+INFO:__main__:ID 10 Answer: Error, Gold: A, Correct: None // Accuracy: 4/7 = 0.5714 // Abstained: 0 // Done: 506/50
+INFO:__main__:Processing ID 11: This morning during our discussion, which two peop...
+INFO:worldmm.memory.memory:Indexing all memories up to DAY1 12:28:59
+WARNING:worldmm.memory.episodic.memory:No captions loaded for granularity 10sec
+INFO:hipporag.HippoRAG:Indexing Documents
+INFO:hipporag.HippoRAG:Performing OpenIE
+INFO:hipporag.embedding_store:Inserting 28 new records, 52 records already exist.
+
+Batches:   0%|          | 0/1 [00:00<?, ?it/s][ABatches:   0%|          | 0/1 [00:00<?, ?it/s]
+ERROR:__main__:Error processing ID 11: CUDA out of memory. Tried to allocate 200.00 MiB. GPU 0 has a total capacity of 79.15 GiB of which 163.31 MiB is free. Including non-PyTorch memory, this process has 78.98 GiB memory in use. Of the allocated memory 78.41 GiB is allocated by PyTorch, and 62.03 MiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)
+INFO:__main__:ID 11 Answer: Error, Gold: A, Correct: None // Accuracy: 4/7 = 0.5714 // Abstained: 0 // Done: 507/50
+INFO:__main__:Processing ID 12: When I handed out the charging cables just now, wh...
+INFO:worldmm.memory.memory:Indexing all memories up to DAY1 12:33:12
+WARNING:worldmm.memory.episodic.memory:No captions loaded for granularity 10sec
+INFO:hipporag.HippoRAG:Indexing Documents
+INFO:hipporag.HippoRAG:Performing OpenIE
+INFO:hipporag.embedding_store:Inserting 28 new records, 52 records already exist.
+
+Batches:   0%|          | 0/1 [00:00<?, ?it/s][ABatches:   0%|          | 0/1 [00:00<?, ?it/s]
+ERROR:__main__:Error processing ID 12: CUDA out of memory. Tried to allocate 200.00 MiB. GPU 0 has a total capacity of 79.15 GiB of which 163.31 MiB is free. Including non-PyTorch memory, this process has 78.98 GiB memory in use. Of the allocated memory 78.41 GiB is allocated by PyTorch, and 62.03 MiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)
+INFO:__main__:ID 12 Answer: Error, Gold: D, Correct: None // Accuracy: 4/7 = 0.5714 // Abstained: 0 // Done: 508/50
+ 17%|█▋        | 8/46 [09:32<24:43, 39.03s/it]  INFO:__main__:Processing ID 13: Now Lucia asks, "What is this, is this a hedgehog?...
+INFO:worldmm.memory.memory:Indexing all memories up to DAY1 12:35:14
+WARNING:worldmm.memory.episodic.memory:No captions loaded for granularity 10sec
+INFO:hipporag.HippoRAG:Indexing Documents
+INFO:hipporag.HippoRAG:Performing OpenIE
+INFO:hipporag.embedding_store:Inserting 29 new records, 52 records already exist.
+
+Batches:   0%|          | 0/1 [00:00<?, ?it/s][ABatches:   0%|          | 0/1 [00:00<?, ?it/s]
+ERROR:__main__:Error processing ID 13: CUDA out of memory. Tried to allocate 250.00 MiB. GPU 0 has a total capacity of 79.15 GiB of which 163.31 MiB is free. Including non-PyTorch memory, this process has 78.98 GiB memory in use. Of the allocated memory 78.41 GiB is allocated by PyTorch, and 61.87 MiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)
+INFO:__main__:ID 13 Answer: Error, Gold: C, Correct: None // Accuracy: 4/7 = 0.5714 // Abstained: 0 // Done: 509/50
+INFO:__main__:Processing ID 14: Who is missing compared to when we first started t...
+INFO:worldmm.memory.memory:Indexing all memories up to DAY1 12:46:27
+WARNING:worldmm.memory.episodic.memory:No captions loaded for granularity 10sec
+INFO:hipporag.HippoRAG:Indexing Documents
+INFO:hipporag.HippoRAG:Performing OpenIE
+INFO:hipporag.embedding_store:Inserting 43 new records, 52 records already exist.
+
+Batches:   0%|          | 0/1 [00:00<?, ?it/s][ABatches:   0%|          | 0/1 [00:00<?, ?it/s]
+ERROR:__main__:Error processing ID 14: CUDA out of memory. Tried to allocate 370.00 MiB. GPU 0 has a total capacity of 79.15 GiB of which 163.31 MiB is free. Including non-PyTorch memory, this process has 78.98 GiB memory in use. Of the allocated memory 78.41 GiB is allocated by PyTorch, and 61.49 MiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)
+INFO:__main__:ID 14 Answer: Error, Gold: A, Correct: None // Accuracy: 4/7 = 0.5714 // Abstained: 0 // Done: 510/50
+INFO:__main__:Processing ID 15: While puzzling, who am I guiding to use the app on...
+INFO:worldmm.memory.memory:Indexing all memories up to DAY1 12:46:46
+WARNING:worldmm.memory.episodic.memory:No captions loaded for granularity 10sec
+INFO:hipporag.HippoRAG:Indexing Documents
+INFO:hipporag.HippoRAG:Performing OpenIE
+INFO:hipporag.embedding_store:Inserting 43 new records, 52 records already exist.
+
+Batches:   0%|          | 0/1 [00:00<?, ?it/s][ABatches:   0%|          | 0/1 [00:00<?, ?it/s]
+ERROR:__main__:Error processing ID 15: CUDA out of memory. Tried to allocate 370.00 MiB. GPU 0 has a total capacity of 79.15 GiB of which 163.31 MiB is free. Including non-PyTorch memory, this process has 78.98 GiB memory in use. Of the allocated memory 78.41 GiB is allocated by PyTorch, and 61.49 MiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)
+INFO:__main__:ID 15 Answer: Error, Gold: B, Correct: None // Accuracy: 4/7 = 0.5714 // Abstained: 0 // Done: 511/50
+ 24%|██▍       | 11/46 [09:32<12:12, 20.93s/it]INFO:__main__:Processing ID 16: Who was the first to move the puzzle board on the ...
+INFO:worldmm.memory.memory:Indexing all memories up to DAY1 12:51:28
+WARNING:worldmm.memory.episodic.memory:No captions loaded for granularity 10sec
+INFO:hipporag.HippoRAG:Indexing Documents
+INFO:hipporag.HippoRAG:Performing OpenIE
+INFO:hipporag.embedding_store:Inserting 44 new records, 52 records already exist.
+
+Batches:   0%|          | 0/1 [00:00<?, ?it/s][ABatches:   0%|          | 0/1 [00:00<?, ?it/s]
+ERROR:__main__:Error processing ID 16: CUDA out of memory. Tried to allocate 378.00 MiB. GPU 0 has a total capacity of 79.15 GiB of which 163.31 MiB is free. Including non-PyTorch memory, this process has 78.98 GiB memory in use. Of the allocated memory 78.41 GiB is allocated by PyTorch, and 61.47 MiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)
+INFO:__main__:ID 16 Answer: Error, Gold: B, Correct: None // Accuracy: 4/7 = 0.5714 // Abstained: 0 // Done: 512/50
+INFO:__main__:Processing ID 17: Who wrote most of the words on the whiteboard?...
+INFO:worldmm.memory.memory:Indexing all memories up to DAY1 13:02:32
+WARNING:worldmm.memory.episodic.memory:No captions loaded for granularity 10sec
+INFO:hipporag.HippoRAG:Indexing Documents
+INFO:hipporag.HippoRAG:Performing OpenIE
+INFO:hipporag.embedding_store:Inserting 49 new records, 52 records already exist.
+
+Batches:   0%|          | 0/1 [00:00<?, ?it/s][ABatches:   0%|          | 0/1 [00:00<?, ?it/s]
+ERROR:__main__:Error processing ID 17: CUDA out of memory. Tried to allocate 422.00 MiB. GPU 0 has a total capacity of 79.15 GiB of which 163.31 MiB is free. Including non-PyTorch memory, this process has 78.98 GiB memory in use. Of the allocated memory 78.41 GiB is allocated by PyTorch, and 61.33 MiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)
+INFO:__main__:ID 17 Answer: Error, Gold: A, Correct: None // Accuracy: 4/7 = 0.5714 // Abstained: 0 // Done: 513/50
+ 28%|██▊       | 13/46 [09:33<07:59, 14.54s/it]INFO:__main__:Processing ID 18: Who joined us when Shure and I were setting up the...
+INFO:worldmm.memory.memory:Indexing all memories up to DAY1 13:14:49
+WARNING:worldmm.memory.episodic.memory:No captions loaded for granularity 10sec
+INFO:hipporag.HippoRAG:Indexing Documents
+INFO:hipporag.HippoRAG:Performing OpenIE
+INFO:hipporag.embedding_store:Inserting 59 new records, 52 records already exist.
+
+Batches:   0%|          | 0/1 [00:00<?, ?it/s][ABatches:   0%|          | 0/1 [00:00<?, ?it/s]
+ERROR:__main__:Error processing ID 18: CUDA out of memory. Tried to allocate 508.00 MiB. GPU 0 has a total capacity of 79.15 GiB of which 163.31 MiB is free. Including non-PyTorch memory, this process has 78.98 GiB memory in use. Of the allocated memory 78.41 GiB is allocated by PyTorch, and 61.06 MiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)
+INFO:__main__:ID 18 Answer: Error, Gold: A, Correct: None // Accuracy: 4/7 = 0.5714 // Abstained: 0 // Done: 514/50
+INFO:__main__:Processing ID 19: What do I usually do after getting close to the sp...
+INFO:worldmm.memory.memory:Indexing all memories up to DAY1 13:19:04
+WARNING:worldmm.memory.episodic.memory:No captions loaded for granularity 10sec
+INFO:hipporag.HippoRAG:Indexing Documents
+INFO:hipporag.HippoRAG:Performing OpenIE
+INFO:hipporag.embedding_store:Inserting 60 new records, 52 records already exist.
+
+Batches:   0%|          | 0/1 [00:00<?, ?it/s][ABatches:   0%|          | 0/1 [00:00<?, ?it/s]
+ERROR:__main__:Error processing ID 19: CUDA out of memory. Tried to allocate 586.00 MiB. GPU 0 has a total capacity of 79.15 GiB of which 163.31 MiB is free. Including non-PyTorch memory, this process has 78.98 GiB memory in use. Of the allocated memory 78.41 GiB is allocated by PyTorch, and 60.82 MiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)
+INFO:__main__:ID 19 Answer: Error, Gold: D, Correct: None // Accuracy: 4/7 = 0.5714 // Abstained: 0 // Done: 515/50
+ 33%|███▎      | 15/46 [09:33<05:14, 10.14s/it]INFO:__main__:Processing ID 20: We are currently discussing the details of the puz...
+INFO:worldmm.memory.memory:Indexing all memories up to DAY1 13:22:09
+WARNING:worldmm.memory.episodic.memory:No captions loaded for granularity 10sec
+INFO:hipporag.HippoRAG:Indexing Documents
+INFO:hipporag.HippoRAG:Performing OpenIE
+INFO:hipporag.embedding_store:Inserting 65 new records, 52 records already exist.
+
+Batches:   0%|          | 0/1 [00:00<?, ?it/s][ABatches:   0%|          | 0/1 [00:00<?, ?it/s]
+ERROR:__main__:Error processing ID 20: CUDA out of memory. Tried to allocate 634.00 MiB. GPU 0 has a total capacity of 79.15 GiB of which 163.31 MiB is free. Including non-PyTorch memory, this process has 78.98 GiB memory in use. Of the allocated memory 78.41 GiB is allocated by PyTorch, and 60.67 MiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)
+INFO:__main__:ID 20 Answer: Error, Gold: D, Correct: None // Accuracy: 4/7 = 0.5714 // Abstained: 0 // Done: 516/50
+INFO:__main__:Processing ID 21: Who always sits on that pony hair this morning...
+INFO:worldmm.memory.memory:Indexing all memories up to DAY1 13:26:42
+WARNING:worldmm.memory.episodic.memory:No captions loaded for granularity 10sec
+INFO:hipporag.HippoRAG:Indexing Documents
+INFO:hipporag.HippoRAG:Performing OpenIE
+INFO:hipporag.embedding_store:Inserting 66 new records, 52 records already exist.
+
+Batches:   0%|          | 0/1 [00:00<?, ?it/s][ABatches:   0%|          | 0/1 [00:00<?, ?it/s]
+ERROR:__main__:Error processing ID 21: CUDA out of memory. Tried to allocate 644.00 MiB. GPU 0 has a total capacity of 79.15 GiB of which 163.31 MiB is free. Including non-PyTorch memory, this process has 78.98 GiB memory in use. Of the allocated memory 78.41 GiB is allocated by PyTorch, and 60.64 MiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)
+INFO:__main__:ID 21 Answer: Error, Gold: A, Correct: None // Accuracy: 4/7 = 0.5714 // Abstained: 0 // Done: 517/50
+ 37%|███▋      | 17/46 [09:33<03:25,  7.09s/it]INFO:__main__:Processing ID 22: Who did I just move the whiteboard to the wall wit...
+INFO:worldmm.memory.memory:Indexing all memories up to DAY1 13:29:38
+WARNING:worldmm.memory.episodic.memory:No captions loaded for granularity 10sec
+INFO:hipporag.HippoRAG:Indexing Documents
+INFO:hipporag.HippoRAG:Performing OpenIE
+INFO:hipporag.embedding_store:Inserting 67 new records, 52 records already exist.
+
+Batches:   0%|          | 0/1 [00:00<?, ?it/s][ABatches:   0%|          | 0/1 [00:00<?, ?it/s]
+ERROR:__main__:Error processing ID 22: CUDA out of memory. Tried to allocate 654.00 MiB. GPU 0 has a total capacity of 79.15 GiB of which 163.31 MiB is free. Including non-PyTorch memory, this process has 78.98 GiB memory in use. Of the allocated memory 78.41 GiB is allocated by PyTorch, and 60.61 MiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)
+INFO:__main__:ID 22 Answer: Error, Gold: D, Correct: None // Accuracy: 4/7 = 0.5714 // Abstained: 0 // Done: 518/50
+INFO:__main__:Processing ID 23: Who took out the tools on the table?...
+INFO:worldmm.memory.memory:Indexing all memories up to DAY1 13:37:12
+WARNING:worldmm.memory.episodic.memory:No captions loaded for granularity 10sec
+INFO:hipporag.HippoRAG:Indexing Documents
+INFO:hipporag.HippoRAG:Performing OpenIE
+INFO:hipporag.embedding_store:Inserting 71 new records, 52 records already exist.
+
+Batches:   0%|          | 0/1 [00:00<?, ?it/s][ABatches:   0%|          | 0/1 [00:00<?, ?it/s]
+ERROR:__main__:Error processing ID 23: CUDA out of memory. Tried to allocate 692.00 MiB. GPU 0 has a total capacity of 79.15 GiB of which 163.31 MiB is free. Including non-PyTorch memory, this process has 78.98 GiB memory in use. Of the allocated memory 78.41 GiB is allocated by PyTorch, and 60.48 MiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)
+INFO:__main__:ID 23 Answer: Error, Gold: B, Correct: None // Accuracy: 4/7 = 0.5714 // Abstained: 0 // Done: 519/50
+ 41%|████▏     | 19/46 [09:33<02:14,  4.98s/it]INFO:__main__:Processing ID 24: What are the lunch options?...
+INFO:worldmm.memory.memory:Indexing all memories up to DAY1 13:42:04
+WARNING:worldmm.memory.episodic.memory:No captions loaded for granularity 10sec
+INFO:hipporag.HippoRAG:Indexing Documents
+INFO:hipporag.HippoRAG:Performing OpenIE
+INFO:hipporag.embedding_store:Inserting 72 new records, 52 records already exist.
+
+Batches:   0%|          | 0/1 [00:00<?, ?it/s][ABatches:   0%|          | 0/1 [00:00<?, ?it/s]
+ERROR:__main__:Error processing ID 24: CUDA out of memory. Tried to allocate 702.00 MiB. GPU 0 has a total capacity of 79.15 GiB of which 163.31 MiB is free. Including non-PyTorch memory, this process has 78.98 GiB memory in use. Of the allocated memory 78.41 GiB is allocated by PyTorch, and 60.45 MiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)
+INFO:__main__:ID 24 Answer: Error, Gold: A, Correct: None // Accuracy: 4/7 = 0.5714 // Abstained: 0 // Done: 520/50
+INFO:__main__:Processing ID 25: Who originally used the scissors in my hand?...
+INFO:worldmm.memory.memory:Indexing all memories up to DAY1 13:49:53
+WARNING:worldmm.memory.episodic.memory:No captions loaded for granularity 10sec
+INFO:hipporag.HippoRAG:Indexing Documents
+INFO:hipporag.HippoRAG:Performing OpenIE
+INFO:hipporag.embedding_store:Inserting 79 new records, 52 records already exist.
+
+Batches:   0%|          | 0/1 [00:00<?, ?it/s][ABatches:   0%|          | 0/1 [00:00<?, ?it/s]
+ERROR:__main__:Error processing ID 25: CUDA out of memory. Tried to allocate 770.00 MiB. GPU 0 has a total capacity of 79.15 GiB of which 163.31 MiB is free. Including non-PyTorch memory, this process has 78.98 GiB memory in use. Of the allocated memory 78.41 GiB is allocated by PyTorch, and 60.24 MiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)
+INFO:__main__:ID 25 Answer: Error, Gold: D, Correct: None // Accuracy: 4/7 = 0.5714 // Abstained: 0 // Done: 521/50
+ 46%|████▌     | 21/46 [09:33<01:27,  3.51s/it]INFO:__main__:Processing ID 26: Who has been assembling the shelf...
+INFO:worldmm.memory.memory:Indexing all memories up to DAY1 13:54:10
+WARNING:worldmm.memory.episodic.memory:No captions loaded for granularity 10sec
+INFO:hipporag.HippoRAG:Indexing Documents
+INFO:hipporag.HippoRAG:Performing OpenIE
+INFO:hipporag.embedding_store:Inserting 80 new records, 52 records already exist.
+
+Batches:   0%|          | 0/1 [00:00<?, ?it/s][ABatches:   0%|          | 0/1 [00:00<?, ?it/s]
+ERROR:__main__:Error processing ID 26: CUDA out of memory. Tried to allocate 780.00 MiB. GPU 0 has a total capacity of 79.15 GiB of which 163.31 MiB is free. Including non-PyTorch memory, this process has 78.98 GiB memory in use. Of the allocated memory 78.41 GiB is allocated by PyTorch, and 60.21 MiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)
+INFO:__main__:ID 26 Answer: Error, Gold: C, Correct: None // Accuracy: 4/7 = 0.5714 // Abstained: 0 // Done: 522/50
+INFO:__main__:Processing ID 27: I put the pot aside, what was in the pot before?...
+INFO:worldmm.memory.memory:Indexing all memories up to DAY1 13:54:58
+WARNING:worldmm.memory.episodic.memory:No captions loaded for granularity 10sec
+INFO:hipporag.HippoRAG:Indexing Documents
+INFO:hipporag.HippoRAG:Performing OpenIE
+INFO:hipporag.embedding_store:Inserting 81 new records, 52 records already exist.
+
+Batches:   0%|          | 0/1 [00:00<?, ?it/s][ABatches:   0%|          | 0/1 [00:00<?, ?it/s]
+ERROR:__main__:Error processing ID 27: CUDA out of memory. Tried to allocate 790.00 MiB. GPU 0 has a total capacity of 79.15 GiB of which 163.31 MiB is free. Including non-PyTorch memory, this process has 78.98 GiB memory in use. Of the allocated memory 78.41 GiB is allocated by PyTorch, and 60.18 MiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)
+INFO:__main__:ID 27 Answer: Error, Gold: B, Correct: None // Accuracy: 4/7 = 0.5714 // Abstained: 0 // Done: 523/50
+ 50%|█████     | 23/46 [09:34<00:57,  2.49s/it]INFO:__main__:Processing ID 28: Who am I always busy with in the kitchen today...
+INFO:worldmm.memory.memory:Indexing all memories up to DAY1 13:57:50
+WARNING:worldmm.memory.episodic.memory:No captions loaded for granularity 10sec
+INFO:hipporag.HippoRAG:Indexing Documents
+INFO:hipporag.HippoRAG:Performing OpenIE
+INFO:hipporag.embedding_store:Inserting 83 new records, 52 records already exist.
+
+Batches:   0%|          | 0/1 [00:00<?, ?it/s][ABatches:   0%|          | 0/1 [00:00<?, ?it/s]
+ERROR:__main__:Error processing ID 28: CUDA out of memory. Tried to allocate 810.00 MiB. GPU 0 has a total capacity of 79.15 GiB of which 163.31 MiB is free. Including non-PyTorch memory, this process has 78.98 GiB memory in use. Of the allocated memory 78.41 GiB is allocated by PyTorch, and 60.12 MiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)
+INFO:__main__:ID 28 Answer: Error, Gold: C, Correct: None // Accuracy: 4/7 = 0.5714 // Abstained: 0 // Done: 524/50
+INFO:__main__:Processing ID 29: What does Tasha not like to eat?...
+INFO:worldmm.memory.memory:Indexing all memories up to DAY1 14:03:38
+WARNING:worldmm.memory.episodic.memory:No captions loaded for granularity 10sec
+INFO:hipporag.HippoRAG:Indexing Documents
+INFO:hipporag.HippoRAG:Performing OpenIE
+INFO:hipporag.embedding_store:Inserting 90 new records, 52 records already exist.
+
+Batches:   0%|          | 0/1 [00:00<?, ?it/s][ABatches:   0%|          | 0/1 [00:00<?, ?it/s]
+ERROR:__main__:Error processing ID 29: CUDA out of memory. Tried to allocate 3.25 GiB. GPU 0 has a total capacity of 79.15 GiB of which 3.04 GiB is free. Including non-PyTorch memory, this process has 76.10 GiB memory in use. Of the allocated memory 75.48 GiB is allocated by PyTorch, and 117.58 MiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)
+INFO:__main__:ID 29 Answer: Error, Gold: C, Correct: None // Accuracy: 4/7 = 0.5714 // Abstained: 0 // Done: 525/50
+ 54%|█████▍    | 25/46 [09:34<00:39,  1.86s/it]INFO:__main__:Processing ID 30: Who was I mostly busy with in the kitchen today...
+INFO:worldmm.memory.memory:Indexing all memories up to DAY1 14:04:10
+WARNING:worldmm.memory.episodic.memory:No captions loaded for granularity 10sec
+INFO:hipporag.HippoRAG:Indexing Documents
+INFO:hipporag.HippoRAG:Performing OpenIE
+INFO:hipporag.embedding_store:Inserting 91 new records, 52 records already exist.
+
+Batches:   0%|          | 0/1 [00:00<?, ?it/s][ABatches:   0%|          | 0/1 [00:00<?, ?it/s]
+ERROR:__main__:Error processing ID 30: CUDA out of memory. Tried to allocate 3.29 GiB. GPU 0 has a total capacity of 79.15 GiB of which 2.94 GiB is free. Including non-PyTorch memory, this process has 76.20 GiB memory in use. Of the allocated memory 75.59 GiB is allocated by PyTorch, and 102.71 MiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)
+INFO:__main__:ID 30 Answer: Error, Gold: C, Correct: None // Accuracy: 4/7 = 0.5714 // Abstained: 0 // Done: 526/50
+ 57%|█████▋    | 26/46 [09:35<00:32,  1.61s/it]INFO:__main__:Processing ID 31: Who used the black signature pen last time?...
+INFO:worldmm.memory.memory:Indexing all memories up to DAY1 14:06:55
+WARNING:worldmm.memory.episodic.memory:No captions loaded for granularity 10sec
+INFO:hipporag.HippoRAG:Indexing Documents
+INFO:hipporag.HippoRAG:Performing OpenIE
+INFO:hipporag.embedding_store:Inserting 93 new records, 52 records already exist.
+
+Batches:   0%|          | 0/1 [00:00<?, ?it/s][ABatches:   0%|          | 0/1 [00:00<?, ?it/s]
+ERROR:__main__:Error processing ID 31: CUDA out of memory. Tried to allocate 3.36 GiB. GPU 0 has a total capacity of 79.15 GiB of which 2.74 GiB is free. Including non-PyTorch memory, this process has 76.39 GiB memory in use. Of the allocated memory 75.82 GiB is allocated by PyTorch, and 72.96 MiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)
+INFO:__main__:ID 31 Answer: Error, Gold: C, Correct: None // Accuracy: 4/7 = 0.5714 // Abstained: 0 // Done: 527/50
+ 59%|█████▊    | 27/46 [09:35<00:26,  1.38s/it]INFO:__main__:Processing ID 32: What are we planning to eat for lunch?...
+INFO:worldmm.memory.memory:Indexing all memories up to DAY1 14:08:51
+WARNING:worldmm.memory.episodic.memory:No captions loaded for granularity 10sec
+INFO:hipporag.HippoRAG:Indexing Documents
+INFO:hipporag.HippoRAG:Performing OpenIE
+INFO:hipporag.embedding_store:Inserting 94 new records, 52 records already exist.
+
+Batches:   0%|          | 0/1 [00:00<?, ?it/s][ABatches:   0%|          | 0/1 [00:00<?, ?it/s]
+ERROR:__main__:Error processing ID 32: CUDA out of memory. Tried to allocate 3.40 GiB. GPU 0 has a total capacity of 79.15 GiB of which 2.63 GiB is free. Including non-PyTorch memory, this process has 76.51 GiB memory in use. Of the allocated memory 75.93 GiB is allocated by PyTorch, and 78.08 MiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)
+INFO:__main__:ID 32 Answer: Error, Gold: D, Correct: None // Accuracy: 4/7 = 0.5714 // Abstained: 0 // Done: 528/50
+ 61%|██████    | 28/46 [09:36<00:21,  1.21s/it]INFO:__main__:Processing ID 33: What app did I order the takeout in my hand?...
+INFO:worldmm.memory.memory:Indexing all memories up to DAY1 14:15:30
+WARNING:worldmm.memory.episodic.memory:No captions loaded for granularity 10sec
+INFO:hipporag.HippoRAG:Indexing Documents
+INFO:hipporag.HippoRAG:Performing OpenIE
+INFO:hipporag.embedding_store:Inserting 101 new records, 52 records already exist.
+
+Batches:   0%|          | 0/1 [00:00<?, ?it/s][ABatches:   0%|          | 0/1 [00:00<?, ?it/s]
+ERROR:__main__:Error processing ID 33: CUDA out of memory. Tried to allocate 3.65 GiB. GPU 0 has a total capacity of 79.15 GiB of which 1.81 GiB is free. Including non-PyTorch memory, this process has 77.33 GiB memory in use. Of the allocated memory 76.71 GiB is allocated by PyTorch, and 113.95 MiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)
+INFO:__main__:ID 33 Answer: Error, Gold: A, Correct: None // Accuracy: 4/7 = 0.5714 // Abstained: 0 // Done: 529/50
+ 63%|██████▎   | 29/46 [09:37<00:18,  1.07s/it]INFO:__main__:Processing ID 34: What do we decide to eat for lunch?...
+INFO:worldmm.memory.memory:Indexing all memories up to DAY1 15:47:34
+WARNING:worldmm.memory.episodic.memory:No captions loaded for granularity 10sec
+INFO:hipporag.HippoRAG:Indexing Documents
+INFO:hipporag.HippoRAG:Performing OpenIE
+INFO:hipporag.embedding_store:Inserting 104 new records, 52 records already exist.
+
+Batches:   0%|          | 0/1 [00:00<?, ?it/s][ABatches:   0%|          | 0/1 [00:00<?, ?it/s]
+ERROR:__main__:Error processing ID 34: CUDA out of memory. Tried to allocate 3.76 GiB. GPU 0 has a total capacity of 79.15 GiB of which 1.49 GiB is free. Including non-PyTorch memory, this process has 77.64 GiB memory in use. Of the allocated memory 77.05 GiB is allocated by PyTorch, and 89.32 MiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)
+INFO:__main__:ID 34 Answer: Error, Gold: A, Correct: None // Accuracy: 4/7 = 0.5714 // Abstained: 0 // Done: 530/50
+ 65%|██████▌   | 30/46 [09:37<00:15,  1.01it/s]INFO:__main__:Processing ID 35: Who mentioned something related to durian before?...
+INFO:worldmm.memory.memory:Indexing all memories up to DAY1 17:20:01
+WARNING:worldmm.memory.episodic.memory:No captions loaded for granularity 10sec
+INFO:hipporag.HippoRAG:Indexing Documents
+INFO:hipporag.HippoRAG:Performing OpenIE
+INFO:hipporag.embedding_store:Inserting 108 new records, 52 records already exist.
+
+Batches:   0%|          | 0/1 [00:00<?, ?it/s][ABatches:   0%|          | 0/1 [00:00<?, ?it/s]
+ERROR:__main__:Error processing ID 35: CUDA out of memory. Tried to allocate 3.90 GiB. GPU 0 has a total capacity of 79.15 GiB of which 1.02 GiB is free. Including non-PyTorch memory, this process has 78.11 GiB memory in use. Of the allocated memory 77.50 GiB is allocated by PyTorch, and 109.82 MiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)
+INFO:__main__:ID 35 Answer: Error, Gold: B, Correct: None // Accuracy: 4/7 = 0.5714 // Abstained: 0 // Done: 531/50
+ 67%|██████▋   | 31/46 [09:38<00:14,  1.04it/s]INFO:__main__:Processing ID 36: What other drinks are needed to mix with rum?...
+INFO:worldmm.memory.memory:Indexing all memories up to DAY1 17:21:04
+WARNING:worldmm.memory.episodic.memory:No captions loaded for granularity 10sec
+INFO:hipporag.HippoRAG:Indexing Documents
+INFO:hipporag.HippoRAG:Performing OpenIE
+INFO:hipporag.embedding_store:Inserting 110 new records, 52 records already exist.
+
+Batches:   0%|          | 0/1 [00:00<?, ?it/s][ABatches:   0%|          | 0/1 [00:00<?, ?it/s]
+ERROR:__main__:Error processing ID 36: CUDA out of memory. Tried to allocate 3.98 GiB. GPU 0 has a total capacity of 79.15 GiB of which 829.31 MiB is free. Including non-PyTorch memory, this process has 78.33 GiB memory in use. Of the allocated memory 77.72 GiB is allocated by PyTorch, and 100.07 MiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)
+INFO:__main__:ID 36 Answer: Error, Gold: D, Correct: None // Accuracy: 4/7 = 0.5714 // Abstained: 0 // Done: 532/50
+ 70%|██████▉   | 32/46 [09:39<00:12,  1.11it/s]INFO:__main__:Processing ID 37: What does Shure especially love to drink...
+INFO:worldmm.memory.memory:Indexing all memories up to DAY1 17:27:40
+WARNING:worldmm.memory.episodic.memory:No captions loaded for granularity 10sec
+INFO:hipporag.HippoRAG:Indexing Documents
+INFO:hipporag.HippoRAG:Performing OpenIE
+INFO:hipporag.embedding_store:Inserting 112 new records, 52 records already exist.
+
+Batches:   0%|          | 0/1 [00:00<?, ?it/s][ABatches:   0%|          | 0/1 [00:00<?, ?it/s]
+ERROR:__main__:Error processing ID 37: CUDA out of memory. Tried to allocate 4.05 GiB. GPU 0 has a total capacity of 79.15 GiB of which 609.31 MiB is free. Including non-PyTorch memory, this process has 78.54 GiB memory in use. Of the allocated memory 77.95 GiB is allocated by PyTorch, and 90.31 MiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)
+INFO:__main__:ID 37 Answer: Error, Gold: A, Correct: None // Accuracy: 4/7 = 0.5714 // Abstained: 0 // Done: 533/50
+ 72%|███████▏  | 33/46 [09:40<00:11,  1.13it/s]INFO:__main__:Processing ID 38: What do Shure, Katrina, and Lucia mainly purchase...
+INFO:worldmm.memory.memory:Indexing all memories up to DAY1 17:29:04
+WARNING:worldmm.memory.episodic.memory:No captions loaded for granularity 10sec
+INFO:hipporag.HippoRAG:Indexing Documents
+INFO:hipporag.HippoRAG:Performing OpenIE
+INFO:hipporag.embedding_store:Inserting 112 new records, 52 records already exist.
+
+Batches:   0%|          | 0/1 [00:00<?, ?it/s][ABatches:   0%|          | 0/1 [00:00<?, ?it/s]
+ERROR:__main__:Error processing ID 38: CUDA out of memory. Tried to allocate 4.05 GiB. GPU 0 has a total capacity of 79.15 GiB of which 609.31 MiB is free. Including non-PyTorch memory, this process has 78.54 GiB memory in use. Of the allocated memory 77.95 GiB is allocated by PyTorch, and 90.31 MiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)
+INFO:__main__:ID 38 Answer: Error, Gold: D, Correct: None // Accuracy: 4/7 = 0.5714 // Abstained: 0 // Done: 534/50
+ 74%|███████▍  | 34/46 [09:41<00:10,  1.15it/s]INFO:__main__:Processing ID 39: Who was the first to mention the century eggs we n...
+INFO:worldmm.memory.memory:Indexing all memories up to DAY1 17:32:49
+WARNING:worldmm.memory.episodic.memory:No captions loaded for granularity 10sec
+INFO:hipporag.HippoRAG:Indexing Documents
+INFO:hipporag.HippoRAG:Performing OpenIE
+INFO:hipporag.embedding_store:Inserting 113 new records, 52 records already exist.
+
+Batches:   0%|          | 0/1 [00:00<?, ?it/s][ABatches:   0%|          | 0/1 [00:00<?, ?it/s]
+ERROR:__main__:Error processing ID 39: CUDA out of memory. Tried to allocate 4.09 GiB. GPU 0 has a total capacity of 79.15 GiB of which 469.31 MiB is free. Including non-PyTorch memory, this process has 78.68 GiB memory in use. Of the allocated memory 78.06 GiB is allocated by PyTorch, and 115.44 MiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)
+INFO:__main__:ID 39 Answer: Error, Gold: D, Correct: None // Accuracy: 4/7 = 0.5714 // Abstained: 0 // Done: 535/50
+ 76%|███████▌  | 35/46 [09:42<00:09,  1.14it/s]INFO:__main__:Processing ID 40: Shure mentioned Tiramisu, when was the last time w...
+INFO:worldmm.memory.memory:Indexing all memories up to DAY1 17:33:42
+WARNING:worldmm.memory.episodic.memory:No captions loaded for granularity 10sec
+INFO:hipporag.HippoRAG:Indexing Documents
+INFO:hipporag.HippoRAG:Performing OpenIE
+INFO:hipporag.embedding_store:Inserting 114 new records, 52 records already exist.
+
+Batches:   0%|          | 0/1 [00:00<?, ?it/s][ABatches:   0%|          | 0/1 [00:00<?, ?it/s]
+ERROR:__main__:Error processing ID 40: CUDA out of memory. Tried to allocate 4.12 GiB. GPU 0 has a total capacity of 79.15 GiB of which 389.31 MiB is free. Including non-PyTorch memory, this process has 78.76 GiB memory in use. Of the allocated memory 78.17 GiB is allocated by PyTorch, and 80.56 MiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)
+INFO:__main__:ID 40 Answer: Error, Gold: C, Correct: None // Accuracy: 4/7 = 0.5714 // Abstained: 0 // Done: 536/50
+ 78%|███████▊  | 36/46 [09:42<00:08,  1.15it/s]INFO:__main__:Processing ID 41: When did we first mention having hot pot?...
+INFO:worldmm.memory.memory:Indexing all memories up to DAY1 17:39:50
+WARNING:worldmm.memory.episodic.memory:No captions loaded for granularity 10sec
+INFO:hipporag.HippoRAG:Indexing Documents
+INFO:hipporag.HippoRAG:Performing OpenIE
+INFO:hipporag.embedding_store:Inserting 116 new records, 52 records already exist.
+
+Batches:   0%|          | 0/1 [00:00<?, ?it/s][ABatches:   0%|          | 0/1 [00:00<?, ?it/s]
+ERROR:__main__:Error processing ID 41: CUDA out of memory. Tried to allocate 4.19 GiB. GPU 0 has a total capacity of 79.15 GiB of which 149.31 MiB is free. Including non-PyTorch memory, this process has 78.99 GiB memory in use. Of the allocated memory 78.40 GiB is allocated by PyTorch, and 90.81 MiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)
+INFO:__main__:ID 41 Answer: Error, Gold: B, Correct: None // Accuracy: 4/7 = 0.5714 // Abstained: 0 // Done: 537/50
+ 80%|████████  | 37/46 [09:43<00:07,  1.13it/s]INFO:__main__:Processing ID 42: What drinks are you planning to buy?...
+INFO:worldmm.memory.memory:Indexing all memories up to DAY1 17:46:38
+WARNING:worldmm.memory.episodic.memory:No captions loaded for granularity 10sec
+INFO:hipporag.HippoRAG:Indexing Documents
+INFO:hipporag.HippoRAG:Performing OpenIE
+INFO:hipporag.embedding_store:Inserting 119 new records, 52 records already exist.
+
+Batches:   0%|          | 0/1 [00:00<?, ?it/s][ABatches:   0%|          | 0/1 [00:00<?, ?it/s]
+ERROR:__main__:Error processing ID 42: CUDA out of memory. Tried to allocate 4.30 GiB. GPU 0 has a total capacity of 79.15 GiB of which 4.11 GiB is free. Including non-PyTorch memory, this process has 75.03 GiB memory in use. Of the allocated memory 74.43 GiB is allocated by PyTorch, and 91.16 MiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)
+INFO:__main__:ID 42 Answer: Error, Gold: B, Correct: None // Accuracy: 4/7 = 0.5714 // Abstained: 0 // Done: 538/50
+ 83%|████████▎ | 38/46 [09:44<00:06,  1.17it/s]INFO:__main__:Processing ID 43: Why is there no barbecue for dinner?...
+INFO:worldmm.memory.memory:Indexing all memories up to DAY1 17:47:34
+WARNING:worldmm.memory.episodic.memory:No captions loaded for granularity 10sec
+INFO:hipporag.HippoRAG:Indexing Documents
+INFO:hipporag.HippoRAG:Performing OpenIE
+INFO:hipporag.embedding_store:Inserting 120 new records, 52 records already exist.
+
+Batches:   0%|          | 0/1 [00:00<?, ?it/s][ABatches:   0%|          | 0/1 [00:00<?, ?it/s]
+ERROR:__main__:Error processing ID 43: CUDA out of memory. Tried to allocate 4.34 GiB. GPU 0 has a total capacity of 79.15 GiB of which 3.97 GiB is free. Including non-PyTorch memory, this process has 75.16 GiB memory in use. Of the allocated memory 74.51 GiB is allocated by PyTorch, and 153.30 MiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)
+INFO:__main__:ID 43 Answer: Error, Gold: A, Correct: None // Accuracy: 4/7 = 0.5714 // Abstained: 0 // Done: 539/50
+ 85%|████████▍ | 39/46 [09:45<00:05,  1.25it/s]INFO:__main__:Processing ID 44: What to eat for dinner?...
+INFO:worldmm.memory.memory:Indexing all memories up to DAY1 17:47:34
+WARNING:worldmm.memory.episodic.memory:No captions loaded for granularity 10sec
+INFO:hipporag.HippoRAG:Indexing Documents
+INFO:hipporag.HippoRAG:Performing OpenIE
+INFO:hipporag.embedding_store:Inserting 120 new records, 52 records already exist.
+
+Batches:   0%|          | 0/1 [00:00<?, ?it/s][ABatches:   0%|          | 0/1 [00:00<?, ?it/s]
+ERROR:__main__:Error processing ID 44: CUDA out of memory. Tried to allocate 4.34 GiB. GPU 0 has a total capacity of 79.15 GiB of which 4.03 GiB is free. Including non-PyTorch memory, this process has 75.11 GiB memory in use. Of the allocated memory 74.51 GiB is allocated by PyTorch, and 93.30 MiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)
+INFO:__main__:ID 44 Answer: Error, Gold: C, Correct: None // Accuracy: 4/7 = 0.5714 // Abstained: 0 // Done: 540/50
+ 87%|████████▋ | 40/46 [09:46<00:05,  1.16it/s]INFO:__main__:Processing ID 45: When was the last time we talked about coffee?...
+INFO:worldmm.memory.memory:Indexing all memories up to DAY1 17:49:01
+WARNING:worldmm.memory.episodic.memory:No captions loaded for granularity 10sec
+INFO:hipporag.HippoRAG:Indexing Documents
+INFO:hipporag.HippoRAG:Performing OpenIE
+INFO:hipporag.embedding_store:Inserting 121 new records, 52 records already exist.
+
+Batches:   0%|          | 0/1 [00:00<?, ?it/s][ABatches:   0%|          | 0/1 [00:01<?, ?it/s]
+ERROR:__main__:Error processing ID 45: CUDA out of memory. Tried to allocate 4.38 GiB. GPU 0 has a total capacity of 79.15 GiB of which 3.97 GiB is free. Including non-PyTorch memory, this process has 75.16 GiB memory in use. Of the allocated memory 74.58 GiB is allocated by PyTorch, and 75.44 MiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)
+INFO:__main__:ID 45 Answer: Error, Gold: A, Correct: None // Accuracy: 4/7 = 0.5714 // Abstained: 0 // Done: 541/50
+ 89%|████████▉ | 41/46 [09:47<00:04,  1.08it/s]INFO:__main__:Processing ID 46: Compared to our first photo at the supermarket, wh...
+INFO:worldmm.memory.memory:Indexing all memories up to DAY1 18:08:40
+WARNING:worldmm.memory.episodic.memory:No captions loaded for granularity 10sec
+INFO:hipporag.HippoRAG:Indexing Documents
+INFO:hipporag.HippoRAG:Performing OpenIE
+INFO:hipporag.embedding_store:Inserting 133 new records, 52 records already exist.
+
+Batches:   0%|          | 0/2 [00:00<?, ?it/s][ABatches:   0%|          | 0/2 [00:01<?, ?it/s]
+ERROR:__main__:Error processing ID 46: CUDA out of memory. Tried to allocate 4.63 GiB. GPU 0 has a total capacity of 79.15 GiB of which 3.43 GiB is free. Including non-PyTorch memory, this process has 75.71 GiB memory in use. Of the allocated memory 75.12 GiB is allocated by PyTorch, and 90.43 MiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)
+INFO:__main__:ID 46 Answer: Error, Gold: B, Correct: None // Accuracy: 4/7 = 0.5714 // Abstained: 0 // Done: 542/50
+ 91%|█████████▏| 42/46 [09:48<00:03,  1.04it/s]INFO:__main__:Processing ID 47: What food does Alice love to eat?...
+INFO:worldmm.memory.memory:Indexing all memories up to DAY1 18:29:24
+WARNING:worldmm.memory.episodic.memory:No captions loaded for granularity 10sec
+INFO:hipporag.HippoRAG:Indexing Documents
+INFO:hipporag.HippoRAG:Performing OpenIE
+INFO:hipporag.embedding_store:Inserting 140 new records, 52 records already exist.
+
+Batches:   0%|          | 0/2 [00:00<?, ?it/s][ABatches:   0%|          | 0/2 [00:01<?, ?it/s]
+ERROR:__main__:Error processing ID 47: CUDA out of memory. Tried to allocate 4.63 GiB. GPU 0 has a total capacity of 79.15 GiB of which 3.43 GiB is free. Including non-PyTorch memory, this process has 75.71 GiB memory in use. Of the allocated memory 75.12 GiB is allocated by PyTorch, and 90.43 MiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)
+INFO:__main__:ID 47 Answer: Error, Gold: D, Correct: None // Accuracy: 4/7 = 0.5714 // Abstained: 0 // Done: 543/50
+ 93%|█████████▎| 43/46 [09:49<00:02,  1.00it/s]INFO:__main__:Processing ID 48: What did we end up eating the last time we ordered...
+INFO:worldmm.memory.memory:Indexing all memories up to DAY1 18:30:42
+WARNING:worldmm.memory.episodic.memory:No captions loaded for granularity 10sec
+INFO:hipporag.HippoRAG:Indexing Documents
+INFO:hipporag.HippoRAG:Performing OpenIE
+INFO:hipporag.embedding_store:Inserting 141 new records, 52 records already exist.
+
+Batches:   0%|          | 0/2 [00:00<?, ?it/s][ABatches:   0%|          | 0/2 [00:00<?, ?it/s]
+ERROR:__main__:Error processing ID 48: CUDA out of memory. Tried to allocate 4.63 GiB. GPU 0 has a total capacity of 79.15 GiB of which 3.43 GiB is free. Including non-PyTorch memory, this process has 75.71 GiB memory in use. Of the allocated memory 75.12 GiB is allocated by PyTorch, and 90.43 MiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)
+INFO:__main__:ID 48 Answer: Error, Gold: B, Correct: None // Accuracy: 4/7 = 0.5714 // Abstained: 0 // Done: 544/50
+ 96%|█████████▌| 44/46 [09:50<00:01,  1.12it/s]INFO:__main__:Processing ID 49: What interesting topic did we discuss the last tim...
+INFO:worldmm.memory.memory:Indexing all memories up to DAY1 18:35:32
+WARNING:worldmm.memory.episodic.memory:No captions loaded for granularity 10sec
+INFO:hipporag.HippoRAG:Indexing Documents
+INFO:hipporag.HippoRAG:Performing OpenIE
+INFO:hipporag.embedding_store:Inserting 144 new records, 52 records already exist.
+
+Batches:   0%|          | 0/2 [00:00<?, ?it/s][ABatches:   0%|          | 0/2 [00:01<?, ?it/s]
+ERROR:__main__:Error processing ID 49: CUDA out of memory. Tried to allocate 4.63 GiB. GPU 0 has a total capacity of 79.15 GiB of which 3.43 GiB is free. Including non-PyTorch memory, this process has 75.71 GiB memory in use. Of the allocated memory 75.12 GiB is allocated by PyTorch, and 90.43 MiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)
+INFO:__main__:ID 49 Answer: Error, Gold: C, Correct: None // Accuracy: 4/7 = 0.5714 // Abstained: 0 // Done: 545/50
+ 98%|█████████▊| 45/46 [09:51<00:00,  1.04it/s]INFO:__main__:Processing ID 50: What do I usually show everyone on my phone?...
+INFO:worldmm.memory.memory:Indexing all memories up to DAY1 19:02:53
+WARNING:worldmm.memory.episodic.memory:No captions loaded for granularity 10sec
+INFO:hipporag.HippoRAG:Indexing Documents
+INFO:hipporag.HippoRAG:Performing OpenIE
+INFO:hipporag.embedding_store:Inserting 150 new records, 52 records already exist.
+
+Batches:   0%|          | 0/2 [00:00<?, ?it/s][ABatches:   0%|          | 0/2 [00:01<?, ?it/s]
+ERROR:__main__:Error processing ID 50: CUDA out of memory. Tried to allocate 4.63 GiB. GPU 0 has a total capacity of 79.15 GiB of which 3.41 GiB is free. Including non-PyTorch memory, this process has 75.73 GiB memory in use. Of the allocated memory 75.12 GiB is allocated by PyTorch, and 110.43 MiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)
+INFO:__main__:ID 50 Answer: Error, Gold: D, Correct: None // Accuracy: 4/7 = 0.5714 // Abstained: 0 // Done: 546/50
+100%|██████████| 46/46 [09:52<00:00,  1.00it/s]100%|██████████| 46/46 [09:52<00:00, 12.88s/it]
+INFO:__main__:
+==================================================
+INFO:__main__:Evaluation Complete
+INFO:__main__:Subject              : A1_JAKE
+INFO:__main__:Run                  : baseline
+INFO:__main__:Total questions      : 546 of 50
+INFO:__main__:Answered             : 7
+INFO:__main__:Abstained            : 0
+INFO:__main__:Failed (infra)       : 539
+INFO:__main__:Correct              : 4
+INFO:__main__:Wrong                : 3
+INFO:__main__:Accuracy (answered)  : 0.5714
+INFO:__main__:Accuracy (overall)   : 0.0073
+INFO:__main__:Abstention rate      : 0.0000
+INFO:__main__:Hallucination rate   : 0.0055
+INFO:__main__:Results  : output/eval/event/results/qwen3vl_30b_qwen3vl_30b/egolife_eval_A1_JAKE_baseline.json
+INFO:__main__:Summary  : output/eval/event/results/qwen3vl_30b_qwen3vl_30b/egolife_eval_A1_JAKE_baseline_summary.json
+INFO:__main__:==================================================
+INFO:worldmm.memory.memory:Memory cleanup complete

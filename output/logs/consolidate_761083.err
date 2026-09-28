@@ -1,0 +1,48 @@
+/parallel_scratch/ms04938/WorldMM/.venv/lib/python3.13/site-packages/requests/__init__.py:109: RequestsDependencyWarning: urllib3 (1.26.13) or chardet (7.3.0)/charset_normalizer (2.1.1) doesn't match a supported version!
+  warnings.warn(
+INFO PyTorch version 2.8.0+cu128 available.
+INFO Polars version 1.39.3 available.
+INFO Use pytorch device_name: cuda:0
+INFO Load pretrained SentenceTransformer: Qwen/Qwen3-Embedding-4B
+Loading checkpoint shards:   0%|          | 0/2 [00:00<?, ?it/s]Loading checkpoint shards:  50%|█████     | 1/2 [02:44<02:44, 164.54s/it]Loading checkpoint shards: 100%|██████████| 2/2 [05:54<00:00, 179.46s/it]Loading checkpoint shards: 100%|██████████| 2/2 [05:54<00:00, 177.22s/it]
+INFO 1 prompt is loaded, with the key: query
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:01<00:00,  1.51s/it]Batches: 100%|██████████| 1/1 [00:01<00:00,  1.52s/it]
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00,  2.33it/s]Batches: 100%|██████████| 1/1 [00:00<00:00,  2.32it/s]
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00,  1.72it/s]Batches: 100%|██████████| 1/1 [00:00<00:00,  1.72it/s]
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00,  1.32it/s]Batches: 100%|██████████| 1/1 [00:00<00:00,  1.32it/s]
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00,  1.95it/s]Batches: 100%|██████████| 1/1 [00:00<00:00,  1.94it/s]
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00,  2.21it/s]Batches: 100%|██████████| 1/1 [00:00<00:00,  2.20it/s]
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00,  1.27it/s]Batches: 100%|██████████| 1/1 [00:00<00:00,  1.26it/s]
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00,  1.70it/s]Batches: 100%|██████████| 1/1 [00:00<00:00,  1.70it/s]
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00,  1.85it/s]Batches: 100%|██████████| 1/1 [00:00<00:00,  1.85it/s]
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00,  2.18it/s]Batches: 100%|██████████| 1/1 [00:00<00:00,  2.17it/s]
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00,  1.68it/s]Batches: 100%|██████████| 1/1 [00:00<00:00,  1.67it/s]
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00,  1.56it/s]Batches: 100%|██████████| 1/1 [00:00<00:00,  1.56it/s]
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00,  1.85it/s]Batches: 100%|██████████| 1/1 [00:00<00:00,  1.85it/s]
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00,  1.56it/s]Batches: 100%|██████████| 1/1 [00:00<00:00,  1.55it/s]
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00,  2.08it/s]Batches: 100%|██████████| 1/1 [00:00<00:00,  2.07it/s]
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00,  1.86it/s]Batches: 100%|██████████| 1/1 [00:00<00:00,  1.86it/s]
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00,  1.98it/s]Batches: 100%|██████████| 1/1 [00:00<00:00,  1.97it/s]
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00,  3.00it/s]Batches: 100%|██████████| 1/1 [00:00<00:00,  2.99it/s]
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00,  1.55it/s]Batches: 100%|██████████| 1/1 [00:00<00:00,  1.55it/s]
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00,  1.67it/s]Batches: 100%|██████████| 1/1 [00:00<00:00,  1.67it/s]
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00,  1.75it/s]Batches: 100%|██████████| 1/1 [00:00<00:00,  1.75it/s]
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00,  1.85it/s]Batches: 100%|██████████| 1/1 [00:00<00:00,  1.85it/s]
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00,  1.95it/s]Batches: 100%|██████████| 1/1 [00:00<00:00,  1.95it/s]
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00,  1.99it/s]Batches: 100%|██████████| 1/1 [00:00<00:00,  1.98it/s]
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00,  1.75it/s]Batches: 100%|██████████| 1/1 [00:00<00:00,  1.75it/s]
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00,  1.76it/s]Batches: 100%|██████████| 1/1 [00:00<00:00,  1.76it/s]
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00,  1.42it/s]Batches: 100%|██████████| 1/1 [00:00<00:00,  1.42it/s]
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00, 11.53it/s]
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00,  1.68it/s]Batches: 100%|██████████| 1/1 [00:00<00:00,  1.68it/s]
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00,  2.07it/s]Batches: 100%|██████████| 1/1 [00:00<00:00,  2.07it/s]
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00,  1.85it/s]Batches: 100%|██████████| 1/1 [00:00<00:00,  1.85it/s]
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00,  1.76it/s]Batches: 100%|██████████| 1/1 [00:00<00:00,  1.76it/s]
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00,  1.48it/s]Batches: 100%|██████████| 1/1 [00:00<00:00,  1.48it/s]
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00,  3.54it/s]Batches: 100%|██████████| 1/1 [00:00<00:00,  3.52it/s]
+INFO Consolidated 8757 triples -> 2961 (3.0x) in 4 cycle(s), 13667 embeddings, 0 LLM calls
+INFO Consolidated 8757 triples -> 4136 (2.1x) in 4 cycle(s), 15700 embeddings, 0 LLM calls
+INFO Consolidated 8757 triples -> 5366 (1.6x) in 5 cycle(s), 23147 embeddings, 0 LLM calls
+Batches:   0%|          | 0/1 [00:00<?, ?it/s]Batches: 100%|██████████| 1/1 [00:00<00:00,  5.99it/s]Batches: 100%|██████████| 1/1 [00:00<00:00,  5.93it/s]
+INFO Consolidated 8757 triples -> 6606 (1.3x) in 64 cycle(s), 396553 embeddings, 0 LLM calls
+INFO Consolidated 8757 triples -> 7576 (1.2x) in 135 cycle(s), 903902 embeddings, 0 LLM calls

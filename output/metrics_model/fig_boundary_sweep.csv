@@ -1,0 +1,8 @@
+condition,threshold,segments,mean_seconds
+event,3.0,3663,65.95
+event,4.0,2401,100.61
+event,5.0,1940,124.52
+event,6.0,1724,140.12
+event,8.0,1549,155.95
+event,10.0,1466,164.78
+event,12.0,1425,169.52

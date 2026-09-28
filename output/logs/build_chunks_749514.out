@@ -1,0 +1,59 @@
+host:    node03
+started: Tue 18 Aug 01:22:09 BST 2026
+----------------------------------------
+Building Fixed 30s Chunks...
+DAY1: 17442 source entries -> 808 chunks
+DAY2: 16137 source entries -> 852 chunks
+DAY3: 18086 source entries -> 908 chunks
+DAY4: 16988 source entries -> 949 chunks
+DAY5: 16383 source entries -> 938 chunks
+DAY7: 12831 source entries -> 701 chunks
+
+=== FIXED CONDITION ===
+  n_chunks               5,156
+  mean_seconds           27.9
+  median_seconds         29.0
+  p95_seconds            30
+  min_seconds            1
+  max_seconds            30
+  mean_text_chars        566.4
+  max_text_chars         12,716
+  multi_video_chunks     0
+  duplicate_chunk_ids    0
+
+  estimated openie cost: 22.4 h (5,156 chunks, text 1.08x the 30s baseline)
+
+Written to output/chunks/A1_JAKE/fixed/
+----------------------------------------
+Building Event-Boundary Sweeps...
+DAY1: 17442 entries, 808 videos -> 1054 segments (mean 37s, 17 forced) -> 779 chunks with text
+DAY2: 16137 entries, 852 videos -> 1125 segments (mean 39s, 5 forced) -> 815 chunks with text
+DAY3: 18086 entries, 908 videos -> 1082 segments (mean 38s, 4 forced) -> 841 chunks with text
+DAY4: 16988 entries, 949 videos -> 1162 segments (mean 36s, 3 forced) -> 938 chunks with text
+DAY5: 16383 entries, 938 videos -> 1159 segments (mean 39s, 6 forced) -> 880 chunks with text
+DAY7: 12831 entries, 701 videos -> 823 segments (mean 36s, 5 forced) -> 669 chunks with text
+
+=== EVENT CONDITION ===
+  n_chunks               4,922
+  mean_seconds           31.4
+  median_seconds         31.0
+  p95_seconds            57.0
+  min_seconds            10.0
+  max_seconds            60.0
+  mean_text_chars        591.6
+  max_text_chars         12,666
+  multi_video_chunks     3,635
+  duplicate_chunk_ids    1
+
+  estimated openie cost: 22.3 h (4,922 chunks, text 1.12x the 30s baseline)
+
+=== THRESHOLD SWEEP ===
+  threshold=  2.0  segments= 8,112  mean=  29.8s
+  threshold=  3.0  segments= 6,405  mean=  37.7s
+  threshold=  4.0  segments= 5,972  mean=  40.5s
+  threshold=  5.0  segments= 5,796  mean=  41.7s
+  threshold=  6.0  segments= 5,720  mean=  42.2s
+
+Written to output/chunks/A1_JAKE/event/
+----------------------------------------
+finished: Tue 18 Aug 01:23:46 BST 2026

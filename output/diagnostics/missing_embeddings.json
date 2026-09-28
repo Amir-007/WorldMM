@@ -1,0 +1,5514 @@
+{
+  "person": "A1_JAKE",
+  "embeddings_path": "output/metadata/visual_memory/A1_JAKE/visual_embeddings.pkl",
+  "total_chunks": 6223,
+  "with_embedding": 5673,
+  "without_embedding": 550,
+  "status_counts": {
+    "readable": 549,
+    "short": 1
+  },
+  "control_absent": 0,
+  "results": [
+    {
+      "timestamp_key": "111103000",
+      "date": "DAY1",
+      "path": "data/EgoLife/A1_JAKE/DAY1/DAY1_A1_JAKE_11100000.mp4",
+      "status": "readable",
+      "size": 14379440,
+      "frames": 600,
+      "fps": 20.0,
+      "error": null
+    },
+    {
+      "timestamp_key": "111110000",
+      "date": "DAY1",
+      "path": "data/EgoLife/A1_JAKE/DAY1/DAY1_A1_JAKE_11103000.mp4",
+      "status": "readable",
+      "size": 14141028,
+      "frames": 600,
+      "fps": 20.0,
+      "error": null
+    },
+    {
+      "timestamp_key": "111125900",
+      "date": "DAY1",
+      "path": "data/EgoLife/A1_JAKE/DAY1/DAY1_A1_JAKE_11123000.mp4",
+      "status": "readable",
+      "size": 15826089,
+      "frames": 600,
+      "fps": 20.0,
+      "error": null
+    },
+    {
+      "timestamp_key": "111133000",
+      "date": "DAY1",
+      "path": "data/EgoLife/A1_JAKE/DAY1/DAY1_A1_JAKE_11130000.mp4",
+      "status": "readable",
+      "size": 15523222,
+      "frames": 600,
+      "fps": 20.0,
+      "error": null
+    },
+    {
+      "timestamp_key": "111143000",
+      "date": "DAY1",
+      "path": "data/EgoLife/A1_JAKE/DAY1/DAY1_A1_JAKE_11140000.mp4",
+      "status": "readable",
+      "size": 13771155,
+      "frames": 600,
+      "fps": 20.0,
+      "error": null
+    },
+    {
+      "timestamp_key": "111223000",
+      "date": "DAY1",
+      "path": "data/EgoLife/A1_JAKE/DAY1/DAY1_A1_JAKE_11220000.mp4",
+      "status": "readable",
+      "size": 14812760,
+      "frames": 600,
+      "fps": 20.0,
+      "error": null
+    },
+    {
+      "timestamp_key": "111250000",
+      "date": "DAY1",
+      "path": "data/EgoLife/A1_JAKE/DAY1/DAY1_A1_JAKE_11243000.mp4",
+      "status": "readable",
+      "size": 16011638,
+      "frames": 600,
+      "fps": 20.0,
+      "error": null
+    },
+    {
+      "timestamp_key": "111272900",
+      "date": "DAY1",
+      "path": "data/EgoLife/A1_JAKE/DAY1/DAY1_A1_JAKE_11270000.mp4",
+      "status": "readable",
+      "size": 10801070,
+      "frames": 600,
+      "fps": 20.0,
+      "error": null
+    },
+    {
+      "timestamp_key": "111303000",
+      "date": "DAY1",
+      "path": "data/EgoLife/A1_JAKE/DAY1/DAY1_A1_JAKE_11300000.mp4",
+      "status": "readable",
+      "size": 12263817,
+      "frames": 600,
+      "fps": 20.0,
+      "error": null
+    },
+    {
+      "timestamp_key": "111343000",
+      "date": "DAY1",
+      "path": "data/EgoLife/A1_JAKE/DAY1/DAY1_A1_JAKE_11340000.mp4",
+      "status": "readable",
+      "size": 10996660,
+      "frames": 600,
+      "fps": 20.0,
+      "error": null
+    },
+    {
+      "timestamp_key": "111375900",
+      "date": "DAY1",
+      "path": "data/EgoLife/A1_JAKE/DAY1/DAY1_A1_JAKE_11373000.mp4",
+      "status": "readable",
+      "size": 13680487,
+      "frames": 600,
+      "fps": 20.0,
+      "error": null
+    },
+    {
+      "timestamp_key": "111413000",
+      "date": "DAY1",
+      "path": "data/EgoLife/A1_JAKE/DAY1/DAY1_A1_JAKE_11410000.mp4",
+      "status": "readable",
+      "size": 10585829,
+      "frames": 600,
+      "fps": 20.0,
+      "error": null
+    },
+    {
+      "timestamp_key": "111465900",
+      "date": "DAY1",
+      "path": "data/EgoLife/A1_JAKE/DAY1/DAY1_A1_JAKE_11463000.mp4",
+      "status": "readable",
+      "size": 10213614,
+      "frames": 600,
+      "fps": 20.0,
+      "error": null
+    },
+    {
+      "timestamp_key": "111480000",
+      "date": "DAY1",
+      "path": "data/EgoLife/A1_JAKE/DAY1/DAY1_A1_JAKE_11473000.mp4",
+      "status": "readable",
+      "size": 10561594,
+      "frames": 600,
+      "fps": 20.0,
+      "error": null
+    },
+    {
+      "timestamp_key": "111505900",
+      "date": "DAY1",
+      "path": "data/EgoLife/A1_JAKE/DAY1/DAY1_A1_JAKE_11503000.mp4",
+      "status": "readable",
+      "size": 11546662,
+      "frames": 600,
+      "fps": 20.0,
+      "error": null
+    },
+    {
+      "timestamp_key": "111522800",
+      "date": "DAY1",
+      "path": "data/EgoLife/A1_JAKE/DAY1/DAY1_A1_JAKE_11520000.mp4",
+      "status": "readable",
+      "size": 11062888,
+      "frames": 600,
+      "fps": 20.0,
+      "error": null
+    },
+    {
+      "timestamp_key": "111533000",
+      "date": "DAY1",
+      "path": "data/EgoLife/A1_JAKE/DAY1/DAY1_A1_JAKE_11530000.mp4",
+      "status": "readable",
+      "size": 10991800,
+      "frames": 600,
+      "fps": 20.0,
+      "error": null
+    },
+    {
+      "timestamp_key": "111550000",
+      "date": "DAY1",
+      "path": "data/EgoLife/A1_JAKE/DAY1/DAY1_A1_JAKE_11543000.mp4",
+      "status": "readable",
+      "size": 13566630,
+      "frames": 600,
+      "fps": 20.0,
+      "error": null
+    },
+    {
+      "timestamp_key": "111582900",
+      "date": "DAY1",
+      "path": "data/EgoLife/A1_JAKE/DAY1/DAY1_A1_JAKE_11580000.mp4",
+      "status": "readable",
+      "size": 11804141,
+      "frames": 600,
+      "fps": 20.0,
+      "error": null
+    },
+    {
+      "timestamp_key": "112025800",
+      "date": "DAY1",
+      "path": "data/EgoLife/A1_JAKE/DAY1/DAY1_A1_JAKE_12023000.mp4",
+      "status": "readable",
+      "size": 10723703,
+      "frames": 600,
+      "fps": 20.0,
+      "error": null
+    },
+    {
+      "timestamp_key": "112090000",
+      "date": "DAY1",
+      "path": "data/EgoLife/A1_JAKE/DAY1/DAY1_A1_JAKE_12083000.mp4",
+      "status": "readable",
+      "size": 12694518,
+      "frames": 600,
+      "fps": 20.0,
+      "error": null
+    },
+    {
+      "timestamp_key": "112133000",
+      "date": "DAY1",
+      "path": "data/EgoLife/A1_JAKE/DAY1/DAY1_A1_JAKE_12130000.mp4",
+      "status": "readable",
+      "size": 8939534,
+      "frames": 600,
+      "fps": 20.0,
+      "error": null
+    },
+    {
+      "timestamp_key": "112163000",
+      "date": "DAY1",
+      "path": "data/EgoLife/A1_JAKE/DAY1/DAY1_A1_JAKE_12160000.mp4",
+      "status": "readable",
+      "size": 11752569,
+      "frames": 600,
+      "fps": 20.0,
+      "error": null
+    },
+    {
+      "timestamp_key": "112180000",
+      "date": "DAY1",
+      "path": "data/EgoLife/A1_JAKE/DAY1/DAY1_A1_JAKE_12173000.mp4",
+      "status": "readable",
+      "size": 14637232,
+      "frames": 600,
+      "fps": 20.0,
+      "error": null
+    },
+    {
+      "timestamp_key": "112200000",
+      "date": "DAY1",
+      "path": "data/EgoLife/A1_JAKE/DAY1/DAY1_A1_JAKE_12193000.mp4",
+      "status": "readable",
+      "size": 13594557,
+      "frames": 600,
+      "fps": 20.0,
+      "error": null
+    },
+    {
+      "timestamp_key": "112205900",
+      "date": "DAY1",
+      "path": "data/EgoLife/A1_JAKE/DAY1/DAY1_A1_JAKE_12203000.mp4",
+      "status": "readable",
+      "size": 11478177,
+      "frames": 600,
+      "fps": 20.0,
+      "error": null
+    },
+    {
+      "timestamp_key": "112243000",
+      "date": "DAY1",
+      "path": "data/EgoLife/A1_JAKE/DAY1/DAY1_A1_JAKE_12240000.mp4",
+      "status": "readable",
+      "size": 11174398,
+      "frames": 600,
+      "fps": 20.0,
+      "error": null
+    },
+    {
+      "timestamp_key": "112292900",
+      "date": "DAY1",
+      "path": "data/EgoLife/A1_JAKE/DAY1/DAY1_A1_JAKE_12290000.mp4",
+      "status": "readable",
+      "size": 13775544,
+      "frames": 600,
+      "fps": 20.0,
+      "error": null
+    },
+    {
+      "timestamp_key": "112362800",
+      "date": "DAY1",
+      "path": "data/EgoLife/A1_JAKE/DAY1/DAY1_A1_JAKE_12360000.mp4",
+      "status": "readable",
+      "size": 13664245,
+      "frames": 600,
+      "fps": 20.0,
+      "error": null
+    },
+    {
+      "timestamp_key": "112365900",
+      "date": "DAY1",
+      "path": "data/EgoLife/A1_JAKE/DAY1/DAY1_A1_JAKE_12363000.mp4",
+      "status": "readable",
+      "size": 14716623,
+      "frames": 600,
+      "fps": 20.0,
+      "error": null
+    },
+    {
+      "timestamp_key": "112413000",
+      "date": "DAY1",
+      "path": "data/EgoLife/A1_JAKE/DAY1/DAY1_A1_JAKE_12410000.mp4",
+      "status": "readable",
+      "size": 14717771,
+      "frames": 600,
+      "fps": 20.0,
+      "error": null
+    },
+    {
+      "timestamp_key": "112463000",
+      "date": "DAY1",
+      "path": "data/EgoLife/A1_JAKE/DAY1/DAY1_A1_JAKE_12460000.mp4",
+      "status": "readable",
+      "size": 13261469,
+      "frames": 600,
+      "fps": 20.0,
+      "error": null
+    },
+    {
+      "timestamp_key": "112470000",
+      "date": "DAY1",
+      "path": "data/EgoLife/A1_JAKE/DAY1/DAY1_A1_JAKE_12463000.mp4",
+      "status": "readable",
+      "size": 13293221,
+      "frames": 600,
+      "fps": 20.0,
+      "error": null
+    },
+    {
+      "timestamp_key": "112473000",
+      "date": "DAY1",
+      "path": "data/EgoLife/A1_JAKE/DAY1/DAY1_A1_JAKE_12470000.mp4",
+      "status": "readable",
+      "size": 16318903,
+      "frames": 600,
+      "fps": 20.0,
+      "error": null
+    },
+    {
+      "timestamp_key": "112505900",
+      "date": "DAY1",
+      "path": "data/EgoLife/A1_JAKE/DAY1/DAY1_A1_JAKE_12503000.mp4",
+      "status": "readable",
+      "size": 13877786,
+      "frames": 600,
+      "fps": 20.0,
+      "error": null
+    },
+    {
+      "timestamp_key": "112550000",
+      "date": "DAY1",
+      "path": "data/EgoLife/A1_JAKE/DAY1/DAY1_A1_JAKE_12543000.mp4",
+      "status": "readable",
+      "size": 15941571,
+      "frames": 600,
+      "fps": 20.0,
+      "error": null
+    },
+    {
+      "timestamp_key": "112572800",
+      "date": "DAY1",
+      "path": "data/EgoLife/A1_JAKE/DAY1/DAY1_A1_JAKE_12570000.mp4",
+      "status": "readable",
+      "size": 15401805,
+      "frames": 600,
+      "fps": 20.0,
+      "error": null
+    },
+    {
+      "timestamp_key": "112592900",
+      "date": "DAY1",
+      "path": "data/EgoLife/A1_JAKE/DAY1/DAY1_A1_JAKE_12590000.mp4",
+      "status": "readable",
+      "size": 15460770,
+      "frames": 600,
+      "fps": 20.0,
+      "error": null
+    },
+    {
+      "timestamp_key": "113035800",
+      "date": "DAY1",
+      "path": "data/EgoLife/A1_JAKE/DAY1/DAY1_A1_JAKE_13033000.mp4",
+      "status": "readable",
+      "size": 12590273,
+      "frames": 600,
+      "fps": 20.0,
+      "error": null
+    },
+    {
+      "timestamp_key": "113045900",
+      "date": "DAY1",
+      "path": "data/EgoLife/A1_JAKE/DAY1/DAY1_A1_JAKE_13043000.mp4",
+      "status": "readable",
+      "size": 13976993,
+      "frames": 600,
+      "fps": 20.0,
+      "error": null
+    },
+    {
+      "timestamp_key": "113093000",
+      "date": "DAY1",
+      "path": "data/EgoLife/A1_JAKE/DAY1/DAY1_A1_JAKE_13090000.mp4",
+      "status": "readable",
+      "size": 14263403,
+      "frames": 600,
+      "fps": 20.0,
+      "error": null
+    },
+    {
+      "timestamp_key": "113132900",
+      "date": "DAY1",
+      "path": "data/EgoLife/A1_JAKE/DAY1/DAY1_A1_JAKE_13130000.mp4",
+      "status": "readable",
+      "size": 14525369,
+      "frames": 600,
+      "fps": 20.0,
+      "error": null
+    },
+    {
+      "timestamp_key": "113182900",
+      "date": "DAY1",
+      "path": "data/EgoLife/A1_JAKE/DAY1/DAY1_A1_JAKE_13180000.mp4",
+      "status": "readable",
+      "size": 14420074,
+      "frames": 600,
+      "fps": 20.0,
+      "error": null
+    },
+    {
+      "timestamp_key": "113222900",
+      "date": "DAY1",
+      "path": "data/EgoLife/A1_JAKE/DAY1/DAY1_A1_JAKE_13220000.mp4",
+      "status": "readable",
+      "size": 12196442,
+      "frames": 600,
+      "fps": 20.0,
+      "error": null
+    },
+    {
+      "timestamp_key": "113260000",
+      "date": "DAY1",
+      "path": "data/EgoLife/A1_JAKE/DAY1/DAY1_A1_JAKE_13253000.mp4",
+      "status": "readable",
+      "size": 13491885,
+      "frames": 600,
+      "fps": 20.0,
+      "error": null
+    },
+    {
+      "timestamp_key": "113272900",
+      "date": "DAY1",
+      "path": "data/EgoLife/A1_JAKE/DAY1/DAY1_A1_JAKE_13270000.mp4",
+      "status": "readable",
+      "size": 15508792,
+      "frames": 600,
+      "fps": 20.0,
+      "error": null
+    },
+    {
+      "timestamp_key": "113325800",
+      "date": "DAY1",
+      "path": "data/EgoLife/A1_JAKE/DAY1/DAY1_A1_JAKE_13323000.mp4",
+      "status": "readable",
+      "size": 12669712,
+      "frames": 600,
+      "fps": 20.0,
+      "error": null
+    },
+    {
+      "timestamp_key": "113350000",
+      "date": "DAY1",
+      "path": "data/EgoLife/A1_JAKE/DAY1/DAY1_A1_JAKE_13343000.mp4",
+      "status": "readable",
+      "size": 12553663,
+      "frames": 600,
+      "fps": 20.0,
+      "error": null
+    },
+    {
+      "timestamp_key": "113412900",
+      "date": "DAY1",
+      "path": "data/EgoLife/A1_JAKE/DAY1/DAY1_A1_JAKE_13410000.mp4",
+      "status": "readable",
+      "size": 15855523,
+      "frames": 600,
+      "fps": 20.0,
+      "error": null
+    },
+    {
+      "timestamp_key": "113453000",
+      "date": "DAY1",
+      "path": "data/EgoLife/A1_JAKE/DAY1/DAY1_A1_JAKE_13450000.mp4",
+      "status": "readable",
+      "size": 10197890,
+      "frames": 600,
+      "fps": 20.0,
+      "error": null
+    },
+    {
+      "timestamp_key": "113493000",
+      "date": "DAY1",
+      "path": "data/EgoLife/A1_JAKE/DAY1/DAY1_A1_JAKE_13490000.mp4",
+      "status": "readable",
+      "size": 12545573,
+      "frames": 600,
+      "fps": 20.0,
+      "error": null
+    },
+    {
+      "timestamp_key": "113522900",
+      "date": "DAY1",
+      "path": "data/EgoLife/A1_JAKE/DAY1/DAY1_A1_JAKE_13520000.mp4",
+      "status": "readable",
+      "size": 15954075,
+      "frames": 600,
+      "fps": 20.0,
+      "error": null
+    },
+    {
+      "timestamp_key": "113552800",
+      "date": "DAY1",
+      "path": "data/EgoLife/A1_JAKE/DAY1/DAY1_A1_JAKE_13550000.mp4",
+      "status": "readable",
+      "size": 15188821,
+      "frames": 600,
+      "fps": 20.0,
+      "error": null
+    },
+    {
+      "timestamp_key": "114000000",
+      "date": "DAY1",
+      "path": "data/EgoLife/A1_JAKE/DAY1/DAY1_A1_JAKE_13593000.mp4",
+      "status": "readable",
+      "size": 14224356,
+      "frames": 600,
+      "fps": 20.0,
+      "error": null
+    },
+    {
+      "timestamp_key": "114035900",
+      "date": "DAY1",
+      "path": "data/EgoLife/A1_JAKE/DAY1/DAY1_A1_JAKE_14033000.mp4",
+      "status": "readable",
+      "size": 14424070,
+      "frames": 600,
+      "fps": 20.0,
+      "error": null
+    },
+    {
+      "timestamp_key": "114053000",
+      "date": "DAY1",
+      "path": "data/EgoLife/A1_JAKE/DAY1/DAY1_A1_JAKE_14050000.mp4",
+      "status": "readable",
+      "size": 15506009,
+      "frames": 600,
+      "fps": 20.0,
+      "error": null
+    },
+    {
+      "timestamp_key": "114092900",
+      "date": "DAY1",
+      "path": "data/EgoLife/A1_JAKE/DAY1/DAY1_A1_JAKE_14090000.mp4",
+      "status": "readable",
+      "size": 18431679,
+      "frames": 600,
+      "fps": 20.0,
+      "error": null
+    },
+    {
+      "timestamp_key": "114145900",
+      "date": "DAY1",
+      "path": "data/EgoLife/A1_JAKE/DAY1/DAY1_A1_JAKE_14143000.mp4",
+      "status": "readable",
+      "size": 14750341,
+      "frames": 600,
+      "fps": 20.0,
+      "error": null
+    },
+    {
+      "timestamp_key": "117120100",
+      "date": "DAY1",
+      "path": "data/EgoLife/A1_JAKE/DAY1/DAY1_A1_JAKE_17120000.mp4",
+      "status": "readable",
+      "size": 18602603,
+      "frames": 600,
+      "fps": 20.0,
+      "error": null
+    },
+    {
+      "timestamp_key": "117180000",
+      "date": "DAY1",
+      "path": "data/EgoLife/A1_JAKE/DAY1/DAY1_A1_JAKE_17173000.mp4",
+      "status": "readable",
+      "size": 15474502,
+      "frames": 600,
+      "fps": 20.0,
+      "error": null
+    },
+    {
+      "timestamp_key": "117470000",
+      "date": "DAY1",
+      "path": "data/EgoLife/A1_JAKE/DAY1/DAY1_A1_JAKE_17463000.mp4",
+      "status": "readable",
+      "size": 18324815,
+      "frames": 600,
+      "fps": 20.0,
+      "error": null
+    },
+    {
+      "timestamp_key": "117472600",
+      "date": "DAY1",
+      "path": "data/EgoLife/A1_JAKE/DAY1/DAY1_A1_JAKE_17470000.mp4",
+      "status": "readable",
+      "size": 20022787,
+      "frames": 600,
+      "fps": 20.0,
+      "error": null
+    },
+    {
+      "timestamp_key": "117480000",
+      "date": "DAY1",
+      "path": "data/EgoLife/A1_JAKE/DAY1/DAY1_A1_JAKE_17473000.mp4",
+      "status": "readable",
+      "size": 18682566,
+      "frames": 600,
+      "fps": 20.0,
+      "error": null
+    },
+    {
+      "timestamp_key": "117513000",
+      "date": "DAY1",
+      "path": "data/EgoLife/A1_JAKE/DAY1/DAY1_A1_JAKE_17510000.mp4",
+      "status": "readable",
+      "size": 22519945,
+      "frames": 600,
+      "fps": 20.0,
+      "error": null
+    },
+    {
+      "timestamp_key": "118343000",
+      "date": "DAY1",
+      "path": "data/EgoLife/A1_JAKE/DAY1/DAY1_A1_JAKE_18340000.mp4",
+      "status": "readable",
+      "size": 16834532,
+      "frames": 600,
+      "fps": 20.0,
+      "error": null
+    },
+    {
+      "timestamp_key": "119542500",
+      "date": "DAY1",
+      "path": "data/EgoLife/A1_JAKE/DAY1/DAY1_A1_JAKE_19540000.mp4",
+      "status": "readable",
+      "size": 14003084,
+      "frames": 600,
+      "fps": 20.0,
+      "error": null
+    },
+    {
+      "timestamp_key": "120390000",
+      "date": "DAY1",
+      "path": "data/EgoLife/A1_JAKE/DAY1/DAY1_A1_JAKE_20383000.mp4",
+      "status": "readable",
+      "size": 14433043,
+      "frames": 600,
+      "fps": 20.0,
+      "error": null
+    },
+    {
+      "timestamp_key": "120393000",
+      "date": "DAY1",
+      "path": "data/EgoLife/A1_JAKE/DAY1/DAY1_A1_JAKE_20390000.mp4",
+      "status": "readable",
+      "size": 18760485,
+      "frames": 600,
+      "fps": 20.0,
+      "error": null
+    },
+    {
+      "timestamp_key": "120400000",
+      "date": "DAY1",
+      "path": "data/EgoLife/A1_JAKE/DAY1/DAY1_A1_JAKE_20393000.mp4",
+      "status": "readable",
+      "size": 19839493,
+      "frames": 600,
+      "fps": 20.0,
+      "error": null
+    },
+    {
+      "timestamp_key": "120403000",
+      "date": "DAY1",
+      "path": "data/EgoLife/A1_JAKE/DAY1/DAY1_A1_JAKE_20400000.mp4",
+      "status": "readable",
+      "size": 16492617,
+      "frames": 600,
+      "fps": 20.0,
+      "error": null
+    },
+    {
+      "timestamp_key": "120410000",
+      "date": "DAY1",
+      "path": "data/EgoLife/A1_JAKE/DAY1/DAY1_A1_JAKE_20403000.mp4",
+      "status": "readable",
+      "size": 20536409,
+      "frames": 600,
+      "fps": 20.0,
+      "error": null
+    },
+    {
+      "timestamp_key": "120413000",
+      "date": "DAY1",
+      "path": "data/EgoLife/A1_JAKE/DAY1/DAY1_A1_JAKE_20410000.mp4",
+      "status": "readable",
+      "size": 20892497,
+      "frames": 600,
+      "fps": 20.0,
+      "error": null
+    },
+    {
+      "timestamp_key": "120465800",
+      "date": "DAY1",
+      "path": "data/EgoLife/A1_JAKE/DAY1/DAY1_A1_JAKE_20463000.mp4",
+      "status": "readable",
+      "size": 21375853,
+      "frames": 600,
+      "fps": 20.0,
+      "error": null
+    },
+    {
+      "timestamp_key": "121360000",
+      "date": "DAY1",
+      "path": "data/EgoLife/A1_JAKE/DAY1/DAY1_A1_JAKE_21355916.mp4",
+      "status": "short",
+      "size": 149551,
+      "frames": 4,
+      "fps": 20.0,
+      "error": null
+    },
+    {
+      "timestamp_key": "121363000",
+      "date": "DAY1",
+      "path": "data/EgoLife/A1_JAKE/DAY1/DAY1_A1_JAKE_21360000.mp4",
+      "status": "readable",
+      "size": 18829087,
+      "frames": 600,
+      "fps": 20.0,
+      "error": null
+    },
+    {
+      "timestamp_key": "121413000",
+      "date": "DAY1",
+      "path": "data/EgoLife/A1_JAKE/DAY1/DAY1_A1_JAKE_21410000.mp4",
+      "status": "readable",
+      "size": 16528308,
+      "frames": 600,
+      "fps": 20.0,
+      "error": null
+    },
+    {
+      "timestamp_key": "121432900",
+      "date": "DAY1",
+      "path": "data/EgoLife/A1_JAKE/DAY1/DAY1_A1_JAKE_21430000.mp4",
+      "status": "readable",
+      "size": 15491179,
+      "frames": 600,
+      "fps": 20.0,
+      "error": null
+    },
+    {
+      "timestamp_key": "121470000",
+      "date": "DAY1",
+      "path": "data/EgoLife/A1_JAKE/DAY1/DAY1_A1_JAKE_21463000.mp4",
+      "status": "readable",
+      "size": 18636270,
+      "frames": 600,
+      "fps": 20.0,
+      "error": null
+    },
+    {
+      "timestamp_key": "121495900",
+      "date": "DAY1",
+      "path": "data/EgoLife/A1_JAKE/DAY1/DAY1_A1_JAKE_21493000.mp4",
+      "status": "readable",
+      "size": 20584248,
+      "frames": 600,
+      "fps": 20.0,
+      "error": null
+    },
+    {
+      "timestamp_key": "121530000",
+      "date": "DAY1",
+      "path": "data/EgoLife/A1_JAKE/DAY1/DAY1_A1_JAKE_21523000.mp4",
+      "status": "readable",
+      "size": 16900445,
+      "frames": 600,
+      "fps": 20.0,
+      "error": null
+    },
+    {
+      "timestamp_key": "121550000",
+      "date": "DAY1",
+      "path": "data/EgoLife/A1_JAKE/DAY1/DAY1_A1_JAKE_21543000.mp4",
+      "status": "readable",
+      "size": 14461178,
+      "frames": 600,
+      "fps": 20.0,
+      "error": null
+    },
+    {
+      "timestamp_key": "121560000",
+      "date": "DAY1",
+      "path": "data/EgoLife/A1_JAKE/DAY1/DAY1_A1_JAKE_21553000.mp4",
+      "status": "readable",
+      "size": 20601529,
+      "frames": 600,
+      "fps": 20.0,
+      "error": null
+    },
+    {
+      "timestamp_key": "121582900",
+      "date": "DAY1",
+      "path": "data/EgoLife/A1_JAKE/DAY1/DAY1_A1_JAKE_21580000.mp4",
+      "status": "readable",
+      "size": 12397062,
+      "frames": 600,
+      "fps": 20.0,
+      "error": null
+    },
+    {
+      "timestamp_key": "122010000",
+      "date": "DAY1",
+      "path": "data/EgoLife/A1_JAKE/DAY1/DAY1_A1_JAKE_22003000.mp4",
+      "status": "readable",
+      "size": 15726405,
+      "frames": 600,
+      "fps": 20.0,
+      "error": null
+    },
+    {
+      "timestamp_key": "122033000",
+      "date": "DAY1",
+      "path": "data/EgoLife/A1_JAKE/DAY1/DAY1_A1_JAKE_22030000.mp4",
+      "status": "readable",
+      "size": 16644459,
+      "frames": 600,
+      "fps": 20.0,
+      "error": null
+    },
+    {
+      "timestamp_key": "122054900",
+      "date": "DAY1",
+      "path": "data/EgoLife/A1_JAKE/DAY1/DAY1_A1_JAKE_22053000.mp4",
+      "status": "readable",
+      "size": 11688755,
+      "frames": 393,
+      "fps": 20.0,
+      "error": null
+    },
+    {
+      "timestamp_key": "210445900",
+      "date": "DAY2",
+      "path": "data/EgoLife/A1_JAKE/DAY2/DAY2_A1_JAKE_10443000.mp4",
+      "status": "readable",
+      "size": 13968289,
+      "frames": 600,
+      "fps": 20.0,
+      "error": null
+    },
+    {
+      "timestamp_key": "210455900",
+      "date": "DAY2",
+      "path": "data/EgoLife/A1_JAKE/DAY2/DAY2_A1_JAKE_10453000.mp4",
+      "status": "readable",
+      "size": 14322267,
+      "frames": 600,
+      "fps": 20.0,
+      "error": null
+    },
+    {
+      "timestamp_key": "210493000",
+      "date": "DAY2",
+      "path": "data/EgoLife/A1_JAKE/DAY2/DAY2_A1_JAKE_10490000.mp4",
+      "status": "readable",
+      "size": 13874698,
+      "frames": 600,
+      "fps": 20.0,
+      "error": null
+    },
+    {
+      "timestamp_key": "210522900",
+      "date": "DAY2",
+      "path": "data/EgoLife/A1_JAKE/DAY2/DAY2_A1_JAKE_10520000.mp4",
+      "status": "readable",
+      "size": 12670000,
+      "frames": 600,
+      "fps": 20.0,
+      "error": null
+    },
+    {
+      "timestamp_key": "210543000",
+      "date": "DAY2",
+      "path": "data/EgoLife/A1_JAKE/DAY2/DAY2_A1_JAKE_10540000.mp4",
+      "status": "readable",
+      "size": 9879437,
+      "frames": 600,
+      "fps": 20.0,
+      "error": null
+    },
+    {
+      "timestamp_key": "210553000",
+      "date": "DAY2",
+      "path": "data/EgoLife/A1_JAKE/DAY2/DAY2_A1_JAKE_10550000.mp4",
+      "status": "readable",
+      "size": 13287049,
+      "frames": 600,
+      "fps": 20.0,
+      "error": null
+    },
+    {
+      "timestamp_key": "210593000",
+      "date": "DAY2",
+      "path": "data/EgoLife/A1_JAKE/DAY2/DAY2_A1_JAKE_10590000.mp4",
+      "status": "readable",
+      "size": 16373447,
+      "frames": 600,
+      "fps": 20.0,
+      "error": null
+    },
+    {
+      "timestamp_key": "211003000",
+      "date": "DAY2",
+      "path": "data/EgoLife/A1_JAKE/DAY2/DAY2_A1_JAKE_11000000.mp4",
+      "status": "readable",
+      "size": 15897171,
+      "frames": 600,
+      "fps": 20.0,
+      "error": null
+    },
+    {
+      "timestamp_key": "211040000",
+      "date": "DAY2",
+      "path": "data/EgoLife/A1_JAKE/DAY2/DAY2_A1_JAKE_11033000.mp4",
+      "status": "readable",
+      "size": 13654727,
+      "frames": 600,
+      "fps": 20.0,
+      "error": null
+    },
+    {
+      "timestamp_key": "211062800",
+      "date": "DAY2",
+      "path": "data/EgoLife/A1_JAKE/DAY2/DAY2_A1_JAKE_11060000.mp4",
+      "status": "readable",
+      "size": 14348427,
+      "frames": 600,
+      "fps": 20.0,
+      "error": null
+    },
+    {
+      "timestamp_key": "211082300",
+      "date": "DAY2",
+      "path": "data/EgoLife/A1_JAKE/DAY2/DAY2_A1_JAKE_11080000.mp4",
+      "status": "readable",
+      "size": 12086444,
+      "frames": 600,
+      "fps": 20.0,
+      "error": null
+    },
+    {
+      "timestamp_key": "211130000",
+      "date": "DAY2",
+      "path": "data/EgoLife/A1_JAKE/DAY2/DAY2_A1_JAKE_11123000.mp4",
+      "status": "readable",
+      "size": 12087541,
+      "frames": 600,
+      "fps": 20.0,
+      "error": null
+    },
+    {
+      "timestamp_key": "211160000",
+      "date": "DAY2",
+      "path": "data/EgoLife/A1_JAKE/DAY2/DAY2_A1_JAKE_11153000.mp4",
+      "status": "readable",
+      "size": 12462432,
+      "frames": 600,
+      "fps": 20.0,
+      "error": null
+    },
+    {
+      "timestamp_key": "211240000",
+      "date": "DAY2",
+      "path": "data/EgoLife/A1_JAKE/DAY2/DAY2_A1_JAKE_11233000.mp4",
+      "status": "readable",
+      "size": 15718954,
+      "frames": 600,
+      "fps": 20.0,
+      "error": null
+    },
+    {
+      "timestamp_key": "211283000",
+      "date": "DAY2",
+      "path": "data/EgoLife/A1_JAKE/DAY2/DAY2_A1_JAKE_11280000.mp4",
+      "status": "readable",
+      "size": 13908555,
+      "frames": 600,
+      "fps": 20.0,
+      "error": null
+    },
+    {
+      "timestamp_key": "211343000",
+      "date": "DAY2",
+      "path": "data/EgoLife/A1_JAKE/DAY2/DAY2_A1_JAKE_11340000.mp4",
+      "status": "readable",
+      "size": 12618796,
+      "frames": 600,
+      "fps": 20.0,
+      "error": null
+    },
+    {
+      "timestamp_key": "211350000",
+      "date": "DAY2",
+      "path": "data/EgoLife/A1_JAKE/DAY2/DAY2_A1_JAKE_11343000.mp4",
+      "status": "readable",
+      "size": 14095612,
+      "frames": 600,
+      "fps": 20.0,
+      "error": null
+    },
+    {
+      "timestamp_key": "211352900",
+      "date": "DAY2",
+      "path": "data/EgoLife/A1_JAKE/DAY2/DAY2_A1_JAKE_11350000.mp4",
+      "status": "readable",
+      "size": 13885597,
+      "frames": 600,
+      "fps": 20.0,
+      "error": null
+    },
+    {
+      "timestamp_key": "211370000",
+      "date": "DAY2",
+      "path": "data/EgoLife/A1_JAKE/DAY2/DAY2_A1_JAKE_11363000.mp4",
+      "status": "readable",
+      "size": 13817587,
+      "frames": 600,
+      "fps": 20.0,
+      "error": null
+    },
+    {
+      "timestamp_key": "211422900",
+      "date": "DAY2",
+      "path": "data/EgoLife/A1_JAKE/DAY2/DAY2_A1_JAKE_11420000.mp4",
+      "status": "readable",
+      "size": 11460349,
+      "frames": 600,
+      "fps": 20.0,
+      "error": null
+    },
+    {
+      "timestamp_key": "211430000",
+      "date": "DAY2",
+      "path": "data/EgoLife/A1_JAKE/DAY2/DAY2_A1_JAKE_11423000.mp4",
+      "status": "readable",
+      "size": 12769962,
+      "frames": 600,
+      "fps": 20.0,
+      "error": null
+    },
+    {
+      "timestamp_key": "211432900",
+      "date": "DAY2",
+      "path": "data/EgoLife/A1_JAKE/DAY2/DAY2_A1_JAKE_11430000.mp4",
+      "status": "readable",
+      "size": 11489764,
+      "frames": 600,
+      "fps": 20.0,
+      "error": null
+    },
+    {
+      "timestamp_key": "211435900",
+      "date": "DAY2",
+      "path": "data/EgoLife/A1_JAKE/DAY2/DAY2_A1_JAKE_11433000.mp4",
+      "status": "readable",
+      "size": 14757094,
+      "frames": 600,
+      "fps": 20.0,
+      "error": null
+    },
+    {
+      "timestamp_key": "211455800",
+      "date": "DAY2",
+      "path": "data/EgoLife/A1_JAKE/DAY2/DAY2_A1_JAKE_11453000.mp4",
+      "status": "readable",
+      "size": 11497188,
+      "frames": 600,
+      "fps": 20.0,
+      "error": null
+    },
+    {
+      "timestamp_key": "211510000",
+      "date": "DAY2",
+      "path": "data/EgoLife/A1_JAKE/DAY2/DAY2_A1_JAKE_11503000.mp4",
+      "status": "readable",
+      "size": 13976083,
+      "frames": 600,
+      "fps": 20.0,
+      "error": null
+    },
+    {
+      "timestamp_key": "211543000",
+      "date": "DAY2",
+      "path": "data/EgoLife/A1_JAKE/DAY2/DAY2_A1_JAKE_11540000.mp4",
+      "status": "readable",
+      "size": 10490034,
+      "frames": 600,
+      "fps": 20.0,
+      "error": null
+    },
+    {
+      "timestamp_key": "211570000",
+      "date": "DAY2",
+      "path": "data/EgoLife/A1_JAKE/DAY2/DAY2_A1_JAKE_11563000.mp4",
+      "status": "readable",
+      "size": 11797800,
+      "frames": 600,
+      "fps": 20.0,
+      "error": null
+    },
+    {
+      "timestamp_key": "212000000",
+      "date": "DAY2",
+      "path": "data/EgoLife/A1_JAKE/DAY2/DAY2_A1_JAKE_11593000.mp4",
+      "status": "readable",
+      "size": 11008115,
+      "frames": 600,
+      "fps": 20.0,
+      "error": null
+    },
+    {
+      "timestamp_key": "212040000",
+      "date": "DAY2",
+      "path": "data/EgoLife/A1_JAKE/DAY2/DAY2_A1_JAKE_12033000.mp4",
+      "status": "readable",
+      "size": 12576329,
+      "frames": 600,
+      "fps": 20.0,
+      "error": null
+    },
+    {
+      "timestamp_key": "212070000",
+      "date": "DAY2",
+      "path": "data/EgoLife/A1_JAKE/DAY2/DAY2_A1_JAKE_12063000.mp4",
+      "status": "readable",
+      "size": 14054257,
+      "frames": 600,
+      "fps": 20.0,
+      "error": null
+    },
+    {
+      "timestamp_key": "212462900",
+      "date": "DAY2",
+      "path": "data/EgoLife/A1_JAKE/DAY2/DAY2_A1_JAKE_12460000.mp4",
+      "status": "readable",
+      "size": 15897531,
+      "frames": 600,
+      "fps": 20.0,
+      "error": null
+    },
+    {
+      "timestamp_key": "212473000",
+      "date": "DAY2",
+      "path": "data/EgoLife/A1_JAKE/DAY2/DAY2_A1_JAKE_12470000.mp4",
+      "status": "readable",
+      "size": 15306399,
+      "frames": 600,
+      "fps": 20.0,
+      "error": null
+    },
+    {
+      "timestamp_key": "212503000",
+      "date": "DAY2",
+      "path": "data/EgoLife/A1_JAKE/DAY2/DAY2_A1_JAKE_12500000.mp4",
+      "status": "readable",
+      "size": 14528455,
+      "frames": 600,
+      "fps": 20.0,
+      "error": null
+    },
+    {
+      "timestamp_key": "212533000",
+      "date": "DAY2",
+      "path": "data/EgoLife/A1_JAKE/DAY2/DAY2_A1_JAKE_12530000.mp4",
+      "status": "readable",
+      "size": 16250196,
+      "frames": 600,
+      "fps": 20.0,
+      "error": null
+    },
+    {
+      "timestamp_key": "212562800",
+      "date": "DAY2",
+      "path": "data/EgoLife/A1_JAKE/DAY2/DAY2_A1_JAKE_12560000.mp4",
+      "status": "readable",
+      "size": 15738122,
+      "frames": 600,
+      "fps": 20.0,
+      "error": null
+    },
+    {
+      "timestamp_key": "212583000",
+      "date": "DAY2",
+      "path": "data/EgoLife/A1_JAKE/DAY2/DAY2_A1_JAKE_12580000.mp4",
+      "status": "readable",
+      "size": 11929319,
+      "frames": 600,
+      "fps": 20.0,
+      "error": null
+    },
+    {
+      "timestamp_key": "213003000",
+      "date": "DAY2",
+      "path": "data/EgoLife/A1_JAKE/DAY2/DAY2_A1_JAKE_13000000.mp4",
+      "status": "readable",
+      "size": 12713268,
+      "frames": 600,
+      "fps": 20.0,
+      "error": null
+    },
+    {
+      "timestamp_key": "213023000",
+      "date": "DAY2",
+      "path": "data/EgoLife/A1_JAKE/DAY2/DAY2_A1_JAKE_13020000.mp4",
+      "status": "readable",
+      "size": 17216738,
+      "frames": 600,
+      "fps": 20.0,
+      "error": null
+    },
+    {
+      "timestamp_key": "213053000",
+      "date": "DAY2",
+      "path": "data/EgoLife/A1_JAKE/DAY2/DAY2_A1_JAKE_13050000.mp4",
+      "status": "readable",
+      "size": 16094454,
+      "frames": 600,
+      "fps": 20.0,
+      "error": null
+    },
+    {
+      "timestamp_key": "213075900",
+      "date": "DAY2",
+      "path": "data/EgoLife/A1_JAKE/DAY2/DAY2_A1_JAKE_13073000.mp4",
+      "status": "readable",
+      "size": 17909260,
+      "frames": 600,
+      "fps": 20.0,
+      "error": null
+    },
+    {
+      "timestamp_key": "213095900",
+      "date": "DAY2",
+      "path": "data/EgoLife/A1_JAKE/DAY2/DAY2_A1_JAKE_13093000.mp4",
+      "status": "readable",
+      "size": 15223020,
+      "frames": 600,
+      "fps": 20.0,
+      "error": null
+    },
+    {
+      "timestamp_key": "213115900",
+      "date": "DAY2",
+      "path": "data/EgoLife/A1_JAKE/DAY2/DAY2_A1_JAKE_13113000.mp4",
+      "status": "readable",
+      "size": 13453861,
+      "frames": 600,
+      "fps": 20.0,
+      "error": null
+    },
+    {
+      "timestamp_key": "213153000",
+      "date": "DAY2",
+      "path": "data/EgoLife/A1_JAKE/DAY2/DAY2_A1_JAKE_13150000.mp4",
+      "status": "readable",
+      "size": 16218382,
+      "frames": 600,
+      "fps": 20.0,
+      "error": null
+    },
+    {
+      "timestamp_key": "213155900",
+      "date": "DAY2",
+      "path": "data/EgoLife/A1_JAKE/DAY2/DAY2_A1_JAKE_13153000.mp4",
+      "status": "readable",
+      "size": 14288786,
+      "frames": 600,
+      "fps": 20.0,
+      "error": null
+    },
+    {
+      "timestamp_key": "213213000",
+      "date": "DAY2",
+      "path": "data/EgoLife/A1_JAKE/DAY2/DAY2_A1_JAKE_13210000.mp4",
+      "status": "readable",
+      "size": 15749065,
+      "frames": 600,
+      "fps": 20.0,
+      "error": null
+    },
+    {
+      "timestamp_key": "213263000",
+      "date": "DAY2",
+      "path": "data/EgoLife/A1_JAKE/DAY2/DAY2_A1_JAKE_13260000.mp4",
+      "status": "readable",
+      "size": 14035930,
+      "frames": 600,
+      "fps": 20.0,
+      "error": null
+    },
+    {
+      "timestamp_key": "213302700",
+      "date": "DAY2",
+      "path": "data/EgoLife/A1_JAKE/DAY2/DAY2_A1_JAKE_13300000.mp4",
+      "status": "readable",
+      "size": 12789357,
+      "frames": 600,
+      "fps": 20.0,
+      "error": null
+    },
+    {
+      "timestamp_key": "213480000",
+      "date": "DAY2",
+      "path": "data/EgoLife/A1_JAKE/DAY2/DAY2_A1_JAKE_13473000.mp4",
+      "status": "readable",
+      "size": 15374997,
+      "frames": 600,
+      "fps": 20.0,
+      "error": null
+    },
+    {
+      "timestamp_key": "215540000",
+      "date": "DAY2",
+      "path": "data/EgoLife/A1_JAKE/DAY2/DAY2_A1_JAKE_15533000.mp4",
+      "status": "readable",
+      "size": 12289769,
+      "frames": 600,
+      "fps": 20.0,
+      "error": null
+    },
+    {
+      "timestamp_key": "215582800",
+      "date": "DAY2",
+      "path": "data/EgoLife/A1_JAKE/DAY2/DAY2_A1_JAKE_15580000.mp4",
+      "status": "readable",
+      "size": 13244463,
+      "frames": 600,
+      "fps": 20.0,
+      "error": null
+    },
+    {
+      "timestamp_key": "216003000",
+      "date": "DAY2",
+      "path": "data/EgoLife/A1_JAKE/DAY2/DAY2_A1_JAKE_16000000.mp4",
+      "status": "readable",
+      "size": 14074424,
+      "frames": 600,
+      "fps": 20.0,
+      "error": null
+    },
+    {
+      "timestamp_key": "216043000",
+      "date": "DAY2",
+      "path": "data/EgoLife/A1_JAKE/DAY2/DAY2_A1_JAKE_16040000.mp4",
+      "status": "readable",
+      "size": 17023539,
+      "frames": 600,
+      "fps": 20.0,
+      "error": null
+    },
+    {
+      "timestamp_key": "216085900",
+      "date": "DAY2",
+      "path": "data/EgoLife/A1_JAKE/DAY2/DAY2_A1_JAKE_16083000.mp4",
+      "status": "readable",
+      "size": 16131616,
+      "frames": 600,
+      "fps": 20.0,
+      "error": null
+    },
+    {
+      "timestamp_key": "216115900",
+      "date": "DAY2",
+      "path": "data/EgoLife/A1_JAKE/DAY2/DAY2_A1_JAKE_16113000.mp4",
+      "status": "readable",
+      "size": 15872505,
+      "frames": 600,
+      "fps": 20.0,
+      "error": null
+    },
+    {
+      "timestamp_key": "216180000",
+      "date": "DAY2",
+      "path": "data/EgoLife/A1_JAKE/DAY2/DAY2_A1_JAKE_16173000.mp4",
+      "status": "readable",
+      "size": 12444897,
+      "frames": 600,
+      "fps": 20.0,
+      "error": null
+    },
+    {
+      "timestamp_key": "216232900",
+      "date": "DAY2",
+      "path": "data/EgoLife/A1_JAKE/DAY2/DAY2_A1_JAKE_16230000.mp4",
+      "status": "readable",
+      "size": 15411408,
+      "frames": 600,
+      "fps": 20.0,
+      "error": null
+    },
+    {
+      "timestamp_key": "216293000",
+      "date": "DAY2",
+      "path": "data/EgoLife/A1_JAKE/DAY2/DAY2_A1_JAKE_16290000.mp4",
+      "status": "readable",
+      "size": 14757892,
+      "frames": 600,
+      "fps": 20.0,
+      "error": null
+    },
+    {
+      "timestamp_key": "216332800",
+      "date": "DAY2",
+      "path": "data/EgoLife/A1_JAKE/DAY2/DAY2_A1_JAKE_16330000.mp4",
+      "status": "readable",
+      "size": 13988232,
+      "frames": 600,
+      "fps": 20.0,
+      "error": null
+    },
+    {
+      "timestamp_key": "216342900",
+      "date": "DAY2",
+      "path": "data/EgoLife/A1_JAKE/DAY2/DAY2_A1_JAKE_16340000.mp4",
+      "status": "readable",
+      "size": 16505899,
+      "frames": 600,
+      "fps": 20.0,
+      "error": null
+    },
+    {
+      "timestamp_key": "216385800",
+      "date": "DAY2",
+      "path": "data/EgoLife/A1_JAKE/DAY2/DAY2_A1_JAKE_16383000.mp4",
+      "status": "readable",
+      "size": 15238837,
+      "frames": 600,
+      "fps": 20.0,
+      "error": null
+    },
+    {
+      "timestamp_key": "216430000",
+      "date": "DAY2",
+      "path": "data/EgoLife/A1_JAKE/DAY2/DAY2_A1_JAKE_16423000.mp4",
+      "status": "readable",
+      "size": 18520749,
+      "frames": 600,
+      "fps": 20.0,
+      "error": null
+    },
+    {
+      "timestamp_key": "216480000",
+      "date": "DAY2",
+      "path": "data/EgoLife/A1_JAKE/DAY2/DAY2_A1_JAKE_16473000.mp4",
+      "status": "readable",
+      "size": 15773017,
+      "frames": 600,
+      "fps": 20.0,
+      "error": null
+    },
+    {
+      "timestamp_key": "216525900",
+      "date": "DAY2",
+      "path": "data/EgoLife/A1_JAKE/DAY2/DAY2_A1_JAKE_16523000.mp4",
+      "status": "readable",
+      "size": 14670571,
+      "frames": 600,
+      "fps": 20.0,
+      "error": null
+    },
+    {
+      "timestamp_key": "216583000",
+      "date": "DAY2",
+      "path": "data/EgoLife/A1_JAKE/DAY2/DAY2_A1_JAKE_16580000.mp4",
+      "status": "readable",
+      "size": 13094194,
+      "frames": 600,
+      "fps": 20.0,
+      "error": null
+    },
+    {
+      "timestamp_key": "217023000",
+      "date": "DAY2",
+      "path": "data/EgoLife/A1_JAKE/DAY2/DAY2_A1_JAKE_17020000.mp4",
+      "status": "readable",
+      "size": 15529657,
+      "frames": 600,
+      "fps": 20.0,
+      "error": null
+    },
+    {
+      "timestamp_key": "217083000",
+      "date": "DAY2",
+      "path": "data/EgoLife/A1_JAKE/DAY2/DAY2_A1_JAKE_17080000.mp4",
+      "status": "readable",
+      "size": 18171546,
+      "frames": 600,
+      "fps": 20.0,
+      "error": null
+    },
+    {
+      "timestamp_key": "217102900",
+      "date": "DAY2",
+      "path": "data/EgoLife/A1_JAKE/DAY2/DAY2_A1_JAKE_17100000.mp4",
+      "status": "readable",
+      "size": 15872816,
+      "frames": 600,
+      "fps": 20.0,
+      "error": null
+    },
+    {
+      "timestamp_key": "217165900",
+      "date": "DAY2",
+      "path": "data/EgoLife/A1_JAKE/DAY2/DAY2_A1_JAKE_17163000.mp4",
+      "status": "readable",
+      "size": 17767654,
+      "frames": 600,
+      "fps": 20.0,
+      "error": null
+    },
+    {
+      "timestamp_key": "217212900",
+      "date": "DAY2",
+      "path": "data/EgoLife/A1_JAKE/DAY2/DAY2_A1_JAKE_17210000.mp4",
+      "status": "readable",
+      "size": 15629033,
+      "frames": 600,
+      "fps": 20.0,
+      "error": null
+    },
+    {
+      "timestamp_key": "218090000",
+      "date": "DAY2",
+      "path": "data/EgoLife/A1_JAKE/DAY2/DAY2_A1_JAKE_18083000.mp4",
+      "status": "readable",
+      "size": 16517443,
+      "frames": 600,
+      "fps": 20.0,
+      "error": null
+    },
+    {
+      "timestamp_key": "218103000",
+      "date": "DAY2",
+      "path": "data/EgoLife/A1_JAKE/DAY2/DAY2_A1_JAKE_18100000.mp4",
+      "status": "readable",
+      "size": 17843491,
+      "frames": 600,
+      "fps": 20.0,
+      "error": null
+    },
+    {
+      "timestamp_key": "218275900",
+      "date": "DAY2",
+      "path": "data/EgoLife/A1_JAKE/DAY2/DAY2_A1_JAKE_18273000.mp4",
+      "status": "readable",
+      "size": 20304126,
+      "frames": 600,
+      "fps": 20.0,
+      "error": null
+    },
+    {
+      "timestamp_key": "218283000",
+      "date": "DAY2",
+      "path": "data/EgoLife/A1_JAKE/DAY2/DAY2_A1_JAKE_18280000.mp4",
+      "status": "readable",
+      "size": 15293228,
+      "frames": 602,
+      "fps": 20.0,
+      "error": null
+    },
+    {
+      "timestamp_key": "218285900",
+      "date": "DAY2",
+      "path": "data/EgoLife/A1_JAKE/DAY2/DAY2_A1_JAKE_18283000.mp4",
+      "status": "readable",
+      "size": 17873811,
+      "frames": 600,
+      "fps": 20.0,
+      "error": null
+    },
+    {
+      "timestamp_key": "218292900",
+      "date": "DAY2",
+      "path": "data/EgoLife/A1_JAKE/DAY2/DAY2_A1_JAKE_18290000.mp4",
+      "status": "readable",
+      "size": 18039244,
+      "frames": 600,
+      "fps": 20.0,
+      "error": null
+    },
+    {
+      "timestamp_key": "218300000",
+      "date": "DAY2",
+      "path": "data/EgoLife/A1_JAKE/DAY2/DAY2_A1_JAKE_18293000.mp4",
+      "status": "readable",
+      "size": 18219752,
+      "frames": 600,
+      "fps": 20.0,
+      "error": null
+    },
+    {
+      "timestamp_key": "218302900",
+      "date": "DAY2",
+      "path": "data/EgoLife/A1_JAKE/DAY2/DAY2_A1_JAKE_18300000.mp4",
+      "status": "readable",
+      "size": 20415130,
+      "frames": 600,
+      "fps": 20.0,
+      "error": null
+    },
+    {
+      "timestamp_key": "218355900",
+      "date": "DAY2",
+      "path": "data/EgoLife/A1_JAKE/DAY2/DAY2_A1_JAKE_18353000.mp4",
+      "status": "readable",
+      "size": 20815537,
+      "frames": 600,
+      "fps": 20.0,
+      "error": null
+    },
+    {
+      "timestamp_key": "221053000",
+      "date": "DAY2",
+      "path": "data/EgoLife/A1_JAKE/DAY2/DAY2_A1_JAKE_21050000.mp4",
+      "status": "readable",
+      "size": 18621652,
+      "frames": 600,
+      "fps": 20.0,
+      "error": null
+    },
+    {
+      "timestamp_key": "221055900",
+      "date": "DAY2",
+      "path": "data/EgoLife/A1_JAKE/DAY2/DAY2_A1_JAKE_21053000.mp4",
+      "status": "readable",
+      "size": 19273194,
+      "frames": 600,
+      "fps": 20.0,
+      "error": null
+    },
+    {
+      "timestamp_key": "221125900",
+      "date": "DAY2",
+      "path": "data/EgoLife/A1_JAKE/DAY2/DAY2_A1_JAKE_21123000.mp4",
+      "status": "readable",
+      "size": 21321147,
+      "frames": 600,
+      "fps": 20.0,
+      "error": null
+    },
+    {
+      "timestamp_key": "221132900",
+      "date": "DAY2",
+      "path": "data/EgoLife/A1_JAKE/DAY2/DAY2_A1_JAKE_21130000.mp4",
+      "status": "readable",
+      "size": 20685285,
+      "frames": 600,
+      "fps": 20.0,
+      "error": null
+    },
+    {
+      "timestamp_key": "221140000",
+      "date": "DAY2",
+      "path": "data/EgoLife/A1_JAKE/DAY2/DAY2_A1_JAKE_21133000.mp4",
+      "status": "readable",
+      "size": 19625230,
+      "frames": 600,
+      "fps": 20.0,
+      "error": null
+    },
+    {
+      "timestamp_key": "221245700",
+      "date": "DAY2",
+      "path": "data/EgoLife/A1_JAKE/DAY2/DAY2_A1_JAKE_21243000.mp4",
+      "status": "readable",
+      "size": 12856425,
+      "frames": 600,
+      "fps": 20.0,
+      "error": null
+    },
+    {
+      "timestamp_key": "221283000",
+      "date": "DAY2",
+      "path": "data/EgoLife/A1_JAKE/DAY2/DAY2_A1_JAKE_21280000.mp4",
+      "status": "readable",
+      "size": 20543597,
+      "frames": 600,
+      "fps": 20.0,
+      "error": null
+    },
+    {
+      "timestamp_key": "221385900",
+      "date": "DAY2",
+      "path": "data/EgoLife/A1_JAKE/DAY2/DAY2_A1_JAKE_21383000.mp4",
+      "status": "readable",
+      "size": 12770129,
+      "frames": 600,
+      "fps": 20.0,
+      "error": null
+    },
+    {
+      "timestamp_key": "222022900",
+      "date": "DAY2",
+      "path": "data/EgoLife/A1_JAKE/DAY2/DAY2_A1_JAKE_22020000.mp4",
+      "status": "readable",
+      "size": 16429485,
+      "frames": 600,
+      "fps": 20.0,
+      "error": null
+    },
+    {
+      "timestamp_key": "222052700",
+      "date": "DAY2",
+      "path": "data/EgoLife/A1_JAKE/DAY2/DAY2_A1_JAKE_22050000.mp4",
+      "status": "readable",
+      "size": 17265760,
+      "frames": 600,
+      "fps": 20.0,
+      "error": null
+    },
+    {
+      "timestamp_key": "222400000",
+      "date": "DAY2",
+      "path": "data/EgoLife/A1_JAKE/DAY2/DAY2_A1_JAKE_22393000.mp4",
+      "status": "readable",
+      "size": 16224453,
+      "frames": 600,
+      "fps": 20.0,
+      "error": null
+    },
+    {
+      "timestamp_key": "222432800",
+      "date": "DAY2",
+      "path": "data/EgoLife/A1_JAKE/DAY2/DAY2_A1_JAKE_22430000.mp4",
+      "status": "readable",
+      "size": 16975549,
+      "frames": 600,
+      "fps": 20.0,
+      "error": null
+    },
+    {
+      "timestamp_key": "222442900",
+      "date": "DAY2",
+      "path": "data/EgoLife/A1_JAKE/DAY2/DAY2_A1_JAKE_22440000.mp4",
+      "status": "readable",
+      "size": 14784319,
+      "frames": 600,
+      "fps": 20.0,
+      "error": null
+    },
+    {
+      "timestamp_key": "222475900",
+      "date": "DAY2",
+      "path": "data/EgoLife/A1_JAKE/DAY2/DAY2_A1_JAKE_22473000.mp4",
+      "status": "readable",
+      "size": 16919801,
+      "frames": 600,
+      "fps": 20.0,
+      "error": null
+    },
+    {
+      "timestamp_key": "222530000",
+      "date": "DAY2",
+      "path": "data/EgoLife/A1_JAKE/DAY2/DAY2_A1_JAKE_22523000.mp4",
+      "status": "readable",
+      "size": 13624357,
+      "frames": 600,
+      "fps": 20.0,
+      "error": null
+    },
+    {
+      "timestamp_key": "222582300",
+      "date": "DAY2",
+      "path": "data/EgoLife/A1_JAKE/DAY2/DAY2_A1_JAKE_22580000.mp4",
+      "status": "readable",
+      "size": 9509753,
+      "frames": 501,
+      "fps": 20.0,
+      "error": null
+    },
+    {
+      "timestamp_key": "311335900",
+      "date": "DAY3",
+      "path": "data/EgoLife/A1_JAKE/DAY3/DAY3_A1_JAKE_11333000.mp4",
+      "status": "readable",
+      "size": 11655003,
+      "frames": 600,
+      "fps": 20.0,
+      "error": null
+    },
+    {
+      "timestamp_key": "311342900",
+      "date": "DAY3",
+      "path": "data/EgoLife/A1_JAKE/DAY3/DAY3_A1_JAKE_11340000.mp4",
+      "status": "readable",
+      "size": 13424753,
+      "frames": 600,
+      "fps": 20.0,
+      "error": null
+    },
+    {
+      "timestamp_key": "311345900",
+      "date": "DAY3",
+      "path": "data/EgoLife/A1_JAKE/DAY3/DAY3_A1_JAKE_11343000.mp4",
+      "status": "readable",
+      "size": 14271213,
+      "frames": 600,
+      "fps": 20.0,
+      "error": null
+    },
+    {
+      "timestamp_key": "311353000",
+      "date": "DAY3",
+      "path": "data/EgoLife/A1_JAKE/DAY3/DAY3_A1_JAKE_11350000.mp4",
+      "status": "readable",
+      "size": 12569405,
+      "frames": 600,
+      "fps": 20.0,
+      "error": null
+    },
+    {
+      "timestamp_key": "311355900",
+      "date": "DAY3",
+      "path": "data/EgoLife/A1_JAKE/DAY3/DAY3_A1_JAKE_11353000.mp4",
+      "status": "readable",
+      "size": 15642710,
+      "frames": 600,
+      "fps": 20.0,
+      "error": null
+    },
+    {
+      "timestamp_key": "311390000",
+      "date": "DAY3",
+      "path": "data/EgoLife/A1_JAKE/DAY3/DAY3_A1_JAKE_11383000.mp4",
+      "status": "readable",
+      "size": 12869940,
+      "frames": 600,
+      "fps": 20.0,
+      "error": null
+    },
+    {
+      "timestamp_key": "311515900",
+      "date": "DAY3",
+      "path": "data/EgoLife/A1_JAKE/DAY3/DAY3_A1_JAKE_11513000.mp4",
+      "status": "readable",
+      "size": 16507942,
+      "frames": 600,
+      "fps": 20.0,
+      "error": null
+    },
+    {
+      "timestamp_key": "311593000",
+      "date": "DAY3",
+      "path": "data/EgoLife/A1_JAKE/DAY3/DAY3_A1_JAKE_11590000.mp4",
+      "status": "readable",
+      "size": 17856604,
+      "frames": 600,
+      "fps": 20.0,
+      "error": null
+    },
+    {
+      "timestamp_key": "311595900",
+      "date": "DAY3",
+      "path": "data/EgoLife/A1_JAKE/DAY3/DAY3_A1_JAKE_11593000.mp4",
+      "status": "readable",
+      "size": 16181413,
+      "frames": 600,
+      "fps": 20.0,
+      "error": null
+    },
+    {
+      "timestamp_key": "312002800",
+      "date": "DAY3",
+      "path": "data/EgoLife/A1_JAKE/DAY3/DAY3_A1_JAKE_12000000.mp4",
+      "status": "readable",
+      "size": 17357369,
+      "frames": 600,
+      "fps": 20.0,
+      "error": null
+    },
+    {
+      "timestamp_key": "312010000",
+      "date": "DAY3",
+      "path": "data/EgoLife/A1_JAKE/DAY3/DAY3_A1_JAKE_12003000.mp4",
+      "status": "readable",
+      "size": 18180339,
+      "frames": 600,
+      "fps": 20.0,
+      "error": null
+    },
+    {
+      "timestamp_key": "312113000",
+      "date": "DAY3",
+      "path": "data/EgoLife/A1_JAKE/DAY3/DAY3_A1_JAKE_12110000.mp4",
+      "status": "readable",
+      "size": 11627593,
+      "frames": 600,
+      "fps": 20.0,
+      "error": null
+    },
+    {
+      "timestamp_key": "312120000",
+      "date": "DAY3",
+      "path": "data/EgoLife/A1_JAKE/DAY3/DAY3_A1_JAKE_12113000.mp4",
+      "status": "readable",
+      "size": 14283004,
+      "frames": 600,
+      "fps": 20.0,
+      "error": null
+    },
+    {
+      "timestamp_key": "312223000",
+      "date": "DAY3",
+      "path": "data/EgoLife/A1_JAKE/DAY3/DAY3_A1_JAKE_12220000.mp4",
+      "status": "readable",
+      "size": 9069971,
+      "frames": 600,
+      "fps": 20.0,
+      "error": null
+    },
+    {
+      "timestamp_key": "312280000",
+      "date": "DAY3",
+      "path": "data/EgoLife/A1_JAKE/DAY3/DAY3_A1_JAKE_12273000.mp4",
+      "status": "readable",
+      "size": 11214148,
+      "frames": 600,
+      "fps": 20.0,
+      "error": null
+    },
+    {
+      "timestamp_key": "312283000",
+      "date": "DAY3",
+      "path": "data/EgoLife/A1_JAKE/DAY3/DAY3_A1_JAKE_12280000.mp4",
+      "status": "readable",
+      "size": 9893676,
+      "frames": 600,
+      "fps": 20.0,
+      "error": null
+    },
+    {
+      "timestamp_key": "312290000",
+      "date": "DAY3",
+      "path": "data/EgoLife/A1_JAKE/DAY3/DAY3_A1_JAKE_12283000.mp4",
+      "status": "readable",
+      "size": 11820767,
+      "frames": 600,
+      "fps": 20.0,
+      "error": null
+    },
+    {
+      "timestamp_key": "312293000",
+      "date": "DAY3",
+      "path": "data/EgoLife/A1_JAKE/DAY3/DAY3_A1_JAKE_12290000.mp4",
+      "status": "readable",
+      "size": 11498278,
+      "frames": 600,
+      "fps": 20.0,
+      "error": null
+    },
+    {
+      "timestamp_key": "312295900",
+      "date": "DAY3",
+      "path": "data/EgoLife/A1_JAKE/DAY3/DAY3_A1_JAKE_12293000.mp4",
+      "status": "readable",
+      "size": 11626262,
+      "frames": 600,
+      "fps": 20.0,
+      "error": null
+    },
+    {
+      "timestamp_key": "312303000",
+      "date": "DAY3",
+      "path": "data/EgoLife/A1_JAKE/DAY3/DAY3_A1_JAKE_12300000.mp4",
+      "status": "readable",
+      "size": 11546784,
+      "frames": 600,
+      "fps": 20.0,
+      "error": null
+    },
+    {
+      "timestamp_key": "312310000",
+      "date": "DAY3",
+      "path": "data/EgoLife/A1_JAKE/DAY3/DAY3_A1_JAKE_12303000.mp4",
+      "status": "readable",
+      "size": 13373651,
+      "frames": 600,
+      "fps": 20.0,
+      "error": null
+    },
+    {
+      "timestamp_key": "312312800",
+      "date": "DAY3",
+      "path": "data/EgoLife/A1_JAKE/DAY3/DAY3_A1_JAKE_12310000.mp4",
+      "status": "readable",
+      "size": 11755201,
+      "frames": 600,
+      "fps": 20.0,
+      "error": null
+    },
+    {
+      "timestamp_key": "312320000",
+      "date": "DAY3",
+      "path": "data/EgoLife/A1_JAKE/DAY3/DAY3_A1_JAKE_12313000.mp4",
+      "status": "readable",
+      "size": 13825446,
+      "frames": 600,
+      "fps": 20.0,
+      "error": null
+    },
+    {
+      "timestamp_key": "312353000",
+      "date": "DAY3",
+      "path": "data/EgoLife/A1_JAKE/DAY3/DAY3_A1_JAKE_12350000.mp4",
+      "status": "readable",
+      "size": 14260226,
+      "frames": 600,
+      "fps": 20.0,
+      "error": null
+    },
+    {
+      "timestamp_key": "312360000",
+      "date": "DAY3",
+      "path": "data/EgoLife/A1_JAKE/DAY3/DAY3_A1_JAKE_12353000.mp4",
+      "status": "readable",
+      "size": 14346829,
+      "frames": 600,
+      "fps": 20.0,
+      "error": null
+    },
+    {
+      "timestamp_key": "312373000",
+      "date": "DAY3",
+      "path": "data/EgoLife/A1_JAKE/DAY3/DAY3_A1_JAKE_12370000.mp4",
+      "status": "readable",
+      "size": 15962900,
+      "frames": 600,
+      "fps": 20.0,
+      "error": null
+    },
+    {
+      "timestamp_key": "312375900",
+      "date": "DAY3",
+      "path": "data/EgoLife/A1_JAKE/DAY3/DAY3_A1_JAKE_12373000.mp4",
+      "status": "readable",
+      "size": 15473703,
+      "frames": 600,
+      "fps": 20.0,
+      "error": null
+    },
+    {
+      "timestamp_key": "312385900",
+      "date": "DAY3",
+      "path": "data/EgoLife/A1_JAKE/DAY3/DAY3_A1_JAKE_12383000.mp4",
+      "status": "readable",
+      "size": 16827855,
+      "frames": 600,
+      "fps": 20.0,
+      "error": null
+    },
+    {
+      "timestamp_key": "314503000",
+      "date": "DAY3",
+      "path": "data/EgoLife/A1_JAKE/DAY3/DAY3_A1_JAKE_14500000.mp4",
+      "status": "readable",
+      "size": 19526730,
+      "frames": 600,
+      "fps": 20.0,
+      "error": null
+    },
+    {
+      "timestamp_key": "314582800",
+      "date": "DAY3",
+      "path": "data/EgoLife/A1_JAKE/DAY3/DAY3_A1_JAKE_14580000.mp4",
+      "status": "readable",
+      "size": 23476503,
+      "frames": 600,
+      "fps": 20.0,
+      "error": null
+    },
+    {
+      "timestamp_key": "314590000",
+      "date": "DAY3",
+      "path": "data/EgoLife/A1_JAKE/DAY3/DAY3_A1_JAKE_14583000.mp4",
+      "status": "readable",
+      "size": 24130562,
+      "frames": 600,
+      "fps": 20.0,
+      "error": null
+    },
+    {
+      "timestamp_key": "314593000",
+      "date": "DAY3",
+      "path": "data/EgoLife/A1_JAKE/DAY3/DAY3_A1_JAKE_14590000.mp4",
+      "status": "readable",
+      "size": 22376934,
+      "frames": 600,
+      "fps": 20.0,
+      "error": null
+    },
+    {
+      "timestamp_key": "315010000",
+      "date": "DAY3",
+      "path": "data/EgoLife/A1_JAKE/DAY3/DAY3_A1_JAKE_15003000.mp4",
+      "status": "readable",
+      "size": 21211268,
+      "frames": 600,
+      "fps": 20.0,
+      "error": null
+    },
+    {
+      "timestamp_key": "315013000",
+      "date": "DAY3",
+      "path": "data/EgoLife/A1_JAKE/DAY3/DAY3_A1_JAKE_15010000.mp4",
+      "status": "readable",
+      "size": 19110934,
+      "frames": 600,
+      "fps": 20.0,
+      "error": null
+    },
+    {
+      "timestamp_key": "315015900",
+      "date": "DAY3",
+      "path": "data/EgoLife/A1_JAKE/DAY3/DAY3_A1_JAKE_15013000.mp4",
+      "status": "readable",
+      "size": 21100060,
+      "frames": 600,
+      "fps": 20.0,
+      "error": null
+    },
+    {
+      "timestamp_key": "315022900",
+      "date": "DAY3",
+      "path": "data/EgoLife/A1_JAKE/DAY3/DAY3_A1_JAKE_15020000.mp4",
+      "status": "readable",
+      "size": 19162137,
+      "frames": 600,
+      "fps": 20.0,
+      "error": null
+    },
+    {
+      "timestamp_key": "315030000",
+      "date": "DAY3",
+      "path": "data/EgoLife/A1_JAKE/DAY3/DAY3_A1_JAKE_15023000.mp4",
+      "status": "readable",
+      "size": 17813707,
+      "frames": 600,
+      "fps": 20.0,
+      "error": null
+    },
+    {
+      "timestamp_key": "315033000",
+      "date": "DAY3",
+      "path": "data/EgoLife/A1_JAKE/DAY3/DAY3_A1_JAKE_15030000.mp4",
+      "status": "readable",
+      "size": 19451937,
+      "frames": 600,
+      "fps": 20.0,
+      "error": null
+    },
+    {
+      "timestamp_key": "315525700",
+      "date": "DAY3",
+      "path": "data/EgoLife/A1_JAKE/DAY3/DAY3_A1_JAKE_15523000.mp4",
+      "status": "readable",
+      "size": 26161971,
+      "frames": 600,
+      "fps": 20.0,
+      "error": null
+    },
+    {
+      "timestamp_key": "315533000",
+      "date": "DAY3",
+      "path": "data/EgoLife/A1_JAKE/DAY3/DAY3_A1_JAKE_15530000.mp4",
+      "status": "readable",
+      "size": 24897177,
+      "frames": 600,
+      "fps": 20.0,
+      "error": null
+    },
+    {
+      "timestamp_key": "315535900",
+      "date": "DAY3",
+      "path": "data/EgoLife/A1_JAKE/DAY3/DAY3_A1_JAKE_15533000.mp4",
+      "status": "readable",
+      "size": 21660935,
+      "frames": 600,
+      "fps": 20.0,
+      "error": null
+    },
+    {
+      "timestamp_key": "315543000",
+      "date": "DAY3",
+      "path": "data/EgoLife/A1_JAKE/DAY3/DAY3_A1_JAKE_15540000.mp4",
+      "status": "readable",
+      "size": 18825364,
+      "frames": 600,
+      "fps": 20.0,
+      "error": null
+    },
+    {
+      "timestamp_key": "316122700",
+      "date": "DAY3",
+      "path": "data/EgoLife/A1_JAKE/DAY3/DAY3_A1_JAKE_16120000.mp4",
+      "status": "readable",
+      "size": 22663017,
+      "frames": 600,
+      "fps": 20.0,
+      "error": null
+    },
+    {
+      "timestamp_key": "316162800",
+      "date": "DAY3",
+      "path": "data/EgoLife/A1_JAKE/DAY3/DAY3_A1_JAKE_16160000.mp4",
+      "status": "readable",
+      "size": 22019581,
+      "frames": 600,
+      "fps": 20.0,
+      "error": null
+    },
+    {
+      "timestamp_key": "316275700",
+      "date": "DAY3",
+      "path": "data/EgoLife/A1_JAKE/DAY3/DAY3_A1_JAKE_16273000.mp4",
+      "status": "readable",
+      "size": 24879474,
+      "frames": 600,
+      "fps": 20.0,
+      "error": null
+    },
+    {
+      "timestamp_key": "316283000",
+      "date": "DAY3",
+      "path": "data/EgoLife/A1_JAKE/DAY3/DAY3_A1_JAKE_16280000.mp4",
+      "status": "readable",
+      "size": 23988061,
+      "frames": 600,
+      "fps": 20.0,
+      "error": null
+    },
+    {
+      "timestamp_key": "316543000",
+      "date": "DAY3",
+      "path": "data/EgoLife/A1_JAKE/DAY3/DAY3_A1_JAKE_16540000.mp4",
+      "status": "readable",
+      "size": 20393177,
+      "frames": 600,
+      "fps": 20.0,
+      "error": null
+    },
+    {
+      "timestamp_key": "316550000",
+      "date": "DAY3",
+      "path": "data/EgoLife/A1_JAKE/DAY3/DAY3_A1_JAKE_16543000.mp4",
+      "status": "readable",
+      "size": 18267261,
+      "frames": 600,
+      "fps": 20.0,
+      "error": null
+    },
+    {
+      "timestamp_key": "317190000",
+      "date": "DAY3",
+      "path": "data/EgoLife/A1_JAKE/DAY3/DAY3_A1_JAKE_17183000.mp4",
+      "status": "readable",
+      "size": 9421793,
+      "frames": 600,
+      "fps": 20.0,
+      "error": null
+    },
+    {
+      "timestamp_key": "317193000",
+      "date": "DAY3",
+      "path": "data/EgoLife/A1_JAKE/DAY3/DAY3_A1_JAKE_17190000.mp4",
+      "status": "readable",
+      "size": 14848115,
+      "frames": 600,
+      "fps": 20.0,
+      "error": null
+    },
+    {
+      "timestamp_key": "317200000",
+      "date": "DAY3",
+      "path": "data/EgoLife/A1_JAKE/DAY3/DAY3_A1_JAKE_17193000.mp4",
+      "status": "readable",
+      "size": 14594499,
+      "frames": 600,
+      "fps": 20.0,
+      "error": null
+    },
+    {
+      "timestamp_key": "317213000",
+      "date": "DAY3",
+      "path": "data/EgoLife/A1_JAKE/DAY3/DAY3_A1_JAKE_17210000.mp4",
+      "status": "readable",
+      "size": 12951905,
+      "frames": 600,
+      "fps": 20.0,
+      "error": null
+    },
+    {
+      "timestamp_key": "317230000",
+      "date": "DAY3",
+      "path": "data/EgoLife/A1_JAKE/DAY3/DAY3_A1_JAKE_17223000.mp4",
+      "status": "readable",
+      "size": 13495394,
+      "frames": 600,
+      "fps": 20.0,
+      "error": null
+    },
+    {
+      "timestamp_key": "317280000",
+      "date": "DAY3",
+      "path": "data/EgoLife/A1_JAKE/DAY3/DAY3_A1_JAKE_17273000.mp4",
+      "status": "readable",
+      "size": 17744214,
+      "frames": 600,
+      "fps": 20.0,
+      "error": null
+    },
+    {
+      "timestamp_key": "317293000",
+      "date": "DAY3",
+      "path": "data/EgoLife/A1_JAKE/DAY3/DAY3_A1_JAKE_17290000.mp4",
+      "status": "readable",
+      "size": 22818931,
+      "frames": 600,
+      "fps": 20.0,
+      "error": null
+    },
+    {
+      "timestamp_key": "317300000",
+      "date": "DAY3",
+      "path": "data/EgoLife/A1_JAKE/DAY3/DAY3_A1_JAKE_17293000.mp4",
+      "status": "readable",
+      "size": 19073492,
+      "frames": 600,
+      "fps": 20.0,
+      "error": null
+    },
+    {
+      "timestamp_key": "317302900",
+      "date": "DAY3",
+      "path": "data/EgoLife/A1_JAKE/DAY3/DAY3_A1_JAKE_17300000.mp4",
+      "status": "readable",
+      "size": 21358052,
+      "frames": 600,
+      "fps": 20.0,
+      "error": null
+    },
+    {
+      "timestamp_key": "318023000",
+      "date": "DAY3",
+      "path": "data/EgoLife/A1_JAKE/DAY3/DAY3_A1_JAKE_18020000.mp4",
+      "status": "readable",
+      "size": 21001950,
+      "frames": 600,
+      "fps": 20.0,
+      "error": null
+    },
+    {
+      "timestamp_key": "318105900",
+      "date": "DAY3",
+      "path": "data/EgoLife/A1_JAKE/DAY3/DAY3_A1_JAKE_18103000.mp4",
+      "status": "readable",
+      "size": 16958281,
+      "frames": 600,
+      "fps": 20.0,
+      "error": null
+    },
+    {
+      "timestamp_key": "319345900",
+      "date": "DAY3",
+      "path": "data/EgoLife/A1_JAKE/DAY3/DAY3_A1_JAKE_19343000.mp4",
+      "status": "readable",
+      "size": 17479735,
+      "frames": 600,
+      "fps": 20.0,
+      "error": null
+    },
+    {
+      "timestamp_key": "319365600",
+      "date": "DAY3",
+      "path": "data/EgoLife/A1_JAKE/DAY3/DAY3_A1_JAKE_19363000.mp4",
+      "status": "readable",
+      "size": 19665714,
+      "frames": 600,
+      "fps": 20.0,
+      "error": null
+    },
+    {
+      "timestamp_key": "320032900",
+      "date": "DAY3",
+      "path": "data/EgoLife/A1_JAKE/DAY3/DAY3_A1_JAKE_20030000.mp4",
+      "status": "readable",
+      "size": 17964445,
+      "frames": 600,
+      "fps": 20.0,
+      "error": null
+    },
+    {
+      "timestamp_key": "320152800",
+      "date": "DAY3",
+      "path": "data/EgoLife/A1_JAKE/DAY3/DAY3_A1_JAKE_20150000.mp4",
+      "status": "readable",
+      "size": 17033067,
+      "frames": 600,
+      "fps": 20.0,
+      "error": null
+    },
+    {
+      "timestamp_key": "321212900",
+      "date": "DAY3",
+      "path": "data/EgoLife/A1_JAKE/DAY3/DAY3_A1_JAKE_21210000.mp4",
+      "status": "readable",
+      "size": 20773774,
+      "frames": 600,
+      "fps": 20.0,
+      "error": null
+    },
+    {
+      "timestamp_key": "321220000",
+      "date": "DAY3",
+      "path": "data/EgoLife/A1_JAKE/DAY3/DAY3_A1_JAKE_21213000.mp4",
+      "status": "readable",
+      "size": 16883871,
+      "frames": 600,
+      "fps": 20.0,
+      "error": null
+    },
+    {
+      "timestamp_key": "321223000",
+      "date": "DAY3",
+      "path": "data/EgoLife/A1_JAKE/DAY3/DAY3_A1_JAKE_21220000.mp4",
+      "status": "readable",
+      "size": 18055732,
+      "frames": 600,
+      "fps": 20.0,
+      "error": null
+    },
+    {
+      "timestamp_key": "321225900",
+      "date": "DAY3",
+      "path": "data/EgoLife/A1_JAKE/DAY3/DAY3_A1_JAKE_21223000.mp4",
+      "status": "readable",
+      "size": 17079064,
+      "frames": 600,
+      "fps": 20.0,
+      "error": null
+    },
+    {
+      "timestamp_key": "321233000",
+      "date": "DAY3",
+      "path": "data/EgoLife/A1_JAKE/DAY3/DAY3_A1_JAKE_21230000.mp4",
+      "status": "readable",
+      "size": 17236615,
+      "frames": 600,
+      "fps": 20.0,
+      "error": null
+    },
+    {
+      "timestamp_key": "321235900",
+      "date": "DAY3",
+      "path": "data/EgoLife/A1_JAKE/DAY3/DAY3_A1_JAKE_21233000.mp4",
+      "status": "readable",
+      "size": 21304697,
+      "frames": 600,
+      "fps": 20.0,
+      "error": null
+    },
+    {
+      "timestamp_key": "321243000",
+      "date": "DAY3",
+      "path": "data/EgoLife/A1_JAKE/DAY3/DAY3_A1_JAKE_21240000.mp4",
+      "status": "readable",
+      "size": 16063794,
+      "frames": 600,
+      "fps": 20.0,
+      "error": null
+    },
+    {
+      "timestamp_key": "321245900",
+      "date": "DAY3",
+      "path": "data/EgoLife/A1_JAKE/DAY3/DAY3_A1_JAKE_21243000.mp4",
+      "status": "readable",
+      "size": 18421789,
+      "frames": 600,
+      "fps": 20.0,
+      "error": null
+    },
+    {
+      "timestamp_key": "321253000",
+      "date": "DAY3",
+      "path": "data/EgoLife/A1_JAKE/DAY3/DAY3_A1_JAKE_21250000.mp4",
+      "status": "readable",
+      "size": 17381090,
+      "frames": 600,
+      "fps": 20.0,
+      "error": null
+    },
+    {
+      "timestamp_key": "321255900",
+      "date": "DAY3",
+      "path": "data/EgoLife/A1_JAKE/DAY3/DAY3_A1_JAKE_21253000.mp4",
+      "status": "readable",
+      "size": 16672015,
+      "frames": 600,
+      "fps": 20.0,
+      "error": null
+    },
+    {
+      "timestamp_key": "321262900",
+      "date": "DAY3",
+      "path": "data/EgoLife/A1_JAKE/DAY3/DAY3_A1_JAKE_21260000.mp4",
+      "status": "readable",
+      "size": 19457397,
+      "frames": 600,
+      "fps": 20.0,
+      "error": null
+    },
+    {
+      "timestamp_key": "321270000",
+      "date": "DAY3",
+      "path": "data/EgoLife/A1_JAKE/DAY3/DAY3_A1_JAKE_21263000.mp4",
+      "status": "readable",
+      "size": 18212323,
+      "frames": 600,
+      "fps": 20.0,
+      "error": null
+    },
+    {
+      "timestamp_key": "321273000",
+      "date": "DAY3",
+      "path": "data/EgoLife/A1_JAKE/DAY3/DAY3_A1_JAKE_21270000.mp4",
+      "status": "readable",
+      "size": 19062207,
+      "frames": 600,
+      "fps": 20.0,
+      "error": null
+    },
+    {
+      "timestamp_key": "321275800",
+      "date": "DAY3",
+      "path": "data/EgoLife/A1_JAKE/DAY3/DAY3_A1_JAKE_21273000.mp4",
+      "status": "readable",
+      "size": 23112233,
+      "frames": 600,
+      "fps": 20.0,
+      "error": null
+    },
+    {
+      "timestamp_key": "410490000",
+      "date": "DAY4",
+      "path": "data/EgoLife/A1_JAKE/DAY4/DAY4_A1_JAKE_10483000.mp4",
+      "status": "readable",
+      "size": 13972892,
+      "frames": 600,
+      "fps": 20.0,
+      "error": null
+    },
+    {
+      "timestamp_key": "410522900",
+      "date": "DAY4",
+      "path": "data/EgoLife/A1_JAKE/DAY4/DAY4_A1_JAKE_10520000.mp4",
+      "status": "readable",
+      "size": 18526443,
+      "frames": 600,
+      "fps": 20.0,
+      "error": null
+    },
+    {
+      "timestamp_key": "410540000",
+      "date": "DAY4",
+      "path": "data/EgoLife/A1_JAKE/DAY4/DAY4_A1_JAKE_10533000.mp4",
+      "status": "readable",
+      "size": 15900218,
+      "frames": 600,
+      "fps": 20.0,
+      "error": null
+    },
+    {
+      "timestamp_key": "411072900",
+      "date": "DAY4",
+      "path": "data/EgoLife/A1_JAKE/DAY4/DAY4_A1_JAKE_11070000.mp4",
+      "status": "readable",
+      "size": 10619768,
+      "frames": 600,
+      "fps": 20.0,
+      "error": null
+    },
+    {
+      "timestamp_key": "411202900",
+      "date": "DAY4",
+      "path": "data/EgoLife/A1_JAKE/DAY4/DAY4_A1_JAKE_11200000.mp4",
+      "status": "readable",
+      "size": 11155572,
+      "frames": 600,
+      "fps": 20.0,
+      "error": null
+    },
+    {
+      "timestamp_key": "411233000",
+      "date": "DAY4",
+      "path": "data/EgoLife/A1_JAKE/DAY4/DAY4_A1_JAKE_11230000.mp4",
+      "status": "readable",
+      "size": 13385766,
+      "frames": 600,
+      "fps": 20.0,
+      "error": null
+    },
+    {
+      "timestamp_key": "411253000",
+      "date": "DAY4",
+      "path": "data/EgoLife/A1_JAKE/DAY4/DAY4_A1_JAKE_11250000.mp4",
+      "status": "readable",
+      "size": 10394251,
+      "frames": 600,
+      "fps": 20.0,
+      "error": null
+    },
+    {
+      "timestamp_key": "411343000",
+      "date": "DAY4",
+      "path": "data/EgoLife/A1_JAKE/DAY4/DAY4_A1_JAKE_11340000.mp4",
+      "status": "readable",
+      "size": 15972028,
+      "frames": 600,
+      "fps": 20.0,
+      "error": null
+    },
+    {
+      "timestamp_key": "411550000",
+      "date": "DAY4",
+      "path": "data/EgoLife/A1_JAKE/DAY4/DAY4_A1_JAKE_11543000.mp4",
+      "status": "readable",
+      "size": 13605782,
+      "frames": 600,
+      "fps": 20.0,
+      "error": null
+    },
+    {
+      "timestamp_key": "412022900",
+      "date": "DAY4",
+      "path": "data/EgoLife/A1_JAKE/DAY4/DAY4_A1_JAKE_12020000.mp4",
+      "status": "readable",
+      "size": 14047549,
+      "frames": 600,
+      "fps": 20.0,
+      "error": null
+    },
+    {
+      "timestamp_key": "412133000",
+      "date": "DAY4",
+      "path": "data/EgoLife/A1_JAKE/DAY4/DAY4_A1_JAKE_12130000.mp4",
+      "status": "readable",
+      "size": 9293917,
+      "frames": 600,
+      "fps": 20.0,
+      "error": null
+    },
+    {
+      "timestamp_key": "412185900",
+      "date": "DAY4",
+      "path": "data/EgoLife/A1_JAKE/DAY4/DAY4_A1_JAKE_12183000.mp4",
+      "status": "readable",
+      "size": 19894222,
+      "frames": 600,
+      "fps": 20.0,
+      "error": null
+    },
+    {
+      "timestamp_key": "412193000",
+      "date": "DAY4",
+      "path": "data/EgoLife/A1_JAKE/DAY4/DAY4_A1_JAKE_12190000.mp4",
+      "status": "readable",
+      "size": 17416935,
+      "frames": 600,
+      "fps": 20.0,
+      "error": null
+    },
+    {
+      "timestamp_key": "412200000",
+      "date": "DAY4",
+      "path": "data/EgoLife/A1_JAKE/DAY4/DAY4_A1_JAKE_12193000.mp4",
+      "status": "readable",
+      "size": 16982627,
+      "frames": 600,
+      "fps": 20.0,
+      "error": null
+    },
+    {
+      "timestamp_key": "412202900",
+      "date": "DAY4",
+      "path": "data/EgoLife/A1_JAKE/DAY4/DAY4_A1_JAKE_12200000.mp4",
+      "status": "readable",
+      "size": 17170921,
+      "frames": 600,
+      "fps": 20.0,
+      "error": null
+    },
+    {
+      "timestamp_key": "412205900",
+      "date": "DAY4",
+      "path": "data/EgoLife/A1_JAKE/DAY4/DAY4_A1_JAKE_12203000.mp4",
+      "status": "readable",
+      "size": 20909500,
+      "frames": 600,
+      "fps": 20.0,
+      "error": null
+    },
+    {
+      "timestamp_key": "412213000",
+      "date": "DAY4",
+      "path": "data/EgoLife/A1_JAKE/DAY4/DAY4_A1_JAKE_12210000.mp4",
+      "status": "readable",
+      "size": 18298240,
+      "frames": 600,
+      "fps": 20.0,
+      "error": null
+    },
+    {
+      "timestamp_key": "412253000",
+      "date": "DAY4",
+      "path": "data/EgoLife/A1_JAKE/DAY4/DAY4_A1_JAKE_12250000.mp4",
+      "status": "readable",
+      "size": 18147943,
+      "frames": 600,
+      "fps": 20.0,
+      "error": null
+    },
+    {
+      "timestamp_key": "412260000",
+      "date": "DAY4",
+      "path": "data/EgoLife/A1_JAKE/DAY4/DAY4_A1_JAKE_12253000.mp4",
+      "status": "readable",
+      "size": 17969258,
+      "frames": 600,
+      "fps": 20.0,
+      "error": null
+    },
+    {
+      "timestamp_key": "412262900",
+      "date": "DAY4",
+      "path": "data/EgoLife/A1_JAKE/DAY4/DAY4_A1_JAKE_12260000.mp4",
+      "status": "readable",
+      "size": 17819033,
+      "frames": 600,
+      "fps": 20.0,
+      "error": null
+    },
+    {
+      "timestamp_key": "412353000",
+      "date": "DAY4",
+      "path": "data/EgoLife/A1_JAKE/DAY4/DAY4_A1_JAKE_12350000.mp4",
+      "status": "readable",
+      "size": 13589494,
+      "frames": 600,
+      "fps": 20.0,
+      "error": null
+    },
+    {
+      "timestamp_key": "412360000",
+      "date": "DAY4",
+      "path": "data/EgoLife/A1_JAKE/DAY4/DAY4_A1_JAKE_12353000.mp4",
+      "status": "readable",
+      "size": 15116446,
+      "frames": 600,
+      "fps": 20.0,
+      "error": null
+    },
+    {
+      "timestamp_key": "412362800",
+      "date": "DAY4",
+      "path": "data/EgoLife/A1_JAKE/DAY4/DAY4_A1_JAKE_12360000.mp4",
+      "status": "readable",
+      "size": 12745142,
+      "frames": 600,
+      "fps": 20.0,
+      "error": null
+    },
+    {
+      "timestamp_key": "412365900",
+      "date": "DAY4",
+      "path": "data/EgoLife/A1_JAKE/DAY4/DAY4_A1_JAKE_12363000.mp4",
+      "status": "readable",
+      "size": 17661100,
+      "frames": 600,
+      "fps": 20.0,
+      "error": null
+    },
+    {
+      "timestamp_key": "412373000",
+      "date": "DAY4",
+      "path": "data/EgoLife/A1_JAKE/DAY4/DAY4_A1_JAKE_12370000.mp4",
+      "status": "readable",
+      "size": 18283939,
+      "frames": 600,
+      "fps": 20.0,
+      "error": null
+    },
+    {
+      "timestamp_key": "412460000",
+      "date": "DAY4",
+      "path": "data/EgoLife/A1_JAKE/DAY4/DAY4_A1_JAKE_12453000.mp4",
+      "status": "readable",
+      "size": 14104564,
+      "frames": 600,
+      "fps": 20.0,
+      "error": null
+    },
+    {
+      "timestamp_key": "412520000",
+      "date": "DAY4",
+      "path": "data/EgoLife/A1_JAKE/DAY4/DAY4_A1_JAKE_12513000.mp4",
+      "status": "readable",
+      "size": 10991959,
+      "frames": 600,
+      "fps": 20.0,
+      "error": null
+    },
+    {
+      "timestamp_key": "413113000",
+      "date": "DAY4",
+      "path": "data/EgoLife/A1_JAKE/DAY4/DAY4_A1_JAKE_13110000.mp4",
+      "status": "readable",
+      "size": 16541581,
+      "frames": 600,
+      "fps": 20.0,
+      "error": null
+    },
+    {
+      "timestamp_key": "413150000",
+      "date": "DAY4",
+      "path": "data/EgoLife/A1_JAKE/DAY4/DAY4_A1_JAKE_13143000.mp4",
+      "status": "readable",
+      "size": 19459311,
+      "frames": 600,
+      "fps": 20.0,
+      "error": null
+    },
+    {
+      "timestamp_key": "413173000",
+      "date": "DAY4",
+      "path": "data/EgoLife/A1_JAKE/DAY4/DAY4_A1_JAKE_13170000.mp4",
+      "status": "readable",
+      "size": 12601223,
+      "frames": 600,
+      "fps": 20.0,
+      "error": null
+    },
+    {
+      "timestamp_key": "413283000",
+      "date": "DAY4",
+      "path": "data/EgoLife/A1_JAKE/DAY4/DAY4_A1_JAKE_13280000.mp4",
+      "status": "readable",
+      "size": 14923029,
+      "frames": 600,
+      "fps": 20.0,
+      "error": null
+    },
+    {
+      "timestamp_key": "413323000",
+      "date": "DAY4",
+      "path": "data/EgoLife/A1_JAKE/DAY4/DAY4_A1_JAKE_13320000.mp4",
+      "status": "readable",
+      "size": 14477313,
+      "frames": 600,
+      "fps": 20.0,
+      "error": null
+    },
+    {
+      "timestamp_key": "413390000",
+      "date": "DAY4",
+      "path": "data/EgoLife/A1_JAKE/DAY4/DAY4_A1_JAKE_13383000.mp4",
+      "status": "readable",
+      "size": 12936328,
+      "frames": 600,
+      "fps": 20.0,
+      "error": null
+    },
+    {
+      "timestamp_key": "415595900",
+      "date": "DAY4",
+      "path": "data/EgoLife/A1_JAKE/DAY4/DAY4_A1_JAKE_15593000.mp4",
+      "status": "readable",
+      "size": 12653632,
+      "frames": 600,
+      "fps": 20.0,
+      "error": null
+    },
+    {
+      "timestamp_key": "416032600",
+      "date": "DAY4",
+      "path": "data/EgoLife/A1_JAKE/DAY4/DAY4_A1_JAKE_16030000.mp4",
+      "status": "readable",
+      "size": 14719850,
+      "frames": 600,
+      "fps": 20.0,
+      "error": null
+    },
+    {
+      "timestamp_key": "416155900",
+      "date": "DAY4",
+      "path": "data/EgoLife/A1_JAKE/DAY4/DAY4_A1_JAKE_16153000.mp4",
+      "status": "readable",
+      "size": 15403879,
+      "frames": 600,
+      "fps": 20.0,
+      "error": null
+    },
+    {
+      "timestamp_key": "416193000",
+      "date": "DAY4",
+      "path": "data/EgoLife/A1_JAKE/DAY4/DAY4_A1_JAKE_16190000.mp4",
+      "status": "readable",
+      "size": 15737550,
+      "frames": 600,
+      "fps": 20.0,
+      "error": null
+    },
+    {
+      "timestamp_key": "417072800",
+      "date": "DAY4",
+      "path": "data/EgoLife/A1_JAKE/DAY4/DAY4_A1_JAKE_17070000.mp4",
+      "status": "readable",
+      "size": 14191775,
+      "frames": 600,
+      "fps": 20.0,
+      "error": null
+    },
+    {
+      "timestamp_key": "417103000",
+      "date": "DAY4",
+      "path": "data/EgoLife/A1_JAKE/DAY4/DAY4_A1_JAKE_17100000.mp4",
+      "status": "readable",
+      "size": 18008387,
+      "frames": 600,
+      "fps": 20.0,
+      "error": null
+    },
+    {
+      "timestamp_key": "417110000",
+      "date": "DAY4",
+      "path": "data/EgoLife/A1_JAKE/DAY4/DAY4_A1_JAKE_17103000.mp4",
+      "status": "readable",
+      "size": 17203632,
+      "frames": 600,
+      "fps": 20.0,
+      "error": null
+    },
+    {
+      "timestamp_key": "417112900",
+      "date": "DAY4",
+      "path": "data/EgoLife/A1_JAKE/DAY4/DAY4_A1_JAKE_17110000.mp4",
+      "status": "readable",
+      "size": 18602015,
+      "frames": 600,
+      "fps": 20.0,
+      "error": null
+    },
+    {
+      "timestamp_key": "417130000",
+      "date": "DAY4",
+      "path": "data/EgoLife/A1_JAKE/DAY4/DAY4_A1_JAKE_17123000.mp4",
+      "status": "readable",
+      "size": 18044480,
+      "frames": 600,
+      "fps": 20.0,
+      "error": null
+    },
+    {
+      "timestamp_key": "417133000",
+      "date": "DAY4",
+      "path": "data/EgoLife/A1_JAKE/DAY4/DAY4_A1_JAKE_17130000.mp4",
+      "status": "readable",
+      "size": 16509799,
+      "frames": 600,
+      "fps": 20.0,
+      "error": null
+    },
+    {
+      "timestamp_key": "417140000",
+      "date": "DAY4",
+      "path": "data/EgoLife/A1_JAKE/DAY4/DAY4_A1_JAKE_17133000.mp4",
+      "status": "readable",
+      "size": 16062836,
+      "frames": 600,
+      "fps": 20.0,
+      "error": null
+    },
+    {
+      "timestamp_key": "417220000",
+      "date": "DAY4",
+      "path": "data/EgoLife/A1_JAKE/DAY4/DAY4_A1_JAKE_17213000.mp4",
+      "status": "readable",
+      "size": 16646965,
+      "frames": 600,
+      "fps": 20.0,
+      "error": null
+    },
+    {
+      "timestamp_key": "417222800",
+      "date": "DAY4",
+      "path": "data/EgoLife/A1_JAKE/DAY4/DAY4_A1_JAKE_17220000.mp4",
+      "status": "readable",
+      "size": 16196531,
+      "frames": 600,
+      "fps": 20.0,
+      "error": null
+    },
+    {
+      "timestamp_key": "417285800",
+      "date": "DAY4",
+      "path": "data/EgoLife/A1_JAKE/DAY4/DAY4_A1_JAKE_17283000.mp4",
+      "status": "readable",
+      "size": 16595996,
+      "frames": 600,
+      "fps": 20.0,
+      "error": null
+    },
+    {
+      "timestamp_key": "417432900",
+      "date": "DAY4",
+      "path": "data/EgoLife/A1_JAKE/DAY4/DAY4_A1_JAKE_17430000.mp4",
+      "status": "readable",
+      "size": 16714802,
+      "frames": 600,
+      "fps": 20.0,
+      "error": null
+    },
+    {
+      "timestamp_key": "417435900",
+      "date": "DAY4",
+      "path": "data/EgoLife/A1_JAKE/DAY4/DAY4_A1_JAKE_17433000.mp4",
+      "status": "readable",
+      "size": 14848873,
+      "frames": 600,
+      "fps": 20.0,
+      "error": null
+    },
+    {
+      "timestamp_key": "417465800",
+      "date": "DAY4",
+      "path": "data/EgoLife/A1_JAKE/DAY4/DAY4_A1_JAKE_17463000.mp4",
+      "status": "readable",
+      "size": 16346980,
+      "frames": 600,
+      "fps": 20.0,
+      "error": null
+    },
+    {
+      "timestamp_key": "417473000",
+      "date": "DAY4",
+      "path": "data/EgoLife/A1_JAKE/DAY4/DAY4_A1_JAKE_17470000.mp4",
+      "status": "readable",
+      "size": 17958210,
+      "frames": 600,
+      "fps": 20.0,
+      "error": null
+    },
+    {
+      "timestamp_key": "417482900",
+      "date": "DAY4",
+      "path": "data/EgoLife/A1_JAKE/DAY4/DAY4_A1_JAKE_17480000.mp4",
+      "status": "readable",
+      "size": 17736220,
+      "frames": 600,
+      "fps": 20.0,
+      "error": null
+    },
+    {
+      "timestamp_key": "417485800",
+      "date": "DAY4",
+      "path": "data/EgoLife/A1_JAKE/DAY4/DAY4_A1_JAKE_17483000.mp4",
+      "status": "readable",
+      "size": 16406701,
+      "frames": 600,
+      "fps": 20.0,
+      "error": null
+    },
+    {
+      "timestamp_key": "417493000",
+      "date": "DAY4",
+      "path": "data/EgoLife/A1_JAKE/DAY4/DAY4_A1_JAKE_17490000.mp4",
+      "status": "readable",
+      "size": 14696591,
+      "frames": 600,
+      "fps": 20.0,
+      "error": null
+    },
+    {
+      "timestamp_key": "417500000",
+      "date": "DAY4",
+      "path": "data/EgoLife/A1_JAKE/DAY4/DAY4_A1_JAKE_17493000.mp4",
+      "status": "readable",
+      "size": 15363836,
+      "frames": 600,
+      "fps": 20.0,
+      "error": null
+    },
+    {
+      "timestamp_key": "418055900",
+      "date": "DAY4",
+      "path": "data/EgoLife/A1_JAKE/DAY4/DAY4_A1_JAKE_18053000.mp4",
+      "status": "readable",
+      "size": 17166634,
+      "frames": 600,
+      "fps": 20.0,
+      "error": null
+    },
+    {
+      "timestamp_key": "418065900",
+      "date": "DAY4",
+      "path": "data/EgoLife/A1_JAKE/DAY4/DAY4_A1_JAKE_18063000.mp4",
+      "status": "readable",
+      "size": 16570543,
+      "frames": 600,
+      "fps": 20.0,
+      "error": null
+    },
+    {
+      "timestamp_key": "418095900",
+      "date": "DAY4",
+      "path": "data/EgoLife/A1_JAKE/DAY4/DAY4_A1_JAKE_18093000.mp4",
+      "status": "readable",
+      "size": 16734226,
+      "frames": 600,
+      "fps": 20.0,
+      "error": null
+    },
+    {
+      "timestamp_key": "418103000",
+      "date": "DAY4",
+      "path": "data/EgoLife/A1_JAKE/DAY4/DAY4_A1_JAKE_18100000.mp4",
+      "status": "readable",
+      "size": 17131994,
+      "frames": 600,
+      "fps": 20.0,
+      "error": null
+    },
+    {
+      "timestamp_key": "418112900",
+      "date": "DAY4",
+      "path": "data/EgoLife/A1_JAKE/DAY4/DAY4_A1_JAKE_18110000.mp4",
+      "status": "readable",
+      "size": 16232485,
+      "frames": 600,
+      "fps": 20.0,
+      "error": null
+    },
+    {
+      "timestamp_key": "418115800",
+      "date": "DAY4",
+      "path": "data/EgoLife/A1_JAKE/DAY4/DAY4_A1_JAKE_18113000.mp4",
+      "status": "readable",
+      "size": 15077157,
+      "frames": 600,
+      "fps": 20.0,
+      "error": null
+    },
+    {
+      "timestamp_key": "418133000",
+      "date": "DAY4",
+      "path": "data/EgoLife/A1_JAKE/DAY4/DAY4_A1_JAKE_18130000.mp4",
+      "status": "readable",
+      "size": 17321668,
+      "frames": 600,
+      "fps": 20.0,
+      "error": null
+    },
+    {
+      "timestamp_key": "418135800",
+      "date": "DAY4",
+      "path": "data/EgoLife/A1_JAKE/DAY4/DAY4_A1_JAKE_18133000.mp4",
+      "status": "readable",
+      "size": 18131804,
+      "frames": 600,
+      "fps": 20.0,
+      "error": null
+    },
+    {
+      "timestamp_key": "418282900",
+      "date": "DAY4",
+      "path": "data/EgoLife/A1_JAKE/DAY4/DAY4_A1_JAKE_18280000.mp4",
+      "status": "readable",
+      "size": 18974653,
+      "frames": 600,
+      "fps": 20.0,
+      "error": null
+    },
+    {
+      "timestamp_key": "418290000",
+      "date": "DAY4",
+      "path": "data/EgoLife/A1_JAKE/DAY4/DAY4_A1_JAKE_18283000.mp4",
+      "status": "readable",
+      "size": 17277031,
+      "frames": 600,
+      "fps": 20.0,
+      "error": null
+    },
+    {
+      "timestamp_key": "418373000",
+      "date": "DAY4",
+      "path": "data/EgoLife/A1_JAKE/DAY4/DAY4_A1_JAKE_18370000.mp4",
+      "status": "readable",
+      "size": 19271904,
+      "frames": 600,
+      "fps": 20.0,
+      "error": null
+    },
+    {
+      "timestamp_key": "418375900",
+      "date": "DAY4",
+      "path": "data/EgoLife/A1_JAKE/DAY4/DAY4_A1_JAKE_18373000.mp4",
+      "status": "readable",
+      "size": 17521173,
+      "frames": 600,
+      "fps": 20.0,
+      "error": null
+    },
+    {
+      "timestamp_key": "418382900",
+      "date": "DAY4",
+      "path": "data/EgoLife/A1_JAKE/DAY4/DAY4_A1_JAKE_18380000.mp4",
+      "status": "readable",
+      "size": 15993359,
+      "frames": 600,
+      "fps": 20.0,
+      "error": null
+    },
+    {
+      "timestamp_key": "418450000",
+      "date": "DAY4",
+      "path": "data/EgoLife/A1_JAKE/DAY4/DAY4_A1_JAKE_18443000.mp4",
+      "status": "readable",
+      "size": 20276125,
+      "frames": 600,
+      "fps": 20.0,
+      "error": null
+    },
+    {
+      "timestamp_key": "420400000",
+      "date": "DAY4",
+      "path": "data/EgoLife/A1_JAKE/DAY4/DAY4_A1_JAKE_20393000.mp4",
+      "status": "readable",
+      "size": 19953352,
+      "frames": 600,
+      "fps": 20.0,
+      "error": null
+    },
+    {
+      "timestamp_key": "420403000",
+      "date": "DAY4",
+      "path": "data/EgoLife/A1_JAKE/DAY4/DAY4_A1_JAKE_20400000.mp4",
+      "status": "readable",
+      "size": 18378342,
+      "frames": 600,
+      "fps": 20.0,
+      "error": null
+    },
+    {
+      "timestamp_key": "420455900",
+      "date": "DAY4",
+      "path": "data/EgoLife/A1_JAKE/DAY4/DAY4_A1_JAKE_20453000.mp4",
+      "status": "readable",
+      "size": 20287026,
+      "frames": 600,
+      "fps": 20.0,
+      "error": null
+    },
+    {
+      "timestamp_key": "420462900",
+      "date": "DAY4",
+      "path": "data/EgoLife/A1_JAKE/DAY4/DAY4_A1_JAKE_20460000.mp4",
+      "status": "readable",
+      "size": 20510278,
+      "frames": 600,
+      "fps": 20.0,
+      "error": null
+    },
+    {
+      "timestamp_key": "420585800",
+      "date": "DAY4",
+      "path": "data/EgoLife/A1_JAKE/DAY4/DAY4_A1_JAKE_20583000.mp4",
+      "status": "readable",
+      "size": 21162404,
+      "frames": 600,
+      "fps": 20.0,
+      "error": null
+    },
+    {
+      "timestamp_key": "421022900",
+      "date": "DAY4",
+      "path": "data/EgoLife/A1_JAKE/DAY4/DAY4_A1_JAKE_21020000.mp4",
+      "status": "readable",
+      "size": 18670053,
+      "frames": 600,
+      "fps": 20.0,
+      "error": null
+    },
+    {
+      "timestamp_key": "421052800",
+      "date": "DAY4",
+      "path": "data/EgoLife/A1_JAKE/DAY4/DAY4_A1_JAKE_21050000.mp4",
+      "status": "readable",
+      "size": 19143525,
+      "frames": 600,
+      "fps": 20.0,
+      "error": null
+    },
+    {
+      "timestamp_key": "421060000",
+      "date": "DAY4",
+      "path": "data/EgoLife/A1_JAKE/DAY4/DAY4_A1_JAKE_21053000.mp4",
+      "status": "readable",
+      "size": 18500193,
+      "frames": 600,
+      "fps": 20.0,
+      "error": null
+    },
+    {
+      "timestamp_key": "421120000",
+      "date": "DAY4",
+      "path": "data/EgoLife/A1_JAKE/DAY4/DAY4_A1_JAKE_21113000.mp4",
+      "status": "readable",
+      "size": 15155908,
+      "frames": 600,
+      "fps": 20.0,
+      "error": null
+    },
+    {
+      "timestamp_key": "421123000",
+      "date": "DAY4",
+      "path": "data/EgoLife/A1_JAKE/DAY4/DAY4_A1_JAKE_21120000.mp4",
+      "status": "readable",
+      "size": 14298498,
+      "frames": 600,
+      "fps": 20.0,
+      "error": null
+    },
+    {
+      "timestamp_key": "421140000",
+      "date": "DAY4",
+      "path": "data/EgoLife/A1_JAKE/DAY4/DAY4_A1_JAKE_21133000.mp4",
+      "status": "readable",
+      "size": 14138030,
+      "frames": 600,
+      "fps": 20.0,
+      "error": null
+    },
+    {
+      "timestamp_key": "421392900",
+      "date": "DAY4",
+      "path": "data/EgoLife/A1_JAKE/DAY4/DAY4_A1_JAKE_21390000.mp4",
+      "status": "readable",
+      "size": 22061986,
+      "frames": 600,
+      "fps": 20.0,
+      "error": null
+    },
+    {
+      "timestamp_key": "421400000",
+      "date": "DAY4",
+      "path": "data/EgoLife/A1_JAKE/DAY4/DAY4_A1_JAKE_21393000.mp4",
+      "status": "readable",
+      "size": 20678865,
+      "frames": 600,
+      "fps": 20.0,
+      "error": null
+    },
+    {
+      "timestamp_key": "421533000",
+      "date": "DAY4",
+      "path": "data/EgoLife/A1_JAKE/DAY4/DAY4_A1_JAKE_21530000.mp4",
+      "status": "readable",
+      "size": 19484511,
+      "frames": 600,
+      "fps": 20.0,
+      "error": null
+    },
+    {
+      "timestamp_key": "421543000",
+      "date": "DAY4",
+      "path": "data/EgoLife/A1_JAKE/DAY4/DAY4_A1_JAKE_21540000.mp4",
+      "status": "readable",
+      "size": 22289152,
+      "frames": 600,
+      "fps": 20.0,
+      "error": null
+    },
+    {
+      "timestamp_key": "421550000",
+      "date": "DAY4",
+      "path": "data/EgoLife/A1_JAKE/DAY4/DAY4_A1_JAKE_21543000.mp4",
+      "status": "readable",
+      "size": 22338367,
+      "frames": 600,
+      "fps": 20.0,
+      "error": null
+    },
+    {
+      "timestamp_key": "421595900",
+      "date": "DAY4",
+      "path": "data/EgoLife/A1_JAKE/DAY4/DAY4_A1_JAKE_21593000.mp4",
+      "status": "readable",
+      "size": 17802483,
+      "frames": 600,
+      "fps": 20.0,
+      "error": null
+    },
+    {
+      "timestamp_key": "511050000",
+      "date": "DAY5",
+      "path": "data/EgoLife/A1_JAKE/DAY5/DAY5_A1_JAKE_11043000.mp4",
+      "status": "readable",
+      "size": 7441436,
+      "frames": 600,
+      "fps": 20.0,
+      "error": null
+    },
+    {
+      "timestamp_key": "511060000",
+      "date": "DAY5",
+      "path": "data/EgoLife/A1_JAKE/DAY5/DAY5_A1_JAKE_11053000.mp4",
+      "status": "readable",
+      "size": 7401835,
+      "frames": 600,
+      "fps": 20.0,
+      "error": null
+    },
+    {
+      "timestamp_key": "511082800",
+      "date": "DAY5",
+      "path": "data/EgoLife/A1_JAKE/DAY5/DAY5_A1_JAKE_11080000.mp4",
+      "status": "readable",
+      "size": 7033584,
+      "frames": 600,
+      "fps": 20.0,
+      "error": null
+    },
+    {
+      "timestamp_key": "511102900",
+      "date": "DAY5",
+      "path": "data/EgoLife/A1_JAKE/DAY5/DAY5_A1_JAKE_11100000.mp4",
+      "status": "readable",
+      "size": 10205841,
+      "frames": 600,
+      "fps": 20.0,
+      "error": null
+    },
+    {
+      "timestamp_key": "511150000",
+      "date": "DAY5",
+      "path": "data/EgoLife/A1_JAKE/DAY5/DAY5_A1_JAKE_11143000.mp4",
+      "status": "readable",
+      "size": 10551250,
+      "frames": 600,
+      "fps": 20.0,
+      "error": null
+    },
+    {
+      "timestamp_key": "511165900",
+      "date": "DAY5",
+      "path": "data/EgoLife/A1_JAKE/DAY5/DAY5_A1_JAKE_11163000.mp4",
+      "status": "readable",
+      "size": 9195010,
+      "frames": 600,
+      "fps": 20.0,
+      "error": null
+    },
+    {
+      "timestamp_key": "511200000",
+      "date": "DAY5",
+      "path": "data/EgoLife/A1_JAKE/DAY5/DAY5_A1_JAKE_11193000.mp4",
+      "status": "readable",
+      "size": 12333376,
+      "frames": 600,
+      "fps": 20.0,
+      "error": null
+    },
+    {
+      "timestamp_key": "511315900",
+      "date": "DAY5",
+      "path": "data/EgoLife/A1_JAKE/DAY5/DAY5_A1_JAKE_11313000.mp4",
+      "status": "readable",
+      "size": 17843783,
+      "frames": 600,
+      "fps": 20.0,
+      "error": null
+    },
+    {
+      "timestamp_key": "511422900",
+      "date": "DAY5",
+      "path": "data/EgoLife/A1_JAKE/DAY5/DAY5_A1_JAKE_11420000.mp4",
+      "status": "readable",
+      "size": 12038961,
+      "frames": 600,
+      "fps": 20.0,
+      "error": null
+    },
+    {
+      "timestamp_key": "511455700",
+      "date": "DAY5",
+      "path": "data/EgoLife/A1_JAKE/DAY5/DAY5_A1_JAKE_11453000.mp4",
+      "status": "readable",
+      "size": 14598400,
+      "frames": 600,
+      "fps": 20.0,
+      "error": null
+    },
+    {
+      "timestamp_key": "512063000",
+      "date": "DAY5",
+      "path": "data/EgoLife/A1_JAKE/DAY5/DAY5_A1_JAKE_12060000.mp4",
+      "status": "readable",
+      "size": 15551434,
+      "frames": 600,
+      "fps": 20.0,
+      "error": null
+    },
+    {
+      "timestamp_key": "512185900",
+      "date": "DAY5",
+      "path": "data/EgoLife/A1_JAKE/DAY5/DAY5_A1_JAKE_12183000.mp4",
+      "status": "readable",
+      "size": 14840930,
+      "frames": 600,
+      "fps": 20.0,
+      "error": null
+    },
+    {
+      "timestamp_key": "512283000",
+      "date": "DAY5",
+      "path": "data/EgoLife/A1_JAKE/DAY5/DAY5_A1_JAKE_12280000.mp4",
+      "status": "readable",
+      "size": 11629484,
+      "frames": 600,
+      "fps": 20.0,
+      "error": null
+    },
+    {
+      "timestamp_key": "515005500",
+      "date": "DAY5",
+      "path": "data/EgoLife/A1_JAKE/DAY5/DAY5_A1_JAKE_15003207.mp4",
+      "status": "readable",
+      "size": 17681244,
+      "frames": 552,
+      "fps": 20.0,
+      "error": null
+    },
+    {
+      "timestamp_key": "515163000",
+      "date": "DAY5",
+      "path": "data/EgoLife/A1_JAKE/DAY5/DAY5_A1_JAKE_15160000.mp4",
+      "status": "readable",
+      "size": 12549923,
+      "frames": 600,
+      "fps": 20.0,
+      "error": null
+    },
+    {
+      "timestamp_key": "515265900",
+      "date": "DAY5",
+      "path": "data/EgoLife/A1_JAKE/DAY5/DAY5_A1_JAKE_15263000.mp4",
+      "status": "readable",
+      "size": 18599300,
+      "frames": 600,
+      "fps": 20.0,
+      "error": null
+    },
+    {
+      "timestamp_key": "515273000",
+      "date": "DAY5",
+      "path": "data/EgoLife/A1_JAKE/DAY5/DAY5_A1_JAKE_15270000.mp4",
+      "status": "readable",
+      "size": 18352192,
+      "frames": 600,
+      "fps": 20.0,
+      "error": null
+    },
+    {
+      "timestamp_key": "515275500",
+      "date": "DAY5",
+      "path": "data/EgoLife/A1_JAKE/DAY5/DAY5_A1_JAKE_15273000.mp4",
+      "status": "readable",
+      "size": 16621845,
+      "frames": 600,
+      "fps": 20.0,
+      "error": null
+    },
+    {
+      "timestamp_key": "515283000",
+      "date": "DAY5",
+      "path": "data/EgoLife/A1_JAKE/DAY5/DAY5_A1_JAKE_15280000.mp4",
+      "status": "readable",
+      "size": 15435831,
+      "frames": 600,
+      "fps": 20.0,
+      "error": null
+    },
+    {
+      "timestamp_key": "515285900",
+      "date": "DAY5",
+      "path": "data/EgoLife/A1_JAKE/DAY5/DAY5_A1_JAKE_15283000.mp4",
+      "status": "readable",
+      "size": 15947000,
+      "frames": 600,
+      "fps": 20.0,
+      "error": null
+    },
+    {
+      "timestamp_key": "515312800",
+      "date": "DAY5",
+      "path": "data/EgoLife/A1_JAKE/DAY5/DAY5_A1_JAKE_15310000.mp4",
+      "status": "readable",
+      "size": 18936017,
+      "frames": 600,
+      "fps": 20.0,
+      "error": null
+    },
+    {
+      "timestamp_key": "515520000",
+      "date": "DAY5",
+      "path": "data/EgoLife/A1_JAKE/DAY5/DAY5_A1_JAKE_15513000.mp4",
+      "status": "readable",
+      "size": 22373636,
+      "frames": 600,
+      "fps": 20.0,
+      "error": null
+    },
+    {
+      "timestamp_key": "516000000",
+      "date": "DAY5",
+      "path": "data/EgoLife/A1_JAKE/DAY5/DAY5_A1_JAKE_15593000.mp4",
+      "status": "readable",
+      "size": 24521371,
+      "frames": 600,
+      "fps": 20.0,
+      "error": null
+    },
+    {
+      "timestamp_key": "516003000",
+      "date": "DAY5",
+      "path": "data/EgoLife/A1_JAKE/DAY5/DAY5_A1_JAKE_16000000.mp4",
+      "status": "readable",
+      "size": 19124212,
+      "frames": 600,
+      "fps": 20.0,
+      "error": null
+    },
+    {
+      "timestamp_key": "516112900",
+      "date": "DAY5",
+      "path": "data/EgoLife/A1_JAKE/DAY5/DAY5_A1_JAKE_16110000.mp4",
+      "status": "readable",
+      "size": 21957082,
+      "frames": 600,
+      "fps": 20.0,
+      "error": null
+    },
+    {
+      "timestamp_key": "516115800",
+      "date": "DAY5",
+      "path": "data/EgoLife/A1_JAKE/DAY5/DAY5_A1_JAKE_16113000.mp4",
+      "status": "readable",
+      "size": 22482908,
+      "frames": 600,
+      "fps": 20.0,
+      "error": null
+    },
+    {
+      "timestamp_key": "516205900",
+      "date": "DAY5",
+      "path": "data/EgoLife/A1_JAKE/DAY5/DAY5_A1_JAKE_16203000.mp4",
+      "status": "readable",
+      "size": 22027117,
+      "frames": 600,
+      "fps": 20.0,
+      "error": null
+    },
+    {
+      "timestamp_key": "516213000",
+      "date": "DAY5",
+      "path": "data/EgoLife/A1_JAKE/DAY5/DAY5_A1_JAKE_16210000.mp4",
+      "status": "readable",
+      "size": 18206482,
+      "frames": 600,
+      "fps": 20.0,
+      "error": null
+    },
+    {
+      "timestamp_key": "516215900",
+      "date": "DAY5",
+      "path": "data/EgoLife/A1_JAKE/DAY5/DAY5_A1_JAKE_16213000.mp4",
+      "status": "readable",
+      "size": 23072374,
+      "frames": 600,
+      "fps": 20.0,
+      "error": null
+    },
+    {
+      "timestamp_key": "516245500",
+      "date": "DAY5",
+      "path": "data/EgoLife/A1_JAKE/DAY5/DAY5_A1_JAKE_16243000.mp4",
+      "status": "readable",
+      "size": 24288624,
+      "frames": 600,
+      "fps": 20.0,
+      "error": null
+    },
+    {
+      "timestamp_key": "516290000",
+      "date": "DAY5",
+      "path": "data/EgoLife/A1_JAKE/DAY5/DAY5_A1_JAKE_16283000.mp4",
+      "status": "readable",
+      "size": 25723497,
+      "frames": 600,
+      "fps": 20.0,
+      "error": null
+    },
+    {
+      "timestamp_key": "516293000",
+      "date": "DAY5",
+      "path": "data/EgoLife/A1_JAKE/DAY5/DAY5_A1_JAKE_16290000.mp4",
+      "status": "readable",
+      "size": 21176241,
+      "frames": 600,
+      "fps": 20.0,
+      "error": null
+    },
+    {
+      "timestamp_key": "516300000",
+      "date": "DAY5",
+      "path": "data/EgoLife/A1_JAKE/DAY5/DAY5_A1_JAKE_16293000.mp4",
+      "status": "readable",
+      "size": 23690270,
+      "frames": 600,
+      "fps": 20.0,
+      "error": null
+    },
+    {
+      "timestamp_key": "516323000",
+      "date": "DAY5",
+      "path": "data/EgoLife/A1_JAKE/DAY5/DAY5_A1_JAKE_16320000.mp4",
+      "status": "readable",
+      "size": 20464329,
+      "frames": 600,
+      "fps": 20.0,
+      "error": null
+    },
+    {
+      "timestamp_key": "516333000",
+      "date": "DAY5",
+      "path": "data/EgoLife/A1_JAKE/DAY5/DAY5_A1_JAKE_16330000.mp4",
+      "status": "readable",
+      "size": 22163056,
+      "frames": 600,
+      "fps": 20.0,
+      "error": null
+    },
+    {
+      "timestamp_key": "516340000",
+      "date": "DAY5",
+      "path": "data/EgoLife/A1_JAKE/DAY5/DAY5_A1_JAKE_16333000.mp4",
+      "status": "readable",
+      "size": 22654016,
+      "frames": 600,
+      "fps": 20.0,
+      "error": null
+    },
+    {
+      "timestamp_key": "516370000",
+      "date": "DAY5",
+      "path": "data/EgoLife/A1_JAKE/DAY5/DAY5_A1_JAKE_16363000.mp4",
+      "status": "readable",
+      "size": 20158980,
+      "frames": 600,
+      "fps": 20.0,
+      "error": null
+    },
+    {
+      "timestamp_key": "516403000",
+      "date": "DAY5",
+      "path": "data/EgoLife/A1_JAKE/DAY5/DAY5_A1_JAKE_16400000.mp4",
+      "status": "readable",
+      "size": 24253627,
+      "frames": 600,
+      "fps": 20.0,
+      "error": null
+    },
+    {
+      "timestamp_key": "518140000",
+      "date": "DAY5",
+      "path": "data/EgoLife/A1_JAKE/DAY5/DAY5_A1_JAKE_18133000.mp4",
+      "status": "readable",
+      "size": 17858354,
+      "frames": 600,
+      "fps": 20.0,
+      "error": null
+    },
+    {
+      "timestamp_key": "518142900",
+      "date": "DAY5",
+      "path": "data/EgoLife/A1_JAKE/DAY5/DAY5_A1_JAKE_18140000.mp4",
+      "status": "readable",
+      "size": 14148291,
+      "frames": 600,
+      "fps": 20.0,
+      "error": null
+    },
+    {
+      "timestamp_key": "518150000",
+      "date": "DAY5",
+      "path": "data/EgoLife/A1_JAKE/DAY5/DAY5_A1_JAKE_18143000.mp4",
+      "status": "readable",
+      "size": 16494606,
+      "frames": 600,
+      "fps": 20.0,
+      "error": null
+    },
+    {
+      "timestamp_key": "518152700",
+      "date": "DAY5",
+      "path": "data/EgoLife/A1_JAKE/DAY5/DAY5_A1_JAKE_18150000.mp4",
+      "status": "readable",
+      "size": 17752977,
+      "frames": 600,
+      "fps": 20.0,
+      "error": null
+    },
+    {
+      "timestamp_key": "518213000",
+      "date": "DAY5",
+      "path": "data/EgoLife/A1_JAKE/DAY5/DAY5_A1_JAKE_18210000.mp4",
+      "status": "readable",
+      "size": 17500739,
+      "frames": 600,
+      "fps": 20.0,
+      "error": null
+    },
+    {
+      "timestamp_key": "518215900",
+      "date": "DAY5",
+      "path": "data/EgoLife/A1_JAKE/DAY5/DAY5_A1_JAKE_18213000.mp4",
+      "status": "readable",
+      "size": 15719496,
+      "frames": 600,
+      "fps": 20.0,
+      "error": null
+    },
+    {
+      "timestamp_key": "518223000",
+      "date": "DAY5",
+      "path": "data/EgoLife/A1_JAKE/DAY5/DAY5_A1_JAKE_18220000.mp4",
+      "status": "readable",
+      "size": 15101673,
+      "frames": 600,
+      "fps": 20.0,
+      "error": null
+    },
+    {
+      "timestamp_key": "518225700",
+      "date": "DAY5",
+      "path": "data/EgoLife/A1_JAKE/DAY5/DAY5_A1_JAKE_18223000.mp4",
+      "status": "readable",
+      "size": 16056108,
+      "frames": 600,
+      "fps": 20.0,
+      "error": null
+    },
+    {
+      "timestamp_key": "518232900",
+      "date": "DAY5",
+      "path": "data/EgoLife/A1_JAKE/DAY5/DAY5_A1_JAKE_18230000.mp4",
+      "status": "readable",
+      "size": 14687379,
+      "frames": 600,
+      "fps": 20.0,
+      "error": null
+    },
+    {
+      "timestamp_key": "518250000",
+      "date": "DAY5",
+      "path": "data/EgoLife/A1_JAKE/DAY5/DAY5_A1_JAKE_18243000.mp4",
+      "status": "readable",
+      "size": 16801405,
+      "frames": 600,
+      "fps": 20.0,
+      "error": null
+    },
+    {
+      "timestamp_key": "518365900",
+      "date": "DAY5",
+      "path": "data/EgoLife/A1_JAKE/DAY5/DAY5_A1_JAKE_18363000.mp4",
+      "status": "readable",
+      "size": 19839300,
+      "frames": 600,
+      "fps": 20.0,
+      "error": null
+    },
+    {
+      "timestamp_key": "518475900",
+      "date": "DAY5",
+      "path": "data/EgoLife/A1_JAKE/DAY5/DAY5_A1_JAKE_18473000.mp4",
+      "status": "readable",
+      "size": 21373410,
+      "frames": 600,
+      "fps": 20.0,
+      "error": null
+    },
+    {
+      "timestamp_key": "518483000",
+      "date": "DAY5",
+      "path": "data/EgoLife/A1_JAKE/DAY5/DAY5_A1_JAKE_18480000.mp4",
+      "status": "readable",
+      "size": 19420285,
+      "frames": 600,
+      "fps": 20.0,
+      "error": null
+    },
+    {
+      "timestamp_key": "518580000",
+      "date": "DAY5",
+      "path": "data/EgoLife/A1_JAKE/DAY5/DAY5_A1_JAKE_18573000.mp4",
+      "status": "readable",
+      "size": 24452843,
+      "frames": 600,
+      "fps": 20.0,
+      "error": null
+    },
+    {
+      "timestamp_key": "519033000",
+      "date": "DAY5",
+      "path": "data/EgoLife/A1_JAKE/DAY5/DAY5_A1_JAKE_19030000.mp4",
+      "status": "readable",
+      "size": 28031164,
+      "frames": 600,
+      "fps": 20.0,
+      "error": null
+    },
+    {
+      "timestamp_key": "519082900",
+      "date": "DAY5",
+      "path": "data/EgoLife/A1_JAKE/DAY5/DAY5_A1_JAKE_19080000.mp4",
+      "status": "readable",
+      "size": 26019051,
+      "frames": 600,
+      "fps": 20.0,
+      "error": null
+    },
+    {
+      "timestamp_key": "519113000",
+      "date": "DAY5",
+      "path": "data/EgoLife/A1_JAKE/DAY5/DAY5_A1_JAKE_19110000.mp4",
+      "status": "readable",
+      "size": 25506419,
+      "frames": 600,
+      "fps": 20.0,
+      "error": null
+    },
+    {
+      "timestamp_key": "519120000",
+      "date": "DAY5",
+      "path": "data/EgoLife/A1_JAKE/DAY5/DAY5_A1_JAKE_19113000.mp4",
+      "status": "readable",
+      "size": 17911131,
+      "frames": 600,
+      "fps": 20.0,
+      "error": null
+    },
+    {
+      "timestamp_key": "520093000",
+      "date": "DAY5",
+      "path": "data/EgoLife/A1_JAKE/DAY5/DAY5_A1_JAKE_20090000.mp4",
+      "status": "readable",
+      "size": 17671527,
+      "frames": 600,
+      "fps": 20.0,
+      "error": null
+    },
+    {
+      "timestamp_key": "520100000",
+      "date": "DAY5",
+      "path": "data/EgoLife/A1_JAKE/DAY5/DAY5_A1_JAKE_20093000.mp4",
+      "status": "readable",
+      "size": 20241115,
+      "frames": 600,
+      "fps": 20.0,
+      "error": null
+    },
+    {
+      "timestamp_key": "520180000",
+      "date": "DAY5",
+      "path": "data/EgoLife/A1_JAKE/DAY5/DAY5_A1_JAKE_20173000.mp4",
+      "status": "readable",
+      "size": 18891310,
+      "frames": 600,
+      "fps": 20.0,
+      "error": null
+    },
+    {
+      "timestamp_key": "520315800",
+      "date": "DAY5",
+      "path": "data/EgoLife/A1_JAKE/DAY5/DAY5_A1_JAKE_20313000.mp4",
+      "status": "readable",
+      "size": 18634426,
+      "frames": 600,
+      "fps": 20.0,
+      "error": null
+    },
+    {
+      "timestamp_key": "520322600",
+      "date": "DAY5",
+      "path": "data/EgoLife/A1_JAKE/DAY5/DAY5_A1_JAKE_20320000.mp4",
+      "status": "readable",
+      "size": 20188908,
+      "frames": 600,
+      "fps": 20.0,
+      "error": null
+    },
+    {
+      "timestamp_key": "522143000",
+      "date": "DAY5",
+      "path": "data/EgoLife/A1_JAKE/DAY5/DAY5_A1_JAKE_22140000.mp4",
+      "status": "readable",
+      "size": 13482860,
+      "frames": 600,
+      "fps": 20.0,
+      "error": null
+    },
+    {
+      "timestamp_key": "522145900",
+      "date": "DAY5",
+      "path": "data/EgoLife/A1_JAKE/DAY5/DAY5_A1_JAKE_22143000.mp4",
+      "status": "readable",
+      "size": 17780925,
+      "frames": 600,
+      "fps": 20.0,
+      "error": null
+    },
+    {
+      "timestamp_key": "522405900",
+      "date": "DAY5",
+      "path": "data/EgoLife/A1_JAKE/DAY5/DAY5_A1_JAKE_22403000.mp4",
+      "status": "readable",
+      "size": 12249673,
+      "frames": 600,
+      "fps": 20.0,
+      "error": null
+    },
+    {
+      "timestamp_key": "523135900",
+      "date": "DAY5",
+      "path": "data/EgoLife/A1_JAKE/DAY5/DAY5_A1_JAKE_23133000.mp4",
+      "status": "readable",
+      "size": 21576967,
+      "frames": 600,
+      "fps": 20.0,
+      "error": null
+    },
+    {
+      "timestamp_key": "523142000",
+      "date": "DAY5",
+      "path": "data/EgoLife/A1_JAKE/DAY5/DAY5_A1_JAKE_23140000.mp4",
+      "status": "readable",
+      "size": 22227055,
+      "frames": 600,
+      "fps": 20.0,
+      "error": null
+    },
+    {
+      "timestamp_key": "610063000",
+      "date": "DAY6",
+      "path": "data/EgoLife/A1_JAKE/DAY6/DAY6_A1_JAKE_10060000.mp4",
+      "status": "readable",
+      "size": 12749722,
+      "frames": 600,
+      "fps": 20.0,
+      "error": null
+    },
+    {
+      "timestamp_key": "610070000",
+      "date": "DAY6",
+      "path": "data/EgoLife/A1_JAKE/DAY6/DAY6_A1_JAKE_10063000.mp4",
+      "status": "readable",
+      "size": 17739358,
+      "frames": 600,
+      "fps": 20.0,
+      "error": null
+    },
+    {
+      "timestamp_key": "610073000",
+      "date": "DAY6",
+      "path": "data/EgoLife/A1_JAKE/DAY6/DAY6_A1_JAKE_10070000.mp4",
+      "status": "readable",
+      "size": 14774787,
+      "frames": 600,
+      "fps": 20.0,
+      "error": null
+    },
+    {
+      "timestamp_key": "610080000",
+      "date": "DAY6",
+      "path": "data/EgoLife/A1_JAKE/DAY6/DAY6_A1_JAKE_10073000.mp4",
+      "status": "readable",
+      "size": 16317691,
+      "frames": 600,
+      "fps": 20.0,
+      "error": null
+    },
+    {
+      "timestamp_key": "610082800",
+      "date": "DAY6",
+      "path": "data/EgoLife/A1_JAKE/DAY6/DAY6_A1_JAKE_10080000.mp4",
+      "status": "readable",
+      "size": 15077094,
+      "frames": 600,
+      "fps": 20.0,
+      "error": null
+    },
+    {
+      "timestamp_key": "610103000",
+      "date": "DAY6",
+      "path": "data/EgoLife/A1_JAKE/DAY6/DAY6_A1_JAKE_10100000.mp4",
+      "status": "readable",
+      "size": 14878918,
+      "frames": 600,
+      "fps": 20.0,
+      "error": null
+    },
+    {
+      "timestamp_key": "610145800",
+      "date": "DAY6",
+      "path": "data/EgoLife/A1_JAKE/DAY6/DAY6_A1_JAKE_10143000.mp4",
+      "status": "readable",
+      "size": 14480760,
+      "frames": 600,
+      "fps": 20.0,
+      "error": null
+    },
+    {
+      "timestamp_key": "610192900",
+      "date": "DAY6",
+      "path": "data/EgoLife/A1_JAKE/DAY6/DAY6_A1_JAKE_10190000.mp4",
+      "status": "readable",
+      "size": 14366333,
+      "frames": 600,
+      "fps": 20.0,
+      "error": null
+    },
+    {
+      "timestamp_key": "610240000",
+      "date": "DAY6",
+      "path": "data/EgoLife/A1_JAKE/DAY6/DAY6_A1_JAKE_10233000.mp4",
+      "status": "readable",
+      "size": 11912543,
+      "frames": 600,
+      "fps": 20.0,
+      "error": null
+    },
+    {
+      "timestamp_key": "610272900",
+      "date": "DAY6",
+      "path": "data/EgoLife/A1_JAKE/DAY6/DAY6_A1_JAKE_10270000.mp4",
+      "status": "readable",
+      "size": 12617403,
+      "frames": 600,
+      "fps": 20.0,
+      "error": null
+    },
+    {
+      "timestamp_key": "610303000",
+      "date": "DAY6",
+      "path": "data/EgoLife/A1_JAKE/DAY6/DAY6_A1_JAKE_10300000.mp4",
+      "status": "readable",
+      "size": 15857567,
+      "frames": 600,
+      "fps": 20.0,
+      "error": null
+    },
+    {
+      "timestamp_key": "610353000",
+      "date": "DAY6",
+      "path": "data/EgoLife/A1_JAKE/DAY6/DAY6_A1_JAKE_10350000.mp4",
+      "status": "readable",
+      "size": 15322101,
+      "frames": 600,
+      "fps": 20.0,
+      "error": null
+    },
+    {
+      "timestamp_key": "610355900",
+      "date": "DAY6",
+      "path": "data/EgoLife/A1_JAKE/DAY6/DAY6_A1_JAKE_10353000.mp4",
+      "status": "readable",
+      "size": 16290380,
+      "frames": 600,
+      "fps": 20.0,
+      "error": null
+    },
+    {
+      "timestamp_key": "610373000",
+      "date": "DAY6",
+      "path": "data/EgoLife/A1_JAKE/DAY6/DAY6_A1_JAKE_10370000.mp4",
+      "status": "readable",
+      "size": 14659710,
+      "frames": 600,
+      "fps": 20.0,
+      "error": null
+    },
+    {
+      "timestamp_key": "610440000",
+      "date": "DAY6",
+      "path": "data/EgoLife/A1_JAKE/DAY6/DAY6_A1_JAKE_10433000.mp4",
+      "status": "readable",
+      "size": 13702121,
+      "frames": 600,
+      "fps": 20.0,
+      "error": null
+    },
+    {
+      "timestamp_key": "611365900",
+      "date": "DAY6",
+      "path": "data/EgoLife/A1_JAKE/DAY6/DAY6_A1_JAKE_11363000.mp4",
+      "status": "readable",
+      "size": 26940486,
+      "frames": 600,
+      "fps": 20.0,
+      "error": null
+    },
+    {
+      "timestamp_key": "611373000",
+      "date": "DAY6",
+      "path": "data/EgoLife/A1_JAKE/DAY6/DAY6_A1_JAKE_11370000.mp4",
+      "status": "readable",
+      "size": 22008390,
+      "frames": 600,
+      "fps": 20.0,
+      "error": null
+    },
+    {
+      "timestamp_key": "611460000",
+      "date": "DAY6",
+      "path": "data/EgoLife/A1_JAKE/DAY6/DAY6_A1_JAKE_11453000.mp4",
+      "status": "readable",
+      "size": 14429058,
+      "frames": 600,
+      "fps": 20.0,
+      "error": null
+    },
+    {
+      "timestamp_key": "611510000",
+      "date": "DAY6",
+      "path": "data/EgoLife/A1_JAKE/DAY6/DAY6_A1_JAKE_11503000.mp4",
+      "status": "readable",
+      "size": 15918478,
+      "frames": 600,
+      "fps": 20.0,
+      "error": null
+    },
+    {
+      "timestamp_key": "612035900",
+      "date": "DAY6",
+      "path": "data/EgoLife/A1_JAKE/DAY6/DAY6_A1_JAKE_12033000.mp4",
+      "status": "readable",
+      "size": 12019847,
+      "frames": 600,
+      "fps": 20.0,
+      "error": null
+    },
+    {
+      "timestamp_key": "612080000",
+      "date": "DAY6",
+      "path": "data/EgoLife/A1_JAKE/DAY6/DAY6_A1_JAKE_12073000.mp4",
+      "status": "readable",
+      "size": 18512877,
+      "frames": 600,
+      "fps": 20.0,
+      "error": null
+    },
+    {
+      "timestamp_key": "612082900",
+      "date": "DAY6",
+      "path": "data/EgoLife/A1_JAKE/DAY6/DAY6_A1_JAKE_12080000.mp4",
+      "status": "readable",
+      "size": 15572644,
+      "frames": 600,
+      "fps": 20.0,
+      "error": null
+    },
+    {
+      "timestamp_key": "612090000",
+      "date": "DAY6",
+      "path": "data/EgoLife/A1_JAKE/DAY6/DAY6_A1_JAKE_12083000.mp4",
+      "status": "readable",
+      "size": 17227500,
+      "frames": 600,
+      "fps": 20.0,
+      "error": null
+    },
+    {
+      "timestamp_key": "612093000",
+      "date": "DAY6",
+      "path": "data/EgoLife/A1_JAKE/DAY6/DAY6_A1_JAKE_12090000.mp4",
+      "status": "readable",
+      "size": 13608447,
+      "frames": 600,
+      "fps": 20.0,
+      "error": null
+    },
+    {
+      "timestamp_key": "612095700",
+      "date": "DAY6",
+      "path": "data/EgoLife/A1_JAKE/DAY6/DAY6_A1_JAKE_12093000.mp4",
+      "status": "readable",
+      "size": 16512788,
+      "frames": 600,
+      "fps": 20.0,
+      "error": null
+    },
+    {
+      "timestamp_key": "612102900",
+      "date": "DAY6",
+      "path": "data/EgoLife/A1_JAKE/DAY6/DAY6_A1_JAKE_12100000.mp4",
+      "status": "readable",
+      "size": 14729023,
+      "frames": 600,
+      "fps": 20.0,
+      "error": null
+    },
+    {
+      "timestamp_key": "612160000",
+      "date": "DAY6",
+      "path": "data/EgoLife/A1_JAKE/DAY6/DAY6_A1_JAKE_12153000.mp4",
+      "status": "readable",
+      "size": 13164960,
+      "frames": 600,
+      "fps": 20.0,
+      "error": null
+    },
+    {
+      "timestamp_key": "612263000",
+      "date": "DAY6",
+      "path": "data/EgoLife/A1_JAKE/DAY6/DAY6_A1_JAKE_12260000.mp4",
+      "status": "readable",
+      "size": 7886047,
+      "frames": 602,
+      "fps": 20.0,
+      "error": null
+    },
+    {
+      "timestamp_key": "612342900",
+      "date": "DAY6",
+      "path": "data/EgoLife/A1_JAKE/DAY6/DAY6_A1_JAKE_12340000.mp4",
+      "status": "readable",
+      "size": 10443536,
+      "frames": 600,
+      "fps": 20.0,
+      "error": null
+    },
+    {
+      "timestamp_key": "612353000",
+      "date": "DAY6",
+      "path": "data/EgoLife/A1_JAKE/DAY6/DAY6_A1_JAKE_12350000.mp4",
+      "status": "readable",
+      "size": 10037245,
+      "frames": 600,
+      "fps": 20.0,
+      "error": null
+    },
+    {
+      "timestamp_key": "612385900",
+      "date": "DAY6",
+      "path": "data/EgoLife/A1_JAKE/DAY6/DAY6_A1_JAKE_12383000.mp4",
+      "status": "readable",
+      "size": 12432519,
+      "frames": 600,
+      "fps": 20.0,
+      "error": null
+    },
+    {
+      "timestamp_key": "612463000",
+      "date": "DAY6",
+      "path": "data/EgoLife/A1_JAKE/DAY6/DAY6_A1_JAKE_12460000.mp4",
+      "status": "readable",
+      "size": 15090980,
+      "frames": 600,
+      "fps": 20.0,
+      "error": null
+    },
+    {
+      "timestamp_key": "612470000",
+      "date": "DAY6",
+      "path": "data/EgoLife/A1_JAKE/DAY6/DAY6_A1_JAKE_12463000.mp4",
+      "status": "readable",
+      "size": 13516420,
+      "frames": 600,
+      "fps": 20.0,
+      "error": null
+    },
+    {
+      "timestamp_key": "612473000",
+      "date": "DAY6",
+      "path": "data/EgoLife/A1_JAKE/DAY6/DAY6_A1_JAKE_12470000.mp4",
+      "status": "readable",
+      "size": 15542437,
+      "frames": 600,
+      "fps": 20.0,
+      "error": null
+    },
+    {
+      "timestamp_key": "613023000",
+      "date": "DAY6",
+      "path": "data/EgoLife/A1_JAKE/DAY6/DAY6_A1_JAKE_13020000.mp4",
+      "status": "readable",
+      "size": 14897031,
+      "frames": 600,
+      "fps": 20.0,
+      "error": null
+    },
+    {
+      "timestamp_key": "613030000",
+      "date": "DAY6",
+      "path": "data/EgoLife/A1_JAKE/DAY6/DAY6_A1_JAKE_13023000.mp4",
+      "status": "readable",
+      "size": 9077188,
+      "frames": 600,
+      "fps": 20.0,
+      "error": null
+    },
+    {
+      "timestamp_key": "613033000",
+      "date": "DAY6",
+      "path": "data/EgoLife/A1_JAKE/DAY6/DAY6_A1_JAKE_13030000.mp4",
+      "status": "readable",
+      "size": 9226160,
+      "frames": 600,
+      "fps": 20.0,
+      "error": null
+    },
+    {
+      "timestamp_key": "613040000",
+      "date": "DAY6",
+      "path": "data/EgoLife/A1_JAKE/DAY6/DAY6_A1_JAKE_13033000.mp4",
+      "status": "readable",
+      "size": 8559402,
+      "frames": 600,
+      "fps": 20.0,
+      "error": null
+    },
+    {
+      "timestamp_key": "613043000",
+      "date": "DAY6",
+      "path": "data/EgoLife/A1_JAKE/DAY6/DAY6_A1_JAKE_13040000.mp4",
+      "status": "readable",
+      "size": 9544136,
+      "frames": 600,
+      "fps": 20.0,
+      "error": null
+    },
+    {
+      "timestamp_key": "613045900",
+      "date": "DAY6",
+      "path": "data/EgoLife/A1_JAKE/DAY6/DAY6_A1_JAKE_13043000.mp4",
+      "status": "readable",
+      "size": 8758167,
+      "frames": 600,
+      "fps": 20.0,
+      "error": null
+    },
+    {
+      "timestamp_key": "613053000",
+      "date": "DAY6",
+      "path": "data/EgoLife/A1_JAKE/DAY6/DAY6_A1_JAKE_13050000.mp4",
+      "status": "readable",
+      "size": 8483957,
+      "frames": 600,
+      "fps": 20.0,
+      "error": null
+    },
+    {
+      "timestamp_key": "613060000",
+      "date": "DAY6",
+      "path": "data/EgoLife/A1_JAKE/DAY6/DAY6_A1_JAKE_13053000.mp4",
+      "status": "readable",
+      "size": 8343700,
+      "frames": 600,
+      "fps": 20.0,
+      "error": null
+    },
+    {
+      "timestamp_key": "613072900",
+      "date": "DAY6",
+      "path": "data/EgoLife/A1_JAKE/DAY6/DAY6_A1_JAKE_13070000.mp4",
+      "status": "readable",
+      "size": 8025477,
+      "frames": 600,
+      "fps": 20.0,
+      "error": null
+    },
+    {
+      "timestamp_key": "613102700",
+      "date": "DAY6",
+      "path": "data/EgoLife/A1_JAKE/DAY6/DAY6_A1_JAKE_13100000.mp4",
+      "status": "readable",
+      "size": 8242347,
+      "frames": 600,
+      "fps": 20.0,
+      "error": null
+    },
+    {
+      "timestamp_key": "613123000",
+      "date": "DAY6",
+      "path": "data/EgoLife/A1_JAKE/DAY6/DAY6_A1_JAKE_13120000.mp4",
+      "status": "readable",
+      "size": 9675374,
+      "frames": 600,
+      "fps": 20.0,
+      "error": null
+    },
+    {
+      "timestamp_key": "613140000",
+      "date": "DAY6",
+      "path": "data/EgoLife/A1_JAKE/DAY6/DAY6_A1_JAKE_13133000.mp4",
+      "status": "readable",
+      "size": 7916298,
+      "frames": 600,
+      "fps": 20.0,
+      "error": null
+    },
+    {
+      "timestamp_key": "613153000",
+      "date": "DAY6",
+      "path": "data/EgoLife/A1_JAKE/DAY6/DAY6_A1_JAKE_13150000.mp4",
+      "status": "readable",
+      "size": 9209132,
+      "frames": 600,
+      "fps": 20.0,
+      "error": null
+    },
+    {
+      "timestamp_key": "613183000",
+      "date": "DAY6",
+      "path": "data/EgoLife/A1_JAKE/DAY6/DAY6_A1_JAKE_13180000.mp4",
+      "status": "readable",
+      "size": 9426883,
+      "frames": 600,
+      "fps": 20.0,
+      "error": null
+    },
+    {
+      "timestamp_key": "613222900",
+      "date": "DAY6",
+      "path": "data/EgoLife/A1_JAKE/DAY6/DAY6_A1_JAKE_13220000.mp4",
+      "status": "readable",
+      "size": 12359038,
+      "frames": 600,
+      "fps": 20.0,
+      "error": null
+    },
+    {
+      "timestamp_key": "613252500",
+      "date": "DAY6",
+      "path": "data/EgoLife/A1_JAKE/DAY6/DAY6_A1_JAKE_13250000.mp4",
+      "status": "readable",
+      "size": 7709867,
+      "frames": 600,
+      "fps": 20.0,
+      "error": null
+    },
+    {
+      "timestamp_key": "615092800",
+      "date": "DAY6",
+      "path": "data/EgoLife/A1_JAKE/DAY6/DAY6_A1_JAKE_15090000.mp4",
+      "status": "readable",
+      "size": 17276515,
+      "frames": 600,
+      "fps": 20.0,
+      "error": null
+    },
+    {
+      "timestamp_key": "615100000",
+      "date": "DAY6",
+      "path": "data/EgoLife/A1_JAKE/DAY6/DAY6_A1_JAKE_15093000.mp4",
+      "status": "readable",
+      "size": 15739825,
+      "frames": 600,
+      "fps": 20.0,
+      "error": null
+    },
+    {
+      "timestamp_key": "615102900",
+      "date": "DAY6",
+      "path": "data/EgoLife/A1_JAKE/DAY6/DAY6_A1_JAKE_15100000.mp4",
+      "status": "readable",
+      "size": 15995335,
+      "frames": 600,
+      "fps": 20.0,
+      "error": null
+    },
+    {
+      "timestamp_key": "615110000",
+      "date": "DAY6",
+      "path": "data/EgoLife/A1_JAKE/DAY6/DAY6_A1_JAKE_15103000.mp4",
+      "status": "readable",
+      "size": 12917562,
+      "frames": 600,
+      "fps": 20.0,
+      "error": null
+    },
+    {
+      "timestamp_key": "615113000",
+      "date": "DAY6",
+      "path": "data/EgoLife/A1_JAKE/DAY6/DAY6_A1_JAKE_15110000.mp4",
+      "status": "readable",
+      "size": 13288341,
+      "frames": 600,
+      "fps": 20.0,
+      "error": null
+    },
+    {
+      "timestamp_key": "615143000",
+      "date": "DAY6",
+      "path": "data/EgoLife/A1_JAKE/DAY6/DAY6_A1_JAKE_15140000.mp4",
+      "status": "readable",
+      "size": 16610750,
+      "frames": 600,
+      "fps": 20.0,
+      "error": null
+    },
+    {
+      "timestamp_key": "615180000",
+      "date": "DAY6",
+      "path": "data/EgoLife/A1_JAKE/DAY6/DAY6_A1_JAKE_15173000.mp4",
+      "status": "readable",
+      "size": 11340884,
+      "frames": 600,
+      "fps": 20.0,
+      "error": null
+    },
+    {
+      "timestamp_key": "615202800",
+      "date": "DAY6",
+      "path": "data/EgoLife/A1_JAKE/DAY6/DAY6_A1_JAKE_15200000.mp4",
+      "status": "readable",
+      "size": 15427962,
+      "frames": 600,
+      "fps": 20.0,
+      "error": null
+    },
+    {
+      "timestamp_key": "615222800",
+      "date": "DAY6",
+      "path": "data/EgoLife/A1_JAKE/DAY6/DAY6_A1_JAKE_15220000.mp4",
+      "status": "readable",
+      "size": 14794295,
+      "frames": 600,
+      "fps": 20.0,
+      "error": null
+    },
+    {
+      "timestamp_key": "615243000",
+      "date": "DAY6",
+      "path": "data/EgoLife/A1_JAKE/DAY6/DAY6_A1_JAKE_15240000.mp4",
+      "status": "readable",
+      "size": 13356625,
+      "frames": 600,
+      "fps": 20.0,
+      "error": null
+    },
+    {
+      "timestamp_key": "615325900",
+      "date": "DAY6",
+      "path": "data/EgoLife/A1_JAKE/DAY6/DAY6_A1_JAKE_15323000.mp4",
+      "status": "readable",
+      "size": 13695778,
+      "frames": 600,
+      "fps": 20.0,
+      "error": null
+    },
+    {
+      "timestamp_key": "615370000",
+      "date": "DAY6",
+      "path": "data/EgoLife/A1_JAKE/DAY6/DAY6_A1_JAKE_15363000.mp4",
+      "status": "readable",
+      "size": 16038283,
+      "frames": 600,
+      "fps": 20.0,
+      "error": null
+    },
+    {
+      "timestamp_key": "615470000",
+      "date": "DAY6",
+      "path": "data/EgoLife/A1_JAKE/DAY6/DAY6_A1_JAKE_15463000.mp4",
+      "status": "readable",
+      "size": 17870731,
+      "frames": 600,
+      "fps": 20.0,
+      "error": null
+    },
+    {
+      "timestamp_key": "616012800",
+      "date": "DAY6",
+      "path": "data/EgoLife/A1_JAKE/DAY6/DAY6_A1_JAKE_16010000.mp4",
+      "status": "readable",
+      "size": 17571211,
+      "frames": 600,
+      "fps": 20.0,
+      "error": null
+    },
+    {
+      "timestamp_key": "616055900",
+      "date": "DAY6",
+      "path": "data/EgoLife/A1_JAKE/DAY6/DAY6_A1_JAKE_16053000.mp4",
+      "status": "readable",
+      "size": 14026238,
+      "frames": 600,
+      "fps": 20.0,
+      "error": null
+    },
+    {
+      "timestamp_key": "616062900",
+      "date": "DAY6",
+      "path": "data/EgoLife/A1_JAKE/DAY6/DAY6_A1_JAKE_16060000.mp4",
+      "status": "readable",
+      "size": 16639504,
+      "frames": 600,
+      "fps": 20.0,
+      "error": null
+    },
+    {
+      "timestamp_key": "616070000",
+      "date": "DAY6",
+      "path": "data/EgoLife/A1_JAKE/DAY6/DAY6_A1_JAKE_16063000.mp4",
+      "status": "readable",
+      "size": 16336231,
+      "frames": 600,
+      "fps": 20.0,
+      "error": null
+    },
+    {
+      "timestamp_key": "616095900",
+      "date": "DAY6",
+      "path": "data/EgoLife/A1_JAKE/DAY6/DAY6_A1_JAKE_16093000.mp4",
+      "status": "readable",
+      "size": 14378364,
+      "frames": 600,
+      "fps": 20.0,
+      "error": null
+    },
+    {
+      "timestamp_key": "616165900",
+      "date": "DAY6",
+      "path": "data/EgoLife/A1_JAKE/DAY6/DAY6_A1_JAKE_16163000.mp4",
+      "status": "readable",
+      "size": 16098874,
+      "frames": 600,
+      "fps": 20.0,
+      "error": null
+    },
+    {
+      "timestamp_key": "616233000",
+      "date": "DAY6",
+      "path": "data/EgoLife/A1_JAKE/DAY6/DAY6_A1_JAKE_16230000.mp4",
+      "status": "readable",
+      "size": 15803339,
+      "frames": 600,
+      "fps": 20.0,
+      "error": null
+    },
+    {
+      "timestamp_key": "616280000",
+      "date": "DAY6",
+      "path": "data/EgoLife/A1_JAKE/DAY6/DAY6_A1_JAKE_16273000.mp4",
+      "status": "readable",
+      "size": 16625026,
+      "frames": 600,
+      "fps": 20.0,
+      "error": null
+    },
+    {
+      "timestamp_key": "616340000",
+      "date": "DAY6",
+      "path": "data/EgoLife/A1_JAKE/DAY6/DAY6_A1_JAKE_16333000.mp4",
+      "status": "readable",
+      "size": 14110931,
+      "frames": 600,
+      "fps": 20.0,
+      "error": null
+    },
+    {
+      "timestamp_key": "616372900",
+      "date": "DAY6",
+      "path": "data/EgoLife/A1_JAKE/DAY6/DAY6_A1_JAKE_16370000.mp4",
+      "status": "readable",
+      "size": 15804254,
+      "frames": 600,
+      "fps": 20.0,
+      "error": null
+    },
+    {
+      "timestamp_key": "616410000",
+      "date": "DAY6",
+      "path": "data/EgoLife/A1_JAKE/DAY6/DAY6_A1_JAKE_16403000.mp4",
+      "status": "readable",
+      "size": 14588267,
+      "frames": 600,
+      "fps": 20.0,
+      "error": null
+    },
+    {
+      "timestamp_key": "616433000",
+      "date": "DAY6",
+      "path": "data/EgoLife/A1_JAKE/DAY6/DAY6_A1_JAKE_16430000.mp4",
+      "status": "readable",
+      "size": 17763941,
+      "frames": 600,
+      "fps": 20.0,
+      "error": null
+    },
+    {
+      "timestamp_key": "616472900",
+      "date": "DAY6",
+      "path": "data/EgoLife/A1_JAKE/DAY6/DAY6_A1_JAKE_16470000.mp4",
+      "status": "readable",
+      "size": 14964950,
+      "frames": 600,
+      "fps": 20.0,
+      "error": null
+    },
+    {
+      "timestamp_key": "616483000",
+      "date": "DAY6",
+      "path": "data/EgoLife/A1_JAKE/DAY6/DAY6_A1_JAKE_16480000.mp4",
+      "status": "readable",
+      "size": 18750787,
+      "frames": 600,
+      "fps": 20.0,
+      "error": null
+    },
+    {
+      "timestamp_key": "616542900",
+      "date": "DAY6",
+      "path": "data/EgoLife/A1_JAKE/DAY6/DAY6_A1_JAKE_16540000.mp4",
+      "status": "readable",
+      "size": 13054373,
+      "frames": 600,
+      "fps": 20.0,
+      "error": null
+    },
+    {
+      "timestamp_key": "617052900",
+      "date": "DAY6",
+      "path": "data/EgoLife/A1_JAKE/DAY6/DAY6_A1_JAKE_17050000.mp4",
+      "status": "readable",
+      "size": 15953960,
+      "frames": 600,
+      "fps": 20.0,
+      "error": null
+    },
+    {
+      "timestamp_key": "617132800",
+      "date": "DAY6",
+      "path": "data/EgoLife/A1_JAKE/DAY6/DAY6_A1_JAKE_17130000.mp4",
+      "status": "readable",
+      "size": 17648685,
+      "frames": 600,
+      "fps": 20.0,
+      "error": null
+    },
+    {
+      "timestamp_key": "617212900",
+      "date": "DAY6",
+      "path": "data/EgoLife/A1_JAKE/DAY6/DAY6_A1_JAKE_17210000.mp4",
+      "status": "readable",
+      "size": 17257109,
+      "frames": 600,
+      "fps": 20.0,
+      "error": null
+    },
+    {
+      "timestamp_key": "617282800",
+      "date": "DAY6",
+      "path": "data/EgoLife/A1_JAKE/DAY6/DAY6_A1_JAKE_17280000.mp4",
+      "status": "readable",
+      "size": 14996697,
+      "frames": 600,
+      "fps": 20.0,
+      "error": null
+    },
+    {
+      "timestamp_key": "619310000",
+      "date": "DAY6",
+      "path": "data/EgoLife/A1_JAKE/DAY6/DAY6_A1_JAKE_19303000.mp4",
+      "status": "readable",
+      "size": 18781083,
+      "frames": 600,
+      "fps": 20.0,
+      "error": null
+    },
+    {
+      "timestamp_key": "619312700",
+      "date": "DAY6",
+      "path": "data/EgoLife/A1_JAKE/DAY6/DAY6_A1_JAKE_19310000.mp4",
+      "status": "readable",
+      "size": 17710976,
+      "frames": 600,
+      "fps": 20.0,
+      "error": null
+    },
+    {
+      "timestamp_key": "619320000",
+      "date": "DAY6",
+      "path": "data/EgoLife/A1_JAKE/DAY6/DAY6_A1_JAKE_19313000.mp4",
+      "status": "readable",
+      "size": 16973922,
+      "frames": 600,
+      "fps": 20.0,
+      "error": null
+    },
+    {
+      "timestamp_key": "619323000",
+      "date": "DAY6",
+      "path": "data/EgoLife/A1_JAKE/DAY6/DAY6_A1_JAKE_19320000.mp4",
+      "status": "readable",
+      "size": 17795697,
+      "frames": 600,
+      "fps": 20.0,
+      "error": null
+    },
+    {
+      "timestamp_key": "619332900",
+      "date": "DAY6",
+      "path": "data/EgoLife/A1_JAKE/DAY6/DAY6_A1_JAKE_19330000.mp4",
+      "status": "readable",
+      "size": 17343766,
+      "frames": 600,
+      "fps": 20.0,
+      "error": null
+    },
+    {
+      "timestamp_key": "619340000",
+      "date": "DAY6",
+      "path": "data/EgoLife/A1_JAKE/DAY6/DAY6_A1_JAKE_19333000.mp4",
+      "status": "readable",
+      "size": 18120428,
+      "frames": 600,
+      "fps": 20.0,
+      "error": null
+    },
+    {
+      "timestamp_key": "619410000",
+      "date": "DAY6",
+      "path": "data/EgoLife/A1_JAKE/DAY6/DAY6_A1_JAKE_19403000.mp4",
+      "status": "readable",
+      "size": 15288705,
+      "frames": 600,
+      "fps": 20.0,
+      "error": null
+    },
+    {
+      "timestamp_key": "619413000",
+      "date": "DAY6",
+      "path": "data/EgoLife/A1_JAKE/DAY6/DAY6_A1_JAKE_19410000.mp4",
+      "status": "readable",
+      "size": 18190231,
+      "frames": 600,
+      "fps": 20.0,
+      "error": null
+    },
+    {
+      "timestamp_key": "619463000",
+      "date": "DAY6",
+      "path": "data/EgoLife/A1_JAKE/DAY6/DAY6_A1_JAKE_19460000.mp4",
+      "status": "readable",
+      "size": 15032126,
+      "frames": 600,
+      "fps": 20.0,
+      "error": null
+    },
+    {
+      "timestamp_key": "620050000",
+      "date": "DAY6",
+      "path": "data/EgoLife/A1_JAKE/DAY6/DAY6_A1_JAKE_20043000.mp4",
+      "status": "readable",
+      "size": 18410816,
+      "frames": 600,
+      "fps": 20.0,
+      "error": null
+    },
+    {
+      "timestamp_key": "620052900",
+      "date": "DAY6",
+      "path": "data/EgoLife/A1_JAKE/DAY6/DAY6_A1_JAKE_20050000.mp4",
+      "status": "readable",
+      "size": 18293174,
+      "frames": 600,
+      "fps": 20.0,
+      "error": null
+    },
+    {
+      "timestamp_key": "620335800",
+      "date": "DAY6",
+      "path": "data/EgoLife/A1_JAKE/DAY6/DAY6_A1_JAKE_20333000.mp4",
+      "status": "readable",
+      "size": 16823500,
+      "frames": 600,
+      "fps": 20.0,
+      "error": null
+    },
+    {
+      "timestamp_key": "621070000",
+      "date": "DAY6",
+      "path": "data/EgoLife/A1_JAKE/DAY6/DAY6_A1_JAKE_21063000.mp4",
+      "status": "readable",
+      "size": 1661402,
+      "frames": 600,
+      "fps": 20.0,
+      "error": null
+    },
+    {
+      "timestamp_key": "621142900",
+      "date": "DAY6",
+      "path": "data/EgoLife/A1_JAKE/DAY6/DAY6_A1_JAKE_21140000.mp4",
+      "status": "readable",
+      "size": 12558064,
+      "frames": 600,
+      "fps": 20.0,
+      "error": null
+    },
+    {
+      "timestamp_key": "621213000",
+      "date": "DAY6",
+      "path": "data/EgoLife/A1_JAKE/DAY6/DAY6_A1_JAKE_21210000.mp4",
+      "status": "readable",
+      "size": 13115095,
+      "frames": 601,
+      "fps": 20.0,
+      "error": null
+    },
+    {
+      "timestamp_key": "621363000",
+      "date": "DAY6",
+      "path": "data/EgoLife/A1_JAKE/DAY6/DAY6_A1_JAKE_21360000.mp4",
+      "status": "readable",
+      "size": 14504193,
+      "frames": 600,
+      "fps": 20.0,
+      "error": null
+    },
+    {
+      "timestamp_key": "621423000",
+      "date": "DAY6",
+      "path": "data/EgoLife/A1_JAKE/DAY6/DAY6_A1_JAKE_21420000.mp4",
+      "status": "readable",
+      "size": 12930561,
+      "frames": 600,
+      "fps": 20.0,
+      "error": null
+    },
+    {
+      "timestamp_key": "621425900",
+      "date": "DAY6",
+      "path": "data/EgoLife/A1_JAKE/DAY6/DAY6_A1_JAKE_21423000.mp4",
+      "status": "readable",
+      "size": 15398423,
+      "frames": 600,
+      "fps": 20.0,
+      "error": null
+    },
+    {
+      "timestamp_key": "621432900",
+      "date": "DAY6",
+      "path": "data/EgoLife/A1_JAKE/DAY6/DAY6_A1_JAKE_21430000.mp4",
+      "status": "readable",
+      "size": 15578954,
+      "frames": 600,
+      "fps": 20.0,
+      "error": null
+    },
+    {
+      "timestamp_key": "621440000",
+      "date": "DAY6",
+      "path": "data/EgoLife/A1_JAKE/DAY6/DAY6_A1_JAKE_21433000.mp4",
+      "status": "readable",
+      "size": 14778931,
+      "frames": 600,
+      "fps": 20.0,
+      "error": null
+    },
+    {
+      "timestamp_key": "621442900",
+      "date": "DAY6",
+      "path": "data/EgoLife/A1_JAKE/DAY6/DAY6_A1_JAKE_21440000.mp4",
+      "status": "readable",
+      "size": 14326101,
+      "frames": 600,
+      "fps": 20.0,
+      "error": null
+    },
+    {
+      "timestamp_key": "621450000",
+      "date": "DAY6",
+      "path": "data/EgoLife/A1_JAKE/DAY6/DAY6_A1_JAKE_21443000.mp4",
+      "status": "readable",
+      "size": 14815099,
+      "frames": 600,
+      "fps": 20.0,
+      "error": null
+    },
+    {
+      "timestamp_key": "621453000",
+      "date": "DAY6",
+      "path": "data/EgoLife/A1_JAKE/DAY6/DAY6_A1_JAKE_21450000.mp4",
+      "status": "readable",
+      "size": 15386384,
+      "frames": 600,
+      "fps": 20.0,
+      "error": null
+    },
+    {
+      "timestamp_key": "621460000",
+      "date": "DAY6",
+      "path": "data/EgoLife/A1_JAKE/DAY6/DAY6_A1_JAKE_21453000.mp4",
+      "status": "readable",
+      "size": 16157441,
+      "frames": 600,
+      "fps": 20.0,
+      "error": null
+    },
+    {
+      "timestamp_key": "621463000",
+      "date": "DAY6",
+      "path": "data/EgoLife/A1_JAKE/DAY6/DAY6_A1_JAKE_21460000.mp4",
+      "status": "readable",
+      "size": 15245132,
+      "frames": 600,
+      "fps": 20.0,
+      "error": null
+    },
+    {
+      "timestamp_key": "621470000",
+      "date": "DAY6",
+      "path": "data/EgoLife/A1_JAKE/DAY6/DAY6_A1_JAKE_21463000.mp4",
+      "status": "readable",
+      "size": 13469887,
+      "frames": 600,
+      "fps": 20.0,
+      "error": null
+    },
+    {
+      "timestamp_key": "621473000",
+      "date": "DAY6",
+      "path": "data/EgoLife/A1_JAKE/DAY6/DAY6_A1_JAKE_21470000.mp4",
+      "status": "readable",
+      "size": 14449764,
+      "frames": 600,
+      "fps": 20.0,
+      "error": null
+    },
+    {
+      "timestamp_key": "621480000",
+      "date": "DAY6",
+      "path": "data/EgoLife/A1_JAKE/DAY6/DAY6_A1_JAKE_21473000.mp4",
+      "status": "readable",
+      "size": 14960086,
+      "frames": 600,
+      "fps": 20.0,
+      "error": null
+    },
+    {
+      "timestamp_key": "621483000",
+      "date": "DAY6",
+      "path": "data/EgoLife/A1_JAKE/DAY6/DAY6_A1_JAKE_21480000.mp4",
+      "status": "readable",
+      "size": 13647543,
+      "frames": 600,
+      "fps": 20.0,
+      "error": null
+    },
+    {
+      "timestamp_key": "621495900",
+      "date": "DAY6",
+      "path": "data/EgoLife/A1_JAKE/DAY6/DAY6_A1_JAKE_21493000.mp4",
+      "status": "readable",
+      "size": 15062287,
+      "frames": 600,
+      "fps": 20.0,
+      "error": null
+    },
+    {
+      "timestamp_key": "609535900",
+      "date": "DAY6",
+      "path": "data/EgoLife/A1_JAKE/DAY6/DAY6_A1_JAKE_09533000.mp4",
+      "status": "readable",
+      "size": 13877364,
+      "frames": 600,
+      "fps": 20.0,
+      "error": null
+    },
+    {
+      "timestamp_key": "711565900",
+      "date": "DAY7",
+      "path": "data/EgoLife/A1_JAKE/DAY7/DAY7_A1_JAKE_11563000.mp4",
+      "status": "readable",
+      "size": 10085305,
+      "frames": 600,
+      "fps": 20.0,
+      "error": null
+    },
+    {
+      "timestamp_key": "712275900",
+      "date": "DAY7",
+      "path": "data/EgoLife/A1_JAKE/DAY7/DAY7_A1_JAKE_12273000.mp4",
+      "status": "readable",
+      "size": 13398935,
+      "frames": 600,
+      "fps": 20.0,
+      "error": null
+    },
+    {
+      "timestamp_key": "712445900",
+      "date": "DAY7",
+      "path": "data/EgoLife/A1_JAKE/DAY7/DAY7_A1_JAKE_12443000.mp4",
+      "status": "readable",
+      "size": 13927877,
+      "frames": 600,
+      "fps": 20.0,
+      "error": null
+    },
+    {
+      "timestamp_key": "712482900",
+      "date": "DAY7",
+      "path": "data/EgoLife/A1_JAKE/DAY7/DAY7_A1_JAKE_12480000.mp4",
+      "status": "readable",
+      "size": 10528594,
+      "frames": 600,
+      "fps": 20.0,
+      "error": null
+    },
+    {
+      "timestamp_key": "713125900",
+      "date": "DAY7",
+      "path": "data/EgoLife/A1_JAKE/DAY7/DAY7_A1_JAKE_13123000.mp4",
+      "status": "readable",
+      "size": 12855727,
+      "frames": 600,
+      "fps": 20.0,
+      "error": null
+    },
+    {
+      "timestamp_key": "713473000",
+      "date": "DAY7",
+      "path": "data/EgoLife/A1_JAKE/DAY7/DAY7_A1_JAKE_13470000.mp4",
+      "status": "readable",
+      "size": 16332383,
+      "frames": 600,
+      "fps": 20.0,
+      "error": null
+    },
+    {
+      "timestamp_key": "714335900",
+      "date": "DAY7",
+      "path": "data/EgoLife/A1_JAKE/DAY7/DAY7_A1_JAKE_14333000.mp4",
+      "status": "readable",
+      "size": 12648149,
+      "frames": 600,
+      "fps": 20.0,
+      "error": null
+    },
+    {
+      "timestamp_key": "714405900",
+      "date": "DAY7",
+      "path": "data/EgoLife/A1_JAKE/DAY7/DAY7_A1_JAKE_14403000.mp4",
+      "status": "readable",
+      "size": 12878048,
+      "frames": 600,
+      "fps": 20.0,
+      "error": null
+    },
+    {
+      "timestamp_key": "714412900",
+      "date": "DAY7",
+      "path": "data/EgoLife/A1_JAKE/DAY7/DAY7_A1_JAKE_14410000.mp4",
+      "status": "readable",
+      "size": 12302253,
+      "frames": 600,
+      "fps": 20.0,
+      "error": null
+    },
+    {
+      "timestamp_key": "714420000",
+      "date": "DAY7",
+      "path": "data/EgoLife/A1_JAKE/DAY7/DAY7_A1_JAKE_14413000.mp4",
+      "status": "readable",
+      "size": 12866667,
+      "frames": 600,
+      "fps": 20.0,
+      "error": null
+    },
+    {
+      "timestamp_key": "714422900",
+      "date": "DAY7",
+      "path": "data/EgoLife/A1_JAKE/DAY7/DAY7_A1_JAKE_14420000.mp4",
+      "status": "readable",
+      "size": 11229541,
+      "frames": 600,
+      "fps": 20.0,
+      "error": null
+    },
+    {
+      "timestamp_key": "714432800",
+      "date": "DAY7",
+      "path": "data/EgoLife/A1_JAKE/DAY7/DAY7_A1_JAKE_14430000.mp4",
+      "status": "readable",
+      "size": 11626781,
+      "frames": 600,
+      "fps": 20.0,
+      "error": null
+    },
+    {
+      "timestamp_key": "714472900",
+      "date": "DAY7",
+      "path": "data/EgoLife/A1_JAKE/DAY7/DAY7_A1_JAKE_14470000.mp4",
+      "status": "readable",
+      "size": 20466858,
+      "frames": 600,
+      "fps": 20.0,
+      "error": null
+    },
+    {
+      "timestamp_key": "714480000",
+      "date": "DAY7",
+      "path": "data/EgoLife/A1_JAKE/DAY7/DAY7_A1_JAKE_14473000.mp4",
+      "status": "readable",
+      "size": 17537372,
+      "frames": 600,
+      "fps": 20.0,
+      "error": null
+    },
+    {
+      "timestamp_key": "714555900",
+      "date": "DAY7",
+      "path": "data/EgoLife/A1_JAKE/DAY7/DAY7_A1_JAKE_14553000.mp4",
+      "status": "readable",
+      "size": 14551282,
+      "frames": 600,
+      "fps": 20.0,
+      "error": null
+    },
+    {
+      "timestamp_key": "714572800",
+      "date": "DAY7",
+      "path": "data/EgoLife/A1_JAKE/DAY7/DAY7_A1_JAKE_14570000.mp4",
+      "status": "readable",
+      "size": 19834262,
+      "frames": 600,
+      "fps": 20.0,
+      "error": null
+    },
+    {
+      "timestamp_key": "714575700",
+      "date": "DAY7",
+      "path": "data/EgoLife/A1_JAKE/DAY7/DAY7_A1_JAKE_14573000.mp4",
+      "status": "readable",
+      "size": 13244715,
+      "frames": 600,
+      "fps": 20.0,
+      "error": null
+    },
+    {
+      "timestamp_key": "714582700",
+      "date": "DAY7",
+      "path": "data/EgoLife/A1_JAKE/DAY7/DAY7_A1_JAKE_14580000.mp4",
+      "status": "readable",
+      "size": 13710634,
+      "frames": 600,
+      "fps": 20.0,
+      "error": null
+    },
+    {
+      "timestamp_key": "714585800",
+      "date": "DAY7",
+      "path": "data/EgoLife/A1_JAKE/DAY7/DAY7_A1_JAKE_14583000.mp4",
+      "status": "readable",
+      "size": 16392055,
+      "frames": 600,
+      "fps": 20.0,
+      "error": null
+    },
+    {
+      "timestamp_key": "715105800",
+      "date": "DAY7",
+      "path": "data/EgoLife/A1_JAKE/DAY7/DAY7_A1_JAKE_15103000.mp4",
+      "status": "readable",
+      "size": 11683464,
+      "frames": 600,
+      "fps": 20.0,
+      "error": null
+    },
+    {
+      "timestamp_key": "715370000",
+      "date": "DAY7",
+      "path": "data/EgoLife/A1_JAKE/DAY7/DAY7_A1_JAKE_15363000.mp4",
+      "status": "readable",
+      "size": 4848160,
+      "frames": 464,
+      "fps": 20.0,
+      "error": null
+    },
+    {
+      "timestamp_key": "717483000",
+      "date": "DAY7",
+      "path": "data/EgoLife/A1_JAKE/DAY7/DAY7_A1_JAKE_17480000.mp4",
+      "status": "readable",
+      "size": 13610011,
+      "frames": 600,
+      "fps": 20.0,
+      "error": null
+    },
+    {
+      "timestamp_key": "718092800",
+      "date": "DAY7",
+      "path": "data/EgoLife/A1_JAKE/DAY7/DAY7_A1_JAKE_18090000.mp4",
+      "status": "readable",
+      "size": 12623294,
+      "frames": 600,
+      "fps": 20.0,
+      "error": null
+    },
+    {
+      "timestamp_key": "718135900",
+      "date": "DAY7",
+      "path": "data/EgoLife/A1_JAKE/DAY7/DAY7_A1_JAKE_18133000.mp4",
+      "status": "readable",
+      "size": 12752698,
+      "frames": 600,
+      "fps": 20.0,
+      "error": null
+    },
+    {
+      "timestamp_key": "718220000",
+      "date": "DAY7",
+      "path": "data/EgoLife/A1_JAKE/DAY7/DAY7_A1_JAKE_18213000.mp4",
+      "status": "readable",
+      "size": 14180627,
+      "frames": 600,
+      "fps": 20.0,
+      "error": null
+    },
+    {
+      "timestamp_key": "718285800",
+      "date": "DAY7",
+      "path": "data/EgoLife/A1_JAKE/DAY7/DAY7_A1_JAKE_18283000.mp4",
+      "status": "readable",
+      "size": 15642314,
+      "frames": 600,
+      "fps": 20.0,
+      "error": null
+    },
+    {
+      "timestamp_key": "718325900",
+      "date": "DAY7",
+      "path": "data/EgoLife/A1_JAKE/DAY7/DAY7_A1_JAKE_18323000.mp4",
+      "status": "readable",
+      "size": 13754714,
+      "frames": 600,
+      "fps": 20.0,
+      "error": null
+    },
+    {
+      "timestamp_key": "719142700",
+      "date": "DAY7",
+      "path": "data/EgoLife/A1_JAKE/DAY7/DAY7_A1_JAKE_19140000.mp4",
+      "status": "readable",
+      "size": 10927012,
+      "frames": 600,
+      "fps": 20.0,
+      "error": null
+    }
+  ]
+}
